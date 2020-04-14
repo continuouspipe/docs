@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basics on ContinuousPipe Docs</title>
+    <link>/basics/index.xml</link>
+    <description>Recent content in Basics on ContinuousPipe Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>Released under the MIT license</copyright>
+    <atom:link href="/basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ContinuousPipe</title>
+      <link>/basics/continuous-pipe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/basics/continuous-pipe/</guid>
+      <description>
+
+&lt;h2 id=&#34;what-is-continuouspipe&#34;&gt;What is ContinuousPipe?&lt;/h2&gt;
+
+&lt;p&gt;ContinuousPipe is a system for continuous automated deployment of multiple environments with simple configuration. It utilises Docker and Kubernetes to automatically deploy new environments, dramatically speeding up your feedback loop and cutting lead time.&lt;/p&gt;
+
+&lt;h2 id=&#34;technology-stack&#34;&gt;Technology Stack&lt;/h2&gt;
+
+&lt;p&gt;ContinuousPipe allows you to deploy your &lt;a href=&#34;../basics/concepts-build-concepts/&#34;&gt;Docker application&lt;/a&gt; on any &lt;a href=&#34;../basics/concepts-deployment-concepts/&#34;&gt;Kubernetes cluster&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;figure class=&#34;diagram technology-stack&#34;&gt;
+    
+        &lt;img src=&#34;../images/basics/cp-technology-stack.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;To get started with ContinuousPipe you will need the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; or &lt;a href=&#34;https://bitbucket.org/&#34;&gt;Bitbucket&lt;/a&gt; account to host your project&lt;/li&gt;
+&lt;li&gt;A Docker registry account e.g. &lt;a href=&#34;https://docker.io&#34;&gt;docker.io&lt;/a&gt; or &lt;a href=&#34;https://quay.io&#34;&gt;quay.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A Kubernetes cluster e.g. &lt;a href=&#34;https://cloud.google.com/container-engine/&#34;&gt;GCE&lt;/a&gt;, &lt;a href=&#34;https://aws.amazon.com/&#34;&gt;AWS&lt;/a&gt; or &lt;a href=&#34;https://azure.microsoft.com/en-au/&#34;&gt;Azure&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;customizable-workflow&#34;&gt;Customizable Workflow&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&#34;../basics/workflow-principles/&#34;&gt;customizable workflow&lt;/a&gt; allows you to integrate developers, QA and product owners to produce super-fast feedback cycles on a feature-by-feature basis.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Concepts: ContinuousPipe Concepts</title>
+      <link>/basics/concepts-continuous-pipe-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/basics/concepts-continuous-pipe-concepts/</guid>
+      <description>
+
+&lt;h2 id=&#34;system-overview&#34;&gt;System Overview&lt;/h2&gt;
+
+
+&lt;figure class=&#34;diagram concepts&#34;&gt;
+    
+        &lt;img src=&#34;../images/basics/cp-system-overview.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
+
+&lt;p&gt;A project is where the ContinuousPipe workflow begins. It is used to group together &lt;a href=&#34;../basics/concepts-build-concepts/&#34;&gt;Docker registries&lt;/a&gt; and &lt;a href=&#34;../basics/concepts-deployment-concepts/&#34;&gt;Kubernetes clusters&lt;/a&gt;, and configure user access.&lt;/p&gt;
+
+&lt;p&gt;Each project needs assigning at least one Docker registry. Storing the Docker registry credentials allows that registry to be specified in the YAML configuration so that ContinuousPipe can automatically push built images.&lt;/p&gt;
+
+&lt;p&gt;Similarly, each project needs assigning at least one Kubernetes cluster. Storing the Kubernetes cluster credentials allows that cluster to be specified in the YAML configuration so that ContinuousPipe can automatically create deployments.&lt;/p&gt;
+
+&lt;p&gt;When a project is created the project creator is set as an administrator user. Additional users can then be added as either administrators or basic users by sending them an invitation. Administrator users have extra privileges, such as being able to add new users, change subscription settings, change flow configuration and delete environments.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;ContinuousPipe currently uses GitHub to authenticate users, so a GitHub account is needed in order for a user to access ContinuousPipe.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;flows&#34;&gt;Flows&lt;/h2&gt;
+
+&lt;p&gt;A flow is created within a project by selecting a Git code repository. Typically a single flow is all that is needed for a project. However additional flows can easily be added to a project to represent different Git code repositories or even different components in the same Git code repository where a micro services architecture is used.&lt;/p&gt;
+
+&lt;p&gt;In parallel with the selection of a Git code repository, &lt;a href=&#34;../basics/installation-github/&#34;&gt;ContinuousPipe integration&lt;/a&gt; needs to be installed on that repository so that ContinuousPipe can respond to events such as code pushes, pull requests, and branch deletions.&lt;/p&gt;
+
+&lt;p&gt;Each flow allows YAML secrets to be defined and optionally encrypted. This allows sensitive data to be stored within ContinuousPipe rather than exposed in YAML configuration files in the Git code repository. The secrets are exposed to the YAML configuration as variables.&lt;/p&gt;
+
+&lt;h2 id=&#34;tides&#34;&gt;Tides&lt;/h2&gt;
+
+&lt;p&gt;A tide is created within a flow. It is triggered automatically by ContinuousPipe when an event occurs within the Git code repository - typically this is either a code push or a pull request.&lt;/p&gt;
+
+&lt;p&gt;The tide then reads the configuration from the branch/commit that instigated the tide. It then runs a sequence of tasks as defined in configuration to build an image and deploy it to a cluster. The result of a tide is a working environment, ready to test.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;A tide can also be triggered manually from within ContinuousPipe.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;environments&#34;&gt;Environments&lt;/h2&gt;
+
+&lt;p&gt;An environment in ContinuousPipe is a representation of a deployed pod instance within a Kubernetes cluster. ContinuousPipe creates a new environment/pod instance for each branch deployed, creating an identifier based on the branch name. The environment in ContinuousPipe monitors the cluster to make sure it is still healthy, and provides information on the containers within the pod, including log access.&lt;/p&gt;
+
+&lt;p&gt;The lifetime of an environment/pod instance is usually in step with the lifetime of the branch, and deleting the branch in Git will trigger the removal of the environment/pod instance in ContinuousPipe/Kubernetes. An environment can be manually deleted, in which case it will be recreated upon the next tide for that branch.&lt;/p&gt;
+
+&lt;h2 id=&#34;remote-development&#34;&gt;Remote Development&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;../remote-development/getting-started/&#34;&gt;Remote development&lt;/a&gt; in the ContinuousPipe context refers to the use of an environment for the incremental testing of work in development. An environment used in this way is referred to as a &amp;ldquo;remote development environment&amp;rdquo; or just &amp;ldquo;remote environment&amp;rdquo;. A specialised tool &lt;code&gt;cp-remote&lt;/code&gt; is provided to assist this process, using rsync to synchronise local filesystem changes with the remote environment. This allows local changes to be visible in the remote environment almost instantly so offering the same benefits as a VM but without requiring the same local machine resources. It also offers the benefit of centralising the devops effort needed to support development environments.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Concepts: Configuration Concepts</title>
+      <link>/basics/concepts-configuration-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/basics/concepts-configuration-concepts/</guid>
+      <description>
+
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
+
+&lt;p&gt;ContinuousPipe takes a minimal approach to configuration, and works with existing Docker configuration if already present. All configuration needs to be placed in the code repository root directory:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;.
+├── Dockerfile          | https://docs.docker.com/engine/reference/builder/
+├── docker-compose.yml  | https://docs.docker.com/compose/compose-file/
+└── continuous-pipe.yml | https://docs.continuouspipe.io/configuration/tasks/
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;continuous-pipe.yml&lt;/code&gt; file extends &lt;code&gt;docker-compose.yml&lt;/code&gt;. It allows the ContinuousPipe build and deployment to be configured using a set of tasks expressed using YAML. When a flow is triggered the configuration files are read from the branch that is being acted upon.&lt;/p&gt;
+
+&lt;h2 id=&#34;tasks&#34;&gt;Tasks&lt;/h2&gt;
+
+&lt;p&gt;Tasks are the central element of ContinuousPipe configuration. By breaking down the configuration into smaller tasks, they can be composed together to create a flexible workflow. The primary tasks handle the configuration of the Docker image build and Kubernetes cluster deployment, however additional tasks can be added to do the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Run arbitrary setup commands&lt;/li&gt;
+&lt;li&gt;Wait for the results of other GitHub integrations (e.g. Scrutinizer)&lt;/li&gt;
+&lt;li&gt;Require manual approval prior to deployment&lt;/li&gt;
+&lt;li&gt;Trigger a webhook&lt;/li&gt;
+&lt;li&gt;Trigger notifications of build state to Slack&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tasks can also be conditional so only trigger in response to certain branch name formats or certain pull request labels. By default, tasks will run in declaration sequence, but for more powerful task control pipelines can be defined. These allow different tide execution plans, running only specified tasks in a specified order.&lt;/p&gt;
+
+&lt;h3 id=&#34;tide-triggers-with-task-filters&#34;&gt;Tide Triggers with Task Filters&lt;/h3&gt;
+
+&lt;p&gt;The following diagram shows how a tide can be triggered. Additionally, it shows how &lt;a href=&#34;../configuration/tasks/#filters&#34;&gt;task filters&lt;/a&gt; can affect the execution of the tide:&lt;/p&gt;
+
+
+&lt;figure class=&#34;diagram concepts&#34;&gt;
+    
+        &lt;img src=&#34;../images/basics/cp-tide-triggers-default.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h3 id=&#34;tide-triggers-with-pipeline-filters&#34;&gt;Tide Triggers with Pipeline Filters&lt;/h3&gt;
+
+&lt;p&gt;The following diagram shows an alternative configuration using &lt;a href=&#34;../configuration/pipelines/&#34;&gt;pipeline filters&lt;/a&gt;:&lt;/p&gt;
+
+
+&lt;figure class=&#34;diagram concepts&#34;&gt;
+    
+        &lt;img src=&#34;../images/basics/cp-tide-triggers-pipeline.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;It is also possible to add filters to tasks when using pipelines. This creates unnecessary complexity however, so is not recommended.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Concepts: Build Concepts</title>
+      <link>/basics/concepts-build-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/basics/concepts-build-concepts/</guid>
+      <description>
+
+&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; is an application distribution tool that uses containers. A container is effectively a package of the all the code, tools and libraries that an application needs in order to run.&lt;/p&gt;
+
+&lt;h2 id=&#34;images&#34;&gt;Images&lt;/h2&gt;
+
+&lt;p&gt;ContinuousPipe uses Docker to build container images. When a build is run it reads configuration files from your Git repository to create an image that can be deployed to a Kubernetes cluster.&lt;/p&gt;
+
+&lt;p&gt;Once built, ContinuousPipe will push the image to a Docker registry where it will be stored with its own name and tag, depending of the build strategy you choose. ContinuousPipe supports all major Docker registries such as &lt;a href=&#34;https://hub.docker.com/&#34;&gt;Docker Hub&lt;/a&gt; and &lt;a href=&#34;https://quay.io/&#34;&gt;Quay&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Your pushed image will be shared publicly by default but can be made private (both Docker Hub and Quay allow private storage). ContinuousPipe also provides a feature that allows separate images to be built sequentially and share artifacts. This allows an initial image to be built using private dependencies, then share the output of the build process with a second image - the second image can then be pushed without exposing any private credentials.&lt;/p&gt;
+
+&lt;p&gt;ContinuousPipe provides &lt;a href=&#34;../faq/what-are-the-continuous-pipe-images/&#34;&gt;images&lt;/a&gt; for many common technologies that you may need to use in your application infrastructure. These can be used as they are or as a base to add customisations according to the requirements of your application. The benefit of using ContinuousPipe images are that they have been created according to best practices on security and performance. For example, the Apache and NGINX server images are automatically configured to use HTTPS only websites and install self signed SSL certificate on container start.&lt;/p&gt;
+
+&lt;p&gt;ContinuousPipe also provides several &lt;a href=&#34;../faq/what-are-the-continuous-pipe-demo-sites/&#34;&gt;demo sites&lt;/a&gt; on Github that provide sample configuration for common PHP frameworks.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Concepts: Deployment Concepts</title>
+      <link>/basics/concepts-deployment-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/basics/concepts-deployment-concepts/</guid>
+      <description>
+
+&lt;h2 id=&#34;kubernetes&#34;&gt;Kubernetes&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kubernetes.io&#34;&gt;Kubernetes&lt;/a&gt; is a Docker container orchestration tool written and maintained by Google. It is recognised as one of the best container orchestration platforms around.&lt;/p&gt;
+
+&lt;h2 id=&#34;clusters&#34;&gt;Clusters&lt;/h2&gt;
+
+&lt;p&gt;A Kubernetes cluster is a collection of computers (nodes) that work together as a single system. Each node can be either a virtual or physical machine.&lt;/p&gt;
+
+&lt;p&gt;ContinuousPipe supports Kubernetes clusters on all major cloud providers such as &lt;a href=&#34;https://cloud.google.com/container-engine/&#34;&gt;GCE&lt;/a&gt;, &lt;a href=&#34;https://aws.amazon.com/&#34;&gt;AWS&lt;/a&gt;, &lt;a href=&#34;https://azure.microsoft.com/en-au/&#34;&gt;Azure&lt;/a&gt;. You may also use Kubernetes clusters on your own infrastructure. ContinuousPipe even allows you to deploy different environments on different clusters. You can therefore deploy your production environment on an AWS cluster, and your UAT environments on a GCE cluster.&lt;/p&gt;
+
+&lt;h2 id=&#34;pods&#34;&gt;Pods&lt;/h2&gt;
+
+&lt;p&gt;A &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/&#34;&gt;pod&lt;/a&gt; is the Kubernetes name for one or more containers deployed to the same host. Each pod is assigned a unique IP address within the cluster. A pod can contain a single container, or several containers that interoperate and are dependent upon each other. For example a web application might have a container for the main application running a web server, a container for the database, and a container for caching (e.g. running Redis).&lt;/p&gt;
+
+&lt;p&gt;Pods are intended to be immutable i.e. they should not be reconfigured while they are running. ContinuousPipe supports this by performing rolling update deployments when an application has been modified, so effectively the pod is replaced.&lt;/p&gt;
+
+&lt;h2 id=&#34;services&#34;&gt;Services&lt;/h2&gt;
+
+&lt;p&gt;A &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/service/&#34;&gt;service&lt;/a&gt; is the Kubernetes name for a grouping of pods. Services act as a load balancer and allow external IPs to be created to access a pod.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;A Kubernetes service is not the same as a ContinuousPipe service. ContinuousPipe services represent the YAML instructions for creating individual containers. This ambiguity will be addressed in a future release of ContinuousPipe.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;ingress&#34;&gt;Ingress&lt;/h2&gt;
+
+&lt;p&gt;An &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/ingress/#what-is-ingress&#34;&gt;ingress&lt;/a&gt; is the Kubernetes name for an entry point for inbound connections accessing a cluster. At its simplest it can be a dynamic IP address directing inbound connections to a single service, but can be a static IP address configured to direct inbound connections to multiple services.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Workflow Principles</title>
+      <link>/basics/workflow-principles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/basics/workflow-principles/</guid>
+      <description>
+
+&lt;h2 id=&#34;workflow-principles&#34;&gt;Workflow Principles&lt;/h2&gt;
+
+&lt;p&gt;ContinuousPipe does not mandate a specific project workflow. Instead it promotes a series of workflow principles that are intended to improve an existing project workflow or shape a new one. These principles are particularly beneficial when they are used in tandem with agile practices, as they focus on iteration and collaboration.&lt;/p&gt;
+
+&lt;p&gt;Used together or just individually, the principles aim to achieve &amp;ldquo;continuous deployment&amp;rdquo;, reducing the lead time from when a feature starts development to when it goes into production.&lt;/p&gt;
+
+&lt;h3 id=&#34;principle-1-use-github-to-control-your-workflow&#34;&gt;Principle #1: Use GitHub to Control Your Workflow&lt;/h3&gt;
+
+&lt;p&gt;GitHub offers a range of features that promote the utility of Git beyond that of a simple code repository. You may already be using some of these in your projects. One of the key features is the pull request (PR), which is used to invite code review and collaboration. Another key feature is automatic integration testing when a pull request is created or updated.&lt;/p&gt;
+
+&lt;p&gt;ContinuousPipe takes pull requests and automatic integration testing a step further by allowing pull requests to be configured to automatically create an isolated environment to test the branch changes in. This can be further refined to respond only to certain branch name patterns or certain pull request labels.&lt;/p&gt;
+
+&lt;p&gt;The results of the enviroment build, including an IP address to access the enviroment, will be subsequently posted back to the pull request by ContinuousPipe. This gives developers, quality assurance (QA), and product owner (PO) the facility to test a feature within minutes of the pull request being created.&lt;/p&gt;
+
+&lt;h3 id=&#34;principle-2-shorten-feedback-loop-between-development-and-approval&#34;&gt;Principle #2: Shorten Feedback Loop Between Development and Approval&lt;/h3&gt;
+
+&lt;p&gt;The results of initial and subsequent builds can be broadcast through several channels. By default GitHub notifications are used, which most developers will already be using. To inform the wider project team, Slack notifications can also be configured. If you are not using Slack then webhooks allow you to customise the way you recieve notifications. This means that the time between &amp;ldquo;dev complete&amp;rdquo; and &amp;ldquo;in testing&amp;rdquo; can be minimised, and QAs and POs can get to work quickly.&lt;/p&gt;
+
+&lt;p&gt;Once an environment has been built and is in review, it may need rework. As soon as the developer has pushed their changes, the environment will be automatically rebuilt and notifications raised. This means that QAs and POs are instantly updated and aware that they can retest the work.&lt;/p&gt;
+
+&lt;h3 id=&#34;principle-3-review-and-test-features-in-isolated-environments&#34;&gt;Principle #3: Review and Test Features in Isolated Environments&lt;/h3&gt;
+
+&lt;p&gt;ContinuousPipe creates an individual environment for each branch, meaning that features can live in isolated environments until everyone is happy that they are working as intended. This keeps project, integration and production branches clean and reduces the risk of releases being blocked by broken features.&lt;/p&gt;
+
+&lt;p&gt;The extent to which this principle is applied can be controlled by branch management - a branch could represent an entire feature or branches could be created for each subtask depending upon requirements.&lt;/p&gt;
+
+&lt;h3 id=&#34;principle-4-involve-product-owners-as-early-as-possible&#34;&gt;Principle #4: Involve Product Owners as Early as Possible&lt;/h3&gt;
+
+&lt;p&gt;Building on the previous principles, it is much easier to bring in PO approval at the feature branch stage, which can often result in important interventions and corrections to misunderstood requirements. Adapting your workflow to have PO approval as well as QA approval at this stage can therefore save time and money.&lt;/p&gt;
+
+&lt;p&gt;In the real world however, POs are usually very busy people, but the benefits are still applicable when using ContinuousPipe to build the integration environment. POs can benefit from the shortened feedback loop to understand when an environment is ready to test and when a change has been made for them to retest.&lt;/p&gt;
+
+&lt;h3 id=&#34;principle-5-use-remote-development-tooling-to-speed-up-development&#34;&gt;Principle #5: Use Remote Development Tooling to Speed Up Development&lt;/h3&gt;
+
+&lt;p&gt;ContinuousPipe environments can also be used by developers as a replacement for virtual machines. To achieve this ContinuousPipe provides a utility that syncs their local changes with a remote environment. This allows developers to work faster as they are able to test their local changes on production quality hardware and benefit from up to date environments. They are also able to share a link to their environment with other developers and QA before even raising a PR. This allows problems encountered to be quickly explained and visualised using a browser.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installation: GitHub</title>
+      <link>/basics/installation-github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/basics/installation-github/</guid>
+      <description>
+
+&lt;p&gt;In order to use ContinuousPipe with a GitHub repository, you need to configure two interaction points:&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-a-connected-account-in-continuouspipe&#34;&gt;Creating a Connected Account in ContinuousPipe&lt;/h2&gt;
+
+&lt;p&gt;The first interaction is connecting your GitHub account to ContinuousPipe. This is needed when creating a flow so that ContinuousPipe can list repositories to select.&lt;/p&gt;
+
+&lt;p&gt;Setting up a connected account is demonstrated in the Quick Start guide to &lt;a href=&#34;../quick-start/creating-a-flow/&#34;&gt;creating a flow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;installing-the-continuouspipe-integration-in-github&#34;&gt;Installing the ContinuousPipe Integration in GitHub&lt;/h2&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;The integration needs to be installed on the GitHub account hosting the repository. If you don&amp;rsquo;t control the account hosting the repository, you will need the account owner to perform this step for you.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The second interaction is installing the ContinuousPipe integration in GitHub. This is needed in order to let ContinuousPipe know about any repository changes that have been made and to add comments on pull requests.&lt;/p&gt;
+
+&lt;p&gt;To install, visit &lt;a href=&#34;https://github.com/integration/continuouspipe&#34;&gt;https://github.com/integration/continuouspipe&lt;/a&gt;, which will present the installation page. You need to click &amp;ldquo;Install&amp;rdquo; to proceed.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;If you get as far as creating a flow without installing the integration, you&amp;rsquo;ll be prompted to do so before you can proceed.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/basics/github-integration-install.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You will then be presented with the configuration page. You can choose whether to apply the installation to all repositories associated with the account with the &amp;ldquo;All repositories&amp;rdquo; option or alternatively just limit the integration to individual repositories with the &amp;ldquo;Only selected repositories&amp;rdquo; option. Then click &amp;ldquo;Install&amp;rdquo; to complete the installation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/basics/github-integration-configure.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You are now all set and the GitHub integration is configured for the code repository.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installation: Bitbucket</title>
+      <link>/basics/installation-bitbucket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/basics/installation-bitbucket/</guid>
+      <description>
+
+&lt;p&gt;In order to use ContinuousPipe with a Bitbucket repository, you need to configure two interaction points:&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-a-connected-account-in-continuouspipe&#34;&gt;Creating a Connected Account in ContinuousPipe&lt;/h2&gt;
+
+&lt;p&gt;The first interaction is connecting your Bitbucket account to ContinuousPipe. This is needed when creating a flow so that ContinuousPipe can list repositories to select.&lt;/p&gt;
+
+&lt;p&gt;Setting up a connected account is demonstrated in the Quick Start guide to &lt;a href=&#34;../quick-start/creating-a-flow/&#34;&gt;creating a flow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;installing-the-continuouspipe-integration-in-bitbucket&#34;&gt;Installing the ContinuousPipe Integration in Bitbucket&lt;/h2&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;The integration needs to be installed on the Bitbucket account hosting the repository. If you don&amp;rsquo;t control the account hosting the repository, you will need the account owner to perform this step for you.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The second interaction is installing the ContinuousPipe integration in Bitbucket. This is needed in order to let ContinuousPipe know about any repository changes that have been made and to add comments on pull requests.&lt;/p&gt;
+
+&lt;p&gt;Go to the Bitbucket account settings page, and in the left menu click on &amp;ldquo;Manage integrations&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/basics/bitbucket-settings-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can now click on &amp;ldquo;Install add-on from URL&amp;rdquo; and enter &lt;code&gt;https://authenticator.continuouspipe.io/connect/service/bitbucket/addon/&lt;/code&gt; as show in this example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/basics/bitbucket-addon-install.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The last step is to grant ContinuousPipe access to the code repository by clicking the &amp;ldquo;Grant access&amp;rdquo; button in the following screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/basics/bitbucket-grant-access-popup.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You are now all set and the Bitbucket integration is configured for the code repository.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

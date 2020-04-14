@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-gb">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Setting up Xdebug on a Remote Environment - ContinuousPipe Docs</title>
+    <meta name="generator" content="Hugo 0.18" />
+
+    
+    <meta name="description" content="Documentation for ContinuousPipe">
+    
+    <link rel="canonical" href="../../guides/remote-environment-xdebug/">
+    
+    <meta name="author" content="Samuel Rozé">
+    
+
+    <meta property="og:url" content="/guides/remote-environment-xdebug/">
+    <meta property="og:title" content="ContinuousPipe Docs">
+    <meta property="og:image" content="/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="ContinuousPipe Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.png">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot');
+        src: url('/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff')
+               format('woff'),
+             url('/fonts/icon.ttf')
+               format('truetype'),
+             url('/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../../stylesheets/application.css">
+    <link rel="stylesheet" href="../../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open%20Sans:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css">
+    
+    <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script src="../../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-blue palette-accent-teal">
+
+
+<div class="backdrop">
+    <div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+    <nav aria-label="Header">
+    <div class="bar default">
+        <div class="button button-menu" role="button" aria-label="Menu">
+            <label class="toggle-button icon icon-menu" for="toggle-drawer">
+                <span></span>
+            </label>
+        </div>
+        <div class="stretch">
+            <div class="title">
+                <a href="https://continuouspipe.io/" class="cp-website-link"><i class="cp-icon-logo"></i></a>
+                <a href="../../">ContinuousPipe
+                    Documentation</a>
+            </div>
+        </div>
+
+        
+        <div class="button button-twitter" role="button" aria-label="Twitter">
+            <a href="https://twitter.com/continuouspipe" title="@continuouspipe on Twitter" target="_blank"
+               class="toggle-button icon icon-twitter"></a>
+        </div>
+        
+
+        
+        <div class="button button-github" role="button" aria-label="GitHub">
+            <a href="https://github.com/continuouspipe" title="@continuouspipe on GitHub" target="_blank"
+               class="toggle-button icon icon-github"></a>
+        </div>
+        
+
+        <div class="button button-search" role="button" aria-label="Search">
+            <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+        </div>
+    </div>
+    <div class="bar search">
+        <div class="button button-close" role="button" aria-label="Close">
+            <label class="toggle-button icon icon-back" for="toggle-search"></label>
+        </div>
+        <div class="stretch">
+            <div class="field">
+                <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off"
+                       autocomplete="off" spellcheck id="algolia-query">
+            </div>
+        </div>
+        <div class="button button-reset" role="button" aria-label="Search">
+            <button class="toggle-button icon icon-close" id="reset-search"></button>
+        </div>
+    </div>
+</nav>
+
+</header>
+
+<main class="main">
+    <div class="drawer">
+        <nav aria-label="Navigation">
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a  title="Basics" href="../../basics/">
+	
+	Basics
+</a>
+
+
+        
+        <ul >
+           
+            
+            
+
+
+
+<a  title="ContinuousPipe" href="../../basics/continuous-pipe/">
+	
+	ContinuousPipe
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Concepts: ContinuousPipe Concepts" href="../../basics/concepts-continuous-pipe-concepts/">
+	
+	Concepts: ContinuousPipe Concepts
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Concepts: Configuration Concepts" href="../../basics/concepts-configuration-concepts/">
+	
+	Concepts: Configuration Concepts
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Concepts: Build Concepts" href="../../basics/concepts-build-concepts/">
+	
+	Concepts: Build Concepts
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Concepts: Deployment Concepts" href="../../basics/concepts-deployment-concepts/">
+	
+	Concepts: Deployment Concepts
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Workflow Principles" href="../../basics/workflow-principles/">
+	
+	Workflow Principles
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Installation: GitHub" href="../../basics/installation-github/">
+	
+	Installation: GitHub
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Installation: Bitbucket" href="../../basics/installation-bitbucket/">
+	
+	Installation: Bitbucket
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a  title="Quick Start" href="../../quick-start/">
+	
+	Quick Start
+</a>
+
+
+        
+        <ul >
+           
+            
+            
+
+
+
+<a  title="Creating a Project" href="../../quick-start/creating-a-project/">
+	
+	Creating a Project
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Creating a Flow" href="../../quick-start/creating-a-flow/">
+	
+	Creating a Flow
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Configuring Users" href="../../quick-start/configuring-users/">
+	
+	Configuring Users
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Configuring a Cluster" href="../../quick-start/configuring-a-cluster/">
+	
+	Configuring a Cluster
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Configuring a Registry" href="../../quick-start/configuring-a-registry/">
+	
+	Configuring a Registry
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Configuring Your Repository" href="../../quick-start/configuring-your-repository/">
+	
+	Configuring Your Repository
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Configuring a Flow" href="../../quick-start/configuring-a-flow/">
+	
+	Configuring a Flow
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Creating a Tide" href="../../quick-start/creating-a-tide/">
+	
+	Creating a Tide
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Remote Development: Installing the Client" href="../../quick-start/remote-development-installing-the-client/">
+	
+	Remote Development: Installing the Client
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Remote Development: Configuring Your Repository" href="../../quick-start/remote-development-configuring-your-repository/">
+	
+	Remote Development: Configuring Your Repository
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Remote Development: Creating a Remote Environment" href="../../quick-start/remote-development-creating-a-remote-environment/">
+	
+	Remote Development: Creating a Remote Environment
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Remote Development: Using a Remote Environment" href="../../quick-start/remote-development-using-a-remote-environment/">
+	
+	Remote Development: Using a Remote Environment
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a  title="Configuration" href="../../configuration/">
+	
+	Configuration
+</a>
+
+
+        
+        <ul >
+           
+            
+            
+
+
+
+<a  title="Configuration Files" href="../../configuration/configuration-files/">
+	
+	Configuration Files
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks" href="../../configuration/tasks/">
+	
+	Tasks
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Building Docker Images" href="../../configuration/tasks-build/">
+	
+	Tasks: Building Docker Images
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Deploying Services" href="../../configuration/tasks-deploy/">
+	
+	Tasks: Deploying Services
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Running Commands" href="../../configuration/tasks-run/">
+	
+	Tasks: Running Commands
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Waiting Statuses" href="../../configuration/tasks-wait/">
+	
+	Tasks: Waiting Statuses
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Manual Approval" href="../../configuration/tasks-manual-approval/">
+	
+	Tasks: Manual Approval
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Creating Webhooks" href="../../configuration/tasks-webhook/">
+	
+	Tasks: Creating Webhooks
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Notifications" href="../../configuration/notifications/">
+	
+	Notifications
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Pipelines" href="../../configuration/pipelines/">
+	
+	Pipelines
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Cloudflare Integration" href="../../configuration/cloudflare-integration/">
+	
+	Cloudflare Integration
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Endpoints" href="../../configuration/endpoints/">
+	
+	Endpoints
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Artifacts" href="../../configuration/artifacts/">
+	
+	Artifacts
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a  title="Remote Development" href="../../remote-development/">
+	
+	Remote Development
+</a>
+
+
+        
+        <ul >
+           
+            
+            
+
+
+
+<a  title="Getting Started" href="../../remote-development/getting-started/">
+	
+	Getting Started
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Working with a Different Environment" href="../../remote-development/working-with-different-environments/">
+	
+	Working with a Different Environment
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Working with a Direct Connection to the Cluster" href="../../remote-development/working-with-direct-cluster-connection/">
+	
+	Working with a Direct Connection to the Cluster
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Advanced Setup" href="../../remote-development/advanced-setup/">
+	
+	Advanced Setup
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Init" href="../../remote-development/command-init/">
+	
+	Command: Init
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Setup" href="../../remote-development/command-setup/">
+	
+	Command: Setup
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Build" href="../../remote-development/command-build/">
+	
+	Command: Build
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Logs" href="../../remote-development/command-logs/">
+	
+	Command: Logs
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Bash" href="../../remote-development/command-bash/">
+	
+	Command: Bash
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Exec" href="../../remote-development/command-exec/">
+	
+	Command: Exec
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Watch" href="../../remote-development/command-watch/">
+	
+	Command: Watch
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Fetch" href="../../remote-development/command-fetch/">
+	
+	Command: Fetch
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Push" href="../../remote-development/command-push/">
+	
+	Command: Push
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Sync" href="../../remote-development/command-sync/">
+	
+	Command: Sync
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Delete" href="../../remote-development/command-delete/">
+	
+	Command: Delete
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Forward" href="../../remote-development/command-forward/">
+	
+	Command: Forward
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Pods" href="../../remote-development/command-pods/">
+	
+	Command: Pods
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Check Connection" href="../../remote-development/command-check-connection/">
+	
+	Command: Check Connection
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Destroy" href="../../remote-development/command-destroy/">
+	
+	Command: Destroy
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.0" href="../../remote-development/release-notes-0-1-0/">
+	
+	Release Notes v0.1.0
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.1" href="../../remote-development/release-notes-0-1-1/">
+	
+	Release Notes v0.1.1
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.2" href="../../remote-development/release-notes-0-1-2/">
+	
+	Release Notes v0.1.2
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.3" href="../../remote-development/release-notes-0-1-3/">
+	
+	Release Notes v0.1.3
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.4" href="../../remote-development/release-notes-0-1-4/">
+	
+	Release Notes v0.1.4
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.5" href="../../remote-development/release-notes-0-1-5/">
+	
+	Release Notes v0.1.5
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a  title="FAQ" href="../../faq/">
+	
+	FAQ
+</a>
+
+
+        
+        <ul >
+           
+            
+            
+
+
+
+<a  title="Billing Profile" href="../../faq/how-do-I-create-a-billing-profile/">
+	
+	Billing Profile
+</a>
+
+           
+            
+            
+
+
+
+<a  title="ContinuousPipe Images" href="../../faq/what-are-the-continuous-pipe-images/">
+	
+	ContinuousPipe Images
+</a>
+
+           
+            
+            
+
+
+
+<a  title="ContinuousPipe Demo Sites" href="../../faq/what-are-the-continuous-pipe-demo-sites/">
+	
+	ContinuousPipe Demo Sites
+</a>
+
+           
+            
+            
+
+
+
+<a  title="ContinuousPipe API Keys" href="../../faq/where-can-I-get-a-continuous-pipe-api-key/">
+	
+	ContinuousPipe API Keys
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Deployment Logs and Events" href="../../faq/where-can-I-view-container-logs-and-events/">
+	
+	Deployment Logs and Events
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Setting Environment Variables" href="../../faq/how-do-I-set-environment-variables/">
+	
+	Setting Environment Variables
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Controlling Deployments" href="../../faq/how-do-I-control-deployments-using-pr-labels/">
+	
+	Controlling Deployments
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Using Defaults" href="../../faq/how-do-I-use-defaults-to-reduce-the-duplication-of-configuration/">
+	
+	Using Defaults
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Setup GitHub Token" href="../../faq/how-do-I-use-composer-with-github-access-token/">
+	
+	Setup GitHub Token
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Using Pipelines" href="../../faq/how-do-I-use-pipelines-to-simplify-the-configuration/">
+	
+	Using Pipelines
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Basic Authentication" href="../../faq/how-do-I-add-basic-http-authentication-to-an-application/">
+	
+	Basic Authentication
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Overriding Tasks" href="../../faq/how-do-I-override-tasks-in-pipelines/">
+	
+	Overriding Tasks
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Manual Approval" href="../../faq/how-do-I-set-up-manual-approval-of-deployments/">
+	
+	Manual Approval
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Readiness Checks on Services" href="../../faq/how-do-I-define-a-readiness-check-when-deploying-services/">
+	
+	Readiness Checks on Services
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Get Endpoint Address for a Service" href="../../faq/how-do-I-get-the-deployed-endpoint-address-for-a-service/">
+	
+	Get Endpoint Address for a Service
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Slack Notifications" href="../../faq/how-do-I-configure-slack-notifications/">
+	
+	Slack Notifications
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Watch Commands and Inotify" href="../../faq/how-do-I-configure-inotify-for-development-tool-watch-commands/">
+	
+	Watch Commands and Inotify
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a class="current" title="Guides" href="../../guides/">
+	
+	Guides
+</a>
+
+
+        
+        <ul class="current">
+           
+            
+            
+
+
+
+<a  title="Getting Started with Laravel" href="../../guides/laravel/">
+	
+	Getting Started with Laravel
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Getting Started with Symfony" href="../../guides/symfony/">
+	
+	Getting Started with Symfony
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Getting Started with Drupal" href="../../guides/drupal/">
+	
+	Getting Started with Drupal
+</a>
+
+           
+            
+            
+
+
+
+<a class="current" title="Xdebug Remote Environment" href="../../guides/remote-environment-xdebug/">
+	
+	Xdebug Remote Environment
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+        </ul>
+        
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+
+    <article class="article">
+        <div class="wrapper">
+            
+<h1>Setting up Xdebug on a Remote Environment </h1>
+
+
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This is a guide to setting up <a href="https://xdebug.org/">Xdebug</a> on a ContinuousPipe remote environment.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before getting started you will need to have read or understand the following:</p>
+
+<ul>
+<li>Basic Xdebug setup and usage - see <a href="https://www.sitepoint.com/debugging-and-profiling-php-with-xdebug">https://www.sitepoint.com/debugging-and-profiling-php-with-xdebug</a></li>
+<li>Setting up an environment in ContinuousPipe - see the <a href="../../quick-start/creating-a-project/">quick start guide</a></li>
+<li>Setting up a remote development environment in ContinuousPipe - see the <a href="../../quick-start/remote-development-installing-the-client/">remote development quick start guide</a></li>
+</ul>
+
+<p>In addition, we are going to use the ContinuousPipe Symfony demo app, so reading the <a href="../../guides/symfony/">getting started with Symfony guide</a> will help too.</p>
+
+<h2 id="configuring-your-repository">Configuring Your Repository</h2>
+
+<p>As mentioned above, this guide will use the ContinuousPipe Symfony demo app. The files that are modified below can be found in the <a href="https://github.com/continuouspipe/demo-symfony">ContinuousPipe demo-symfony repository</a>.</p>
+
+<p>Below is a summary of the files that will be modified (M) or added (A) to configure the repository:</p>
+
+<pre><code>  .
+M ├── Dockerfile
+M ├── continuous-pipe.yml
+M ├── docker-compose.yml
+  └── docker/
+    └── etc/
+      └── php/
+        └── 7.1/
+          └── fpm/
+            └── conf.d/
+A             └── 20-xdebug.ini
+</code></pre>
+
+<h3 id="installing-xdebug">Installing Xdebug</h3>
+
+<p>The first step is to install Xdebug on the remote environment. This can be done by adding the following instructions to the Dockerfile:</p>
+
+<blockquote>
+<p><strong>Dockerfile</strong>
+<table class="highlighttable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">FROM</span><span style="color: #e6db74"> quay.io/continuouspipe/symfony-php7.1-nginx:latest</span>
+ARG <span style="color: #f8f8f2">GITHUB_TOKEN</span><span style="color: #f92672">=</span>
+ARG <span style="color: #f8f8f2">SYMFONY_ENV</span><span style="color: #f92672">=</span>prod
+<span style="color: #66d9ef">ENV</span><span style="color: #e6db74"> SYMFONY_ENV $SYMFONY_ENV</span>
+
+<span style="background-color: #49483e"><span style="color: #66d9ef">RUN</span> apt-get update -qq -y <span style="color: #ae81ff">\</span>
+</span><span style="background-color: #49483e">    <span style="color: #f92672">&amp;&amp;</span> <span style="color: #f8f8f2">DEBIAN_FRONTEND</span><span style="color: #f92672">=</span>noninteractive apt-get -qq -y --no-install-recommends install php-xdebug <span style="color: #ae81ff">\</span>
+</span><span style="background-color: #49483e">    <span style="color: #f92672">&amp;&amp;</span> apt-get auto-remove -qq -y <span style="color: #ae81ff">\</span>
+</span><span style="background-color: #49483e">    <span style="color: #f92672">&amp;&amp;</span> apt-get clean
+</span><span style="background-color: #49483e">
+</span><span style="background-color: #49483e">COPY docker/etc/ /etc/
+</span>
+COPY . /app
+<span style="color: #66d9ef">RUN</span> container build
+</pre></div>
+</td></tr></table></p>
+</blockquote>
+
+<ul>
+<li><strong>Lines 6-9:</strong> The RUN instruction tells Docker to install the <code>php-xdebug</code> module on the image using <code>apt-get</code>.</li>
+<li><strong>Line 11:</strong> Then the COPY instruction tells Docker to copy files from <code>docker/etc/</code> in the repository to <code>/etc</code> on the image filesystem.</li>
+</ul>
+
+<p>As you can see, the COPY instruction expects the Xdebug configuration to be present in the repository, in this case under the <code>docker/etc/</code> directory.</p>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The exact location of the configuration will depend on the image you are using. For the <code>quay.io/continuouspipe/symfony-php7.1-nginx</code> <a href="../../faq/what-are-the-continuous-pipe-images/">ContinuousPipe image</a> the Xdebug configuration file is at &ldquo;/etc/php/7.1/fpm/conf.d/20-xdebug.ini&rdquo;, however you may need to change this path according to your PHP version.</p>
+</div>
+
+<p>The following file therefore needs to be created in the repository at &ldquo;docker/etc/php/7.1/fpm/conf.d/20-xdebug.ini&rdquo;:</p>
+
+<blockquote>
+<p><strong>20-xdebug.ini</strong></p>
+
+<pre><code>zend_extension=xdebug.so
+xdebug.remote_enable=1
+xdebug.remote_port=9000
+xdebug.remote_host=sshforward
+xdebug.remote_log=
+</code></pre>
+</blockquote>
+
+<p>This will enable remote debugging on port 9000, using the &ldquo;sshforward&rdquo; host. Details on setting up the &ldquo;sshforward&rdquo; host are in the next section of the guide.</p>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With the instructions above Xdebug is always set up irrespective of environment. Instructions on how to make this conditional on the environment can be found in <a href="#appendix-b-making-the-php-configuration-conditional">Appendix B</a>.</p>
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using a ContinuousPipe base image you will also need to disable Tideways. This is necessary as Tideways loads an <a href="http://php.net/manual/en/ini.core.php#ini.auto-prepend-file">auto prepend file</a>, which means the Xdebug client mistakes it for the application entry point.</p>
+
+<p>Basic instructions on how to disable Tideways can be found in <a href="#appendix-c-disabling-tideways-basic-configuration-using-copy">Appendix C</a>. If you have followed the instructions in Appendix B please refer to <a href="#appendix-d-disabling-tideways-advanced-configuration-using-confd">Appendix D</a> instead.</p>
+</div>
+
+<h3 id="installing-ssh-forward">Installing SSH Forward</h3>
+
+<p>The next step is to configure your project to use the <a href="https://github.com/continuouspipe/dockerfiles/tree/master/ssh-forward">ContinuousPipe SSH Forward</a> image. This is needed to allow port forwarding to be set up from your local machine to the pod your environment is running on.</p>
+
+<p>The <code>docker-compose.yml</code> file needs editing as follows:</p>
+
+<blockquote>
+<p><strong>docker-compose.yml</strong>
+<table class="highlighttable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #ae81ff">version</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2&quot;</span>
+<span style="color: #ae81ff">services</span><span style="color: #f8f8f2">:</span>
+<span style="background-color: #49483e">    <span style="color: #ae81ff">sshforward</span><span style="color: #f8f8f2">:</span>
+</span><span style="background-color: #49483e">        <span style="color: #ae81ff">image</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">quay.io/continuouspipe/ssh-forward:latest</span>
+</span>    <span style="color: #ae81ff">web</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">build</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">.</span>
+        <span style="color: #ae81ff">expose</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">80</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">443</span>
+        <span style="color: #ae81ff">ports</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #e6db74">&quot;8080:80&quot;</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #e6db74">&quot;443:443&quot;</span>
+        <span style="color: #ae81ff">volumes</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">.:/app</span>
+<span style="background-color: #49483e">        <span style="color: #ae81ff">depends_on</span><span style="color: #f8f8f2">:</span>
+</span><span style="background-color: #49483e">            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">sshforward</span>
+</span></pre></div>
+</td></tr></table></p>
+</blockquote>
+
+<ul>
+<li><strong>Lines 3-4:</strong> A new service <code>sshforward</code> is added, specifying the &ldquo;quay.io/continuouspipe/ssh-forward&rdquo; image.</li>
+<li><strong>Lines 15-16:</strong> The <code>sshforward</code> service is declared as a dependency of the <code>web</code> service.</li>
+</ul>
+
+<p>The <code>continuous-pipe.yml</code> file needs editing as follows:</p>
+
+<blockquote>
+<p><strong>continuous-pipe.yml</strong>
+<table class="highlighttable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #ae81ff">variables</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">SYMFONY_ENV</span>
+      <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">prod</span>
+
+<span style="color: #ae81ff">tasks</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #ae81ff">images</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">build</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #ae81ff">services</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #ae81ff">web</span><span style="color: #f8f8f2">:</span>
+                    <span style="color: #ae81ff">image</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${IMAGE_NAME}</span>
+                    <span style="color: #ae81ff">naming_strategy</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">sha1</span>
+    <span style="color: #ae81ff">deployment</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">deploy</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #ae81ff">cluster</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${CLUSTER}</span>
+            <span style="color: #ae81ff">environment</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;&quot;sfdemo-&quot;</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">~</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">code_reference.branch&#39;</span>
+            <span style="color: #ae81ff">services</span><span style="color: #f8f8f2">:</span>
+<span style="background-color: #49483e">                <span style="color: #ae81ff">sshforward</span><span style="color: #f8f8f2">:</span>
+</span><span style="background-color: #49483e">                    <span style="color: #ae81ff">condition</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;code_reference.branch</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">matches</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">&quot;/^cpdev/&quot;&#39;</span>
+</span><span style="background-color: #49483e">                    <span style="color: #ae81ff">specification</span><span style="color: #f8f8f2">:</span>
+</span><span style="background-color: #49483e">                        <span style="color: #ae81ff">ports</span><span style="color: #f8f8f2">:</span>
+</span><span style="background-color: #49483e">                            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">9000</span>
+</span><span style="background-color: #49483e">                        <span style="color: #ae81ff">environment_variables</span><span style="color: #f8f8f2">:</span>
+</span><span style="background-color: #49483e">                            <span style="color: #ae81ff">SSH_FORWARD_PASSWORD</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${SSH_FORWARD_PASSWORD}</span>
+</span>                <span style="color: #ae81ff">web</span><span style="color: #f8f8f2">:</span>
+                    <span style="color: #ae81ff">specification</span><span style="color: #f8f8f2">:</span>
+                        <span style="color: #ae81ff">accessibility</span><span style="color: #f8f8f2">:</span>
+                            <span style="color: #ae81ff">from_external</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">true</span>
+                        <span style="color: #ae81ff">environment_variables</span><span style="color: #f8f8f2">:</span>
+                            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">SYMFONY_ENV</span>
+                              <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${SYMFONY_ENV}</span>
+
+<span style="color: #ae81ff">pipelines</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">Production</span>
+      <span style="color: #ae81ff">condition</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;code_reference.branch</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">in</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">[&quot;master&quot;]&#39;</span>
+      <span style="color: #ae81ff">tasks</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span> <span style="color: #f8f8f2">images,</span> <span style="color: #f8f8f2">deployment</span> <span style="color: #f8f8f2">]</span>
+    <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">Feature</span>
+      <span style="color: #ae81ff">condition</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;code_reference.branch</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">matches</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">&quot;/^feature/&quot;&#39;</span>
+      <span style="color: #ae81ff">tasks</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span> <span style="color: #f8f8f2">images,</span> <span style="color: #f8f8f2">deployment</span> <span style="color: #f8f8f2">]</span>
+    <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">Remote</span>
+      <span style="color: #ae81ff">condition</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;code_reference.branch</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">matches</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">&quot;/^cpdev/&quot;&#39;</span>
+      <span style="color: #ae81ff">tasks</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span> <span style="color: #f8f8f2">images,</span> <span style="color: #f8f8f2">deployment</span> <span style="color: #f8f8f2">]</span>
+      <span style="color: #ae81ff">variables</span><span style="color: #f8f8f2">:</span>
+          <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">SYMFONY_ENV</span>
+            <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">dev</span>
+</pre></div>
+</td></tr></table></p>
+</blockquote>
+
+<ul>
+<li><strong>Line 18:</strong> A new service <code>sshforward</code> is added.</li>
+<li><strong>Line 19:</strong> A condition restricts the service to deployments for remote development branches i.e. branches that start with the string &ldquo;cpdev&rdquo;.</li>
+<li><strong>Lines 21-22:</strong> The service will use port 9000.</li>
+<li><strong>Lines 23-24:</strong> A password for the service is specified by passing in the enviromental variable <code>SSH_FORWARD_PASSWORD</code>. This references a YAML variable, also called <code>SSH_FORWARD_PASSWORD</code> - this needs setting as a variable in the ContinuousPipe console, as explained in <a href="../../quick-start/configuring-a-flow/">configuring a flow</a>. Additionally, it need to be encrypted. This can be done by clicking the padlock icon when entering the values into the flow configuration, before saving.</li>
+</ul>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The password you set will be needed later when running the port forwarding command from a terminal.</p>
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>specification</code> has no <code>accessibility</code> section, so will only be accessible from within the cluster i.e. it deliberately has no external IP address.</p>
+</div>
+
+<h3 id="committing-modifications">Committing Modifications</h3>
+
+<h4 id="permanent-repository-modification">Permanent Repository Modification</h4>
+
+<p>If you are permanently modifying your repository configuration to support Xdebug, the file changes now need to be committed and pushed. You will then need to make sure that your local working branch contains the permanent changes.</p>
+
+<h4 id="temporary-repository-modification">Temporary Repository Modification</h4>
+
+<p>If you are temporarily modifying your repository configuration to support Xdebug, the file changes must at a minimum be committed locally on your working branch.</p>
+
+<h2 id="creating-a-remote-development-environment">Creating a Remote Development Environment</h2>
+
+<p>You now need to set up a remote development environment using the ContinuousPipe console. See the <a href="../../quick-start/remote-development-installing-the-client/">remote development quick start guide</a> for instructions on how to do this.</p>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have already built a remote environment, you will need to rebuild it using <code>cp-remote build</code> to ensure that the latest configuration changes are present.</p>
+</div>
+
+<p>If you review the tide progress for the new environment, you should see that the &ldquo;sshforward&rdquo; pod has been created:</p>
+
+<p><img src="../../images/guides/remote-environment-xdebug/cp-tide-service-sshforward.png" alt="" /></p>
+
+<p>You should also be able verify the environment using the <code>cp-remote pods</code> command:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>&gt; cp-remote pods
+checking connection for environment sfdemo-cpdev-pswaine
+2 pods have been found:
+NAMESPACE              NAME                          READY     STATUS    RESTARTS   AGE       IP           NODE
+sfdemo-cpdev-pswaine   sshforward-2105229106-0vlrl   1/1       Running   0          10m       10.0.0.112   gke-cp-internal-pool-4cpu-15gb-878b5c33-pnr8
+sfdemo-cpdev-pswaine   web-367352278-hrh65           1/1       Running   0          10m       10.0.4.134   gke-cp-internal-pool-4cpu-15gb-878b5c33-cf1q
+</pre></div>
+
+<h2 id="setting-up-port-forwarding">Setting Up Port Forwarding</h2>
+
+<p>You can now set up port forwarding between your local machine and the remote environment as follows:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>&gt; cp-remote forward -s sshforward 2222:22 2&gt;&amp;1 &gt; /dev/null &amp;
+[1] 38242
+</pre></div>
+
+<p>Here we use <code>cp-remote</code> to forward the local port 2222 to port 22 on the remote &ldquo;sshforward&rdquo; pod. The command is run as a background process.</p>
+
+<p>You can now use ssh over port 2222 to set up an ssh tunnel:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>&gt; ssh -p 2222 forward@localhost -N -R 9000:localhost:9000
+The authenticity of host &#39;[localhost]:2222 ([::1]:2222)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:*******************************************.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &#39;[localhost]:2222&#39; (ECDSA) to the list of known hosts.
+forward@localhost&#39;s password: 
+</pre></div>
+
+<p>Here we connect to the &ldquo;sshforward&rdquo; pod using port 2222, then use the &ldquo;forward&rdquo; user to create a tunnel beween port 9000 on the local machine and port 9000 on the remote environment. The &ldquo;forward&rdquo; user was created when the &ldquo;sshforward&rdquo; service was deployed, with the password set to the value configured in the flow (as described above). As you can see, this password now needs to be entered into the terminal to permit the tunnel to be set up.</p>
+
+<h2 id="using-xdebug">Using Xdebug</h2>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is deliberately brief, as the process of using an Xdebug client is nearly the same using a remote environment as when your code is running locally.</p>
+</div>
+
+<p>At this point you should be able to initiate Xdebug debugging in your application, as if the code on the remote environment was on your local machine. You will need to ensure that your browser is configured to trigger remote Xdebug sessions (usually using a plugin) and that your IDE is configured to listen on port 9000 for incoming connections.</p>
+
+<hr />
+
+<h2 id="appendix-a-troubleshooting">Appendix A: Troubleshooting</h2>
+
+<h3 id="the-sshforward-service-is-not-installed">The Sshforward Service Is Not Installed</h3>
+
+<p>If the &ldquo;sshforward&rdquo; service is not installed, check that environment was built using a branch starting with &ldquo;cpdev&rdquo;.</p>
+
+<h3 id="xdebug-is-installed-but-not-configured">Xdebug Is Installed but Not Configured</h3>
+
+<p>Xdebug needs to have the following settings configured:</p>
+
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>xdebug.remote_enable</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>xdebug.remote_port</td>
+<td>9000</td>
+</tr>
+
+<tr>
+<td>xdebug.remote_host</td>
+<td>sshforward</td>
+</tr>
+</tbody>
+</table>
+
+<p>If these are not set, ensure that the Xdebug ini has been deployed sucessfully:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>&gt; cp-remote exec -s web -- ls -la /etc/php/7.1/fpm/conf.d/20-xdebug.ini
+  -rw-rw-r-- 3 root root 102 May  8 10:51 /etc/php/7.1/fpm/conf.d/20-xdebug.ini
+</pre></div>
+
+<ul>
+<li>If the ini has not been deployed, check that the path is correct in your local repository.</li>
+<li>If you are using a different base image, you may need to change the path of the Xdebug ini.</li>
+</ul>
+
+<h3 id="xdebug-is-connecting-but-hanging-up-immediately">Xdebug Is Connecting But Hanging Up Immediately</h3>
+
+<p>To debug this issue, you will need to enable Xdebug logging on your container. You can do this by running <code>cp-remote bash -s web</code> and editing &ldquo;/etc/php/7.1/fpm/conf.d/20-xdebug.ini&rdquo; to add the setting &ldquo;xdebug.remote_log=/tmp/xdebug.log&rdquo;. You will then need to restart php-fpm using <code>service php7.1-fpm restart</code>. You can then review Xdebug activity for subsequent requests by tailing the contents of the file &ldquo;/tmp/xdebug.log&rdquo;.</p>
+
+<p>Sometimes you will see the following:</p>
+
+<pre><code>I: Connecting to configured address/port: sshforward:9000.
+I: Connected to client. :-)
+-&gt; &lt;init xmlns=&quot;urn:debugger_protocol_v1&quot; xmlns:xdebug=&quot;http://xdebug.org/dbgp/xdebug&quot; fileuri=&quot;file:///app/web/app.php&quot; language=&quot;PHP&quot; xdebug:language_version=&quot;7.0.4-5ubuntu1&quot; protocol_version=&quot;1.0&quot; appid=&quot;389&quot; idekey=&quot;markross&quot;&gt;&lt;engine version=&quot;2.4.0&quot;&gt;&lt;![CDATA[Xdebug]]&gt;&lt;/engine&gt;&lt;author&gt;&lt;![CDATA[Derick Rethans]]&gt;&lt;/author&gt;&lt;url&gt;&lt;![CDATA[http://xdebug.org]]&gt;&lt;/url&gt;&lt;copyright&gt;&lt;![CDATA[Copyright (c) 2002-2016 by Derick Rethans]]&gt;&lt;/copyright&gt;&lt;/init&gt;
+
+-&gt; &lt;response xmlns=&quot;urn:debugger_protocol_v1&quot; xmlns:xdebug=&quot;http://xdebug.org/dbgp/xdebug&quot; status=&quot;stopping&quot; reason=&quot;ok&quot;&gt;&lt;/response&gt;
+
+Log closed at 2017-05-12 10:04:32
+</code></pre>
+
+<p>This means that Xdebug is connecting to port 9000 on your local machine, but not getting the correct response so the session is immediately terminated. You can debug this by checking what is listening on port 9000 on your local machine using the command <code>lsof -n -i:9000</code>.</p>
+
+<p>In the following example we see that nothing is listening on port 9000 - so the Xdebug client configuration needs checking:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>&gt; lsof  -n -i:9000
+&gt;
+</pre></div>
+
+<p>In the following example we see that a local version of php-fpm is listening on that port - so local PHP will need to be reconfigured:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>&gt; lsof  -n -i:9000
+COMMAND   PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+php-fpm 15159 username    6u  IPv4 0x1d2a0f6d7ef000d5      0t0  TCP 127.0.0.1:cslistener (LISTEN)
+</pre></div>
+
+<p>Ultimately you want to see your Xdebug client (here PhpStorm) in the output of the command:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>&gt; lsof -n -i:9000
+COMMAND    PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+phpstorm 71963 username   40u  IPv4 0x725301cef22311b5      0t0  TCP *:cslistener (LISTEN)
+</pre></div>
+
+<h3 id="path-mapping">Path Mapping</h3>
+
+<p>One problem you may encounter is that your IDE does not know how to map local file paths with remote file paths. If you are using PhpStorm this issue is resolved by <a href="https://confluence.jetbrains.com/display/PhpStorm/Troubleshooting+PhpStorm+debugging#TroubleshootingPhpStormdebugging-Remotefilepathisnotmappedtoanyfilepathinproject">setting up a path mapping</a>.</p>
+
+<hr />
+
+<h2 id="appendix-b-making-the-php-extension-configuration-conditional">Appendix B: Making the PHP Extension Configuration Conditional</h2>
+
+<p>One problem you may have noticed with the instructions above is that Xdebug is always set up and Tideways is always disabled, irrespective of environment. Assuming that you are using one of the <a href="../../faq/what-are-the-continuous-pipe-images/">ContinuousPipe images</a>, you can make the configuration for these extensions conditional using <a href="https://github.com/kelseyhightower/confd">confd</a>.</p>
+
+<p>Using confd, the single configuration file for each extension is replaced with two separate files:</p>
+
+<ol>
+<li>A TOML file that describes a template file, output destination, permissions etc.</li>
+<li>A template file that can render different output dependent upon environment variables.</li>
+</ol>
+
+<p>When <code>COPY docker/etc/ /etc/</code> is run in the <code>Dockerfile</code> the TOML files are processed and template content rendered.</p>
+
+<p>Below is a summary of the files that will be modified (M), added (A) or deleted (D) to update the repository configuration to support confd conditional templates:</p>
+
+<pre><code>  .
+  ├── Dockerfile
+M ├── continuous-pipe.yml
+  ├── docker-compose.yml
+  └── docker/
+    └── etc/
+      └── confd/
+        └── conf.d/
+          └── fpm/
+A           └── php-fpm-xdebug.conf.toml
+          └── templates/
+            └── php-fpm/
+A             └── xdebug.conf.tmpl
+      └── php/
+        └── 7.1/
+          └── fpm/
+            └── conf.d/
+D             ├── 20-xdebug.ini
+</code></pre>
+
+<p>As you can see, the file &ldquo;docker/etc/php/7.1/fpm/conf.d/20-xdebug.ini&rdquo; created earlier need to be deleted.</p>
+
+<p>In its place, the following files need to be created at &ldquo;docker/etc/confd/conf.d/php-fpm-xdebug.conf.toml&rdquo; and &ldquo;docker/etc/confd/templates/php-fpm/xdebug.conf.tmpl&rdquo; respectively:</p>
+
+<blockquote>
+<p><strong>php-fpm-xdebug.conf.toml</strong></p>
+
+<pre><code>[template]
+src   = &quot;php-fpm/xdebug.conf.tmpl&quot;
+dest  = &quot;/etc/php/7.1/fpm/conf.d/20-xdebug.ini&quot;
+mode  = &quot;0644&quot;
+keys = [
+]
+</code></pre>
+
+<p><strong>xdebug.conf.tmpl</strong></p>
+
+<pre><code>{{ if getenv &quot;XDEBUG_REMOTE_ENABLED&quot; }}
+zend_extension=xdebug.so
+xdebug.remote_enable={{ getenv &quot;XDEBUG_REMOTE_ENABLED&quot; }}
+xdebug.remote_host={{ getenv &quot;XDEBUG_REMOTE_HOST&quot; }}
+xdebug.remote_port={{ getenv &quot;XDEBUG_REMOTE_PORT&quot; }}
+xdebug.remote_log=
+{{ else }}
+;zend_extension=xdebug.so
+{{ end }}
+</code></pre>
+</blockquote>
+
+<p>As you can see, the TOML file configures a template to use and the output destination. The template file looks for the environment variable of <code>XDEBUG_REMOTE_ENABLED</code> before outputting an enabled Xdebug configuration, otherwise it outputs a disabled Xdebug configuration. The three <code>XDEBUG_REMOTE_*</code> environment variables used in the template are explained below when <code>continuous-pipe.yml</code> is modified.</p>
+
+<p>In order to actually set the three <code>XDEBUG_REMOTE_*</code> environment variables, <code>continuous-pipe.yml</code> needs modifying as follows.</p>
+
+<blockquote>
+<p><strong>continuous-pipe.yml</strong>
+<table class="highlighttable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #ae81ff">variables</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">SYMFONY_ENV</span>
+      <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">prod</span>
+<span style="background-color: #49483e">    <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">XDEBUG_REMOTE_ENABLED</span>
+</span><span style="background-color: #49483e">      <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">~</span>
+</span><span style="background-color: #49483e">    <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">XDEBUG_REMOTE_HOST</span>
+</span><span style="background-color: #49483e">      <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">~</span>
+</span><span style="background-color: #49483e">    <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">XDEBUG_REMOTE_PORT</span>
+</span><span style="background-color: #49483e">      <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">~</span>
+</span><span style="background-color: #49483e">
+</span><span style="color: #ae81ff">tasks</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #ae81ff">images</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">build</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #ae81ff">services</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #ae81ff">web</span><span style="color: #f8f8f2">:</span>
+                    <span style="color: #ae81ff">image</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${IMAGE_NAME}</span>
+                    <span style="color: #ae81ff">naming_strategy</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">sha1</span>
+    <span style="color: #ae81ff">deployment</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">deploy</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #ae81ff">cluster</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${CLUSTER}</span>
+            <span style="color: #ae81ff">environment</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;&quot;sfdemo-&quot;</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">~</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">code_reference.branch&#39;</span>
+            <span style="color: #ae81ff">services</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #ae81ff">sshforward</span><span style="color: #f8f8f2">:</span>
+                    <span style="color: #ae81ff">condition</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;code_reference.branch</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">matches</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">&quot;/^cpdev/&quot;&#39;</span>
+                    <span style="color: #ae81ff">specification</span><span style="color: #f8f8f2">:</span>
+                        <span style="color: #ae81ff">ports</span><span style="color: #f8f8f2">:</span>
+                            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">9000</span>
+                        <span style="color: #ae81ff">environment_variables</span><span style="color: #f8f8f2">:</span>
+                            <span style="color: #ae81ff">SSH_FORWARD_PASSWORD</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${SSH_FORWARD_PASSWORD}</span>
+                <span style="color: #ae81ff">web</span><span style="color: #f8f8f2">:</span>
+                    <span style="color: #ae81ff">specification</span><span style="color: #f8f8f2">:</span>
+                        <span style="color: #ae81ff">accessibility</span><span style="color: #f8f8f2">:</span>
+                            <span style="color: #ae81ff">from_external</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">true</span>
+                        <span style="color: #ae81ff">environment_variables</span><span style="color: #f8f8f2">:</span>
+                            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">SYMFONY_ENV</span>
+                              <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${SYMFONY_ENV}</span>
+<span style="background-color: #49483e">                            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">XDEBUG_REMOTE_ENABLED</span>
+</span><span style="background-color: #49483e">                              <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${XDEBUG_REMOTE_ENABLED}</span>
+</span><span style="background-color: #49483e">                            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">XDEBUG_REMOTE_HOST</span>
+</span><span style="background-color: #49483e">                              <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${XDEBUG_REMOTE_HOST}</span>
+</span><span style="background-color: #49483e">                            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">XDEBUG_REMOTE_PORT</span>
+</span><span style="background-color: #49483e">                              <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${XDEBUG_REMOTE_PORT}</span>
+</span>
+<span style="color: #ae81ff">pipelines</span><span style="color: #f8f8f2">:</span>
+  <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">Production</span>
+    <span style="color: #ae81ff">condition</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;code_reference.branch</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">in</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">[&quot;master&quot;]&#39;</span>
+    <span style="color: #ae81ff">tasks</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span> <span style="color: #f8f8f2">images,</span> <span style="color: #f8f8f2">deployment</span> <span style="color: #f8f8f2">]</span>
+  <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">Feature</span>
+    <span style="color: #ae81ff">condition</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;code_reference.branch</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">matches</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">&quot;/^feature/&quot;&#39;</span>
+    <span style="color: #ae81ff">tasks</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span> <span style="color: #f8f8f2">images,</span> <span style="color: #f8f8f2">deployment</span> <span style="color: #f8f8f2">]</span>
+  <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">Remote</span>
+    <span style="color: #ae81ff">condition</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;code_reference.branch</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">matches</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">&quot;/^cpdev/&quot;&#39;</span>
+    <span style="color: #ae81ff">tasks</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">[</span> <span style="color: #f8f8f2">images,</span> <span style="color: #f8f8f2">deployment</span> <span style="color: #f8f8f2">]</span>
+    <span style="color: #ae81ff">variables</span><span style="color: #f8f8f2">:</span>
+      <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">SYMFONY_ENV</span>
+        <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">prod</span>
+<span style="background-color: #49483e">      <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">XDEBUG_REMOTE_ENABLED</span>
+</span><span style="background-color: #49483e">        <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">1</span>
+</span><span style="background-color: #49483e">      <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">XDEBUG_REMOTE_HOST</span>
+</span><span style="background-color: #49483e">        <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">sshforward</span>
+</span><span style="background-color: #49483e">      <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">XDEBUG_REMOTE_PORT</span>
+</span><span style="background-color: #49483e">        <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">9000</span>
+</span></pre></div>
+</td></tr></table></p>
+</blockquote>
+
+<ul>
+<li><strong>Lines 4-10:</strong> Three YAML variables <code>XDEBUG_REMOTE_ENABLED</code>, <code>XDEBUG_REMOTE_HOST</code> and <code>XDEBUG_REMOTE_PORT</code> are declared with empty values.</li>
+<li><strong>Lines 38-43:</strong> The three YAML variables are set as environmental variables with the same respective name.</li>
+<li><strong>Lines 58-63:</strong> The three YAML variables are set/populated when the Remote pipeline is used (which is when the branch name begins with &ldquo;cpdev*&ldquo;).</li>
+</ul>
+
+<hr />
+
+<h2 id="appendix-c-disabling-tideways-basic-configuration-using-copy">Appendix C: Disabling Tideways - Basic Configuration Using Copy</h2>
+
+<p>If you are using a ContinuousPipe base image you will also need to disable Tideways. This is necessary as Tideways loads an <a href="http://php.net/manual/en/ini.core.php#ini.auto-prepend-file">auto prepend file</a>, which means the Xdebug client mistakes it for the application entry point.</p>
+
+<p>This appendix contains the instructions to disable Tideways following the basic copy configuration strategy in the main body of this guide.</p>
+
+<p>Below is a summary of the file that will be added (A) to update the repository configuration:</p>
+
+<pre><code>  .
+  ├── Dockerfile
+  ├── continuous-pipe.yml
+  ├── docker-compose.yml
+  └── docker/
+    └── etc/
+      └── php/
+        └── 7.1/
+          └── fpm/
+            └── conf.d/
+              ├── 20-xdebug.ini
+A             └── 40-tideways.ini
+</code></pre>
+
+<p>You will need to create the following file in the repository at &ldquo;docker/etc/php/7.1/fpm/conf.d/40-tideways.ini&rdquo;:</p>
+
+<blockquote>
+<p><strong>40-tideways.ini</strong></p>
+
+<pre><code>;extension=tideways.so
+</code></pre>
+</blockquote>
+
+<p>This very simply disables the Tideways extension by commenting it out.</p>
+
+<hr />
+
+<h2 id="appendix-d-disabling-tideways-advanced-configuration-using-confd">Appendix D: Disabling Tideways - Advanced Configuration Using Confd</h2>
+
+<p>If you are using a ContinuousPipe base image you will also need to disable Tideways. This is necessary as Tideways loads an <a href="http://php.net/manual/en/ini.core.php#ini.auto-prepend-file">auto prepend file</a>, which means the Xdebug client mistakes it for the application entry point.</p>
+
+<p>This appendix contains the instructions to disable Tideways following the confd configuration strategy in <a href="#appendix-b-making-the-php-configuration-conditional">Appendix B</a>.</p>
+
+<p>Below is a summary of the files that will be added (A) or deleted (D) to update the repository configuration:</p>
+
+<pre><code>  .
+  ├── Dockerfile
+  ├── continuous-pipe.yml
+  ├── docker-compose.yml
+  └── docker/
+    └── etc/
+      └── confd/
+        └── conf.d/
+          └── fpm/
+A           ├── php-fpm-tideways.conf.toml
+            └── php-fpm-xdebug.conf.toml
+          └── templates/
+            └── php-fpm/
+A             ├── tideways.conf.tmpl
+              └── xdebug.conf.tmpl
+      └── php/
+        └── 7.1/
+          └── fpm/
+            └── conf.d/
+              ├── 20-xdebug.ini
+D             └── 40-tideways.ini
+</code></pre>
+
+<p>The the following files need to be created at &ldquo;docker/etc/confd/conf.d/php-fpm-tideways.conf.toml&rdquo; and &ldquo;docker/etc/confd/templates/php-fpm/tideways.conf.tmpl&rdquo; respectively:</p>
+
+<blockquote>
+<p><strong>php-fpm-tideways.conf.toml</strong></p>
+
+<pre><code>[template]
+src   = &quot;php-fpm/tideways.conf.tmpl&quot;
+dest  = &quot;/etc/php/7.1/fpm/conf.d/40-tideways.ini&quot;
+mode  = &quot;0644&quot;
+keys = [
+]
+</code></pre>
+
+<p><strong>tideways.conf.tmpl</strong></p>
+
+<pre><code>{{ if getenv &quot;XDEBUG_REMOTE_ENABLED&quot; }}
+;extension=tideways.so
+{{ else }}
+; Configuration for Tideways Profiler Extension
+; priority=40
+extension=tideways.so
+
+; Tideways Application API-Key to configure when using just one application on
+; this php installation.
+;tideways.api_key=
+
+; Configure the profiling sample rate for this PHP server globally.  The given
+; number is an integer representing percent between 0 and 100
+tideways.sample_rate=25
+
+; Automatically detect transactions and exceptions of a given framework The
+; following frameworks are currently supported:
+;
+; symfony2, symfony2c, shopware, oxid, magento, zend1, zend2, laravel,
+; wordpress
+;tideways.framework=
+{{ end }}
+</code></pre>
+</blockquote>
+
+<p>As you can see, the confd setup for Tideways follows very similar logic to the confd setup for Xdebug. However, the process is reversed, with a disabled Tideways configuration being outputted if <code>XDEBUG_REMOTE_ENABLED</code> is found, otherwise the default Tideways configuration is outputted.</p>
+
+
+
+        </div>
+    </article>
+
+    <footer class="footer" style="margin-top: 20px;">
+        
+
+
+
+
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../../guides/drupal/" title="Getting Started with Drupal">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Getting Started with Drupal
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+  </div>
+</nav>
+
+
+
+
+
+    </footer>
+
+    <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+            <div class="wrapper">
+                <div class="meta"></div>
+                <div class="list"></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <script>
+    
+      var base_url = '';
+      var repo_id  = '';
+    
+    </script>
+
+    <script src="../../javascripts/application.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+    
+    <script src="../../javascripts/jquery-3.1.1.min.js"></script>
+    
+    <script src="../../javascripts/menu.js"></script>
+    
+
+    <script>
+    /* Removes redundant event listener from material theme */
+    window.addEventListener('load', function () {
+        var searchToggle = document.querySelector("#toggle-search");
+        var searchLabel = document.querySelector("[for=\"toggle-search\"]");
+        var algoliaInput = document.querySelector("#algolia-query");
+
+        function elementReset(elem) {
+            elem.parentNode.replaceChild(elem.cloneNode(true), elem);
+        }
+
+        elementReset(searchToggle);
+        searchLabel.addEventListener('click', function() {
+            algoliaInput.focus();
+        }, false);
+    }, false);
+    </script>
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+    <script type="text/javascript"> 
+    docsearch({
+        apiKey: '608036855612fb9a0dd2e9a2c09955bc',
+        indexName: 'continuouspipe',
+        inputSelector: '#algolia-query',
+        debug: true 
+    });
+    </script>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+         
+        ga('create', 'UA-71216332-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+         
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+         
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
+

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/faq/how-do-I-create-a-billing-profile/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/what-are-the-continuous-pipe-images/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/what-are-the-continuous-pipe-demo-sites/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/where-can-I-get-a-continuous-pipe-api-key/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/where-can-I-view-container-logs-and-events/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/configuration-files/</loc>
+  </url>
+  
+  <url>
+    <loc>/basics/continuous-pipe/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/creating-a-project/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>/guides/laravel/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-set-environment-variables/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/working-with-different-environments/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/working-with-direct-cluster-connection/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/advanced-setup/</loc>
+  </url>
+  
+  <url>
+    <loc>/basics/concepts-continuous-pipe-concepts/</loc>
+  </url>
+  
+  <url>
+    <loc>/basics/concepts-configuration-concepts/</loc>
+  </url>
+  
+  <url>
+    <loc>/basics/concepts-build-concepts/</loc>
+  </url>
+  
+  <url>
+    <loc>/basics/concepts-deployment-concepts/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-init/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-setup/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-control-deployments-using-pr-labels/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/creating-a-flow/</loc>
+  </url>
+  
+  <url>
+    <loc>/guides/symfony/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/tasks/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/configuring-users/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-build/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-logs/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/configuring-a-cluster/</loc>
+  </url>
+  
+  <url>
+    <loc>/guides/drupal/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/tasks-build/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-use-defaults-to-reduce-the-duplication-of-configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-bash/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/configuring-a-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-use-composer-with-github-access-token/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/tasks-deploy/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-use-pipelines-to-simplify-the-configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>/guides/remote-environment-xdebug/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-add-basic-http-authentication-to-an-application/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-exec/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/configuring-your-repository/</loc>
+  </url>
+  
+  <url>
+    <loc>/basics/workflow-principles/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-watch/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/configuring-a-flow/</loc>
+  </url>
+  
+  <url>
+    <loc>/basics/installation-github/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-override-tasks-in-pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/tasks-run/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/tasks-wait/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-fetch/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/creating-a-tide/</loc>
+  </url>
+  
+  <url>
+    <loc>/basics/installation-bitbucket/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-set-up-manual-approval-of-deployments/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/tasks-manual-approval/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-push/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-define-a-readiness-check-when-deploying-services/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/remote-development-installing-the-client/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/tasks-webhook/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-sync/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-get-the-deployed-endpoint-address-for-a-service/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/notifications/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/remote-development-configuring-your-repository/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-delete/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-forward/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/remote-development-creating-a-remote-environment/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-configure-slack-notifications/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/cloudflare-integration/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-pods/</loc>
+  </url>
+  
+  <url>
+    <loc>/quick-start/remote-development-using-a-remote-environment/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/how-do-I-configure-inotify-for-development-tool-watch-commands/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-check-connection/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/endpoints/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/artifacts/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/command-destroy/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/release-notes-0-1-0/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/release-notes-0-1-1/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/release-notes-0-1-2/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/release-notes-0-1-3/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/release-notes-0-1-4/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/release-notes-0-1-5/</loc>
+  </url>
+  
+  <url>
+    <loc>/basics/</loc>
+  </url>
+  
+  <url>
+    <loc>/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>/guides/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/quick-start/</loc>
+  </url>
+  
+  <url>
+    <loc>/remote-development/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+  </url>
+  
+</urlset>

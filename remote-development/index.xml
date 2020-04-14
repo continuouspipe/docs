@@ -1,0 +1,1582 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Remote Development on ContinuousPipe Docs</title>
+    <link>/remote-development/index.xml</link>
+    <description>Recent content in Remote Development on ContinuousPipe Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>Released under the MIT license</copyright>
+    <atom:link href="/remote-development/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting Started</title>
+      <link>/remote-development/getting-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/getting-started/</guid>
+      <description>
+
+&lt;p&gt;ContinuousPipe can be used as a remote development environment using the &lt;code&gt;cp-remote&lt;/code&gt; command line tool. It helps to create, build and destroy remote environments and keep files in sync with the local filesystem.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;You will need the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A ContinuousPipe hosted project with the GitHub or Bitbucket, Docker and Kubernetes integration set up&lt;/li&gt;
+&lt;li&gt;The project checked out locally&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rsync&lt;/code&gt; installed locally&lt;/li&gt;
+&lt;li&gt;Optionally, a &lt;a href=&#34;https://keen.io&#34;&gt;keen.io&lt;/a&gt; write token, project id and event collection name if you want to log usage stats&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;If the GitHub or Bitbucket repository is not the origin of your checked out project then you will need to add a &lt;a href=&#34;https://help.github.com/articles/adding-a-remote/&#34;&gt;Git remote&lt;/a&gt; for that repository.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;h3 id=&#34;osx-64-bit&#34;&gt;OSX (64-bit):&lt;/h3&gt;
+
+&lt;p&gt;If you use &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt;, you can install &lt;code&gt;cp-remote&lt;/code&gt; via:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install continuouspipe/tools/cp-remote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Otherwise you can install it manually via:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo curl https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/darwin-amd64/cp-remote.tar.gz &amp;gt; cp-remote.tar.gz
+tar -xzvf cp-remote.tar.gz;
+mv cp-remote /usr/local/bin/cp-remote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Dependencies:&lt;/strong&gt; You need to have &lt;code&gt;git&lt;/code&gt;, and &lt;code&gt;rsync&lt;/code&gt; installed and available in the shell where &lt;code&gt;cp-remote&lt;/code&gt; runs.&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-64-bit&#34;&gt;Linux (64-bit):&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo curl https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/linux-amd64/cp-remote.tar.gz &amp;gt; cp-remote.tar.gz
+tar -xzvf cp-remote.tar.gz;
+mv cp-remote /usr/local/bin/cp-remote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;linux-32-bit&#34;&gt;Linux (32-bit):&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo curl https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/linux-386/cp-remote.tar.gz &amp;gt; cp-remote.tar.gz
+tar -xzvf cp-remote.tar.gz;
+mv cp-remote /usr/local/bin/cp-remote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Dependencies:&lt;/strong&gt; You need to have &lt;code&gt;git&lt;/code&gt;, and &lt;code&gt;rsync&lt;/code&gt; installed and available in the shell where &lt;code&gt;cp-remote&lt;/code&gt; runs.&lt;/p&gt;
+
+&lt;h3 id=&#34;windows-64-bit&#34;&gt;Windows (64-bit):&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download &lt;a href=&#34;https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/windows-amd64/cp-remote.zip&#34;&gt;https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/windows-amd64/cp-remote.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract &lt;code&gt;cp-remote.zip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Move &lt;code&gt;cp-remote.exe&lt;/code&gt; into your project folder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;windows-32-bit&#34;&gt;Windows (32-bit):&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download &lt;a href=&#34;https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/windows-386/cp-remote.zip&#34;&gt;https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/windows-386/cp-remote.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract &lt;code&gt;cp-remote.zip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Move &lt;code&gt;cp-remote.exe&lt;/code&gt; into your project folder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Dependencies:&lt;/strong&gt; You need to have &lt;code&gt;git&lt;/code&gt;, and &lt;code&gt;cwRsync&lt;/code&gt; installed and available in your environment &lt;code&gt;PATHS&lt;/code&gt; variable.&lt;/p&gt;
+
+&lt;h2 id=&#34;quick-start&#34;&gt;Quick Start&lt;/h2&gt;
+
+&lt;p&gt;The quick start guide gives an overview of how to get running with remote development:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../quick-start/remote-development-configuring-your-repository/&#34;&gt;Remote Development: Configuring Your Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../quick-start/remote-development-creating-a-remote-environment/&#34;&gt;Remote Development: Creating a Remote Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../quick-start/remote-development-using-a-remote-environment/&#34;&gt;Remote Development: Using a Remote Environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;data-sharing&#34;&gt;Data Sharing&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;ContinuousPipe receives usage and diagnostic information for each cp-remote command executed. This allows errors to be detected and fixed as soon as possible.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Summary of information received:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;cp-remote&lt;/code&gt; version number&lt;/li&gt;
+&lt;li&gt;The operating system and system architecture (Linux, Windows or Mac)&lt;/li&gt;
+&lt;li&gt;The command name including arguments (excluding the init token)&lt;/li&gt;
+&lt;li&gt;The duration of the command&lt;/li&gt;
+&lt;li&gt;The success/failure code of the command&lt;/li&gt;
+&lt;li&gt;Some configuration settings (username, flow id, cluster id, environment id, remote branch name, service name, Kubernetes cluster user and address)&lt;/li&gt;
+&lt;li&gt;Any file names configured to be ignored (if present)&lt;/li&gt;
+&lt;li&gt;Any error stack (if present)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Working with a Different Environment</title>
+      <link>/remote-development/working-with-different-environments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/working-with-different-environments/</guid>
+      <description>
+
+&lt;p&gt;Sometimes you may want to use &lt;code&gt;cp-remote&lt;/code&gt; to access an environment that you did not build using a token. Examples of this might be:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You want to access a feature branch environment&lt;/li&gt;
+&lt;li&gt;You want to access an environment created by a pull request&lt;/li&gt;
+&lt;li&gt;You want to access an environment built by another developer using their own token&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;finding-the-environment-id&#34;&gt;Finding the Environment Id&lt;/h2&gt;
+
+&lt;p&gt;Before starting, you will need to find an environment identifier to supply to the &lt;code&gt;cp-remote&lt;/code&gt; option &lt;code&gt;--kube-environment-name|-e&lt;/code&gt;. You can find it in the environment tab of a flow at the top of each environment pane:&lt;/p&gt;
+
+
+&lt;figure class=&#34;half-width&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/environment-id-default.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;As you can see here the environment id is &lt;code&gt;86ec932a-2683-11e7-8779-0a580a840466-feature-mynewfeature&lt;/code&gt;. The format is &lt;code&gt;&amp;lt;project_key&amp;gt;-&amp;lt;branch-name&amp;gt;&lt;/code&gt; where the project key is &amp;ldquo;86ec932a-2683-11e7-8779-0a580a840466&amp;rdquo; and branch name is &amp;ldquo;feature/mynewfeature&amp;rdquo; and has been &lt;a href=&#34;https://en.wikipedia.org/wiki/Semantic_URL#Slug&#34;&gt;slugified&lt;/a&gt; to become &amp;ldquo;feature-mynewfeature&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;You may notice that the environment identifier for a project looks much shorter, like this:&lt;/p&gt;
+
+
+&lt;figure class=&#34;half-width&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/environment-id-config.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;Here the environment id is &lt;code&gt;sfdemo-feature-mynewfeature&lt;/code&gt;. This is because the default naming behaviour for environments has been changed in the deployment configuration as follows, making the naming format &lt;code&gt;sfdemo-&amp;lt;branch-name&amp;gt;&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tasks:
+    # ...
+    deployment:
+        deploy:
+            # ...
+            environment:
+                name: &#39;&amp;quot;sfdemo-&amp;quot; ~ code_reference.branch&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;token-mode&#34;&gt;When You Have An Existing Environment Built Using a Token&lt;/h2&gt;
+
+&lt;p&gt;If you have already set up a remote development environment using a token, you can use the &lt;code&gt;--kube-environment-name|-e&lt;/code&gt; option to run commands against a different environment than the one specified during setup.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;The environment must be on the same cluster as the token built environment to use the &lt;code&gt;--kube-environment-name&lt;/code&gt; option.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The commands you can use with a token setup and the &lt;code&gt;--kube-environment-name&lt;/code&gt; option are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../remote-development/command-bash/&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../remote-development/command-check-connection/&#34;&gt;checkconnection&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../remote-development/command-exec/&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../remote-development/command-forward/&#34;&gt;forward&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../remote-development/command-fetch/&#34;&gt;fetch&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../remote-development/command-sync/&#34;&gt;sync&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../remote-development/command-watch/&#34;&gt;watch&lt;/a&gt; command&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, to open a bash session on the &lt;code&gt;web&lt;/code&gt; container of the &lt;code&gt;php-example-cpdev-foo&lt;/code&gt; environment you can run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash --environment php-example-cpdev-foo --service web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash -e php-example-cpdev-foo -s web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;interactive-mode&#34;&gt;When You Have No Existing Environment (Using Interactive Mode)&lt;/h2&gt;
+
+&lt;p&gt;If you have no environment, you can use the &lt;code&gt;--interactive|-i&lt;/code&gt; option to run a limited set of commands against an environment.&lt;/p&gt;
+
+&lt;p&gt;The commands you can use with the &lt;code&gt;--interactive&lt;/code&gt; option are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../remote-development/command-init/#interactive-mode&#34;&gt;init&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../remote-development/command-bash/#interactive-mode&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../remote-development/command-exec/#interactive-mode&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you have not previously run interactive mode with any command, you will first need to generate a &lt;a href=&#34;https://authenticator.continuouspipe.io/account/api-keys&#34;&gt;ContinuousPipe API key&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The first time you run the the &lt;code&gt;--interactive&lt;/code&gt; option with any of the above commands you will be prompted to enter your ContinuousPipe username and the ContinuousPipe API key you generated. These credentials are then stored in a global configuration file &lt;code&gt;~/.cp-remote/config.yml&lt;/code&gt; (on Linux/OSX) &lt;code&gt;C:\Users\{YourUserName}\.cp-remote\config.yml&lt;/code&gt; (on Windows), so you won&amp;rsquo;t need to enter them again.&lt;/p&gt;
+
+&lt;p&gt;For the &lt;code&gt;bash&lt;/code&gt; and &lt;code&gt;exec&lt;/code&gt; commands you will also need to supply the following flags:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--kube-environment-name&lt;/code&gt; or &lt;code&gt;-e&lt;/code&gt; - the environment identifier&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--service&lt;/code&gt; or &lt;code&gt;-s&lt;/code&gt; - the service name&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--flow-id&lt;/code&gt; or &lt;code&gt;-f&lt;/code&gt; - the flow identifier&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, to open a bash session on the &lt;code&gt;web&lt;/code&gt; container of the &lt;code&gt;php-example-cpdev-foo&lt;/code&gt; environment you can run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash --interactive --kube-environment-name php-example-cpdev-foo --service web --flow-id 1268cc54-0c360641bb54
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash -i -e php-example-cpdev-foo -s web -f 1268cc54-0c360641bb54
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or, if you don&amp;rsquo;t know which flag options to use, simply run the following and you will be guided to the right pod&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash -i
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;../remote-development/command-bash/#interactive-mode&#34;&gt;bash command&lt;/a&gt; and &lt;a href=&#34;../remote-development/command-exec/#interactive-mode&#34;&gt;exec command&lt;/a&gt; can be run in interactive mode directly without having to run &lt;code&gt;cp-remote init -i&lt;/code&gt; first.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;If you need to reset the stored username and API key, you need to run the &lt;a href=&#34;../remote-development/command-init/#interactive-mode&#34;&gt;init command&lt;/a&gt; with the &lt;code&gt;--reset&lt;/code&gt; flag.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Working with a Direct Connection to the Cluster</title>
+      <link>/remote-development/working-with-direct-cluster-connection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/working-with-direct-cluster-connection/</guid>
+      <description>&lt;p&gt;Edit the &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; local configuration file, set &lt;code&gt;kube-proxy-enabled&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; and add the cluster ip, username and password.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+kube-proxy-enabled: false
+kube-direct-cluster-addr: https://111.222.333.444
+kube-direct-cluster-user: {cluster-user}
+kube-direct-cluster-password: {cluster-password}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After this changes are made, you can simply run any of the command such as &lt;code&gt;cp-remote bash&lt;/code&gt; and the connection will be made directly to the cluster.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Advanced Setup</title>
+      <link>/remote-development/advanced-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/advanced-setup/</guid>
+      <description>
+
+&lt;h2 id=&#34;usage-logging&#34;&gt;Usage Logging&lt;/h2&gt;
+
+&lt;p&gt;Usage stats for the longer running commands (build and resync) can be logged to &lt;a href=&#34;https://keen.io&#34;&gt;https://keen.io&lt;/a&gt; by providing a write key, project id and event collection name when running the setup command. No stats will be logged if these are not provided.&lt;/p&gt;
+
+&lt;h2 id=&#34;anybar-notifications&#34;&gt;AnyBar Notifications&lt;/h2&gt;
+
+&lt;p&gt;To get a status notification for the longer running commands (watch and resync) on OSX you can install &lt;a href=&#34;https://github.com/tonsky/AnyBar&#34;&gt;AnyBar&lt;/a&gt; and provide a port number to use for it during the &lt;code&gt;setup&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;h2 id=&#34;ignoring-files-directories-when-syncing&#34;&gt;Ignoring Files/Directories when Syncing&lt;/h2&gt;
+
+&lt;p&gt;Files/directories can be excluded from being synced by the &lt;code&gt;watch&lt;/code&gt;, &lt;code&gt;resync&lt;/code&gt; and &lt;code&gt;fetch&lt;/code&gt; commands. This is done by adding the files/directories to ignore to a &lt;code&gt;.cp-remote-ignore&lt;/code&gt; file in the project root. This uses the standard rsync excludes-from format.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Init</title>
+      <link>/remote-development/command-init/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-init/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-init-command&#34;&gt;Using the Init Command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote init [token]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;init&lt;/code&gt; command will initialise a remote environment using an initialization token. Tokens can be generated in the ContinuousPipe console when &lt;a href=&#34;../quick-start/remote-development-creating-a-remote-environment/&#34;&gt;creating a remote environment&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If the initialization process is interrupted it can be restarted using the same token and by default it will continue the process where it left off. You can use the flag &lt;code&gt;--reset&lt;/code&gt; to start any partial initializations from the beginning.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote init [token] --reset
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;init&lt;/code&gt; command will use the default Git remote name &lt;code&gt;origin&lt;/code&gt; to create a ContinuousPipe remote development branch. However, if you need to use a different Git remote name you can use the flag &lt;code&gt;--remote-name&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote init [token] --remote-name=foo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-init.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;interactive-mode&#34;&gt;Interactive Mode&lt;/h2&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;You can read a full explanation of interactive mode, including how to get an API key and what arguments are available &lt;a href=&#34;../remote-development/working-with-different-environments/#interactive-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sometimes you may want to connect to an environment that’s not set up as a remote environment, e.g. an environment created for a pull request. You can do this using interactive mode.&lt;/p&gt;
+
+&lt;p&gt;You can use interactive mode with &lt;code&gt;init&lt;/code&gt; by using the &lt;code&gt;--interactive&lt;/code&gt; or &lt;code&gt;-i&lt;/code&gt; flags.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote init --interactive
+cp-remote init -i
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to change the stored username and API key, use the &lt;code&gt;--reset&lt;/code&gt; flag:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote init --interactive --reset
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-init-interactive.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;command-reference&#34;&gt;Command Reference&lt;/h2&gt;
+
+&lt;h3 id=&#34;arguments&#34;&gt;Arguments:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Argument&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Initialization token. Only needs supplying for first run.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;options&#34;&gt;Options:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Local config file. Default is &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; within working directory.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--remote-name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;origin&lt;/td&gt;
+&lt;td&gt;Remote name of Git repository.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;flags&#34;&gt;Flags:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Flag&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--interactive&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-i&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Use interactive mode. Interactive mode allows you specify a ContinuousPipe username and API key to run commands without a token.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--reset&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-r&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Start any partial initializations from the beginning.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Setup</title>
+      <link>/remote-development/command-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-setup/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-setup-command&#34;&gt;Using the Setup Command&lt;/h2&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;setup&lt;/code&gt; command is now obsolete. It has been replaced with the &lt;a href=&#34;../remote-development/command-init/&#34;&gt;init&lt;/a&gt; command.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Build</title>
+      <link>/remote-development/command-build/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-build/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-build-command&#34;&gt;Using the Build Command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote build
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;creating-a-new-remote-environment&#34;&gt;Creating a New Remote Environment&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;build&lt;/code&gt; command will push changes the branch you have checked out locally to your remote environment branch. ContinuousPipe will then build the environment. You can use the &lt;a href=&#34;https://ui.continuouspipe.io/&#34;&gt;ContinuousPipe console&lt;/a&gt; to see when the environment has finished building and to find its IP address.&lt;/p&gt;
+
+&lt;h3 id=&#34;rebuilding-the-remote-environment&#34;&gt;Rebuilding the Remote Environment&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;build&lt;/code&gt; command is also used to rebuild your remote environment. Assuming you are on the same branch used to create the new remote environment the command will force push the branch which will make ContinuousPipe rebuild the environment. If there has been no commit since the last build an empty commit is automatically made to force the rebuild.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-build.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;command-reference&#34;&gt;Command Reference&lt;/h2&gt;
+
+&lt;h3 id=&#34;options&#34;&gt;Options:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Local config file. Default is &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; within working directory.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Logs</title>
+      <link>/remote-development/command-logs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-logs/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-logs-command&#34;&gt;Using the Logs Command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote logs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Print the logs for a container in a pod.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-logs.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;command-reference&#34;&gt;Command Reference&lt;/h2&gt;
+
+&lt;h3 id=&#34;options&#34;&gt;Options:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Local config file. Default is &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; within working directory.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--kube-environment-name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The full remote environment name (e.g. project-key-git-branch).&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--service&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-s&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;web&lt;/td&gt;
+&lt;td&gt;The service to use (e.g. web, mysql).&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--since&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Only return logs newer than a relative duration (e.g. 5s, 2m, 3h). All logs shown by default.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--tail&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;Lines of recent log file to display. Defaults to -1, showing all log lines.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;flags&#34;&gt;Flags:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Flag&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--follow&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-f&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Logs will be streamed.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--previous&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-p&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Print the logs for the previous instance of the container if a pod exists.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Bash</title>
+      <link>/remote-development/command-bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-bash/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-bash-command&#34;&gt;Using the Bash Command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash
+cp-remote ba # alias
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will remotely connect to a bash session on the default container specified during setup but you can specify another container to connect to. For example, if the service you want to connect to is web:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash -s web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-bash.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;interactive-mode&#34;&gt;Interactive Mode&lt;/h2&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;You can read a full explanation of interactive mode, including how to get an API key and what arguments are available &lt;a href=&#34;../remote-development/working-with-different-environments/#interactive-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Interactive mode allows you to connect directly to an environment that is not set up as a remote environment.&lt;/p&gt;
+
+&lt;p&gt;Running the &lt;code&gt;bash&lt;/code&gt; command in interactive mode looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash --interactive --kube-environment-name php-example-cpdev-foo --service web --flow-id 1268cc54-0c360641bb54
+cp-remote bash -i -e php-example-cpdev-foo -s web -f 1268cc54-0c360641bb54
+
+cp-remote bash --interactive
+cp-remote bash -i
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-bash-interactive.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;command-reference&#34;&gt;Command Reference&lt;/h2&gt;
+
+&lt;h3 id=&#34;options&#34;&gt;Options:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Local config file. Default is &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; within working directory.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--flow-id&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The flow identifier.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--kube-environment-name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The full remote environment name (e.g. project-key-git-branch).&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--service&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-s&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;web&lt;/td&gt;
+&lt;td&gt;The service to use (e.g. web, mysql).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;flags&#34;&gt;Flags:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Flag&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--interactive&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-i&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Use interactive mode. Interactive mode allows you specify a ContinuousPipe username and API key to run commands without a token.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Exec</title>
+      <link>/remote-development/command-exec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-exec/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-exec-command&#34;&gt;Using the Exec Command&lt;/h2&gt;
+
+&lt;p&gt;To execute a command on a container without first getting a bash session use the &lt;code&gt;exec&lt;/code&gt; command. The command and its arguments need to follow &lt;code&gt;--&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote exec -- ls -la
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will run the command on the default container specified during setup but you can specify another container to run the command on. For example, if the service you want to connect to is web:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote exec -s web -- ls -la
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-exec.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;interactive-mode&#34;&gt;Interactive Mode&lt;/h2&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;You can read a full explanation of interactive mode, including how to get an API key and what arguments are available &lt;a href=&#34;../remote-development/working-with-different-environments/#interactive-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Interactive mode allows you to connect directly to an environment that is not set up as a remote environment.&lt;/p&gt;
+
+&lt;p&gt;Running the &lt;code&gt;exec&lt;/code&gt; command in interactive mode looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote exec --interactive --kube-environment-name php-example-cpdev-foo --service web --flow-id 1268cc54-0c360641bb54 -- /bin/sh
+cp-remote exec -i -e php-example-cpdev-foo -s web -f 1268cc54-0c360641bb54 -- /bin/sh
+
+cp-remote exec --interactive -- /bin/sh
+cp-remote exec -i -- /bin/sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-exec-interactive.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;command-reference&#34;&gt;Command Reference&lt;/h2&gt;
+
+&lt;h3 id=&#34;options&#34;&gt;Options:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Local config file. Default is &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; within working directory.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--flow-id&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The flow identifier.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--kube-environment-name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The full remote environment name (e.g. project-key-git-branch).&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--service&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-s&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;web&lt;/td&gt;
+&lt;td&gt;The service to use (e.g. web, mysql).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;flags&#34;&gt;Flags:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Flag&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--interactive&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-i&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Use interactive mode. Interactive mode allows you specify a ContinuousPipe username and API key to run commands without a token.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Watch</title>
+      <link>/remote-development/command-watch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-watch/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-watch-command&#34;&gt;Using the Watch Command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote watch
+cp-remote wa # alias
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;watch&lt;/code&gt; command will sync changes you make locally to a container that&amp;rsquo;s part of the remote environment.&lt;/p&gt;
+
+&lt;p&gt;This will use the default container specified during setup but you can specify another container to sync with. For example, if the service you want to sync to is web:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote watch -s web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;watch&lt;/code&gt; command should be left running, it will however need restarting whenever the remote environment is rebuilt using &lt;code&gt;build&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To watch a specific remote project path use the &lt;code&gt;--remote-project-path&lt;/code&gt; flag:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote watch --remote-project-path= /app/sub-folder/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-watch.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;sync-threshold&#34;&gt;Sync Threshold&lt;/h2&gt;
+
+&lt;p&gt;By default the client will synchronise file changes individually up to a certain limit, which by default is 10. Above that threshold a full code scan for changes will be made, which could potentially be slower. If you are editing a large number of files, you should consider upping the default minimum threshold using the &lt;code&gt;--individual-file-sync-threshold&lt;/code&gt; flag:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote watch --individual-file-sync-threshold=20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;command-reference&#34;&gt;Command Reference&lt;/h2&gt;
+
+&lt;h3 id=&#34;options&#34;&gt;Options:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Local config file. Default is &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; within working directory.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--individual-file-sync-threshold&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-t&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;Above this threshold a full code scan for file changes will be made rather than syncing individual files&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--kube-environment-name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The full remote environment name (e.g. project-key-git-branch).&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--latency&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-l&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;500&lt;/td&gt;
+&lt;td&gt;Sync latency / speed in milli-seconds&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--remote-project-path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-a&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;/app/&lt;/td&gt;
+&lt;td&gt;The absolute path to the remote project folder.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--service&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-s&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;web&lt;/td&gt;
+&lt;td&gt;The service to use (e.g. web, mysql).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;flags&#34;&gt;Flags:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Flag&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--delete&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Delete extraneous files from destination directories.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--dry-run&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Show what will be transferred without executing.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--rsync-verbose&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Run rsync in verbose mode for debugging.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--yes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-y&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Skip warning.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Fetch</title>
+      <link>/remote-development/command-fetch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-fetch/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-fetch-command&#34;&gt;Using the Fetch Command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote fetch
+cp-remote fe # alias
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When the remote environment is rebuilt it may contain changes that you do not have on the local filesystem.&lt;/p&gt;
+
+&lt;p&gt;For example, for a PHP project part of building the remote environment could be installing the vendors using composer. Any new or updated vendors would be on the remote environment but not on the local filesystem which could cause issues, such as autocomplete in your IDE not working correctly. The &lt;code&gt;fetch&lt;/code&gt; command will copy changes from the remote to the local filesystem. This will resync with the default container specified during setup but you can specify another container.&lt;/p&gt;
+
+&lt;p&gt;For example to resync with the &lt;code&gt;web&lt;/code&gt; container:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote fetch web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To specify a specific remote project path use the &lt;code&gt;--remote-project-path&lt;/code&gt; flag&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote fetch --remote-project-path /public/sub-folder/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-fetch.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;ignoring-files&#34;&gt;Ignoring Files&lt;/h2&gt;
+
+&lt;p&gt;You can use &lt;code&gt;.cp-remote-ignore&lt;/code&gt; to &lt;a href=&#34;../remote-development/advanced-setup/#ignoring-files-directories-when-syncing&#34;&gt;ignore files and directories when syncing&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This behaviour can be overridden for the &lt;code&gt;fetch&lt;/code&gt; command by adding a &lt;code&gt;.cp-remote-ignore-fetch&lt;/code&gt; file. Like &lt;code&gt;.cp-remote-ignore&lt;/code&gt; it uses standard rsync excludes-from format:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To exclude use: &lt;code&gt;- /path/to/folder1/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To include use: &lt;code&gt;+ /path/to/folder2/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;sync-threshold&#34;&gt;Sync Threshold&lt;/h2&gt;
+
+&lt;p&gt;By default the client will synchronise file changes individually up to a certain limit, which by default is 10. Above that threshold a full code scan for changes will be made, which could potentially be slower. If you are editing a large number of files, you should consider upping the default minimum threshold using the &lt;code&gt;--individual-file-sync-threshold&lt;/code&gt; flag:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote fetch --individual-file-sync-threshold=20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;command-reference&#34;&gt;Command Reference&lt;/h2&gt;
+
+&lt;h3 id=&#34;options&#34;&gt;Options:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Local config file. Default is &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; within working directory.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-f&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Fetch a specific file from the pod.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--kube-environment-name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The full remote environment name (e.g. project-key-git-branch).&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--remote-project-path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-a&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;/app/&lt;/td&gt;
+&lt;td&gt;The absolute path to the remote project folder.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--service&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-s&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;web&lt;/td&gt;
+&lt;td&gt;The service to use (e.g. web, mysql).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;flags&#34;&gt;Flags:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Flag&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--dry-run&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Show what will be transferred without executing.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--rsync-verbose&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Run rsync in verbose mode for debugging.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Push</title>
+      <link>/remote-development/command-push/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-push/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-push-command&#34;&gt;Using the Push Command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote push
+cp-remote pu #alias
+cp-remote sync #alias
+cp-remote sy #alias
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;push&lt;/code&gt; command will sync files and folders to the remote container.&lt;/p&gt;
+
+&lt;p&gt;To specify a specific remote project path use the &lt;code&gt;--remote-project-path&lt;/code&gt; flag&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote push --remote-project-path /public/sub-folder/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-push.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;command-reference&#34;&gt;Command Reference&lt;/h2&gt;
+
+&lt;h3 id=&#34;options&#34;&gt;Options:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Local config file. Default is &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; within working directory.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-f&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Push a specific file to the pod.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--kube-environment-name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The full remote environment name (e.g. project-key-git-branch).&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--remote-project-path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-a&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;/app/&lt;/td&gt;
+&lt;td&gt;The absolute path to the remote project folder&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--service&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-s&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;web&lt;/td&gt;
+&lt;td&gt;The service to use (e.g. web, mysql).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;flags&#34;&gt;Flags:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Flag&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--delete&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Delete extraneous files from destination directories.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--dry-run&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Show what will be transferred without executing.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--rsync-verbose&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Run rsync in verbose mode for debugging.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--yes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-y&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Skip warning.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Sync</title>
+      <link>/remote-development/command-sync/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-sync/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-sync-command&#34;&gt;Using the Sync Command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote sync
+cp-remote sy #alias
+cp-remote push #alias
+cp-remote pu #alias
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;sync&lt;/code&gt; command will sync files and folders to the remote container.&lt;/p&gt;
+
+&lt;p&gt;To specify a specific remote project path use the &lt;code&gt;--remote-project-path&lt;/code&gt; flag&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote sync --remote-project-path /public/sub-folder/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+
+&lt;figure class=&#34;remote-development&#34;&gt;
+    
+        &lt;img src=&#34;../images/remote-development/cp-remote-development-push.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;command-reference&#34;&gt;Command Reference&lt;/h2&gt;
+
+&lt;h3 id=&#34;options&#34;&gt;Options:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Local config file. Default is &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; within working directory.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--file&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-f&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Push a specific file to the pod.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--kube-environment-name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The full remote environment name (e.g. project-key-git-branch).&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--remote-project-path&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-a&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;/app/&lt;/td&gt;
+&lt;td&gt;The absolute path to the remote project folder.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--service&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-s&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;web&lt;/td&gt;
+&lt;td&gt;The service to use (e.g. web, mysql).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;flags&#34;&gt;Flags:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Flag&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--delete&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Delete extraneous files from destination directories.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--dry-run&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Show what will be transferred without executing.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--rsync-verbose&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Run rsync in verbose mode for debugging.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--yes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-y&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Skip warning.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Command: Delete</title>
+      <link>/remote-development/command-delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/command-delete/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-the-delete-command&#34;&gt;Using the Delete Command&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote delete
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;delete&lt;/code&gt; command will delete resources according to a supplied set of criteria. For the most part the command is a wrapper for the &lt;a href=&#34;https://kubernetes.io/docs/user-guide/kubectl/v1.6/#delete&#34;&gt;kubectl delete command&lt;/a&gt;; however the &lt;code&gt;--filename&lt;/code&gt;, &lt;code&gt;--include-extended-apis&lt;/code&gt;, &lt;code&gt;--output&lt;/code&gt; and &lt;code&gt;--recursive&lt;/code&gt; options are not available.&lt;/p&gt;
+
+&lt;h3 id=&#34;examples&#34;&gt;Examples:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  # Delete a pod with minimal delay
+  kubectl delete pod foo --now
+
+  # Force delete a pod on a dead node
+  kubectl delete pod foo --grace-period=0 --force
+
+  # Delete a pod with UID 1234-56-7890-234234-456456.
+  kubectl delete pod 1234-56-7890-234234-456456
+
+  # Delete all pods
+  kubectl delete pods --all
+
+  # Delete pods and services with same names &amp;quot;baz&amp;quot; and &amp;quot;foo&amp;quot;
+  kubectl delete pod,service baz foo
+
+  # Delete pods and services with label name=myLabel.
+  kubectl delete pods,services -l name=myLabel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;command-reference&#34;&gt;Command Reference&lt;/h2&gt;
+
+&lt;h3 id=&#34;options&#34;&gt;Options:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--config&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Local config file. Default is &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; within working directory.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--kube-environment-name&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The full remote environment name (e.g. project-key-git-branch).&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--grace-period&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;Period of time in seconds given to the resource to terminate gracefully. Ignored if negative.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--selector&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-l&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Selector (label query) to filter on.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--timeout duration&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;0s&lt;/td&gt;
+&lt;td&gt;The length of time to wait before giving up on a delete, zero means determine a timeout from the size of the object.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;flags&#34;&gt;Flags:&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Flag&lt;/th&gt;
+&lt;th&gt;Alias&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--all&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;To select all the specified resources.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--cascade&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;If true, cascade the deletion of the resources managed by this resource (e.g. pods created by a ReplicationController).&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--force&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Immediate deletion of some resources may result in inconsistency or data loss and requires confirmation.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--ignore-not-found&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;Treat &amp;ldquo;resource not found&amp;rdquo; as a successful delete. Defaults to &amp;ldquo;true&amp;rdquo; when &amp;ndash;all is specified.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--now&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;If true, resources are signaled for immediate shutdown (same as &amp;ndash;grace-period=1).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

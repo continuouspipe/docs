@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quick Start on ContinuousPipe Docs</title>
+    <link>/quick-start/index.xml</link>
+    <description>Recent content in Quick Start on ContinuousPipe Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>Released under the MIT license</copyright>
+    <atom:link href="/quick-start/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Creating a Project</title>
+      <link>/quick-start/creating-a-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/creating-a-project/</guid>
+      <description>&lt;p&gt;When you log in for the first time you will see the project overview screen, which will be empty. You&amp;rsquo;ll be prompted to create a new project.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/project-overview-no-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To create a project, just click the &amp;ldquo;CREATE A PROJECT&amp;rdquo; button in the top right of the interface.&lt;/p&gt;
+
+&lt;p&gt;You will then be asked to enter the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt; - A name for your project&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unique Identifier&lt;/strong&gt; - An identifier for your project, which needs to not be in use by anyone else.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The project will not be created until a unique identifier is found. You will be told if the identifier is already in use when you click &amp;ldquo;CREATE&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;The new project will now be visible in the project overview screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/project-overview-new-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Creating a Flow</title>
+      <link>/quick-start/creating-a-flow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/creating-a-flow/</guid>
+      <description>&lt;p&gt;Once you have created a project you&amp;rsquo;ll be prompted to create a flow.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/project-view-new-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To create a flow, just click the “CREATE A FLOW” button in the top right of the interface.&lt;/p&gt;
+
+&lt;p&gt;The first time you attempt to create a flow you will see a message informing you that you don&amp;rsquo;t have a linked repository account.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-create-a-flow-no-repo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To solve this, either click on the link provided in the page or navigate to the account section using the menu in the top right of the header. Within the account section you will see the option to connect to a repository under the &amp;ldquo;Connected accounts&amp;rdquo; heading.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/connect-accounts-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Currently you can choose from the following accounts to connect:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Github&lt;/strong&gt; - A code repository account&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bitbucket&lt;/strong&gt; - A code repository account&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google&lt;/strong&gt; - A Kubernetes cluster account&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Each of these options will forward you to the respective provider to sign in and then grant permissions to ContinuousPipe. &lt;strong&gt;You will need to give ContinuousPipe access to at least one code repository account to continue setting up a flow.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Once permissions have been granted you will be returned to ContinuousPipe. You&amp;rsquo;ll need to reselect the project, then click “CREATE A FLOW” again. This time you will be able to choose a repository from the associated repository account.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-create-a-flow-choose-repo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By default your personal repositories from the linked account are displayed. If the linked account is a member of an Organisation these are also visible below. Clicking on each respective Organisation will load a list of available repositories.&lt;/p&gt;
+
+&lt;p&gt;Once you have selected your repository, click &amp;ldquo;CREATE&amp;rdquo; to finish creating the flow.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/project-flow-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuring Users</title>
+      <link>/quick-start/configuring-users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/configuring-users/</guid>
+      <description>
+
+&lt;p&gt;When you create a project, you are automatically added as the default user:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/project-users-overview-default-user.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two levels of user permissions:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Permission&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Restrictions&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ADMIN&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;User has full access permissions&lt;/td&gt;
+&lt;td&gt;n/a&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;USER&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;User has restricted access permissions&lt;/td&gt;
+&lt;td&gt;Adding and removing other users &lt;br/&gt; Saving flow configuration &lt;br /&gt; Deleting environments&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The default user has ADMIN permissions.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;If you don&amp;rsquo;t need to add additional users to your project, you can skip straight to to &lt;a href=&#34;../quick-start/configuring-a-cluster/&#34;&gt;configuring a cluster&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;adding-users&#34;&gt;Adding Users&lt;/h2&gt;
+
+&lt;p&gt;At present ContinuousPipe uses GitHub authentication, so new users will need a GitHub account to be able to log in. If the new user already has a GitHub account they can be added directly. If not, they can be invited via email, and they will need to create a GitHub account as part of the login process.&lt;/p&gt;
+
+&lt;h3 id=&#34;add-user-using-github-username&#34;&gt;Add User Using GitHub Username&lt;/h3&gt;
+
+&lt;p&gt;If the new user already has a GitHub account, you will first need them to advise you of their username.&lt;/p&gt;
+
+&lt;p&gt;Then click the “ADD” button in the top right of the interface.&lt;/p&gt;
+
+&lt;p&gt;You will then be asked to enter the following information:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Username or Email&lt;/strong&gt; - Enter the GitHub username&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permissions&lt;/strong&gt; - Choose whether the new user should have ADMIN or USER permissions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then click &amp;ldquo;ADD&amp;rdquo; to finish.&lt;/p&gt;
+
+&lt;p&gt;The owner of that account will have instant access to the project by going to the &lt;a href=&#34;https://ui.continuouspipe.io/&#34;&gt;ContinuousPipe console login screen&lt;/a&gt; and clicking &amp;ldquo;Login with GitHub&amp;rdquo;. If the user is already authenticated with GitHub, they will be logged straight into the console. Otherwise the user will need to enter their GitHub login credentials.&lt;/p&gt;
+
+&lt;h3 id=&#34;invite-user-using-email-address&#34;&gt;Invite User Using Email Address&lt;/h3&gt;
+
+&lt;p&gt;If the new user doesn&amp;rsquo;t have a GitHub account, you will first need them to advise you of their email address.&lt;/p&gt;
+
+&lt;p&gt;Then click the “ADD” button in the top right of the interface.&lt;/p&gt;
+
+&lt;p&gt;You will then be asked to enter the following information:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Username or Email&lt;/strong&gt; - Enter the email address&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permissions&lt;/strong&gt; - Choose whether the new user should have ADMIN or USER permissions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then click &amp;ldquo;ADD&amp;rdquo; to finish.&lt;/p&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;At this point, if the email address does actually turn out to be associated with a GitHub account, the user will be added directly as described in the above section. Therefore no invitation will be sent.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You will be asked to confirm the invitation:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/project-users-add-user-email-confirm-invite.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The owner of that email address will be sent an invitation. They will need to open the invitation email and click on &amp;ldquo;Accept invitation&amp;rdquo;. This will take them to the &lt;a href=&#34;https://ui.continuouspipe.io/&#34;&gt;ContinuousPipe console login screen&lt;/a&gt; where they need to click &amp;ldquo;Login with GitHub&amp;rdquo;. They will then need to create a new GitHub account as part of the login process, which can be done from the GitHub login screen by clicking on &amp;ldquo;Create an account&amp;rdquo;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuring a Cluster</title>
+      <link>/quick-start/configuring-a-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/configuring-a-cluster/</guid>
+      <description>
+
+&lt;p&gt;Before a flow can be used it needs to know where to deploy to. This is done in the &amp;ldquo;Clusters&amp;rdquo; tab of the project. You&amp;rsquo;ll be prompted to add a new cluster configuration.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/project-cluster-overview-no-cluster.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To add a new cluster configuration, click the “ADD” button in the top right of the interface.&lt;/p&gt;
+
+&lt;p&gt;You will then be asked to choose from the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Google Container Engine&lt;/strong&gt; - A Kubernetes cluster associated with your linked Google account&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;My Own Kubernetes Cluster&lt;/strong&gt; - A Kubernetes cluster managed elsewhere&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;google-container-engine&#34;&gt;Google Container Engine&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;In order to use this option you will first need to set up a Google Cloud project.&lt;/strong&gt; You will then need to link your Google account with ContinuousPipe, which is discussed in &lt;a href=&#34;../quick-start/creating-a-project/&#34;&gt;creating a project&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If selected, you will then be asked to enter the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Google Account&lt;/strong&gt; - A linked Google account&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google Cloud Project&lt;/strong&gt; - A Google Cloud project associated with the Google account&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GKE Cluster&lt;/strong&gt; - A Google Container Engine (GKE) associated with the Google Cloud project&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;my-own-kubernetes-cluster&#34;&gt;My Own Kubernetes Cluster&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;In order to use this option you will first need to set up a custom Kubernetes cluster and have access credentials.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If selected, you will then be asked to enter the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cluster Name&lt;/strong&gt; - A name for reference within ContinuousPipe&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Master API Endpoint&lt;/strong&gt; - The IP address of the cluster&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Version&lt;/strong&gt; - The Kubernetes version of the cluster&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username&lt;/strong&gt; - The username to access the cluster&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password&lt;/strong&gt; - The password to access the cluster&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then click &amp;ldquo;CREATE&amp;rdquo; to finish.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/project-cluster-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuring a Registry</title>
+      <link>/quick-start/configuring-a-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/configuring-a-registry/</guid>
+      <description>&lt;p&gt;Before a flow can be used it needs to know where to store Docker images. This is done in the &amp;ldquo;Registries&amp;rdquo; tab of the project. You&amp;rsquo;ll be prompted to add a new registry configuration.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/project-registry-overview-no-registry.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To add a new registry configuration, click the “ADD” button in the top right of the interface.&lt;/p&gt;
+
+&lt;p&gt;You will then be asked to choose from the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Docker Hub Registry&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quay.io Registry&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Custom Registry&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;For each of these options you will first need to have set up an account with the respective service.&lt;/strong&gt; You will then need to supply the following credentials:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Username&lt;/strong&gt; - The username to access the registry&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt; - The email address to access the registry&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password&lt;/strong&gt; - The password to access the registry&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then click &amp;ldquo;CREATE&amp;rdquo; to finish.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/project-registry-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuring Your Repository</title>
+      <link>/quick-start/configuring-your-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/configuring-your-repository/</guid>
+      <description>
+
+&lt;p&gt;At this stage you should have a fully configured project, so it&amp;rsquo;s time to configure your code repository by adding the configuration files that are needed to build a Docker image and set up ContinuousPipe deployments.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.
+├── Dockerfile
+├── continuous-pipe.yml
+└── docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;add-a-dockerfile&#34;&gt;Add a Dockerfile&lt;/h2&gt;
+
+&lt;p&gt;The first step is to add a &lt;code&gt;Dockerfile&lt;/code&gt; to the root directory of your project. This file contains a series of commands that are combined to build a Docker image.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FROM nginx
+
+COPY . /usr/share/nginx/html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This very basic &lt;code&gt;Dockerfile&lt;/code&gt; will add an &lt;code&gt;nginx&lt;/code&gt; web server container to the Docker image and copy the contents of the code repository into the web server default content directory.&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://docs.docker.com/engine/reference/builder/&#34;&gt;https://docs.docker.com/engine/reference/builder/&lt;/a&gt; for full documentation.&lt;/p&gt;
+
+&lt;h2 id=&#34;add-a-docker-compose-yml&#34;&gt;Add a docker-compose.yml&lt;/h2&gt;
+
+&lt;p&gt;The next step is to add a &lt;code&gt;docker-compose.yml&lt;/code&gt; to the root directory of your project. This file contains YAML configuration for the services, networks and volumes of a Docker image.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;web:
+    build: .
+    expose:
+        - 80
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This YAML will configure the web service to run on port 80.&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://docs.docker.com/compose/compose-file/&#34;&gt;https://docs.docker.com/compose/compose-file/&lt;/a&gt; for full documentation.&lt;/p&gt;
+
+&lt;h2 id=&#34;add-a-continuous-pipe-yml&#34;&gt;Add a continuous-pipe.yml&lt;/h2&gt;
+
+&lt;p&gt;The next step is to add a &lt;code&gt;continuous-pipe.yml&lt;/code&gt; to the root directory of your project. This file contains YAML configuration relating to the deployment of a Docker image.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tasks:
+    images:
+        build:
+            services:
+                web:
+                    image: docker.io/pswaine/hello-world
+
+    deployment:
+        deploy:
+            cluster: hello-world
+            services:
+                web:
+                    specification:
+                        accessibility:
+                            from_external: true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This YAML does the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It will configure the Docker image to be called &lt;code&gt;hello-world&lt;/code&gt; and stored in an account at docker.io&lt;/li&gt;
+&lt;li&gt;It will configure the Docker image to be deployed to the &lt;code&gt;hello-world&lt;/code&gt; cluster - this cluster identifier is defined when &lt;a href=&#34;../quick-start/configuring-a-cluster/&#34;&gt;configuring a cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;It will configure the Kubernetes cluster to create a public load-balancer for the web service allowing public access&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See &lt;a href=&#34;../configuration/tasks-deploy/&#34;&gt;configuring deployments&lt;/a&gt; for more documentation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;These new configuration files then need pushing to your code repository so that ContinuousPipe can read them.&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuring a Flow</title>
+      <link>/quick-start/configuring-a-flow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/configuring-a-flow/</guid>
+      <description>&lt;p&gt;The final step before executing the flow is to configure it. You can do this by clicking on the flow, then selecting the &amp;ldquo;Configuration&amp;rdquo; tab. This will present you with an interface that allows you to define YAML variables.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-configuration-no-config.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We are going to variablise the image name and the cluster identifier that were defined in &lt;code&gt;continuous-pipe.yml&lt;/code&gt; when &lt;a href=&#34;../quick-start/configuring-your-repository/&#34;&gt;configuring your repository&lt;/a&gt;. Here&amp;rsquo;s a reminder of what that looks like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tasks:
+    images:
+        build:
+            services:
+                web:
+                    image: docker.io/pswaine/hello-world
+
+    deployment:
+        deploy:
+            cluster: hello-world
+            services:
+                web:
+                    specification:
+                        accessibility:
+                            from_external: true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To create the image variable click &amp;ldquo;ADD A VARIABLE&amp;rdquo; and then enter:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: &amp;ldquo;IMAGE_NAME&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Value&lt;/strong&gt;: &amp;ldquo;docker.io/pswaine/hello-world&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To create the cluster variable click &amp;ldquo;ADD A VARIABLE&amp;rdquo; and then enter:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: &amp;ldquo;CLUSTER&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Value&lt;/strong&gt;: &amp;ldquo;hello-world&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then click &amp;ldquo;SAVE&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-configuration-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The cluster note in &lt;code&gt;continuous-pipe.yml&lt;/code&gt; can now be updated:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tasks:
+    images:
+        build:
+            services:
+                web:
+                    image: ${IMAGE_NAME}
+
+    deployment:
+        deploy:
+            cluster: ${CLUSTER}
+            services:
+                web:
+                    specification:
+                        accessibility:
+                            from_external: true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once this is committed, the variables in the flow configuration will now be used instead of the hard coded value set previously.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Creating a Tide</title>
+      <link>/quick-start/creating-a-tide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/creating-a-tide/</guid>
+      <description>&lt;p&gt;The flow is now ready to run. An execution of a flow is called a tide.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-overview-no-tide.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The easiest way to create the tide is to run it manually. To do this click the &amp;ldquo;START MANUALLY&amp;rdquo; button in the top right of the interface.&lt;/p&gt;
+
+&lt;p&gt;You will need to enter a branch from your code repository e.g. &lt;code&gt;master&lt;/code&gt; in the Branch field.&lt;/p&gt;
+
+&lt;p&gt;Then click &amp;ldquo;CREATE&amp;rdquo; to start the tide.&lt;/p&gt;
+
+&lt;p&gt;You will initially be shown the &amp;ldquo;Tides&amp;rdquo; tab. If you return to the &amp;ldquo;Overview&amp;rdquo; tab you will be able to see updates on the tide as it progresses.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-overview-tide-success.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you click on the tide it will give you more information. Each of the sections is expandable and will show more detail on the processes the tide ran.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-info-expanded.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you then go to the &amp;ldquo;Environments&amp;rdquo; tab, you will see an entry representing the Kubernetes cluster associated with the tide that was just run.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-environments-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you click the &amp;ldquo;OPEN&amp;rdquo; button you will see a confirm message to let you know that you are being redirected outside ContinuousPipe to the deployed environment. Click &amp;ldquo;OPEN IT&amp;rdquo; to proceed. Finally, you should see your deployed site in a new tab.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-environments-view-endpoint.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Remote Development: Installing the Client</title>
+      <link>/quick-start/remote-development-installing-the-client/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/remote-development-installing-the-client/</guid>
+      <description>&lt;p&gt;The remote development feature of ContinuousPipe allows a developer to work locally while viewing and testing changes in a remote environment. A command line tool &lt;code&gt;cp-remote&lt;/code&gt; keeps local and remote files in sync.&lt;/p&gt;
+
+&lt;p&gt;To get started, you will need to &lt;a href=&#34;../remote-development/getting-started/#installation&#34;&gt;install the remote development client&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Remote Development: Configuring Your Repository</title>
+      <link>/quick-start/remote-development-configuring-your-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/remote-development-configuring-your-repository/</guid>
+      <description>
+
+&lt;p&gt;After &lt;a href=&#34;../quick-start/remote-development-installing-the-client/&#34;&gt;installing the client&lt;/a&gt;, the next step is to update the configuration files in your code repository.&lt;/p&gt;
+
+&lt;h2 id=&#34;update-the-dockerfile&#34;&gt;Update the Dockerfile&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;Dockerfile&lt;/code&gt; needs to be updated so that the container supports remote development:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FROM nginx
+
+COPY . /usr/share/nginx/html
+
+RUN apt-get update &amp;amp;&amp;amp; apt-get install -y rsync &amp;amp;&amp;amp; apt-get clean
+RUN ln -s /usr/share/nginx/html /app
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This update adds two &lt;a href=&#34;https://docs.docker.com/engine/reference/builder/#run&#34;&gt;RUN instructions&lt;/a&gt;. The first installs &lt;code&gt;rsync&lt;/code&gt; using the &lt;code&gt;apt-get&lt;/code&gt; package manager. The second adds a symlink &amp;ldquo;/app&amp;rdquo; to point to the application code so that the remote client knows where to deploy updates to.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;You will then need to push this update to your code repository.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;If you are using one of the &lt;a href=&#34;../faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; then &lt;code&gt;rsync&lt;/code&gt; will already be configured for installation.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;update-the-continuous-pipe-yml&#34;&gt;Update the continuous-pipe.yml&lt;/h2&gt;
+
+&lt;p&gt;If you are using the &lt;code&gt;continuous-pipe.yml&lt;/code&gt; configuration from previous steps in the quick start guide, there is no further configuration required so you can go ahead and &lt;a href=&#34;../quick-start/remote-development-creating-a-remote-environment/&#34;&gt;create a remote environment&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;However, if you have progressed to adding pipelines to your configuration you will need to ensure that the pipeline conditions are not so restrictive that they prevent a tide running for a remote development branch. Remote development branches are by convention in the format &amp;ldquo;cpdev*&amp;ldquo;.&lt;/p&gt;
+
+&lt;p&gt;The following pipeline configuration will allow &amp;ldquo;cpdev*&amp;rdquo; branch pushes to trigger a tide:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tasks:
+    images:
+        build:
+            services:
+                web:
+                    image: docker.io/pswaine/hello-world
+
+    deployment:
+        deploy:
+            cluster: hello-world
+            services:
+                web:
+                    specification:
+                        accessibility:
+                            from_external: true
+                            
+pipelines:
+    - name: Production
+      condition: &#39;code_reference.branch in [&amp;quot;uat&amp;quot;, &amp;quot;production&amp;quot;]&#39;
+    - name: Remote
+      condition: &#39;code_reference.branch matches &amp;quot;/^cpdev/&amp;quot;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;You will then need to push this update to your code repository.&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Remote Development: Creating a Remote Environment</title>
+      <link>/quick-start/remote-development-creating-a-remote-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/remote-development-creating-a-remote-environment/</guid>
+      <description>&lt;p&gt;After &lt;a href=&#34;../quick-start/remote-development-configuring-your-repository/&#34;&gt;configuring your repository&lt;/a&gt; you now need to go to the &amp;ldquo;Dev Environments&amp;rdquo; tab within the flow.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-no-env.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To create a dev environment, just click the “CREATE MY ENVIRONMENT” button in the top right of the interface.&lt;/p&gt;
+
+&lt;p&gt;On the next screen enter a name for the environment (or accept the default), then click &amp;ldquo;CREATE&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;You will then see a screen prompting you to create a token. Before you generate the token you need to enter a branch name (or accept the default). Then click &amp;ldquo;GENERATE AN INITIALIZATION TOKEN&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-environment-no-token.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You will then see a screen displaying a token. This needs to be copied for use with the remote development tool &lt;a href=&#34;../remote-development/command-init/&#34;&gt;init command&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-environment-not-started.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Remote Development: Using a Remote Environment</title>
+      <link>/quick-start/remote-development-using-a-remote-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/remote-development-using-a-remote-environment/</guid>
+      <description>&lt;p&gt;After &lt;a href=&#34;../quick-start/remote-development-creating-a-remote-environment/&#34;&gt;creating a remote environment&lt;/a&gt; you&amp;rsquo;ll need to open the project directory in a terminal. You can be checked out on any branch.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;The reason why your local branch name doesn&amp;rsquo;t matter is because &lt;code&gt;cp-remote&lt;/code&gt; works using a remote branch only. The remote branch it uses is specified in the &amp;ldquo;Remote Branch Name&amp;rdquo; field when you generate the token. When &lt;code&gt;cp-remote init&lt;/code&gt; is executed the remote branch is created automatically and the current HEAD commit is force pushed to it.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;init&lt;/code&gt; command can then be executed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; hello-world
+cp-remote init &amp;lt;token&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Within ContinuousPipe this will trigger the creation of a tide, which becomes in effect the remote development environment. Therefore the running of the &lt;code&gt;init&lt;/code&gt; command may take several minutes while the tide runs. When it completes it will describe the endpoint associated with the new tide.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-environment-cli-init.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Opening the endpoint will reveal the application in its default state.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-environment-view-endpoint.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the tide up and running, it can now be used for remote development. This is done by running the remote development tool &lt;a href=&#34;../remote-development/command-watch/&#34;&gt;watch command&lt;/a&gt;, which runs in the background, detecting file changes and synchronising them with the remote environment.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cp-remote watch
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Updating a file and saving it will therefore result in an immediate update.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-environment-cli-watch.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you now refresh the endpoint you will see the changes:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-environment-view-endpoint-change.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This allows you to develop locally and view iterative changes remotely in the same way as you would if the environment was on your local machine.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

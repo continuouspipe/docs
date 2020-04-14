@@ -1,0 +1,1532 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>What is ContinuousPipe? on ContinuousPipe Docs</title>
+    <link>/index.xml</link>
+    <description>Recent content in What is ContinuousPipe? on ContinuousPipe Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>Released under the MIT license</copyright>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Accounts: How do I create a billing profile?</title>
+      <link>/faq/how-do-I-create-a-billing-profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/faq/how-do-I-create-a-billing-profile/</guid>
+      <description>&lt;p&gt;To create a billing profile you will first need to log into the &lt;a href=&#34;https://ui.continuouspipe.io/&#34;&gt;ContinuousPipe console&lt;/a&gt;. You then need to navigate to the Account section using the sub menu in the top right corner.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Within the account section, select the &amp;ldquo;Billing&amp;rdquo; tab. You will need to select how many users you would like to subscribe. The number of users is effectively the number of people who will have GitHub or Bitbucket accounts that will be pushing to repositories set up in a ContinuousPipe.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/faq/billing-create-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you click on &amp;ldquo;Subscribe&amp;rdquo; a window will open to &lt;a href=&#34;https://recurly.com/&#34;&gt;Recurly&lt;/a&gt;, which is a third party payment subscription handler. Follow the instructions to complete payment.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/faq/billing-recurly-interface.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also adjust the number of users up or down at this stage:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/faq/billing-adjust-users.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After payment is completed, the &amp;ldquo;Billing&amp;rdquo; tab in the ContinuousPipe account section should now display subscription information.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/faq/billing-display-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>General: What are the ContinuousPipe images?</title>
+      <link>/faq/what-are-the-continuous-pipe-images/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/faq/what-are-the-continuous-pipe-images/</guid>
+      <description>&lt;p&gt;ContinuousPipe provides images for many common technologies that you may need to use in your application infrastructure.&lt;/p&gt;
+
+&lt;p&gt;Some examples are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://quay.io/repository/continuouspipe/php7.1-nginx&#34;&gt;PHP with Nginx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://quay.io/repository/continuouspipe/php7.1-apache&#34;&gt;PHP with Apache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://quay.io/repository/continuouspipe/mysql8.0&#34;&gt;MYSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://quay.io/repository/continuouspipe/redis3&#34;&gt;Redis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://quay.io/repository/continuouspipe/solr6&#34;&gt;Solr&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://quay.io/repository/continuouspipe/varnish4&#34;&gt;Varnish&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The full range of images can be seen at &lt;a href=&#34;https://quay.io/organization/continuouspipe&#34;&gt;https://quay.io/organization/continuouspipe&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Docker configuration used to create the images can be seen at &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles&#34;&gt;https://github.com/continuouspipe/dockerfiles&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any of the images can be used by referencing them in your &lt;code&gt;Dockerfile&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FROM quay.io/continuouspipe/php7.1-apache:stable
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The benefit of using ContinuousPipe images are that they have been created according to best practices on security and performance. For example, the Apache and Nginx server images are automatically configured to use HTTPS only websites and install self signed SSL certificate on container start. More information about the specific setup of each image is provided in the README for each image within &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles&#34;&gt;https://github.com/continuouspipe/dockerfiles&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;ContinuousPipe images are also compatible with the &lt;a href=&#34;./remote-development/getting-started/&#34;&gt;remote development&lt;/a&gt; functionality without any additional configuration.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>General: What are the ContinuousPipe demo sites?</title>
+      <link>/faq/what-are-the-continuous-pipe-demo-sites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/faq/what-are-the-continuous-pipe-demo-sites/</guid>
+      <description>&lt;p&gt;ContinuousPipe provides some sample applications for common frameworks:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/continuouspipe/demo-symfony&#34;&gt;Symfony&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/continuouspipe/demo-laravel&#34;&gt;Laravel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/continuouspipe/demo-drupal7&#34;&gt;Drupal 7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/continuouspipe/demo-drupal8&#34;&gt;Drupal 8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/continuouspipe/demo-magento1&#34;&gt;Magento 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/continuouspipe/demo-magento2&#34;&gt;Magento 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;They can be used to get an environment running quickly or as a basis for further adaptation to suit the needs of your own organisation.&lt;/p&gt;
+
+&lt;p&gt;The demo sites are built on top of &lt;a href=&#34;./faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; so they take advantage of their security and performance best practices.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Console: Where can I get a ContinuousPipe API key?</title>
+      <link>/faq/where-can-I-get-a-continuous-pipe-api-key/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/faq/where-can-I-get-a-continuous-pipe-api-key/</guid>
+      <description>
+
+&lt;h2 id=&#34;continuouspipe-api-keys&#34;&gt;ContinuousPipe API Keys&lt;/h2&gt;
+
+&lt;p&gt;ContinuousPipe API keys can be used with the &lt;code&gt;cp-remote&lt;/code&gt; tool in &lt;a href=&#34;./remote-development/working-with-different-environments/#interactive-mode&#34;&gt;interactive mode&lt;/a&gt; to access a bash terminal on a deployed container.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-a-continuouspipe-api-key&#34;&gt;Creating a ContinuousPipe API Key&lt;/h2&gt;
+
+&lt;p&gt;You can generate a new API key in the account section of the console: &lt;a href=&#34;https://authenticator.continuouspipe.io/account/api-keys&#34;&gt;https://authenticator.continuouspipe.io/account/api-keys&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To create a new API key, enter a description in the &amp;ldquo;New key&amp;rdquo; form:&lt;/p&gt;
+
+
+&lt;figure class=&#34;three-quarter-width&#34;&gt;
+    
+        &lt;img src=&#34;./images/faq/account-api-key-new.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;The new key will then be visible in list of keys:&lt;/p&gt;
+
+
+&lt;figure class=&#34;three-quarter-width&#34;&gt;
+    
+        &lt;img src=&#34;./images/faq/account-api-key-view.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;If you have already built a remote development environment using &lt;code&gt;cp-remote init &amp;lt;token&amp;gt;&lt;/code&gt; an API key will already have been generated for you and stored in the global configuration file &lt;code&gt;~/.cp-remote/config.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Console: Where can I view container logs and events?</title>
+      <link>/faq/where-can-I-view-container-logs-and-events/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/faq/where-can-I-view-container-logs-and-events/</guid>
+      <description>
+
+&lt;h2 id=&#34;container-logs&#34;&gt;Container Logs&lt;/h2&gt;
+
+&lt;p&gt;When a container is deployed, Kubernetes generates log and event information, which is useful for debugging when your deployments are failing. ContinuousPipe gives you access to this information in the console without having to access the container directly.&lt;/p&gt;
+
+&lt;h2 id=&#34;viewing-the-container-logs-from-the-tide-log-screen&#34;&gt;Viewing the Container Logs From the Tide Log Screen&lt;/h2&gt;
+
+&lt;p&gt;You can view the container logs and events from the tide log screen of a flow.&lt;/p&gt;
+
+&lt;p&gt;First expand the tab for the container (referred to as component) you want to review, then click the hamburger icon of the container in the bottom right corner:&lt;/p&gt;
+
+
+&lt;figure class=&#34;three-quarter-width&#34;&gt;
+    
+        &lt;img src=&#34;./images/faq/flow-tide-logs-open-cp-logs.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;By default you will see the &amp;ldquo;LOGS&amp;rdquo; tab which displays a real time view of the container logs:&lt;/p&gt;
+
+
+&lt;figure class=&#34;three-quarter-width&#34;&gt;
+    
+        &lt;img src=&#34;./images/faq/flow-tide-logs-view-cp-logs.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;If you click on the &amp;ldquo;EVENTS&amp;rdquo; tab you will see a list of events associated with the container deployment:&lt;/p&gt;
+
+
+&lt;figure class=&#34;three-quarter-width&#34;&gt;
+    
+        &lt;img src=&#34;./images/faq/flow-tide-logs-view-cp-events.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;viewing-the-container-logs-from-the-environment-screen&#34;&gt;Viewing the Container Logs From the Environment Screen&lt;/h2&gt;
+
+&lt;p&gt;You can also view the container logs and events from the environment screen of a flow.&lt;/p&gt;
+
+&lt;p&gt;Click on the environment to expand it, then click the hamburger icon for the container (referred to as component) you want to review:&lt;/p&gt;
+
+
+&lt;figure class=&#34;three-quarter-width&#34;&gt;
+    
+        &lt;img src=&#34;./images/faq/flow-environment-open-cp-logs.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Configuration Files</title>
+      <link>/configuration/configuration-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/configuration-files/</guid>
+      <description>
+
+&lt;p&gt;There are three main configuration files that are needed to build a Docker image and set up ContinuousPipe deployments:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.
+├── Dockerfile
+├── continuous-pipe.yml
+└── docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;docker-build-configuration&#34;&gt;Docker Build Configuration&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;Dockerfile&lt;/code&gt; contains a series of commands that are combined to build a Docker image. See &lt;a href=&#34;https://docs.docker.com/engine/reference/builder/&#34;&gt;https://docs.docker.com/engine/reference/builder/&lt;/a&gt; for full documentation.&lt;/p&gt;
+
+&lt;h2 id=&#34;docker-compose-configuration&#34;&gt;Docker Compose Configuration&lt;/h2&gt;
+
+&lt;p&gt;The file &lt;code&gt;docker-compose.yml&lt;/code&gt; contains YAML configuration for the services, networks and volumes of a Docker image. See &lt;a href=&#34;https://docs.docker.com/compose/compose-file/&#34;&gt;https://docs.docker.com/compose/compose-file/&lt;/a&gt; for full documentation.&lt;/p&gt;
+
+&lt;h2 id=&#34;continuouspipe-configuration&#34;&gt;ContinuousPipe Configuration&lt;/h2&gt;
+
+&lt;p&gt;The ContinuousPipe configuration is represented as a YAML file. The final configuration is the result of a merger of these different optional configuration sources:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The YAML stored on CP when &lt;a href=&#34;./quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The YAML file named &lt;code&gt;continuous-pipe.yml&lt;/code&gt; in your code repository&lt;/li&gt;
+&lt;li&gt;The YAML file named &lt;code&gt;continuous-pipe.[branch].yml&lt;/code&gt; in your code repository&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;tasks&#34;&gt;Tasks&lt;/h3&gt;
+
+&lt;p&gt;The main objects of this configuration file are the &lt;code&gt;tasks&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Each task has a name, so will sometimes be referred to as a &amp;ldquo;named task&amp;rdquo;. Tasks will run sequentially in the order they are defined.&lt;/p&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;It is recommended that all tasks are named as some features rely on this to make task information available to other tasks.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In the following example, you can see that we define &lt;code&gt;build&lt;/code&gt;, &lt;code&gt;deploy&lt;/code&gt;, and &lt;code&gt;run&lt;/code&gt; tasks named &lt;code&gt;images&lt;/code&gt;, &lt;code&gt;deployment&lt;/code&gt;, and &lt;code&gt;migrations&lt;/code&gt; respectively. They will operate in this order when a tide is run.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;migrations&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You will learn more about each task in the &lt;a href=&#34;./configuration/tasks/&#34;&gt;tasks overview section&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;variables&#34;&gt;Variables&lt;/h3&gt;
+
+&lt;p&gt;You can avoid copying and pasting by using variables inside your configuration files. The following example shows you how to prevent putting values inside your &lt;code&gt;continuous-pipe.yml&lt;/code&gt; by using variables that are defined in the configuration stored in ContinuousPipe when &lt;a href=&#34;./quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;# configuration in ContinuousPipe&lt;/span&gt;
+&lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;name:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CLUSTER,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;my-production-cluster&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# configuration in continuous-pipe.yml&lt;/span&gt;
+&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLUSTER}&lt;/span&gt;
+
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Once the configuration files are merged, the variables are resolved. That means that the final configuration will contain the &lt;code&gt;my-production-cluster&lt;/code&gt; value at the &lt;code&gt;cluster&lt;/code&gt; key of the deployment task.&lt;/p&gt;
+
+&lt;h3 id=&#34;conditional-variables&#34;&gt;Conditional Variables&lt;/h3&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Reference&lt;/p&gt;
+&lt;p&gt;Conditions use the &lt;a href=&#34;http://symfony.com/doc/current/components/expression_language/syntax.html&#34;&gt;Symfony expression language&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you need to change the value of the cluster, for instance depending on the branch name, you can use conditions:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;name:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CLUSTER,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;condition:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;code_reference.branch&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;[&amp;quot;production&amp;quot;,&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;uat&amp;quot;]&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;my-production-cluster&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;name:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CLUSTER,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;condition:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;code_reference.branch&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;not&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;[&amp;quot;production&amp;quot;,&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;uat&amp;quot;]&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;my-development-cluster&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;condition&lt;/code&gt; value is an expression. It has access to the tide related context object &lt;code&gt;code_reference&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;code_reference&lt;/code&gt; context object contains the following properties:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Property&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;The name of the branch&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sha1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;The SHA1 of the given commit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;default-variables&#34;&gt;Default Variables&lt;/h3&gt;
+
+&lt;p&gt;You can use a &lt;code&gt;defaults&lt;/code&gt; section to avoid variable duplication across tasks.&lt;/p&gt;
+
+&lt;p&gt;The following example shows a &lt;code&gt;cluster&lt;/code&gt; variable being defined in two separate tasks:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;initialise&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-cluster&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+   &lt;span style=&#34;color: #ae81ff&#34;&gt;deployments&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-cluster&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This can be rewritten using a &lt;code&gt;defaults&lt;/code&gt; section as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;defaults&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+     &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-cluster&lt;/span&gt;
+
+&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;initialise&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployments&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The default cluster variable will now be used for both tasks instead.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ContinuousPipe</title>
+      <link>/basics/continuous-pipe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/basics/continuous-pipe/</guid>
+      <description>
+
+&lt;h2 id=&#34;what-is-continuouspipe&#34;&gt;What is ContinuousPipe?&lt;/h2&gt;
+
+&lt;p&gt;ContinuousPipe is a system for continuous automated deployment of multiple environments with simple configuration. It utilises Docker and Kubernetes to automatically deploy new environments, dramatically speeding up your feedback loop and cutting lead time.&lt;/p&gt;
+
+&lt;h2 id=&#34;technology-stack&#34;&gt;Technology Stack&lt;/h2&gt;
+
+&lt;p&gt;ContinuousPipe allows you to deploy your &lt;a href=&#34;./basics/concepts-build-concepts/&#34;&gt;Docker application&lt;/a&gt; on any &lt;a href=&#34;./basics/concepts-deployment-concepts/&#34;&gt;Kubernetes cluster&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;figure class=&#34;diagram technology-stack&#34;&gt;
+    
+        &lt;img src=&#34;./images/basics/cp-technology-stack.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;To get started with ContinuousPipe you will need the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; or &lt;a href=&#34;https://bitbucket.org/&#34;&gt;Bitbucket&lt;/a&gt; account to host your project&lt;/li&gt;
+&lt;li&gt;A Docker registry account e.g. &lt;a href=&#34;https://docker.io&#34;&gt;docker.io&lt;/a&gt; or &lt;a href=&#34;https://quay.io&#34;&gt;quay.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A Kubernetes cluster e.g. &lt;a href=&#34;https://cloud.google.com/container-engine/&#34;&gt;GCE&lt;/a&gt;, &lt;a href=&#34;https://aws.amazon.com/&#34;&gt;AWS&lt;/a&gt; or &lt;a href=&#34;https://azure.microsoft.com/en-au/&#34;&gt;Azure&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;customizable-workflow&#34;&gt;Customizable Workflow&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&#34;./basics/workflow-principles/&#34;&gt;customizable workflow&lt;/a&gt; allows you to integrate developers, QA and product owners to produce super-fast feedback cycles on a feature-by-feature basis.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Creating a Project</title>
+      <link>/quick-start/creating-a-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/quick-start/creating-a-project/</guid>
+      <description>&lt;p&gt;When you log in for the first time you will see the project overview screen, which will be empty. You&amp;rsquo;ll be prompted to create a new project.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/quick-start/project-overview-no-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To create a project, just click the &amp;ldquo;CREATE A PROJECT&amp;rdquo; button in the top right of the interface.&lt;/p&gt;
+
+&lt;p&gt;You will then be asked to enter the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt; - A name for your project&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unique Identifier&lt;/strong&gt; - An identifier for your project, which needs to not be in use by anyone else.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The project will not be created until a unique identifier is found. You will be told if the identifier is already in use when you click &amp;ldquo;CREATE&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;The new project will now be visible in the project overview screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/quick-start/project-overview-new-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>/remote-development/getting-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/getting-started/</guid>
+      <description>
+
+&lt;p&gt;ContinuousPipe can be used as a remote development environment using the &lt;code&gt;cp-remote&lt;/code&gt; command line tool. It helps to create, build and destroy remote environments and keep files in sync with the local filesystem.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;You will need the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A ContinuousPipe hosted project with the GitHub or Bitbucket, Docker and Kubernetes integration set up&lt;/li&gt;
+&lt;li&gt;The project checked out locally&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rsync&lt;/code&gt; installed locally&lt;/li&gt;
+&lt;li&gt;Optionally, a &lt;a href=&#34;https://keen.io&#34;&gt;keen.io&lt;/a&gt; write token, project id and event collection name if you want to log usage stats&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;If the GitHub or Bitbucket repository is not the origin of your checked out project then you will need to add a &lt;a href=&#34;https://help.github.com/articles/adding-a-remote/&#34;&gt;Git remote&lt;/a&gt; for that repository.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;h3 id=&#34;osx-64-bit&#34;&gt;OSX (64-bit):&lt;/h3&gt;
+
+&lt;p&gt;If you use &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt;, you can install &lt;code&gt;cp-remote&lt;/code&gt; via:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install continuouspipe/tools/cp-remote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Otherwise you can install it manually via:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo curl https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/darwin-amd64/cp-remote.tar.gz &amp;gt; cp-remote.tar.gz
+tar -xzvf cp-remote.tar.gz;
+mv cp-remote /usr/local/bin/cp-remote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Dependencies:&lt;/strong&gt; You need to have &lt;code&gt;git&lt;/code&gt;, and &lt;code&gt;rsync&lt;/code&gt; installed and available in the shell where &lt;code&gt;cp-remote&lt;/code&gt; runs.&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-64-bit&#34;&gt;Linux (64-bit):&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo curl https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/linux-amd64/cp-remote.tar.gz &amp;gt; cp-remote.tar.gz
+tar -xzvf cp-remote.tar.gz;
+mv cp-remote /usr/local/bin/cp-remote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;linux-32-bit&#34;&gt;Linux (32-bit):&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo curl https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/linux-386/cp-remote.tar.gz &amp;gt; cp-remote.tar.gz
+tar -xzvf cp-remote.tar.gz;
+mv cp-remote /usr/local/bin/cp-remote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Dependencies:&lt;/strong&gt; You need to have &lt;code&gt;git&lt;/code&gt;, and &lt;code&gt;rsync&lt;/code&gt; installed and available in the shell where &lt;code&gt;cp-remote&lt;/code&gt; runs.&lt;/p&gt;
+
+&lt;h3 id=&#34;windows-64-bit&#34;&gt;Windows (64-bit):&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download &lt;a href=&#34;https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/windows-amd64/cp-remote.zip&#34;&gt;https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/windows-amd64/cp-remote.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract &lt;code&gt;cp-remote.zip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Move &lt;code&gt;cp-remote.exe&lt;/code&gt; into your project folder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;windows-32-bit&#34;&gt;Windows (32-bit):&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download &lt;a href=&#34;https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/windows-386/cp-remote.zip&#34;&gt;https://inviqa-cp-remote-client-environment.s3-eu-west-1.amazonaws.com/latest/windows-386/cp-remote.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract &lt;code&gt;cp-remote.zip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Move &lt;code&gt;cp-remote.exe&lt;/code&gt; into your project folder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Dependencies:&lt;/strong&gt; You need to have &lt;code&gt;git&lt;/code&gt;, and &lt;code&gt;cwRsync&lt;/code&gt; installed and available in your environment &lt;code&gt;PATHS&lt;/code&gt; variable.&lt;/p&gt;
+
+&lt;h2 id=&#34;quick-start&#34;&gt;Quick Start&lt;/h2&gt;
+
+&lt;p&gt;The quick start guide gives an overview of how to get running with remote development:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./quick-start/remote-development-configuring-your-repository/&#34;&gt;Remote Development: Configuring Your Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./quick-start/remote-development-creating-a-remote-environment/&#34;&gt;Remote Development: Creating a Remote Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./quick-start/remote-development-using-a-remote-environment/&#34;&gt;Remote Development: Using a Remote Environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;data-sharing&#34;&gt;Data Sharing&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;ContinuousPipe receives usage and diagnostic information for each cp-remote command executed. This allows errors to be detected and fixed as soon as possible.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Summary of information received:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;cp-remote&lt;/code&gt; version number&lt;/li&gt;
+&lt;li&gt;The operating system and system architecture (Linux, Windows or Mac)&lt;/li&gt;
+&lt;li&gt;The command name including arguments (excluding the init token)&lt;/li&gt;
+&lt;li&gt;The duration of the command&lt;/li&gt;
+&lt;li&gt;The success/failure code of the command&lt;/li&gt;
+&lt;li&gt;Some configuration settings (username, flow id, cluster id, environment id, remote branch name, service name, Kubernetes cluster user and address)&lt;/li&gt;
+&lt;li&gt;Any file names configured to be ignored (if present)&lt;/li&gt;
+&lt;li&gt;Any error stack (if present)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Laravel</title>
+      <link>/guides/laravel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/guides/laravel/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;In this tutorial we are going to setup a new Laravel project, run it within Docker using one of ContinuousPipe’s base Dockerfiles, then finally push our project to our GitHub repo where ContinuousPipe will build our project and deploy on Google Container Engine. Once we are happy our project is building successfully we will then use ContinuousPipe to manage our cloud based development environment with the &lt;code&gt;cp-remote&lt;/code&gt; CLI tool.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;Before getting started you will need the following -&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; or &lt;a href=&#34;https://bitbucket.org/&#34;&gt;Bitbucket&lt;/a&gt; account to host your Laravel project&lt;/li&gt;
+&lt;li&gt;A &lt;a href=&#34;https://continuouspipe.io/&#34;&gt;ContinuousPipe&lt;/a&gt; account&lt;/li&gt;
+&lt;li&gt;A Kubernetes cluster e.g. &lt;a href=&#34;https://aws.amazon.com/&#34;&gt;AWS&lt;/a&gt;, &lt;a href=&#34;https://cloud.google.com/container-engine/&#34;&gt;GCE&lt;/a&gt; or &lt;a href=&#34;https://azure.microsoft.com/en-au/&#34;&gt;Azure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A Docker Registry account e.g. &lt;a href=&#34;https://docker.io&#34;&gt;docker.io&lt;/a&gt; or &lt;a href=&#34;https://quay.io&#34;&gt;quay.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;setting-up-laravel&#34;&gt;Setting up Laravel&lt;/h2&gt;
+
+&lt;p&gt;The easiest way to install Laravel is with the Laravel installer, if you don’t have this you can simply follow the instructions to use composer instead. For simplicity we will use the Laravel installer.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ laravel new demo-laravel
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Since we used the Laravel installer, a &lt;code&gt;.env&lt;/code&gt; file has been created for us and an application key has been set i.e.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_KEY&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;base64:OQ8H9vjocvQh284ojDBrODQ2HkrgWGDvdLCaQniHz0M&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;During our deployments, Laravel needs this key after the composer install runs due to the post-install composer hook. Unfortunately we will not have a &lt;code&gt;.env&lt;/code&gt; file set at this point so the easiest way to by pass this would be to set a default &lt;code&gt;APP_KEY.&lt;/code&gt; Within &lt;code&gt;config/app.php&lt;/code&gt; change line 106&lt;/p&gt;
+
+&lt;p&gt;from -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;env&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;APP_KEY&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;),&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;to -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;env&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;APP_KEY&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;base64:OQ8H9vjocvQh284ojDBrODQ2HkrgWGDvdLCaQniHz0M=&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;),&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We will overwrite the default key during deployments.&lt;/p&gt;
+
+&lt;p&gt;Since we are going to configure our application to use redis for our cache and session storage we need to add the package &lt;code&gt;predis/predis&lt;/code&gt; to our project.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ composer require predis/predis
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;configuring-continuouspipe&#34;&gt;Configuring ContinuousPipe&lt;/h2&gt;
+
+&lt;p&gt;Before we can push any code to our repository, we need to ensure that the ContinuousPipe console is properly configured. Please refer to the ContinuousPipe Quick Start guide to setup your &lt;a href=&#34;./quick-start/creating-a-project/&#34;&gt;project&lt;/a&gt;, &lt;a href=&#34;./quick-start/configuring-a-cluster/&#34;&gt;cluster&lt;/a&gt;, &lt;a href=&#34;./quick-start/configuring-a-registry/&#34;&gt;registry&lt;/a&gt; and create your first &lt;a href=&#34;./quick-start/creating-a-flow/&#34;&gt;flow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One last thing we need to do before we can begin using ContinuousPipe is configure which cluster we will use. You are free to configure as many clusters as you wish, in fact, its a good idea to have a separate cluster from production as you would for development and testing.&lt;/p&gt;
+
+&lt;p&gt;For now we have only got one cluster configured in ContinuousPipe. Lets assign that cluster name “main-cluster” to an environment variable which can be used with our build and deployment tasks.&lt;/p&gt;
+
+&lt;p&gt;From within the flow, click on configuration in the sidebar, create a new environment variable named &lt;code&gt;CLUSTER&lt;/code&gt; with a value to match what you set as your cluster name/identifier. I have set my cluster name as &lt;code&gt;main-cluster&lt;/code&gt;. Finally save the configuration.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/guides/laravel/flow-variables-configuration.png&#34; alt=&#34;Flow Configuration&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-docker-configuration&#34;&gt;Adding Docker configuration&lt;/h3&gt;
+
+&lt;p&gt;Lets start by configuring our &lt;code&gt;Dockerfile&lt;/code&gt;. We are going to use one of the &lt;a href=&#34;./faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; as our base. In reality, you would want to create a new base image that would extend this image to give you the ability to add other services, such as your NodeJS dependencies often used for the frontend build tools i.e. webpack&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt; quay.io/continuouspipe/php7-nginx:stable&lt;/span&gt;
+
+COPY ./tools/docker/usr/ /usr/
+
+USER build
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Add the application&lt;/span&gt;
+COPY . /app
+&lt;span style=&#34;color: #66d9ef&#34;&gt;WORKDIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt; /app&lt;/span&gt;
+
+USER root
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Install dependencies&lt;/span&gt;
+ARG &lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_ENV&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;RUN&lt;/span&gt; chown -R build:build /app &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;\&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt; -n &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$APP_ENV&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;then&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;\&lt;/span&gt;
+    bash /app/tools/docker/setup/install.sh&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;\&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You will notice from the second line of our Dockerfile that it will copy &lt;code&gt;tools/docker/usr/&lt;/code&gt; to &lt;code&gt;/usr/&lt;/code&gt; This is put in place by the inheritance of the configuration from our base image. Its parent image, &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/ubuntu/16.04#default-environment-variables&#34;&gt;Ubuntu Base&lt;/a&gt; allows us to inject custom environment variables into our container at build time. This allows us to easily manipulate how the build is configured. For example, we can use these to define our web directory which is used to set the nginx vhost &lt;code&gt;root&lt;/code&gt; configuration.&lt;/p&gt;
+
+&lt;h3 id=&#34;setting-additional-docker-required-files&#34;&gt;Setting additional Docker required files&lt;/h3&gt;
+
+&lt;p&gt;Lets create a new file in &lt;code&gt;tools/docker/usr/local/bin/supervisor_custom_start-laravel&lt;/code&gt; with the following -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;tools/docker/usr/local/bin/supervisor_custom_start-laravel&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Bring in the as_code_owner function, to run commands as the user who owns the code.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;# Usually the &amp;quot;build&amp;quot; user.&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;source&lt;/span&gt; /usr/local/share/bootstrap/common_functions.sh
+
+bash /app/tools/docker/setup/install.sh
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Create env file if missing&lt;/span&gt;
+bash /app/tools/docker/setup/setup-dotenv.sh
+
+&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$REMOTE_ENV&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;1&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;then&lt;/span&gt;
+  as_code_owner &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;php artisan key:generate&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The comments should make it clear what each line does however, there are few additional files included in this script we need to create. First is our &lt;code&gt;install.sh&lt;/code&gt; script, this will do our initial folder setup, run composer install and then set the correct file and folder permissions across our project.&lt;/p&gt;
+
+&lt;p&gt;The second included script is used to create our &lt;code&gt;.env&lt;/code&gt; file from our environment variables. Even though technically Laravel can read our environment variables directly, the file needs to exist to generate a new key as Laravel will save the generated key to this file.&lt;/p&gt;
+
+&lt;p&gt;Lets add these files into &lt;code&gt;tools/docker/setup&lt;/code&gt; -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;tools/docker/setup/install.sh&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;set&lt;/span&gt; -xe
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Source variables such as what user the site will be running as&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;source&lt;/span&gt; /usr/local/share/bootstrap/setup.sh
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Bring in the composer running function&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;source&lt;/span&gt; /usr/local/share/php/common_functions.sh
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/app&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Create missing directories&lt;/span&gt;
+/app/tools/docker/setup/setup-directories.sh
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Install the app&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_PATH&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;exit&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+run_composer
+
+chown -R &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;CODE_OWNER&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}:${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_GROUP&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt; bootstrap/cache/ storage
+chmod -R ug+rw,o-w bootstrap/cache/ storage/
+chmod +x storage
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;tools/docker/setup/setup-dotenv.sh&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;set&lt;/span&gt; -xe
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;ENV_FILE&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/app/.env&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt; ! -f &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ENV_FILE&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;then&lt;/span&gt;
+  touch &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ENV_FILE&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;APP_ENV=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_ENV&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;production&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;APP_KEY=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_KEY&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;base64:OQ8H9vjocvQh284ojDBrODQ2HkrgWGDvdLCaQniHz0M=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;APP_DEBUG=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_DEBUG&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;APP_URL=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_URL&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;https://laravel-demo.dev&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;DB_CONNECTION=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_CONNECTION&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mysql&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;DB_HOST=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_HOST&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;database&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;DB_PORT=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PORT&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;3306&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;DB_DATABASE=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_DATABASE&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;laravel&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;DB_USERNAME=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_USERNAME&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;laravel&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;DB_PASSWORD=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;laravel&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;MAIL_DRIVER=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;smtp&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;MAIL_HOST=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_HOST&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mailtrap.io&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;MAIL_PORT=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_PORT&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;2525&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;MAIL_USERNAME=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_USERNAME&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;MAIL_PASSWORD=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;MAIL_ENCRYPTION=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_ENCRYPTION&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;CACHE_DRIVER=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;CACHE_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;redis&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;SESSION_DRIVER=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;SESSION_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;redis&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;QUEUE_DRIVER=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;QUEUE_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;database&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;REDIS_HOST=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;REDIS_HOST&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;redis&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;REDIS_PASSWORD=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;REDIS_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;REDIS_PORT=${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;REDIS_PORT&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;6379&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt; &amp;gt;&amp;gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ENV_FILE&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Allow the web server user to read this file in, and the build user to run `php artisan key:generate`&lt;/span&gt;
+chown &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;CODE_OWNER&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;:&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_GROUP&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ENV_FILE&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;
+chmod &lt;span style=&#34;color: #ae81ff&#34;&gt;640&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ENV_FILE&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Included from the &lt;code&gt;install.sh&lt;/code&gt; file is -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;tools/docker/setup/setup-directories.sh&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;set&lt;/span&gt; -xe
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/app&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Create new directories&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;PUBLIC_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_PATH&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}/public&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;STORAGE_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_PATH&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}/storage&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;FRAMEWORK_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;STORAGE_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}/framework&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;CACHE_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;FRAMEWORK_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}/cache&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;VIEWS_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;FRAMEWORK_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}/views&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;SESSIONS_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;FRAMEWORK_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}/sessions&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Create missing storage directories&lt;/span&gt;
+mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;PUBLIC_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;STORAGE_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;FRAMEWORK_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;CACHE_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;VIEWS_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;SESSIONS_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Lets now create our custom environment variables file -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;tools/docker/usr/local/share/env/20-project&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;WORK_DIRECTORY&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;WORK_DIRECTORY&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;/app&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;WEB_DIRECTORY&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;WEB_DIRECTORY&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;WORK_DIRECTORY&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;/public&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;STORAGE_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;STORAGE_DIR&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;WORK_DIRECTORY&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;/storage&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;UPLOADS_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;UPLOADS_DIR&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;STORAGE_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;/app/public/uploads&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;FRAMEWORK_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;FRAMEWORK_DIR&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;STORAGE_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;/framework&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CACHE_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;CACHE_DIR&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;FRAMEWORK_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;/cache&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;VIEWS_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;VIEWS_DIR&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;FRAMEWORK_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;/views&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;SESSIONS_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;CACHE_DIR&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;SESSIONS_DIR&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;/sessions&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_ENV&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_ENV&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;production&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_KEY&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_KEY&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;base64:OQ8H9vjocvQh284ojDBrODQ2HkrgWGDvdLCaQniHz0M=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_DEBUG&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_DEBUG&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_URL&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;APP_URL&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;https://laravel-demo.dev&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_CONNECTION&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_CONNECTION&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mysql&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_HOST&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_HOST&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;database&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PORT&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PORT&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;3306&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_DATABASE&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_DATABASE&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;laravel&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_USERNAME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_USERNAME&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;laravel&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;laravel&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;smtp&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_HOST&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_HOST&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mailtrap.io&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_PORT&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_PORT&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;2525&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_USERNAME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_USERNAME&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_ENCRYPTION&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;MAIL_ENCRYPTION&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CACHE_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;CACHE_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;redis&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;SESSION_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;SESSION_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;redis&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;QUEUE_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;QUEUE_DRIVER&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;database&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;REDIS_HOST&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;REDIS_HOST&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;redis&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;REDIS_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;REDIS_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;REDIS_PORT&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;REDIS_HOST_PORT&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;6379&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For the majority of this file we are setting environment variables using the default Laravel variables found in the &lt;code&gt;.env&lt;/code&gt; file, with a few extras and one exception. The &lt;code&gt;REDIS_PORT&lt;/code&gt; being set is looking for an injected variable &lt;code&gt;REDIS_HOST_PORT&lt;/code&gt;. This is to mitigate the issue where &lt;code&gt;SERVICENAME_PORT&lt;/code&gt; is a reserved keyword in &lt;code&gt;docker-compose&lt;/code&gt; which ultimately sets the &lt;code&gt;redis&lt;/code&gt; connection to &lt;code&gt;tcp://ip.ad.dr.ress:port&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For more information on how the custom environment variables are loaded please refer to the main base image &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/ubuntu/16.04#default-environment-variables&#34;&gt;readme&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The only thing left to do for our Docker configuration is to setup our &lt;code&gt;docker-compose.yml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;docker-compose.yml&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;version&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;2&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;.&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;APP_ENV&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;links&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;database&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;redis&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;expose&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;443&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;80:80&amp;quot;&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;443:443&amp;quot;&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;volumes&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;.:/app&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+          &lt;span style=&#34;color: #ae81ff&#34;&gt;APP_USER_LOCAL&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;true&amp;quot;&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;database&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;quay.io/continuouspipe/mysql5.7:stable&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;laravel&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;MYSQL_DATABASE&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;laravel&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;MYSQL_USER&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;laravel&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;MYSQL_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;laravel&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;expose&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;3306&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;3360:3360&amp;quot;&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;redis&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;quay.io/continuouspipe/redis3:stable&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;expose&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;6379&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;6379:6379&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here we have three services, &lt;code&gt;web&lt;/code&gt;, &lt;code&gt;database&lt;/code&gt; and &lt;code&gt;redis&lt;/code&gt;. Our &lt;code&gt;web&lt;/code&gt; service is our main service that builds from our Dockerfile previously mentioned. This will link to our &lt;code&gt;database&lt;/code&gt; and &lt;code&gt;redis&lt;/code&gt; services which use &lt;code&gt;quay.io/continuouspipe/mysql5.7:stable&lt;/code&gt; and &lt;code&gt;quay.io/continuouspipe/redis3:stable&lt;/code&gt; respectivly. These are just standard &lt;code&gt;redis:3.0&lt;/code&gt; and &lt;code&gt;mysql:5.7&lt;/code&gt; official images in a simple wrapper that allows a faster patching mechanism.&lt;/p&gt;
+
+&lt;p&gt;We are injecting &lt;code&gt;APP_ENV&lt;/code&gt; into our web container as a build argument. This will allow &lt;code&gt;composer install&lt;/code&gt; to run on &lt;code&gt;docker-compose up&lt;/code&gt;. Essentially, this means a developer can simply clone the project repo and start the Docker container and all the setup is handled for them. No more manual steps should be required.&lt;/p&gt;
+
+&lt;p&gt;Additionally our web container is exposing both port &lt;code&gt;80&lt;/code&gt; and &lt;code&gt;443&lt;/code&gt;, this is because our base &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx&#34;&gt;php7-nginx&lt;/a&gt; image is creating a self signed SSL certificate and forcing our app to use &lt;code&gt;https://&lt;/code&gt; as default.&lt;/p&gt;
+
+&lt;p&gt;There is an additional environment variable being set for our &lt;code&gt;web&lt;/code&gt; container, &lt;code&gt;APP_USER_LOCAL&lt;/code&gt;, which is used to fix volume permission issues.&lt;/p&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;APP_USER_LOCAL&lt;/code&gt; should only be used in development as using this could cause a security risk. Please see &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/ubuntu/16.04#volume-permission-fixes&#34;&gt;Volume Permission Fixes&lt;/a&gt; for more information&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Docker needs to be able to execute the files we have in &lt;code&gt;tools/docker/setup&lt;/code&gt;. Lets make sure that all files have execute permissions -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ chmod -R +x tools/docker/setup
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We can now start our Docker containers -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ docker-compose up
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If everything has gone to plan, we should now see the famous &amp;ldquo;Laravel&amp;rdquo; splash page at &lt;code&gt;https://localhost&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;prepare-to-build-on-continuouspipe&#34;&gt;Prepare to build on ContinuousPipe&lt;/h3&gt;
+
+&lt;p&gt;We configure ContinuousPipe with a &lt;code&gt;continuous-pipe.yml&lt;/code&gt; file in the root of our project. This is the main configuration file that defines each of our tasks to be executed. As this configuration file is YAML, please ensure proper indentation is set, otherwise ContinuousPipe will fail to load the configuration file correctly.&lt;/p&gt;
+
+&lt;p&gt;First thing we define is some environment variables -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;continuous-pipe.yaml (partial)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;APP_ENV&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;production&amp;quot;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;REMOTE_ENV&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;1&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We are simply setting a the &lt;code&gt;APP_ENV&lt;/code&gt; for use within our build and &lt;code&gt;REMOTE_ENV&lt;/code&gt; which can be used to distinguish the difference between a local docker build and a ContinuousPipe build. This can be useful when you need to to pull additional assets from 3rd party services or perhaps build the frontend assets in your deployments. For this tutorial, we are using this to allow us to generate a new &lt;code&gt;APP_KEY&lt;/code&gt; during the deployment stage.&lt;/p&gt;
+
+&lt;p&gt;Next we define our tasks, our first task is building our image -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;continuous-pipe.yaml (partial)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;APP_ENV&lt;/span&gt;
+                  &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${APP_ENV}&lt;/span&gt;
+
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;quay.io/continuouspipe/laravel-demo&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here we injecting the &lt;code&gt;APP_ENV&lt;/code&gt; build argument, the same as we did for our &lt;code&gt;docker-compose.yml&lt;/code&gt; file. We also define the registry repository address where we want to push our freshly built images to.&lt;/p&gt;
+
+&lt;p&gt;The next task to run is the &lt;code&gt;infrastructure&lt;/code&gt; task -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;continuous-pipe.yaml (partial)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;infrastructure&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+   &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+       &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLUSTER}&lt;/span&gt;
+       &lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+           &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;project-key-&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;code_reference.branch&amp;#39;&lt;/span&gt;
+
+       &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+           &lt;span style=&#34;color: #ae81ff&#34;&gt;database&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+               &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;volumes&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;persistent&lt;/span&gt;
+                         &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;database-volume&lt;/span&gt;
+                         &lt;span style=&#34;color: #ae81ff&#34;&gt;capacity&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;5Gi&lt;/span&gt;
+                         &lt;span style=&#34;color: #ae81ff&#34;&gt;storage_class&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;default&lt;/span&gt;
+
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;volume_mounts&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;database-volume&lt;/span&gt;
+                         &lt;span style=&#34;color: #ae81ff&#34;&gt;mount_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;/var/lib/mysql&lt;/span&gt;
+
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;/usr/local/bin/docker-entrypoint.sh&lt;/span&gt;
+                       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;mysqld&lt;/span&gt;
+                       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;--ignore-db-dir=lost+found&lt;/span&gt;
+                       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;--max_allowed_packet=128M&lt;/span&gt;
+
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;3306&lt;/span&gt;
+
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;resources&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;requests&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;cpu&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;50m&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;memory&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;250Mi&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;limits&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;cpu&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;500m&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;memory&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;500Mi&lt;/span&gt;
+
+           &lt;span style=&#34;color: #ae81ff&#34;&gt;redis&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+               &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment_strategy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;readiness_probe&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;tcp&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;port&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;6379&lt;/span&gt;
+
+               &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;6379&lt;/span&gt;
+
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;resources&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;requests&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;cpu&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;50m&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;memory&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;100Mi&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;limits&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;cpu&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;250m&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;memory&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;250Mi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is where we build our redis and database containers. We define a persistent volume to store our database so we don&amp;rsquo;t need to build again on subsequent deployments. We are also setting the required cluster resources for these containers. Notice we set &lt;code&gt;cluster: ${CLUSTER}&lt;/code&gt;. This is pulling the cluster name we previously set in the ContinuousPipe UI under Clusters.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;An important change for each of our tasks is to define the project key. Where I have set an environment name as &lt;code&gt;&amp;quot;project-key-&amp;quot; ~ code_reference.branch&lt;/code&gt;, you should replace the &lt;code&gt;project-key&lt;/code&gt; with your project name you defined earlier in the ContinuousPipe setup step.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Our next task in the list is &lt;code&gt;initialization&lt;/code&gt; -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;continuous-pipe.yaml (partial)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;initialization&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLUSTER}&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;project-key-&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;code_reference.branch&amp;#39;&lt;/span&gt;
+
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;from_service&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;
+
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;commands&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;tools/docker/setup/setup.sh&lt;/span&gt;
+
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;&amp;amp;WEB_ENV_VARS&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;APP_ENV&lt;/span&gt;
+              &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${APP_ENV}&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;REMOTE_ENV&lt;/span&gt;
+              &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${REMOTE_ENV}&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;APP_URL&lt;/span&gt;
+              &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${APP_URL}&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;APP_USER_LOCAL&lt;/span&gt;
+              &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;filter&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;expression&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;tasks.infrastructure.services.database.created&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The purpose of this task is to allow us to run any database specific tasks for our application. This might be the combination of a &lt;code&gt;php artisan migrate&lt;/code&gt; and &lt;code&gt;php artisan db:seed&lt;/code&gt;. Notice we are using the &lt;code&gt;filter&lt;/code&gt; &lt;code&gt;expression: &#39;tasks.infrastructure.services.database.created&#39;&lt;/code&gt;, this ensures we only run this when we know the database is finished building. We run these commands by executing a script &lt;code&gt;tools/docker/setup/setup.sh&lt;/code&gt; inside the container that has had some specific environment variables set.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note: We have explicitly set &lt;code&gt;APP_USER_LOCAL&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; to elevate any security concerns previously mentioned with this setting&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The last task in this configuration is &lt;code&gt;application&lt;/code&gt; -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;continuous-pipe.yaml (partial)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;application&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+   &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+       &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLUSTER}&lt;/span&gt;
+       &lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+           &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;project-key-&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;code_reference.branch&amp;#39;&lt;/span&gt;
+
+       &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+           &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+               &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;accessibility&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;from_external&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;true&lt;/span&gt;
+
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;*WEB_ENV_VARS&lt;/span&gt;
+
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;resources&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;requests&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;cpu&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;50m&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;memory&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;500Mi&lt;/span&gt;
+
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;limits&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;cpu&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;
+                           &lt;span style=&#34;color: #ae81ff&#34;&gt;memory&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;2G&lt;/span&gt;
+
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;
+                       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;443&lt;/span&gt;
+
+               &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment_strategy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;readiness_probe&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;tcp&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;port&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;initial_delay_seconds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;30&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;period_seconds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;30&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;failure_threshold&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;120&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here we are creating a new web container, making it accessible to the public which instructs ContinuousPipe to get an IP address from the load balancer. We inject the environment variables previously defined in the &lt;code&gt;initalization&lt;/code&gt; task, and finally we configure the resources required from the cluster and open up the required ports, &lt;code&gt;80&lt;/code&gt; and &lt;code&gt;443&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The last section of this task is the &lt;code&gt;deployment_strategy&lt;/code&gt; which configures how ContinuousPipe will determine when the container is finished building and if it was successful or not. For more information on health checks please refer to &lt;a href=&#34;http://docs.continuouspipe.io/configuration/deployments/#health-checks&#34;&gt;http://docs.continuouspipe.io/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that we have defined our &lt;code&gt;continuous-pipe.yml&lt;/code&gt; file lets configure that one last script we set to use in the &lt;code&gt;initialization&lt;/code&gt; task. Create a new file &lt;code&gt;tools/docker/setup/setup.sh&lt;/code&gt; with the following -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;tools/docker/setup/setup.sh&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;set&lt;/span&gt; -xe
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Bring in the as_code_owner function, to run commands as the user who owns the code.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;# Usually the &amp;quot;build&amp;quot; user.&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;source&lt;/span&gt; /usr/local/share/bootstrap/setup.sh
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;source&lt;/span&gt; /usr/local/share/bootstrap/common_functions.sh
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;WORK_DIRECTORY&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/app&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_CONNECTION&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_CONNECTION&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mysql&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_HOST&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_HOST&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;database&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PORT&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PORT&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;3306&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_DATABASE&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_DATABASE&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;laravel&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_USERNAME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_USERNAME&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;laravel&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;laravel&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_ROOT_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DB_PASSWORD&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;laravel&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;WORK_DIRECTORY&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;}&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;exit&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+as_code_owner &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;php artisan migrate&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We are simply running a &lt;code&gt;php artisan migrate&lt;/code&gt; here to setup all our defined database tables.&lt;/p&gt;
+
+&lt;p&gt;OK, we are finally ready to push all our code to GitHub and utilise ContinuousPipe to build and deploy our application on the cluster.&lt;/p&gt;
+
+&lt;p&gt;Lets now push our code to GitHub to trigger ContinuousPipe -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git init
+$ git add -A
+$ git commit -m &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Initial Commit&amp;quot;&lt;/span&gt;
+$ git remote add origin https://github.com:continuouspipe/demo-laravel.git
+$ git push -u origin master
+Counting objects: &lt;span style=&#34;color: #ae81ff&#34;&gt;128&lt;/span&gt;, &lt;span style=&#34;color: #66d9ef&#34;&gt;done&lt;/span&gt;.
+Delta compression using up to &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; threads.
+Compressing objects: &lt;span style=&#34;color: #ae81ff&#34;&gt;100&lt;/span&gt;% &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;107&lt;/span&gt;/107&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt;, &lt;span style=&#34;color: #66d9ef&#34;&gt;done&lt;/span&gt;.
+Writing objects: &lt;span style=&#34;color: #ae81ff&#34;&gt;100&lt;/span&gt;% &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;128&lt;/span&gt;/128&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt;, &lt;span style=&#34;color: #ae81ff&#34;&gt;206&lt;/span&gt;.86 KiB &lt;span style=&#34;color: #f8f8f2&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt; bytes/s, &lt;span style=&#34;color: #66d9ef&#34;&gt;done&lt;/span&gt;.
+Total &lt;span style=&#34;color: #ae81ff&#34;&gt;128&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;delta &lt;span style=&#34;color: #ae81ff&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt;, reused &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;delta &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt;
+remote: Resolving deltas: &lt;span style=&#34;color: #ae81ff&#34;&gt;100&lt;/span&gt;% &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;8&lt;/span&gt;/8&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt;, &lt;span style=&#34;color: #66d9ef&#34;&gt;done&lt;/span&gt;.
+To github.com:continuouspipe/demo-laravel.git
+ * &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;new branch&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;      master -&amp;gt; master
+Branch master &lt;span style=&#34;color: #f8f8f2&#34;&gt;set&lt;/span&gt; up to track remote branch master from origin.
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Thats it, we should now see ContinuousPipe working through our defined tasks -&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/guides/laravel/flow-overview.png&#34; alt=&#34;Dashboard&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once all our tasks have finished we should see a success status, everything green and a public endpoint for the web service.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/guides/laravel/tide-complete-tasks.png&#34; alt=&#34;Complete Tasks&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we now visit this endpoint in the browser e.g. &lt;code&gt;https://104.199.75.150/&lt;/code&gt; we should now see that Laravel splash page we previously seen when running in our local Docker build -&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;remote-development-environment&#34;&gt;Remote development environment&lt;/h2&gt;
+
+&lt;p&gt;Since our project is essentially just running in docker and it now works on both local Docker and ContinuousPipe we can effectively turn our cluster performance into a really fast development environment.&lt;/p&gt;
+
+&lt;p&gt;We are going to instruct ContinuousPipe to build us a new environment by creating our own &amp;ldquo;dev&amp;rdquo; branch in our GitHub repository. When complete, we will watch our local file system for any changes to our codebase and synchronise these changes into our running &lt;code&gt;web&lt;/code&gt; container. It&amp;rsquo;s really that simple.&lt;/p&gt;
+
+&lt;h3 id=&#34;install-cp-remote&#34;&gt;Install &lt;code&gt;cp-remote&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;cp-remote&lt;/code&gt; is available on OSX, Linux and Windows. Please refer to the &lt;a href=&#34;./remote-development/getting-started/#installation&#34;&gt;remote development installation instructions&lt;/a&gt; for each of the platforms.&lt;/p&gt;
+
+&lt;p&gt;For simplicity, here is the OSX installation instructions&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo curl https://raw.githubusercontent.com/continuouspipe/remote-environment-client/gh-pages/0.0.1/darwin-amd64.gz &amp;gt; cp-remote.gz
+gzip -d cp-remote.gz&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+mv cp-remote /usr/local/bin/cp-remote
+chmod +x /usr/local/bin/cp-remote
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rsync&lt;/code&gt; &amp;amp; &lt;code&gt;git&lt;/code&gt; are required for &lt;code&gt;cp-remote&lt;/code&gt; to work&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+
+&lt;p&gt;Now that we have &lt;code&gt;cp-remote&lt;/code&gt; installed, we are ready to setup our remote environment. From the root of your project run the following -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote setup
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You will now be asked a series of questions that relate to how you have configured ContinuousPipe and your cluster details. Please refer to the &lt;a href=&#34;./remote-development/command-setup/&#34;&gt;remote development setup instructions&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;h3 id=&#34;build-the-environment&#34;&gt;Build the environment&lt;/h3&gt;
+
+&lt;p&gt;Run the following -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote build
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is now going to create a new git branch from the current branch with the name you defined in the setup. Its going to push this branch to GitHub which will then trigger ContinuousPipe to create you a new developer environment. You should now see the something like -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;Pushing to remote
+Total &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;delta &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt;, reused &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;delta &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt;
+To github.com:continuouspipe/demo-laravel.git
+ * &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;new branch&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;      master -&amp;gt; dev-richdynamix
+Continuous Pipe will now build your developer environment
+You can see when it is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/span&gt; and find its IP address at https://ui.continuouspipe.io/
+Please &lt;span style=&#34;color: #f8f8f2&#34;&gt;wait&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;until&lt;/span&gt; the build is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/span&gt; to use any of this tool&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;&amp;#39;&lt;/span&gt;s other commands.
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/guides/laravel/dashboard-with-dev.png&#34; alt=&#34;Dashboard with dev environment&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can check that the environment is ready either from the ContinuousPipe UI or by running the following -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote ck
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Which should display something like this  -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;checking connection &lt;span style=&#34;color: #66d9ef&#34;&gt;for&lt;/span&gt; environment laravel-demo-dev-richdynamix
+Connected successfully and found &lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt; pods &lt;span style=&#34;color: #66d9ef&#34;&gt;for&lt;/span&gt; the environment
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that we know all three containers (pods) have been setup we need to obtain the IP address from the ContinuousPipe UI for that tide. Lets visit the IP address in our browser and once again, we will see the Laravel splash page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;watching-for-changes&#34;&gt;Watching for changes&lt;/h3&gt;
+
+&lt;p&gt;From within your project root, lets start watching for file changes -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote watch
+Watching &lt;span style=&#34;color: #66d9ef&#34;&gt;for&lt;/span&gt; changes. Quit anytime with Ctrl-C.
+
+.cp-remote-ignore was missing or empty and has been created with the default ignore settings.
+
+Destination Pod: web-3232721034-k6g9t
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here we run the &lt;code&gt;cp-remote watch&lt;/code&gt; command which will use our default &lt;code&gt;web&lt;/code&gt; container as the destination pod.&lt;/p&gt;
+
+&lt;p&gt;Lets edit some code and see our changes reflected in the browser. Open &lt;code&gt;resources/views/welcome.blade.php&lt;/code&gt; and change the title on &lt;code&gt;Line 82&lt;/code&gt;. I will change it to &amp;ldquo;Awesome Laravel&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/guides/laravel/sublime.png&#34; alt=&#34;Sublime&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When you save this file from within your editor, the &lt;code&gt;cp-remote watch&lt;/code&gt; command will pick up these changes and &lt;code&gt;RSYNC&lt;/code&gt; them to the web container. Your terminal should look something like the following -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote watch
+Watching &lt;span style=&#34;color: #66d9ef&#34;&gt;for&lt;/span&gt; changes. Quit anytime with Ctrl-C.
+
+.cp-remote-ignore was missing or empty and has been created with the default ignore settings.
+
+Destination Pod: web-3232721034-k6g9t
+Synchronizing filesystem changes...
+resources/views/welcome.blade.php
+Done.
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now when you check the site in the browser you should see the following -&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./images/guides/laravel/awesome-laravel.png&#34; alt=&#34;Awesome Laravel&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is a quick screencast of that syncing in action -&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;./images/guides/laravel/awesome-laravel-screencast.gif&#34;&gt;&lt;img src=&#34;./images/guides/laravel/awesome-laravel-screencast.gif&#34; alt=&#34;Laravel Screencast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The syncing speeds are pretty fast, so fast in fact, I can run this from a train wifi while retaining the performance of the cloud hosting.&lt;/p&gt;
+
+&lt;p&gt;For full instructions on other commands in the &lt;code&gt;cp-remote&lt;/code&gt; CLI tool, such as port forwarding, connecting to the web container via BASH or even destroying the environment visit the &lt;a href=&#34;https://github.com/continuouspipe/remote-environment-client&#34;&gt;README&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;ContinuousPipe is a fantastic tool for simplifying container orchestration and deployment. Its makes the CI/CD workflow much more productive than similar tools available. One of the best and unique features of ContinuousPipe is the remote developer environments. This not only reduces the resource requirements of the developer&amp;rsquo;s laptop, but it also ensures compatibility across platforms.&lt;/p&gt;
+
+&lt;p&gt;There is far more we can do with ContinuousPipe to increase productivity, for example, we can use filters to determine when tasks are run. Perhaps we only want certain branches to build environments, or a certain GitHub label on a Pull-Request to trigger the build. We can also go one step further and separate our builds into pipelines. Perhaps we want to have a separate pipeline for production compared to development or testing. This is useful if there are certain environment variables and tasks that should only be used in development but not production.&lt;/p&gt;
+
+&lt;p&gt;This getting started guide should be treated as a first step, please refer to the &lt;a href=&#34;http://docs.continuouspipe.io&#34;&gt;http://docs.continuouspipe.io&lt;/a&gt; for more advanced tutorials.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuration: How do I set environment variables?</title>
+      <link>/faq/how-do-I-set-environment-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/faq/how-do-I-set-environment-variables/</guid>
+      <description>&lt;p&gt;You may want to change the behaviour of an application based on what environment it is deployed to. This can be done by changing the value of an environment variable passed to a container. For example you may want to set the &lt;code&gt;SYMFONY_ENV&lt;/code&gt; environment variable to &amp;ldquo;prod&amp;rdquo; for production, UAT and feature branch environments. We can do this by creating a variable within &lt;code&gt;continuous-pipe.yml&lt;/code&gt; and then using it as the value of the environment variable passed to the service.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;SYMFONY_ENVIRONMENT&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;prod&lt;/span&gt;
+ 
+&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;SYMFONY_ENV&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${SYMFONY_ENVIRONMENT}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In the &lt;code&gt;variables&lt;/code&gt; section a &lt;code&gt;SYMFONY_ENVIRONMENT&lt;/code&gt; variable is created and assigned a value of &amp;ldquo;prod&amp;rdquo;. This variable then becomes available in the &lt;code&gt;tasks&lt;/code&gt; section where it is passed to the web service as the environment variable &lt;code&gt;SYMFONY_ENV&lt;/code&gt; (the local variable could also be called &amp;ldquo;SYMFONY_ENV&amp;rdquo; instead of &amp;ldquo;SYMFONY_ENVIRONMENT&amp;rdquo; but is different in this example to distinguish between the variable types).&lt;/p&gt;
+
+&lt;p&gt;You can use conditions to set different values for the variable:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;SYMFONY_ENVIRONMENT&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;prod&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;code_reference.branch in [&amp;quot;uat&amp;quot;, &amp;quot;production&amp;quot;]&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;SYMFONY_ENVIRONMENT&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;dev&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;code_reference.branch not in [&amp;quot;uat&amp;quot;, &amp;quot;production&amp;quot;]&lt;/span&gt;
+ 
+&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;SYMFONY_ENV&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${SYMFONY_ENVIRONMENT}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here &lt;code&gt;SYMFONY_ENVIRONMENT&lt;/code&gt; is set to &amp;ldquo;prod&amp;rdquo; for the &amp;ldquo;uat&amp;rdquo; and &amp;ldquo;production&amp;rdquo; branches only and &amp;ldquo;dev&amp;rdquo; for all others.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Working with a Different Environment</title>
+      <link>/remote-development/working-with-different-environments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/working-with-different-environments/</guid>
+      <description>
+
+&lt;p&gt;Sometimes you may want to use &lt;code&gt;cp-remote&lt;/code&gt; to access an environment that you did not build using a token. Examples of this might be:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You want to access a feature branch environment&lt;/li&gt;
+&lt;li&gt;You want to access an environment created by a pull request&lt;/li&gt;
+&lt;li&gt;You want to access an environment built by another developer using their own token&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;finding-the-environment-id&#34;&gt;Finding the Environment Id&lt;/h2&gt;
+
+&lt;p&gt;Before starting, you will need to find an environment identifier to supply to the &lt;code&gt;cp-remote&lt;/code&gt; option &lt;code&gt;--kube-environment-name|-e&lt;/code&gt;. You can find it in the environment tab of a flow at the top of each environment pane:&lt;/p&gt;
+
+
+&lt;figure class=&#34;half-width&#34;&gt;
+    
+        &lt;img src=&#34;./images/remote-development/environment-id-default.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;As you can see here the environment id is &lt;code&gt;86ec932a-2683-11e7-8779-0a580a840466-feature-mynewfeature&lt;/code&gt;. The format is &lt;code&gt;&amp;lt;project_key&amp;gt;-&amp;lt;branch-name&amp;gt;&lt;/code&gt; where the project key is &amp;ldquo;86ec932a-2683-11e7-8779-0a580a840466&amp;rdquo; and branch name is &amp;ldquo;feature/mynewfeature&amp;rdquo; and has been &lt;a href=&#34;https://en.wikipedia.org/wiki/Semantic_URL#Slug&#34;&gt;slugified&lt;/a&gt; to become &amp;ldquo;feature-mynewfeature&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;You may notice that the environment identifier for a project looks much shorter, like this:&lt;/p&gt;
+
+
+&lt;figure class=&#34;half-width&#34;&gt;
+    
+        &lt;img src=&#34;./images/remote-development/environment-id-config.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;Here the environment id is &lt;code&gt;sfdemo-feature-mynewfeature&lt;/code&gt;. This is because the default naming behaviour for environments has been changed in the deployment configuration as follows, making the naming format &lt;code&gt;sfdemo-&amp;lt;branch-name&amp;gt;&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tasks:
+    # ...
+    deployment:
+        deploy:
+            # ...
+            environment:
+                name: &#39;&amp;quot;sfdemo-&amp;quot; ~ code_reference.branch&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;token-mode&#34;&gt;When You Have An Existing Environment Built Using a Token&lt;/h2&gt;
+
+&lt;p&gt;If you have already set up a remote development environment using a token, you can use the &lt;code&gt;--kube-environment-name|-e&lt;/code&gt; option to run commands against a different environment than the one specified during setup.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;The environment must be on the same cluster as the token built environment to use the &lt;code&gt;--kube-environment-name&lt;/code&gt; option.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The commands you can use with a token setup and the &lt;code&gt;--kube-environment-name&lt;/code&gt; option are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./remote-development/command-bash/&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./remote-development/command-check-connection/&#34;&gt;checkconnection&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./remote-development/command-exec/&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./remote-development/command-forward/&#34;&gt;forward&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./remote-development/command-fetch/&#34;&gt;fetch&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./remote-development/command-sync/&#34;&gt;sync&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./remote-development/command-watch/&#34;&gt;watch&lt;/a&gt; command&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, to open a bash session on the &lt;code&gt;web&lt;/code&gt; container of the &lt;code&gt;php-example-cpdev-foo&lt;/code&gt; environment you can run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash --environment php-example-cpdev-foo --service web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash -e php-example-cpdev-foo -s web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;interactive-mode&#34;&gt;When You Have No Existing Environment (Using Interactive Mode)&lt;/h2&gt;
+
+&lt;p&gt;If you have no environment, you can use the &lt;code&gt;--interactive|-i&lt;/code&gt; option to run a limited set of commands against an environment.&lt;/p&gt;
+
+&lt;p&gt;The commands you can use with the &lt;code&gt;--interactive&lt;/code&gt; option are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./remote-development/command-init/#interactive-mode&#34;&gt;init&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./remote-development/command-bash/#interactive-mode&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./remote-development/command-exec/#interactive-mode&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you have not previously run interactive mode with any command, you will first need to generate a &lt;a href=&#34;https://authenticator.continuouspipe.io/account/api-keys&#34;&gt;ContinuousPipe API key&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The first time you run the the &lt;code&gt;--interactive&lt;/code&gt; option with any of the above commands you will be prompted to enter your ContinuousPipe username and the ContinuousPipe API key you generated. These credentials are then stored in a global configuration file &lt;code&gt;~/.cp-remote/config.yml&lt;/code&gt; (on Linux/OSX) &lt;code&gt;C:\Users\{YourUserName}\.cp-remote\config.yml&lt;/code&gt; (on Windows), so you won&amp;rsquo;t need to enter them again.&lt;/p&gt;
+
+&lt;p&gt;For the &lt;code&gt;bash&lt;/code&gt; and &lt;code&gt;exec&lt;/code&gt; commands you will also need to supply the following flags:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--kube-environment-name&lt;/code&gt; or &lt;code&gt;-e&lt;/code&gt; - the environment identifier&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--service&lt;/code&gt; or &lt;code&gt;-s&lt;/code&gt; - the service name&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--flow-id&lt;/code&gt; or &lt;code&gt;-f&lt;/code&gt; - the flow identifier&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, to open a bash session on the &lt;code&gt;web&lt;/code&gt; container of the &lt;code&gt;php-example-cpdev-foo&lt;/code&gt; environment you can run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash --interactive --kube-environment-name php-example-cpdev-foo --service web --flow-id 1268cc54-0c360641bb54
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash -i -e php-example-cpdev-foo -s web -f 1268cc54-0c360641bb54
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or, if you don&amp;rsquo;t know which flag options to use, simply run the following and you will be guided to the right pod&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp-remote bash -i
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;./remote-development/command-bash/#interactive-mode&#34;&gt;bash command&lt;/a&gt; and &lt;a href=&#34;./remote-development/command-exec/#interactive-mode&#34;&gt;exec command&lt;/a&gt; can be run in interactive mode directly without having to run &lt;code&gt;cp-remote init -i&lt;/code&gt; first.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;If you need to reset the stored username and API key, you need to run the &lt;a href=&#34;./remote-development/command-init/#interactive-mode&#34;&gt;init command&lt;/a&gt; with the &lt;code&gt;--reset&lt;/code&gt; flag.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Working with a Direct Connection to the Cluster</title>
+      <link>/remote-development/working-with-direct-cluster-connection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/working-with-direct-cluster-connection/</guid>
+      <description>&lt;p&gt;Edit the &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; local configuration file, set &lt;code&gt;kube-proxy-enabled&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; and add the cluster ip, username and password.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+kube-proxy-enabled: false
+kube-direct-cluster-addr: https://111.222.333.444
+kube-direct-cluster-user: {cluster-user}
+kube-direct-cluster-password: {cluster-password}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After this changes are made, you can simply run any of the command such as &lt;code&gt;cp-remote bash&lt;/code&gt; and the connection will be made directly to the cluster.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Advanced Setup</title>
+      <link>/remote-development/advanced-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remote-development/advanced-setup/</guid>
+      <description>
+
+&lt;h2 id=&#34;usage-logging&#34;&gt;Usage Logging&lt;/h2&gt;
+
+&lt;p&gt;Usage stats for the longer running commands (build and resync) can be logged to &lt;a href=&#34;https://keen.io&#34;&gt;https://keen.io&lt;/a&gt; by providing a write key, project id and event collection name when running the setup command. No stats will be logged if these are not provided.&lt;/p&gt;
+
+&lt;h2 id=&#34;anybar-notifications&#34;&gt;AnyBar Notifications&lt;/h2&gt;
+
+&lt;p&gt;To get a status notification for the longer running commands (watch and resync) on OSX you can install &lt;a href=&#34;https://github.com/tonsky/AnyBar&#34;&gt;AnyBar&lt;/a&gt; and provide a port number to use for it during the &lt;code&gt;setup&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;h2 id=&#34;ignoring-files-directories-when-syncing&#34;&gt;Ignoring Files/Directories when Syncing&lt;/h2&gt;
+
+&lt;p&gt;Files/directories can be excluded from being synced by the &lt;code&gt;watch&lt;/code&gt;, &lt;code&gt;resync&lt;/code&gt; and &lt;code&gt;fetch&lt;/code&gt; commands. This is done by adding the files/directories to ignore to a &lt;code&gt;.cp-remote-ignore&lt;/code&gt; file in the project root. This uses the standard rsync excludes-from format.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Concepts: ContinuousPipe Concepts</title>
+      <link>/basics/concepts-continuous-pipe-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/basics/concepts-continuous-pipe-concepts/</guid>
+      <description>
+
+&lt;h2 id=&#34;system-overview&#34;&gt;System Overview&lt;/h2&gt;
+
+
+&lt;figure class=&#34;diagram concepts&#34;&gt;
+    
+        &lt;img src=&#34;./images/basics/cp-system-overview.svg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
+
+&lt;p&gt;A project is where the ContinuousPipe workflow begins. It is used to group together &lt;a href=&#34;./basics/concepts-build-concepts/&#34;&gt;Docker registries&lt;/a&gt; and &lt;a href=&#34;./basics/concepts-deployment-concepts/&#34;&gt;Kubernetes clusters&lt;/a&gt;, and configure user access.&lt;/p&gt;
+
+&lt;p&gt;Each project needs assigning at least one Docker registry. Storing the Docker registry credentials allows that registry to be specified in the YAML configuration so that ContinuousPipe can automatically push built images.&lt;/p&gt;
+
+&lt;p&gt;Similarly, each project needs assigning at least one Kubernetes cluster. Storing the Kubernetes cluster credentials allows that cluster to be specified in the YAML configuration so that ContinuousPipe can automatically create deployments.&lt;/p&gt;
+
+&lt;p&gt;When a project is created the project creator is set as an administrator user. Additional users can then be added as either administrators or basic users by sending them an invitation. Administrator users have extra privileges, such as being able to add new users, change subscription settings, change flow configuration and delete environments.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;ContinuousPipe currently uses GitHub to authenticate users, so a GitHub account is needed in order for a user to access ContinuousPipe.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;flows&#34;&gt;Flows&lt;/h2&gt;
+
+&lt;p&gt;A flow is created within a project by selecting a Git code repository. Typically a single flow is all that is needed for a project. However additional flows can easily be added to a project to represent different Git code repositories or even different components in the same Git code repository where a micro services architecture is used.&lt;/p&gt;
+
+&lt;p&gt;In parallel with the selection of a Git code repository, &lt;a href=&#34;./basics/installation-github/&#34;&gt;ContinuousPipe integration&lt;/a&gt; needs to be installed on that repository so that ContinuousPipe can respond to events such as code pushes, pull requests, and branch deletions.&lt;/p&gt;
+
+&lt;p&gt;Each flow allows YAML secrets to be defined and optionally encrypted. This allows sensitive data to be stored within ContinuousPipe rather than exposed in YAML configuration files in the Git code repository. The secrets are exposed to the YAML configuration as variables.&lt;/p&gt;
+
+&lt;h2 id=&#34;tides&#34;&gt;Tides&lt;/h2&gt;
+
+&lt;p&gt;A tide is created within a flow. It is triggered automatically by ContinuousPipe when an event occurs within the Git code repository - typically this is either a code push or a pull request.&lt;/p&gt;
+
+&lt;p&gt;The tide then reads the configuration from the branch/commit that instigated the tide. It then runs a sequence of tasks as defined in configuration to build an image and deploy it to a cluster. The result of a tide is a working environment, ready to test.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;A tide can also be triggered manually from within ContinuousPipe.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;environments&#34;&gt;Environments&lt;/h2&gt;
+
+&lt;p&gt;An environment in ContinuousPipe is a representation of a deployed pod instance within a Kubernetes cluster. ContinuousPipe creates a new environment/pod instance for each branch deployed, creating an identifier based on the branch name. The environment in ContinuousPipe monitors the cluster to make sure it is still healthy, and provides information on the containers within the pod, including log access.&lt;/p&gt;
+
+&lt;p&gt;The lifetime of an environment/pod instance is usually in step with the lifetime of the branch, and deleting the branch in Git will trigger the removal of the environment/pod instance in ContinuousPipe/Kubernetes. An environment can be manually deleted, in which case it will be recreated upon the next tide for that branch.&lt;/p&gt;
+
+&lt;h2 id=&#34;remote-development&#34;&gt;Remote Development&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;./remote-development/getting-started/&#34;&gt;Remote development&lt;/a&gt; in the ContinuousPipe context refers to the use of an environment for the incremental testing of work in development. An environment used in this way is referred to as a &amp;ldquo;remote development environment&amp;rdquo; or just &amp;ldquo;remote environment&amp;rdquo;. A specialised tool &lt;code&gt;cp-remote&lt;/code&gt; is provided to assist this process, using rsync to synchronise local filesystem changes with the remote environment. This allows local changes to be visible in the remote environment almost instantly so offering the same benefits as a VM but without requiring the same local machine resources. It also offers the benefit of centralising the devops effort needed to support development environments.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

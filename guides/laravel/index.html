@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-gb">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Getting Started with Laravel - ContinuousPipe Docs</title>
+    <meta name="generator" content="Hugo 0.18" />
+
+    
+    <meta name="description" content="Documentation for ContinuousPipe">
+    
+    <link rel="canonical" href="../../guides/laravel/">
+    
+    <meta name="author" content="Samuel Rozé">
+    
+
+    <meta property="og:url" content="/guides/laravel/">
+    <meta property="og:title" content="ContinuousPipe Docs">
+    <meta property="og:image" content="/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="ContinuousPipe Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.png">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot');
+        src: url('/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff')
+               format('woff'),
+             url('/fonts/icon.ttf')
+               format('truetype'),
+             url('/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../../stylesheets/application.css">
+    <link rel="stylesheet" href="../../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open%20Sans:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css">
+    
+    <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script src="../../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-blue palette-accent-teal">
+
+
+<div class="backdrop">
+    <div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+    <nav aria-label="Header">
+    <div class="bar default">
+        <div class="button button-menu" role="button" aria-label="Menu">
+            <label class="toggle-button icon icon-menu" for="toggle-drawer">
+                <span></span>
+            </label>
+        </div>
+        <div class="stretch">
+            <div class="title">
+                <a href="https://continuouspipe.io/" class="cp-website-link"><i class="cp-icon-logo"></i></a>
+                <a href="../../">ContinuousPipe
+                    Documentation</a>
+            </div>
+        </div>
+
+        
+        <div class="button button-twitter" role="button" aria-label="Twitter">
+            <a href="https://twitter.com/continuouspipe" title="@continuouspipe on Twitter" target="_blank"
+               class="toggle-button icon icon-twitter"></a>
+        </div>
+        
+
+        
+        <div class="button button-github" role="button" aria-label="GitHub">
+            <a href="https://github.com/continuouspipe" title="@continuouspipe on GitHub" target="_blank"
+               class="toggle-button icon icon-github"></a>
+        </div>
+        
+
+        <div class="button button-search" role="button" aria-label="Search">
+            <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+        </div>
+    </div>
+    <div class="bar search">
+        <div class="button button-close" role="button" aria-label="Close">
+            <label class="toggle-button icon icon-back" for="toggle-search"></label>
+        </div>
+        <div class="stretch">
+            <div class="field">
+                <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off"
+                       autocomplete="off" spellcheck id="algolia-query">
+            </div>
+        </div>
+        <div class="button button-reset" role="button" aria-label="Search">
+            <button class="toggle-button icon icon-close" id="reset-search"></button>
+        </div>
+    </div>
+</nav>
+
+</header>
+
+<main class="main">
+    <div class="drawer">
+        <nav aria-label="Navigation">
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a  title="Basics" href="../../basics/">
+	
+	Basics
+</a>
+
+
+        
+        <ul >
+           
+            
+            
+
+
+
+<a  title="ContinuousPipe" href="../../basics/continuous-pipe/">
+	
+	ContinuousPipe
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Concepts: ContinuousPipe Concepts" href="../../basics/concepts-continuous-pipe-concepts/">
+	
+	Concepts: ContinuousPipe Concepts
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Concepts: Configuration Concepts" href="../../basics/concepts-configuration-concepts/">
+	
+	Concepts: Configuration Concepts
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Concepts: Build Concepts" href="../../basics/concepts-build-concepts/">
+	
+	Concepts: Build Concepts
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Concepts: Deployment Concepts" href="../../basics/concepts-deployment-concepts/">
+	
+	Concepts: Deployment Concepts
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Workflow Principles" href="../../basics/workflow-principles/">
+	
+	Workflow Principles
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Installation: GitHub" href="../../basics/installation-github/">
+	
+	Installation: GitHub
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Installation: Bitbucket" href="../../basics/installation-bitbucket/">
+	
+	Installation: Bitbucket
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a  title="Quick Start" href="../../quick-start/">
+	
+	Quick Start
+</a>
+
+
+        
+        <ul >
+           
+            
+            
+
+
+
+<a  title="Creating a Project" href="../../quick-start/creating-a-project/">
+	
+	Creating a Project
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Creating a Flow" href="../../quick-start/creating-a-flow/">
+	
+	Creating a Flow
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Configuring Users" href="../../quick-start/configuring-users/">
+	
+	Configuring Users
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Configuring a Cluster" href="../../quick-start/configuring-a-cluster/">
+	
+	Configuring a Cluster
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Configuring a Registry" href="../../quick-start/configuring-a-registry/">
+	
+	Configuring a Registry
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Configuring Your Repository" href="../../quick-start/configuring-your-repository/">
+	
+	Configuring Your Repository
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Configuring a Flow" href="../../quick-start/configuring-a-flow/">
+	
+	Configuring a Flow
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Creating a Tide" href="../../quick-start/creating-a-tide/">
+	
+	Creating a Tide
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Remote Development: Installing the Client" href="../../quick-start/remote-development-installing-the-client/">
+	
+	Remote Development: Installing the Client
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Remote Development: Configuring Your Repository" href="../../quick-start/remote-development-configuring-your-repository/">
+	
+	Remote Development: Configuring Your Repository
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Remote Development: Creating a Remote Environment" href="../../quick-start/remote-development-creating-a-remote-environment/">
+	
+	Remote Development: Creating a Remote Environment
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Remote Development: Using a Remote Environment" href="../../quick-start/remote-development-using-a-remote-environment/">
+	
+	Remote Development: Using a Remote Environment
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a  title="Configuration" href="../../configuration/">
+	
+	Configuration
+</a>
+
+
+        
+        <ul >
+           
+            
+            
+
+
+
+<a  title="Configuration Files" href="../../configuration/configuration-files/">
+	
+	Configuration Files
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks" href="../../configuration/tasks/">
+	
+	Tasks
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Building Docker Images" href="../../configuration/tasks-build/">
+	
+	Tasks: Building Docker Images
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Deploying Services" href="../../configuration/tasks-deploy/">
+	
+	Tasks: Deploying Services
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Running Commands" href="../../configuration/tasks-run/">
+	
+	Tasks: Running Commands
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Waiting Statuses" href="../../configuration/tasks-wait/">
+	
+	Tasks: Waiting Statuses
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Manual Approval" href="../../configuration/tasks-manual-approval/">
+	
+	Tasks: Manual Approval
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Tasks: Creating Webhooks" href="../../configuration/tasks-webhook/">
+	
+	Tasks: Creating Webhooks
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Notifications" href="../../configuration/notifications/">
+	
+	Notifications
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Pipelines" href="../../configuration/pipelines/">
+	
+	Pipelines
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Cloudflare Integration" href="../../configuration/cloudflare-integration/">
+	
+	Cloudflare Integration
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Endpoints" href="../../configuration/endpoints/">
+	
+	Endpoints
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Artifacts" href="../../configuration/artifacts/">
+	
+	Artifacts
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a  title="Remote Development" href="../../remote-development/">
+	
+	Remote Development
+</a>
+
+
+        
+        <ul >
+           
+            
+            
+
+
+
+<a  title="Getting Started" href="../../remote-development/getting-started/">
+	
+	Getting Started
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Working with a Different Environment" href="../../remote-development/working-with-different-environments/">
+	
+	Working with a Different Environment
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Working with a Direct Connection to the Cluster" href="../../remote-development/working-with-direct-cluster-connection/">
+	
+	Working with a Direct Connection to the Cluster
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Advanced Setup" href="../../remote-development/advanced-setup/">
+	
+	Advanced Setup
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Init" href="../../remote-development/command-init/">
+	
+	Command: Init
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Setup" href="../../remote-development/command-setup/">
+	
+	Command: Setup
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Build" href="../../remote-development/command-build/">
+	
+	Command: Build
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Logs" href="../../remote-development/command-logs/">
+	
+	Command: Logs
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Bash" href="../../remote-development/command-bash/">
+	
+	Command: Bash
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Exec" href="../../remote-development/command-exec/">
+	
+	Command: Exec
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Watch" href="../../remote-development/command-watch/">
+	
+	Command: Watch
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Fetch" href="../../remote-development/command-fetch/">
+	
+	Command: Fetch
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Push" href="../../remote-development/command-push/">
+	
+	Command: Push
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Sync" href="../../remote-development/command-sync/">
+	
+	Command: Sync
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Delete" href="../../remote-development/command-delete/">
+	
+	Command: Delete
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Forward" href="../../remote-development/command-forward/">
+	
+	Command: Forward
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Pods" href="../../remote-development/command-pods/">
+	
+	Command: Pods
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Check Connection" href="../../remote-development/command-check-connection/">
+	
+	Command: Check Connection
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Command: Destroy" href="../../remote-development/command-destroy/">
+	
+	Command: Destroy
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.0" href="../../remote-development/release-notes-0-1-0/">
+	
+	Release Notes v0.1.0
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.1" href="../../remote-development/release-notes-0-1-1/">
+	
+	Release Notes v0.1.1
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.2" href="../../remote-development/release-notes-0-1-2/">
+	
+	Release Notes v0.1.2
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.3" href="../../remote-development/release-notes-0-1-3/">
+	
+	Release Notes v0.1.3
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.4" href="../../remote-development/release-notes-0-1-4/">
+	
+	Release Notes v0.1.4
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Release Notes v0.1.5" href="../../remote-development/release-notes-0-1-5/">
+	
+	Release Notes v0.1.5
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a  title="FAQ" href="../../faq/">
+	
+	FAQ
+</a>
+
+
+        
+        <ul >
+           
+            
+            
+
+
+
+<a  title="Billing Profile" href="../../faq/how-do-I-create-a-billing-profile/">
+	
+	Billing Profile
+</a>
+
+           
+            
+            
+
+
+
+<a  title="ContinuousPipe Images" href="../../faq/what-are-the-continuous-pipe-images/">
+	
+	ContinuousPipe Images
+</a>
+
+           
+            
+            
+
+
+
+<a  title="ContinuousPipe Demo Sites" href="../../faq/what-are-the-continuous-pipe-demo-sites/">
+	
+	ContinuousPipe Demo Sites
+</a>
+
+           
+            
+            
+
+
+
+<a  title="ContinuousPipe API Keys" href="../../faq/where-can-I-get-a-continuous-pipe-api-key/">
+	
+	ContinuousPipe API Keys
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Deployment Logs and Events" href="../../faq/where-can-I-view-container-logs-and-events/">
+	
+	Deployment Logs and Events
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Setting Environment Variables" href="../../faq/how-do-I-set-environment-variables/">
+	
+	Setting Environment Variables
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Controlling Deployments" href="../../faq/how-do-I-control-deployments-using-pr-labels/">
+	
+	Controlling Deployments
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Using Defaults" href="../../faq/how-do-I-use-defaults-to-reduce-the-duplication-of-configuration/">
+	
+	Using Defaults
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Setup GitHub Token" href="../../faq/how-do-I-use-composer-with-github-access-token/">
+	
+	Setup GitHub Token
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Using Pipelines" href="../../faq/how-do-I-use-pipelines-to-simplify-the-configuration/">
+	
+	Using Pipelines
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Basic Authentication" href="../../faq/how-do-I-add-basic-http-authentication-to-an-application/">
+	
+	Basic Authentication
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Overriding Tasks" href="../../faq/how-do-I-override-tasks-in-pipelines/">
+	
+	Overriding Tasks
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Manual Approval" href="../../faq/how-do-I-set-up-manual-approval-of-deployments/">
+	
+	Manual Approval
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Readiness Checks on Services" href="../../faq/how-do-I-define-a-readiness-check-when-deploying-services/">
+	
+	Readiness Checks on Services
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Get Endpoint Address for a Service" href="../../faq/how-do-I-get-the-deployed-endpoint-address-for-a-service/">
+	
+	Get Endpoint Address for a Service
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Slack Notifications" href="../../faq/how-do-I-configure-slack-notifications/">
+	
+	Slack Notifications
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Watch Commands and Inotify" href="../../faq/how-do-I-configure-inotify-for-development-tool-watch-commands/">
+	
+	Watch Commands and Inotify
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+    
+    
+    <li>
+        
+
+
+
+<a class="current" title="Guides" href="../../guides/">
+	
+	Guides
+</a>
+
+
+        
+        <ul class="current">
+           
+            
+            
+
+
+
+<a class="current" title="Getting Started with Laravel" href="../../guides/laravel/">
+	
+	Getting Started with Laravel
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Getting Started with Symfony" href="../../guides/symfony/">
+	
+	Getting Started with Symfony
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Getting Started with Drupal" href="../../guides/drupal/">
+	
+	Getting Started with Drupal
+</a>
+
+           
+            
+            
+
+
+
+<a  title="Xdebug Remote Environment" href="../../guides/remote-environment-xdebug/">
+	
+	Xdebug Remote Environment
+</a>
+
+          
+        </ul>
+      
+    </li>
+
+
+
+        </ul>
+        
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+
+    <article class="article">
+        <div class="wrapper">
+            
+<h1>Getting Started with Laravel </h1>
+
+
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In this tutorial we are going to setup a new Laravel project, run it within Docker using one of ContinuousPipe’s base Dockerfiles, then finally push our project to our GitHub repo where ContinuousPipe will build our project and deploy on Google Container Engine. Once we are happy our project is building successfully we will then use ContinuousPipe to manage our cloud based development environment with the <code>cp-remote</code> CLI tool.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before getting started you will need the following -</p>
+
+<ul>
+<li>A <a href="https://github.com/">GitHub</a> or <a href="https://bitbucket.org/">Bitbucket</a> account to host your Laravel project</li>
+<li>A <a href="https://continuouspipe.io/">ContinuousPipe</a> account</li>
+<li>A Kubernetes cluster e.g. <a href="https://aws.amazon.com/">AWS</a>, <a href="https://cloud.google.com/container-engine/">GCE</a> or <a href="https://azure.microsoft.com/en-au/">Azure</a></li>
+<li>A Docker Registry account e.g. <a href="https://docker.io">docker.io</a> or <a href="https://quay.io">quay.io</a></li>
+</ul>
+
+<h2 id="setting-up-laravel">Setting up Laravel</h2>
+
+<p>The easiest way to install Laravel is with the Laravel installer, if you don’t have this you can simply follow the instructions to use composer instead. For simplicity we will use the Laravel installer.</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ laravel new demo-laravel
+</pre></div>
+
+<p>Since we used the Laravel installer, a <code>.env</code> file has been created for us and an application key has been set i.e.</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">APP_KEY</span><span style="color: #f92672">=</span>base64:OQ8H9vjocvQh284ojDBrODQ2HkrgWGDvdLCaQniHz0M<span style="color: #f92672">=</span>
+</pre></div>
+
+<p>During our deployments, Laravel needs this key after the composer install runs due to the post-install composer hook. Unfortunately we will not have a <code>.env</code> file set at this point so the easiest way to by pass this would be to set a default <code>APP_KEY.</code> Within <code>config/app.php</code> change line 106</p>
+
+<p>from -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #e6db74">&#39;key&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">env</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;APP_KEY&#39;</span><span style="color: #f8f8f2">),</span>
+</pre></div>
+
+<p>to -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #e6db74">&#39;key&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">env</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;APP_KEY&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;base64:OQ8H9vjocvQh284ojDBrODQ2HkrgWGDvdLCaQniHz0M=&#39;</span><span style="color: #f8f8f2">),</span>
+</pre></div>
+
+<p>We will overwrite the default key during deployments.</p>
+
+<p>Since we are going to configure our application to use redis for our cache and session storage we need to add the package <code>predis/predis</code> to our project.</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ composer require predis/predis
+</pre></div>
+
+<h2 id="configuring-continuouspipe">Configuring ContinuousPipe</h2>
+
+<p>Before we can push any code to our repository, we need to ensure that the ContinuousPipe console is properly configured. Please refer to the ContinuousPipe Quick Start guide to setup your <a href="../../quick-start/creating-a-project/">project</a>, <a href="../../quick-start/configuring-a-cluster/">cluster</a>, <a href="../../quick-start/configuring-a-registry/">registry</a> and create your first <a href="../../quick-start/creating-a-flow/">flow</a>.</p>
+
+<p>One last thing we need to do before we can begin using ContinuousPipe is configure which cluster we will use. You are free to configure as many clusters as you wish, in fact, its a good idea to have a separate cluster from production as you would for development and testing.</p>
+
+<p>For now we have only got one cluster configured in ContinuousPipe. Lets assign that cluster name “main-cluster” to an environment variable which can be used with our build and deployment tasks.</p>
+
+<p>From within the flow, click on configuration in the sidebar, create a new environment variable named <code>CLUSTER</code> with a value to match what you set as your cluster name/identifier. I have set my cluster name as <code>main-cluster</code>. Finally save the configuration.</p>
+
+<p><img src="../../images/guides/laravel/flow-variables-configuration.png" alt="Flow Configuration" /></p>
+
+<h3 id="adding-docker-configuration">Adding Docker configuration</h3>
+
+<p>Lets start by configuring our <code>Dockerfile</code>. We are going to use one of the <a href="../../faq/what-are-the-continuous-pipe-images/">ContinuousPipe images</a> as our base. In reality, you would want to create a new base image that would extend this image to give you the ability to add other services, such as your NodeJS dependencies often used for the frontend build tools i.e. webpack</p>
+
+<blockquote>
+<p><strong>Dockerfile</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">FROM</span><span style="color: #e6db74"> quay.io/continuouspipe/php7-nginx:stable</span>
+
+COPY ./tools/docker/usr/ /usr/
+
+USER build
+
+<span style="color: #75715e"># Add the application</span>
+COPY . /app
+<span style="color: #66d9ef">WORKDIR</span><span style="color: #e6db74"> /app</span>
+
+USER root
+
+<span style="color: #75715e"># Install dependencies</span>
+ARG <span style="color: #f8f8f2">APP_ENV</span><span style="color: #f92672">=</span>
+<span style="color: #66d9ef">RUN</span> chown -R build:build /app <span style="color: #f92672">&amp;&amp;</span> <span style="color: #ae81ff">\</span>
+  <span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> -n <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$APP_ENV</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span> <span style="color: #ae81ff">\</span>
+    bash /app/tools/docker/setup/install.sh<span style="color: #f8f8f2">;</span> <span style="color: #ae81ff">\</span>
+  <span style="color: #66d9ef">fi</span>
+</pre></div>
+</blockquote>
+
+<p>You will notice from the second line of our Dockerfile that it will copy <code>tools/docker/usr/</code> to <code>/usr/</code> This is put in place by the inheritance of the configuration from our base image. Its parent image, <a href="https://github.com/continuouspipe/dockerfiles/tree/master/ubuntu/16.04#default-environment-variables">Ubuntu Base</a> allows us to inject custom environment variables into our container at build time. This allows us to easily manipulate how the build is configured. For example, we can use these to define our web directory which is used to set the nginx vhost <code>root</code> configuration.</p>
+
+<h3 id="setting-additional-docker-required-files">Setting additional Docker required files</h3>
+
+<p>Lets create a new file in <code>tools/docker/usr/local/bin/supervisor_custom_start-laravel</code> with the following -</p>
+
+<blockquote>
+<p><strong>tools/docker/usr/local/bin/supervisor_custom_start-laravel</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/bash</span>
+
+<span style="color: #75715e"># Bring in the as_code_owner function, to run commands as the user who owns the code.</span>
+<span style="color: #75715e"># Usually the &quot;build&quot; user.</span>
+<span style="color: #f8f8f2">source</span> /usr/local/share/bootstrap/common_functions.sh
+
+bash /app/tools/docker/setup/install.sh
+
+<span style="color: #75715e"># Create env file if missing</span>
+bash /app/tools/docker/setup/setup-dotenv.sh
+
+<span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$REMOTE_ENV</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;1&quot;</span> <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
+  as_code_owner <span style="color: #e6db74">&quot;php artisan key:generate&quot;</span>
+<span style="color: #66d9ef">fi</span>
+</pre></div>
+</blockquote>
+
+<p>The comments should make it clear what each line does however, there are few additional files included in this script we need to create. First is our <code>install.sh</code> script, this will do our initial folder setup, run composer install and then set the correct file and folder permissions across our project.</p>
+
+<p>The second included script is used to create our <code>.env</code> file from our environment variables. Even though technically Laravel can read our environment variables directly, the file needs to exist to generate a new key as Laravel will save the generated key to this file.</p>
+
+<p>Lets add these files into <code>tools/docker/setup</code> -</p>
+
+<blockquote>
+<p><strong>tools/docker/setup/install.sh</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/bash</span>
+
+<span style="color: #f8f8f2">set</span> -xe
+
+<span style="color: #75715e"># Source variables such as what user the site will be running as</span>
+<span style="color: #f8f8f2">source</span> /usr/local/share/bootstrap/setup.sh
+
+<span style="color: #75715e"># Bring in the composer running function</span>
+<span style="color: #f8f8f2">source</span> /usr/local/share/php/common_functions.sh
+
+<span style="color: #f8f8f2">APP_PATH</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/app&quot;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #75715e"># Create missing directories</span>
+/app/tools/docker/setup/setup-directories.sh
+
+<span style="color: #75715e"># Install the app</span>
+<span style="color: #f8f8f2">cd</span> <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">APP_PATH</span><span style="color: #e6db74">}&quot;</span> <span style="color: #f92672">||</span> <span style="color: #f8f8f2">exit</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+
+run_composer
+
+chown -R <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">CODE_OWNER</span><span style="color: #e6db74">}:${</span><span style="color: #f8f8f2">APP_GROUP</span><span style="color: #e6db74">}&quot;</span> bootstrap/cache/ storage
+chmod -R ug+rw,o-w bootstrap/cache/ storage/
+chmod +x storage
+</pre></div>
+
+<p><strong>tools/docker/setup/setup-dotenv.sh</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/sh</span>
+
+<span style="color: #f8f8f2">set</span> -xe
+
+<span style="color: #f8f8f2">ENV_FILE</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/app/.env&quot;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> ! -f <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$ENV_FILE</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
+  touch <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$ENV_FILE</span><span style="color: #e6db74">&quot;</span>
+<span style="color: #66d9ef">fi</span>
+
+<span style="color: #f92672">{</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;APP_ENV=${</span><span style="color: #f8f8f2">APP_ENV</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">production</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;APP_KEY=${</span><span style="color: #f8f8f2">APP_KEY</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">base64:OQ8H9vjocvQh284ojDBrODQ2HkrgWGDvdLCaQniHz0M=</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;APP_DEBUG=${</span><span style="color: #f8f8f2">APP_DEBUG</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">false</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;APP_URL=${</span><span style="color: #f8f8f2">APP_URL</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">https://laravel-demo.dev</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;DB_CONNECTION=${</span><span style="color: #f8f8f2">DB_CONNECTION</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">mysql</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;DB_HOST=${</span><span style="color: #f8f8f2">DB_HOST</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">database</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;DB_PORT=${</span><span style="color: #f8f8f2">DB_PORT</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">3306</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;DB_DATABASE=${</span><span style="color: #f8f8f2">DB_DATABASE</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">laravel</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;DB_USERNAME=${</span><span style="color: #f8f8f2">DB_USERNAME</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">laravel</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;DB_PASSWORD=${</span><span style="color: #f8f8f2">DB_PASSWORD</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">laravel</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;MAIL_DRIVER=${</span><span style="color: #f8f8f2">MAIL_DRIVER</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">smtp</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;MAIL_HOST=${</span><span style="color: #f8f8f2">MAIL_HOST</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">mailtrap.io</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;MAIL_PORT=${</span><span style="color: #f8f8f2">MAIL_PORT</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">2525</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;MAIL_USERNAME=${</span><span style="color: #f8f8f2">MAIL_USERNAME</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">null</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;MAIL_PASSWORD=${</span><span style="color: #f8f8f2">MAIL_PASSWORD</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">null</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;MAIL_ENCRYPTION=${</span><span style="color: #f8f8f2">MAIL_ENCRYPTION</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">null</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;CACHE_DRIVER=${</span><span style="color: #f8f8f2">CACHE_DRIVER</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">redis</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;SESSION_DRIVER=${</span><span style="color: #f8f8f2">SESSION_DRIVER</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">redis</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;QUEUE_DRIVER=${</span><span style="color: #f8f8f2">QUEUE_DRIVER</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">database</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;REDIS_HOST=${</span><span style="color: #f8f8f2">REDIS_HOST</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">redis</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;REDIS_PASSWORD=${</span><span style="color: #f8f8f2">REDIS_PASSWORD</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">null</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;REDIS_PORT=${</span><span style="color: #f8f8f2">REDIS_PORT</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">6379</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #f92672">}</span> &gt;&gt; <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">ENV_FILE</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #75715e"># Allow the web server user to read this file in, and the build user to run `php artisan key:generate`</span>
+chown <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">CODE_OWNER</span><span style="color: #e6db74">}&quot;</span>:<span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">APP_GROUP</span><span style="color: #e6db74">}&quot;</span> <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">ENV_FILE</span><span style="color: #e6db74">}&quot;</span>
+chmod <span style="color: #ae81ff">640</span> <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">ENV_FILE</span><span style="color: #e6db74">}&quot;</span>
+</pre></div>
+</blockquote>
+
+<p>Included from the <code>install.sh</code> file is -</p>
+
+<blockquote>
+<p><strong>tools/docker/setup/setup-directories.sh</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/sh</span>
+
+<span style="color: #f8f8f2">set</span> -xe
+
+<span style="color: #f8f8f2">APP_PATH</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/app&quot;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #75715e"># Create new directories</span>
+<span style="color: #f8f8f2">PUBLIC_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">APP_PATH</span><span style="color: #e6db74">}/public&quot;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">STORAGE_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">APP_PATH</span><span style="color: #e6db74">}/storage&quot;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">FRAMEWORK_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">STORAGE_DIR</span><span style="color: #e6db74">}/framework&quot;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">CACHE_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">FRAMEWORK_DIR</span><span style="color: #e6db74">}/cache&quot;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">VIEWS_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">FRAMEWORK_DIR</span><span style="color: #e6db74">}/views&quot;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">SESSIONS_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">FRAMEWORK_DIR</span><span style="color: #e6db74">}/sessions&quot;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #75715e"># Create missing storage directories</span>
+mkdir -p <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">PUBLIC_DIR</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+mkdir -p <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">STORAGE_DIR</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+mkdir -p <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">FRAMEWORK_DIR</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+mkdir -p <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">CACHE_DIR</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+mkdir -p <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">VIEWS_DIR</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+mkdir -p <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">SESSIONS_DIR</span><span style="color: #e6db74">}&quot;</span><span style="color: #f8f8f2">;</span>
+</pre></div>
+</blockquote>
+
+<p>Lets now create our custom environment variables file -</p>
+
+<blockquote>
+<p><strong>tools/docker/usr/local/share/env/20-project</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/bash</span>
+
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">WORK_DIRECTORY</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">WORK_DIRECTORY</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">/app</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">WEB_DIRECTORY</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">WEB_DIRECTORY</span><span style="color: #66d9ef">:-</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">WORK_DIRECTORY</span><span style="color: #e6db74">}</span><span style="color: #f8f8f2">/public</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">STORAGE_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">STORAGE_DIR</span><span style="color: #66d9ef">:-</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">WORK_DIRECTORY</span><span style="color: #e6db74">}</span><span style="color: #f8f8f2">/storage</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">UPLOADS_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">UPLOADS_DIR</span><span style="color: #66d9ef">:-</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">STORAGE_DIR</span><span style="color: #e6db74">}</span><span style="color: #f8f8f2">/app/public/uploads</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">FRAMEWORK_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">FRAMEWORK_DIR</span><span style="color: #66d9ef">:-</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">STORAGE_DIR</span><span style="color: #e6db74">}</span><span style="color: #f8f8f2">/framework</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">CACHE_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">CACHE_DIR</span><span style="color: #66d9ef">:-</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">FRAMEWORK_DIR</span><span style="color: #e6db74">}</span><span style="color: #f8f8f2">/cache</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">VIEWS_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">VIEWS_DIR</span><span style="color: #66d9ef">:-</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">FRAMEWORK_DIR</span><span style="color: #e6db74">}</span><span style="color: #f8f8f2">/views</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">SESSIONS_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">CACHE_DIR</span><span style="color: #66d9ef">:-</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">SESSIONS_DIR</span><span style="color: #e6db74">}</span><span style="color: #f8f8f2">/sessions</span><span style="color: #e6db74">}</span>
+
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">APP_ENV</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">APP_ENV</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">production</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">APP_KEY</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">APP_KEY</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">base64:OQ8H9vjocvQh284ojDBrODQ2HkrgWGDvdLCaQniHz0M=</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">APP_DEBUG</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">APP_DEBUG</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">false</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">APP_URL</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">APP_URL</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">https://laravel-demo.dev</span><span style="color: #e6db74">}</span>
+
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_CONNECTION</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_CONNECTION</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">mysql</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_HOST</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_HOST</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">database</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_PORT</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_PORT</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">3306</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_DATABASE</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_DATABASE</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">laravel</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_USERNAME</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_USERNAME</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">laravel</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_PASSWORD</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_PASSWORD</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">laravel</span><span style="color: #e6db74">}</span>
+
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">MAIL_DRIVER</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">MAIL_DRIVER</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">smtp</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">MAIL_HOST</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">MAIL_HOST</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">mailtrap.io</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">MAIL_PORT</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">MAIL_PORT</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">2525</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">MAIL_USERNAME</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">MAIL_USERNAME</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">null</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">MAIL_PASSWORD</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">MAIL_PASSWORD</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">null</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">MAIL_ENCRYPTION</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">MAIL_ENCRYPTION</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">null</span><span style="color: #e6db74">}</span>
+
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">CACHE_DRIVER</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">CACHE_DRIVER</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">redis</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">SESSION_DRIVER</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">SESSION_DRIVER</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">redis</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">QUEUE_DRIVER</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">QUEUE_DRIVER</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">database</span><span style="color: #e6db74">}</span>
+
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">REDIS_HOST</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">REDIS_HOST</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">redis</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">REDIS_PASSWORD</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">REDIS_PASSWORD</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">null</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">REDIS_PORT</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">REDIS_HOST_PORT</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">6379</span><span style="color: #e6db74">}</span>
+</pre></div>
+</blockquote>
+
+<p>For the majority of this file we are setting environment variables using the default Laravel variables found in the <code>.env</code> file, with a few extras and one exception. The <code>REDIS_PORT</code> being set is looking for an injected variable <code>REDIS_HOST_PORT</code>. This is to mitigate the issue where <code>SERVICENAME_PORT</code> is a reserved keyword in <code>docker-compose</code> which ultimately sets the <code>redis</code> connection to <code>tcp://ip.ad.dr.ress:port</code></p>
+
+<p>For more information on how the custom environment variables are loaded please refer to the main base image <a href="https://github.com/continuouspipe/dockerfiles/tree/master/ubuntu/16.04#default-environment-variables">readme</a></p>
+
+<p>The only thing left to do for our Docker configuration is to setup our <code>docker-compose.yml</code> file.</p>
+
+<blockquote>
+<p><strong>docker-compose.yml</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #ae81ff">version</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;2&quot;</span>
+<span style="color: #ae81ff">services</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #ae81ff">web</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">build</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #ae81ff">context</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">.</span>
+            <span style="color: #ae81ff">args</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">APP_ENV</span>
+        <span style="color: #ae81ff">links</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">database</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">redis</span>
+        <span style="color: #ae81ff">expose</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">80</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">443</span>
+        <span style="color: #ae81ff">ports</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #e6db74">&quot;80:80&quot;</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #e6db74">&quot;443:443&quot;</span>
+        <span style="color: #ae81ff">volumes</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">.:/app</span>
+        <span style="color: #ae81ff">environment</span><span style="color: #f8f8f2">:</span>
+          <span style="color: #ae81ff">APP_USER_LOCAL</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;true&quot;</span>
+
+    <span style="color: #ae81ff">database</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">image</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">quay.io/continuouspipe/mysql5.7:stable</span>
+        <span style="color: #ae81ff">environment</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #ae81ff">MYSQL_ROOT_PASSWORD</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">laravel</span>
+            <span style="color: #ae81ff">MYSQL_DATABASE</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">laravel</span>
+            <span style="color: #ae81ff">MYSQL_USER</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">laravel</span>
+            <span style="color: #ae81ff">MYSQL_PASSWORD</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">laravel</span>
+        <span style="color: #ae81ff">expose</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">3306</span>
+        <span style="color: #ae81ff">ports</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #e6db74">&quot;3360:3360&quot;</span>
+
+    <span style="color: #ae81ff">redis</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">image</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">quay.io/continuouspipe/redis3:stable</span>
+        <span style="color: #ae81ff">expose</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">6379</span>
+        <span style="color: #ae81ff">ports</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #e6db74">&quot;6379:6379&quot;</span>
+</pre></div>
+</blockquote>
+
+<p>Here we have three services, <code>web</code>, <code>database</code> and <code>redis</code>. Our <code>web</code> service is our main service that builds from our Dockerfile previously mentioned. This will link to our <code>database</code> and <code>redis</code> services which use <code>quay.io/continuouspipe/mysql5.7:stable</code> and <code>quay.io/continuouspipe/redis3:stable</code> respectivly. These are just standard <code>redis:3.0</code> and <code>mysql:5.7</code> official images in a simple wrapper that allows a faster patching mechanism.</p>
+
+<p>We are injecting <code>APP_ENV</code> into our web container as a build argument. This will allow <code>composer install</code> to run on <code>docker-compose up</code>. Essentially, this means a developer can simply clone the project repo and start the Docker container and all the setup is handled for them. No more manual steps should be required.</p>
+
+<p>Additionally our web container is exposing both port <code>80</code> and <code>443</code>, this is because our base <a href="https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx">php7-nginx</a> image is creating a self signed SSL certificate and forcing our app to use <code>https://</code> as default.</p>
+
+<p>There is an additional environment variable being set for our <code>web</code> container, <code>APP_USER_LOCAL</code>, which is used to fix volume permission issues.</p>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>APP_USER_LOCAL</code> should only be used in development as using this could cause a security risk. Please see <a href="https://github.com/continuouspipe/dockerfiles/tree/master/ubuntu/16.04#volume-permission-fixes">Volume Permission Fixes</a> for more information</p>
+</div>
+
+<p>Docker needs to be able to execute the files we have in <code>tools/docker/setup</code>. Lets make sure that all files have execute permissions -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ chmod -R +x tools/docker/setup
+</pre></div>
+
+<p>We can now start our Docker containers -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ docker-compose up
+</pre></div>
+
+<p>If everything has gone to plan, we should now see the famous &ldquo;Laravel&rdquo; splash page at <code>https://localhost</code></p>
+
+<p><img src="../../images/guides/laravel/laravel-splash.png" alt="Laravel Splash" /></p>
+
+<h3 id="prepare-to-build-on-continuouspipe">Prepare to build on ContinuousPipe</h3>
+
+<p>We configure ContinuousPipe with a <code>continuous-pipe.yml</code> file in the root of our project. This is the main configuration file that defines each of our tasks to be executed. As this configuration file is YAML, please ensure proper indentation is set, otherwise ContinuousPipe will fail to load the configuration file correctly.</p>
+
+<p>First thing we define is some environment variables -</p>
+
+<blockquote>
+<p><strong>continuous-pipe.yaml (partial)</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #ae81ff">environment_variables</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">APP_ENV</span>
+      <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;production&quot;</span>
+    <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">REMOTE_ENV</span>
+      <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;1&quot;</span>
+</pre></div>
+</blockquote>
+
+<p>We are simply setting a the <code>APP_ENV</code> for use within our build and <code>REMOTE_ENV</code> which can be used to distinguish the difference between a local docker build and a ContinuousPipe build. This can be useful when you need to to pull additional assets from 3rd party services or perhaps build the frontend assets in your deployments. For this tutorial, we are using this to allow us to generate a new <code>APP_KEY</code> during the deployment stage.</p>
+
+<p>Next we define our tasks, our first task is building our image -</p>
+
+<blockquote>
+<p><strong>continuous-pipe.yaml (partial)</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #ae81ff">tasks</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #ae81ff">images</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">build</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #ae81ff">environment</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">APP_ENV</span>
+                  <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${APP_ENV}</span>
+
+            <span style="color: #ae81ff">services</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #ae81ff">web</span><span style="color: #f8f8f2">:</span>
+                    <span style="color: #ae81ff">image</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">quay.io/continuouspipe/laravel-demo</span>
+</pre></div>
+</blockquote>
+
+<p>Here we injecting the <code>APP_ENV</code> build argument, the same as we did for our <code>docker-compose.yml</code> file. We also define the registry repository address where we want to push our freshly built images to.</p>
+
+<p>The next task to run is the <code>infrastructure</code> task -</p>
+
+<blockquote>
+<p><strong>continuous-pipe.yaml (partial)</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #ae81ff">infrastructure</span><span style="color: #f8f8f2">:</span>
+   <span style="color: #ae81ff">deploy</span><span style="color: #f8f8f2">:</span>
+       <span style="color: #ae81ff">cluster</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${CLUSTER}</span>
+       <span style="color: #ae81ff">environment</span><span style="color: #f8f8f2">:</span>
+           <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;&quot;project-key-&quot;</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">~</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">code_reference.branch&#39;</span>
+
+       <span style="color: #ae81ff">services</span><span style="color: #f8f8f2">:</span>
+           <span style="color: #ae81ff">database</span><span style="color: #f8f8f2">:</span>
+               <span style="color: #ae81ff">specification</span><span style="color: #f8f8f2">:</span>
+                   <span style="color: #ae81ff">volumes</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">type</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">persistent</span>
+                         <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">database-volume</span>
+                         <span style="color: #ae81ff">capacity</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">5Gi</span>
+                         <span style="color: #ae81ff">storage_class</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">default</span>
+
+                   <span style="color: #ae81ff">volume_mounts</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">database-volume</span>
+                         <span style="color: #ae81ff">mount_path</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">/var/lib/mysql</span>
+
+                   <span style="color: #ae81ff">command</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">/usr/local/bin/docker-entrypoint.sh</span>
+                       <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">mysqld</span>
+                       <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">--ignore-db-dir=lost+found</span>
+                       <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">--max_allowed_packet=128M</span>
+
+                   <span style="color: #ae81ff">ports</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">3306</span>
+
+                   <span style="color: #ae81ff">resources</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #ae81ff">requests</span><span style="color: #f8f8f2">:</span>
+                           <span style="color: #ae81ff">cpu</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">50m</span>
+                           <span style="color: #ae81ff">memory</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">250Mi</span>
+                       <span style="color: #ae81ff">limits</span><span style="color: #f8f8f2">:</span>
+                           <span style="color: #ae81ff">cpu</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">500m</span>
+                           <span style="color: #ae81ff">memory</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">500Mi</span>
+
+           <span style="color: #ae81ff">redis</span><span style="color: #f8f8f2">:</span>
+               <span style="color: #ae81ff">deployment_strategy</span><span style="color: #f8f8f2">:</span>
+                   <span style="color: #ae81ff">readiness_probe</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #ae81ff">type</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">tcp</span>
+                       <span style="color: #ae81ff">port</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">6379</span>
+
+               <span style="color: #ae81ff">specification</span><span style="color: #f8f8f2">:</span>
+                   <span style="color: #ae81ff">ports</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">6379</span>
+
+                   <span style="color: #ae81ff">resources</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #ae81ff">requests</span><span style="color: #f8f8f2">:</span>
+                           <span style="color: #ae81ff">cpu</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">50m</span>
+                           <span style="color: #ae81ff">memory</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">100Mi</span>
+                       <span style="color: #ae81ff">limits</span><span style="color: #f8f8f2">:</span>
+                           <span style="color: #ae81ff">cpu</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">250m</span>
+                           <span style="color: #ae81ff">memory</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">250Mi</span>
+</pre></div>
+</blockquote>
+
+<p>This is where we build our redis and database containers. We define a persistent volume to store our database so we don&rsquo;t need to build again on subsequent deployments. We are also setting the required cluster resources for these containers. Notice we set <code>cluster: ${CLUSTER}</code>. This is pulling the cluster name we previously set in the ContinuousPipe UI under Clusters.</p>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An important change for each of our tasks is to define the project key. Where I have set an environment name as <code>&quot;project-key-&quot; ~ code_reference.branch</code>, you should replace the <code>project-key</code> with your project name you defined earlier in the ContinuousPipe setup step.</p>
+</div>
+
+<p>Our next task in the list is <code>initialization</code> -</p>
+
+<blockquote>
+<p><strong>continuous-pipe.yaml (partial)</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #ae81ff">initialization</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #ae81ff">run</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">cluster</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${CLUSTER}</span>
+        <span style="color: #ae81ff">environment</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;&quot;project-key-&quot;</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">~</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">code_reference.branch&#39;</span>
+
+        <span style="color: #ae81ff">image</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #ae81ff">from_service</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">web</span>
+
+        <span style="color: #ae81ff">commands</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">tools/docker/setup/setup.sh</span>
+
+        <span style="color: #ae81ff">environment_variables</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">&amp;WEB_ENV_VARS</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">APP_ENV</span>
+              <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${APP_ENV}</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">REMOTE_ENV</span>
+              <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${REMOTE_ENV}</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">APP_URL</span>
+              <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${APP_URL}</span>
+            <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">APP_USER_LOCAL</span>
+              <span style="color: #ae81ff">value</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">false</span>
+
+    <span style="color: #ae81ff">filter</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #ae81ff">expression</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;tasks.infrastructure.services.database.created&#39;</span>
+</pre></div>
+</blockquote>
+
+<p>The purpose of this task is to allow us to run any database specific tasks for our application. This might be the combination of a <code>php artisan migrate</code> and <code>php artisan db:seed</code>. Notice we are using the <code>filter</code> <code>expression: 'tasks.infrastructure.services.database.created'</code>, this ensures we only run this when we know the database is finished building. We run these commands by executing a script <code>tools/docker/setup/setup.sh</code> inside the container that has had some specific environment variables set.</p>
+
+<p><strong>Note: We have explicitly set <code>APP_USER_LOCAL</code> to <code>false</code> to elevate any security concerns previously mentioned with this setting</strong></p>
+
+<p>The last task in this configuration is <code>application</code> -</p>
+
+<blockquote>
+<p><strong>continuous-pipe.yaml (partial)</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #ae81ff">application</span><span style="color: #f8f8f2">:</span>
+   <span style="color: #ae81ff">deploy</span><span style="color: #f8f8f2">:</span>
+       <span style="color: #ae81ff">cluster</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">${CLUSTER}</span>
+       <span style="color: #ae81ff">environment</span><span style="color: #f8f8f2">:</span>
+           <span style="color: #ae81ff">name</span><span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&#39;&quot;project-key-&quot;</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">~</span><span style="color: #f8f8f2"> </span><span style="color: #e6db74">code_reference.branch&#39;</span>
+
+       <span style="color: #ae81ff">services</span><span style="color: #f8f8f2">:</span>
+           <span style="color: #ae81ff">web</span><span style="color: #f8f8f2">:</span>
+               <span style="color: #ae81ff">specification</span><span style="color: #f8f8f2">:</span>
+                   <span style="color: #ae81ff">accessibility</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #ae81ff">from_external</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">true</span>
+
+                   <span style="color: #ae81ff">environment_variables</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #ae81ff">&lt;&lt;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">*WEB_ENV_VARS</span>
+
+                   <span style="color: #ae81ff">resources</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #ae81ff">requests</span><span style="color: #f8f8f2">:</span>
+                           <span style="color: #ae81ff">cpu</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">50m</span>
+                           <span style="color: #ae81ff">memory</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">500Mi</span>
+
+                       <span style="color: #ae81ff">limits</span><span style="color: #f8f8f2">:</span>
+                           <span style="color: #ae81ff">cpu</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">1</span>
+                           <span style="color: #ae81ff">memory</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">2G</span>
+
+                   <span style="color: #ae81ff">ports</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">80</span>
+                       <span style="color: #f8f8f2">-</span> <span style="color: #ae81ff">443</span>
+
+               <span style="color: #ae81ff">deployment_strategy</span><span style="color: #f8f8f2">:</span>
+                   <span style="color: #ae81ff">readiness_probe</span><span style="color: #f8f8f2">:</span>
+                       <span style="color: #ae81ff">type</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">tcp</span>
+                       <span style="color: #ae81ff">port</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">80</span>
+                       <span style="color: #ae81ff">initial_delay_seconds</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">30</span>
+                       <span style="color: #ae81ff">period_seconds</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">30</span>
+                       <span style="color: #ae81ff">failure_threshold</span><span style="color: #f8f8f2">:</span> <span style="color: #ae81ff">120</span>
+</pre></div>
+</blockquote>
+
+<p>Here we are creating a new web container, making it accessible to the public which instructs ContinuousPipe to get an IP address from the load balancer. We inject the environment variables previously defined in the <code>initalization</code> task, and finally we configure the resources required from the cluster and open up the required ports, <code>80</code> and <code>443</code></p>
+
+<p>The last section of this task is the <code>deployment_strategy</code> which configures how ContinuousPipe will determine when the container is finished building and if it was successful or not. For more information on health checks please refer to <a href="http://docs.continuouspipe.io/configuration/deployments/#health-checks">http://docs.continuouspipe.io/</a></p>
+
+<p>Now that we have defined our <code>continuous-pipe.yml</code> file lets configure that one last script we set to use in the <code>initialization</code> task. Create a new file <code>tools/docker/setup/setup.sh</code> with the following -</p>
+
+<blockquote>
+<p><strong>tools/docker/setup/setup.sh</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/bash</span>
+
+<span style="color: #f8f8f2">set</span> -xe
+
+<span style="color: #75715e"># Bring in the as_code_owner function, to run commands as the user who owns the code.</span>
+<span style="color: #75715e"># Usually the &quot;build&quot; user.</span>
+<span style="color: #f8f8f2">source</span> /usr/local/share/bootstrap/setup.sh
+<span style="color: #f8f8f2">source</span> /usr/local/share/bootstrap/common_functions.sh
+
+<span style="color: #f8f8f2">WORK_DIRECTORY</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/app&quot;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_CONNECTION</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_CONNECTION</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">mysql</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_HOST</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_HOST</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">database</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_PORT</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_PORT</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">3306</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_DATABASE</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_DATABASE</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">laravel</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_USERNAME</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_USERNAME</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">laravel</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_PASSWORD</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_PASSWORD</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">laravel</span><span style="color: #e6db74">}</span>
+<span style="color: #f8f8f2">export</span> <span style="color: #f8f8f2">DB_ROOT_PASSWORD</span><span style="color: #f92672">=</span><span style="color: #e6db74">${</span><span style="color: #f8f8f2">DB_PASSWORD</span><span style="color: #66d9ef">:-</span><span style="color: #f8f8f2">laravel</span><span style="color: #e6db74">}</span>
+
+<span style="color: #f8f8f2">cd</span> <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">WORK_DIRECTORY</span><span style="color: #e6db74">}&quot;</span> <span style="color: #f92672">||</span> <span style="color: #f8f8f2">exit</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+as_code_owner <span style="color: #e6db74">&quot;php artisan migrate&quot;</span>
+</pre></div>
+</blockquote>
+
+<p>We are simply running a <code>php artisan migrate</code> here to setup all our defined database tables.</p>
+
+<p>OK, we are finally ready to push all our code to GitHub and utilise ContinuousPipe to build and deploy our application on the cluster.</p>
+
+<p>Lets now push our code to GitHub to trigger ContinuousPipe -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ git init
+$ git add -A
+$ git commit -m <span style="color: #e6db74">&quot;Initial Commit&quot;</span>
+$ git remote add origin https://github.com:continuouspipe/demo-laravel.git
+$ git push -u origin master
+Counting objects: <span style="color: #ae81ff">128</span>, <span style="color: #66d9ef">done</span>.
+Delta compression using up to <span style="color: #ae81ff">4</span> threads.
+Compressing objects: <span style="color: #ae81ff">100</span>% <span style="color: #f92672">(</span><span style="color: #ae81ff">107</span>/107<span style="color: #f92672">)</span>, <span style="color: #66d9ef">done</span>.
+Writing objects: <span style="color: #ae81ff">100</span>% <span style="color: #f92672">(</span><span style="color: #ae81ff">128</span>/128<span style="color: #f92672">)</span>, <span style="color: #ae81ff">206</span>.86 KiB <span style="color: #f8f8f2">|</span> <span style="color: #ae81ff">0</span> bytes/s, <span style="color: #66d9ef">done</span>.
+Total <span style="color: #ae81ff">128</span> <span style="color: #f92672">(</span>delta <span style="color: #ae81ff">8</span><span style="color: #f92672">)</span>, reused <span style="color: #ae81ff">0</span> <span style="color: #f92672">(</span>delta <span style="color: #ae81ff">0</span><span style="color: #f92672">)</span>
+remote: Resolving deltas: <span style="color: #ae81ff">100</span>% <span style="color: #f92672">(</span><span style="color: #ae81ff">8</span>/8<span style="color: #f92672">)</span>, <span style="color: #66d9ef">done</span>.
+To github.com:continuouspipe/demo-laravel.git
+ * <span style="color: #f92672">[</span>new branch<span style="color: #f92672">]</span>      master -&gt; master
+Branch master <span style="color: #f8f8f2">set</span> up to track remote branch master from origin.
+</pre></div>
+
+<p>Thats it, we should now see ContinuousPipe working through our defined tasks -</p>
+
+<p><img src="../../images/guides/laravel/flow-overview.png" alt="Dashboard" /></p>
+
+<p>Once all our tasks have finished we should see a success status, everything green and a public endpoint for the web service.</p>
+
+<p><img src="../../images/guides/laravel/tide-complete-tasks.png" alt="Complete Tasks" /></p>
+
+<p>If we now visit this endpoint in the browser e.g. <code>https://104.199.75.150/</code> we should now see that Laravel splash page we previously seen when running in our local Docker build -</p>
+
+<p><img src="../../images/guides/laravel/laravel-splash.png" alt="Laravel Splash" /></p>
+
+<h2 id="remote-development-environment">Remote development environment</h2>
+
+<p>Since our project is essentially just running in docker and it now works on both local Docker and ContinuousPipe we can effectively turn our cluster performance into a really fast development environment.</p>
+
+<p>We are going to instruct ContinuousPipe to build us a new environment by creating our own &ldquo;dev&rdquo; branch in our GitHub repository. When complete, we will watch our local file system for any changes to our codebase and synchronise these changes into our running <code>web</code> container. It&rsquo;s really that simple.</p>
+
+<h3 id="install-cp-remote">Install <code>cp-remote</code></h3>
+
+<p><code>cp-remote</code> is available on OSX, Linux and Windows. Please refer to the <a href="../../remote-development/getting-started/#installation">remote development installation instructions</a> for each of the platforms.</p>
+
+<p>For simplicity, here is the OSX installation instructions</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo curl https://raw.githubusercontent.com/continuouspipe/remote-environment-client/gh-pages/0.0.1/darwin-amd64.gz &gt; cp-remote.gz
+gzip -d cp-remote.gz<span style="color: #f8f8f2">;</span>
+mv cp-remote /usr/local/bin/cp-remote
+chmod +x /usr/local/bin/cp-remote
+</pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>rsync</code> &amp; <code>git</code> are required for <code>cp-remote</code> to work</p>
+</div>
+
+<h3 id="setup">Setup</h3>
+
+<p>Now that we have <code>cp-remote</code> installed, we are ready to setup our remote environment. From the root of your project run the following -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ cp-remote setup
+</pre></div>
+
+<p>You will now be asked a series of questions that relate to how you have configured ContinuousPipe and your cluster details. Please refer to the <a href="../../remote-development/command-setup/">remote development setup instructions</a> for more information.</p>
+
+<h3 id="build-the-environment">Build the environment</h3>
+
+<p>Run the following -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ cp-remote build
+</pre></div>
+
+<p>This is now going to create a new git branch from the current branch with the name you defined in the setup. Its going to push this branch to GitHub which will then trigger ContinuousPipe to create you a new developer environment. You should now see the something like -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>Pushing to remote
+Total <span style="color: #ae81ff">0</span> <span style="color: #f92672">(</span>delta <span style="color: #ae81ff">0</span><span style="color: #f92672">)</span>, reused <span style="color: #ae81ff">0</span> <span style="color: #f92672">(</span>delta <span style="color: #ae81ff">0</span><span style="color: #f92672">)</span>
+To github.com:continuouspipe/demo-laravel.git
+ * <span style="color: #f92672">[</span>new branch<span style="color: #f92672">]</span>      master -&gt; dev-richdynamix
+Continuous Pipe will now build your developer environment
+You can see when it is <span style="color: #f8f8f2">complete</span> and find its IP address at https://ui.continuouspipe.io/
+Please <span style="color: #f8f8f2">wait</span> <span style="color: #66d9ef">until</span> the build is <span style="color: #f8f8f2">complete</span> to use any of this tool<span style="color: #960050; background-color: #1e0010">&#39;</span>s other commands.
+</pre></div>
+
+<p><img src="../../images/guides/laravel/dashboard-with-dev.png" alt="Dashboard with dev environment" /></p>
+
+<p>You can check that the environment is ready either from the ContinuousPipe UI or by running the following -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ cp-remote ck
+</pre></div>
+
+<p>Which should display something like this  -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>checking connection <span style="color: #66d9ef">for</span> environment laravel-demo-dev-richdynamix
+Connected successfully and found <span style="color: #ae81ff">3</span> pods <span style="color: #66d9ef">for</span> the environment
+</pre></div>
+
+<p>Now that we know all three containers (pods) have been setup we need to obtain the IP address from the ContinuousPipe UI for that tide. Lets visit the IP address in our browser and once again, we will see the Laravel splash page.</p>
+
+<p><img src="../../images/guides/laravel/laravel-splash.png" alt="Laravel Splash" /></p>
+
+<h3 id="watching-for-changes">Watching for changes</h3>
+
+<p>From within your project root, lets start watching for file changes -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ cp-remote watch
+Watching <span style="color: #66d9ef">for</span> changes. Quit anytime with Ctrl-C.
+
+.cp-remote-ignore was missing or empty and has been created with the default ignore settings.
+
+Destination Pod: web-3232721034-k6g9t
+</pre></div>
+
+<p>Here we run the <code>cp-remote watch</code> command which will use our default <code>web</code> container as the destination pod.</p>
+
+<p>Lets edit some code and see our changes reflected in the browser. Open <code>resources/views/welcome.blade.php</code> and change the title on <code>Line 82</code>. I will change it to &ldquo;Awesome Laravel&rdquo;.</p>
+
+<p><img src="../../images/guides/laravel/sublime.png" alt="Sublime" /></p>
+
+<p>When you save this file from within your editor, the <code>cp-remote watch</code> command will pick up these changes and <code>RSYNC</code> them to the web container. Your terminal should look something like the following -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ cp-remote watch
+Watching <span style="color: #66d9ef">for</span> changes. Quit anytime with Ctrl-C.
+
+.cp-remote-ignore was missing or empty and has been created with the default ignore settings.
+
+Destination Pod: web-3232721034-k6g9t
+Synchronizing filesystem changes...
+resources/views/welcome.blade.php
+Done.
+</pre></div>
+
+<p>Now when you check the site in the browser you should see the following -</p>
+
+<p><img src="../../images/guides/laravel/awesome-laravel.png" alt="Awesome Laravel" /></p>
+
+<p>Here is a quick screencast of that syncing in action -</p>
+
+<p><a href="../../images/guides/laravel/awesome-laravel-screencast.gif"><img src="../../images/guides/laravel/awesome-laravel-screencast.gif" alt="Laravel Screencast" /></a></p>
+
+<p>The syncing speeds are pretty fast, so fast in fact, I can run this from a train wifi while retaining the performance of the cloud hosting.</p>
+
+<p>For full instructions on other commands in the <code>cp-remote</code> CLI tool, such as port forwarding, connecting to the web container via BASH or even destroying the environment visit the <a href="https://github.com/continuouspipe/remote-environment-client">README</a></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>ContinuousPipe is a fantastic tool for simplifying container orchestration and deployment. Its makes the CI/CD workflow much more productive than similar tools available. One of the best and unique features of ContinuousPipe is the remote developer environments. This not only reduces the resource requirements of the developer&rsquo;s laptop, but it also ensures compatibility across platforms.</p>
+
+<p>There is far more we can do with ContinuousPipe to increase productivity, for example, we can use filters to determine when tasks are run. Perhaps we only want certain branches to build environments, or a certain GitHub label on a Pull-Request to trigger the build. We can also go one step further and separate our builds into pipelines. Perhaps we want to have a separate pipeline for production compared to development or testing. This is useful if there are certain environment variables and tasks that should only be used in development but not production.</p>
+
+<p>This getting started guide should be treated as a first step, please refer to the <a href="http://docs.continuouspipe.io">http://docs.continuouspipe.io</a> for more advanced tutorials.</p>
+
+
+
+        </div>
+    </article>
+
+    <footer class="footer" style="margin-top: 20px;">
+        
+
+
+
+
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="../../guides/symfony/" title="Getting Started with Symfony">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Getting Started with Symfony
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+    </footer>
+
+    <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+            <div class="wrapper">
+                <div class="meta"></div>
+                <div class="list"></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <script>
+    
+      var base_url = '';
+      var repo_id  = '';
+    
+    </script>
+
+    <script src="../../javascripts/application.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+    
+    <script src="../../javascripts/jquery-3.1.1.min.js"></script>
+    
+    <script src="../../javascripts/menu.js"></script>
+    
+
+    <script>
+    /* Removes redundant event listener from material theme */
+    window.addEventListener('load', function () {
+        var searchToggle = document.querySelector("#toggle-search");
+        var searchLabel = document.querySelector("[for=\"toggle-search\"]");
+        var algoliaInput = document.querySelector("#algolia-query");
+
+        function elementReset(elem) {
+            elem.parentNode.replaceChild(elem.cloneNode(true), elem);
+        }
+
+        elementReset(searchToggle);
+        searchLabel.addEventListener('click', function() {
+            algoliaInput.focus();
+        }, false);
+    }, false);
+    </script>
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+    <script type="text/javascript"> 
+    docsearch({
+        apiKey: '608036855612fb9a0dd2e9a2c09955bc',
+        indexName: 'continuouspipe',
+        inputSelector: '#algolia-query',
+        debug: true 
+    });
+    </script>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+         
+        ga('create', 'UA-71216332-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+         
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+         
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
+

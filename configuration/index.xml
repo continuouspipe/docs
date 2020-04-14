@@ -1,0 +1,1523 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration on ContinuousPipe Docs</title>
+    <link>/configuration/index.xml</link>
+    <description>Recent content in Configuration on ContinuousPipe Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>Released under the MIT license</copyright>
+    <atom:link href="/configuration/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Configuration Files</title>
+      <link>/configuration/configuration-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/configuration-files/</guid>
+      <description>
+
+&lt;p&gt;There are three main configuration files that are needed to build a Docker image and set up ContinuousPipe deployments:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.
+├── Dockerfile
+├── continuous-pipe.yml
+└── docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;docker-build-configuration&#34;&gt;Docker Build Configuration&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;Dockerfile&lt;/code&gt; contains a series of commands that are combined to build a Docker image. See &lt;a href=&#34;https://docs.docker.com/engine/reference/builder/&#34;&gt;https://docs.docker.com/engine/reference/builder/&lt;/a&gt; for full documentation.&lt;/p&gt;
+
+&lt;h2 id=&#34;docker-compose-configuration&#34;&gt;Docker Compose Configuration&lt;/h2&gt;
+
+&lt;p&gt;The file &lt;code&gt;docker-compose.yml&lt;/code&gt; contains YAML configuration for the services, networks and volumes of a Docker image. See &lt;a href=&#34;https://docs.docker.com/compose/compose-file/&#34;&gt;https://docs.docker.com/compose/compose-file/&lt;/a&gt; for full documentation.&lt;/p&gt;
+
+&lt;h2 id=&#34;continuouspipe-configuration&#34;&gt;ContinuousPipe Configuration&lt;/h2&gt;
+
+&lt;p&gt;The ContinuousPipe configuration is represented as a YAML file. The final configuration is the result of a merger of these different optional configuration sources:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The YAML stored on CP when &lt;a href=&#34;../quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The YAML file named &lt;code&gt;continuous-pipe.yml&lt;/code&gt; in your code repository&lt;/li&gt;
+&lt;li&gt;The YAML file named &lt;code&gt;continuous-pipe.[branch].yml&lt;/code&gt; in your code repository&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;tasks&#34;&gt;Tasks&lt;/h3&gt;
+
+&lt;p&gt;The main objects of this configuration file are the &lt;code&gt;tasks&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Each task has a name, so will sometimes be referred to as a &amp;ldquo;named task&amp;rdquo;. Tasks will run sequentially in the order they are defined.&lt;/p&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;It is recommended that all tasks are named as some features rely on this to make task information available to other tasks.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In the following example, you can see that we define &lt;code&gt;build&lt;/code&gt;, &lt;code&gt;deploy&lt;/code&gt;, and &lt;code&gt;run&lt;/code&gt; tasks named &lt;code&gt;images&lt;/code&gt;, &lt;code&gt;deployment&lt;/code&gt;, and &lt;code&gt;migrations&lt;/code&gt; respectively. They will operate in this order when a tide is run.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;migrations&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You will learn more about each task in the &lt;a href=&#34;../configuration/tasks/&#34;&gt;tasks overview section&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;variables&#34;&gt;Variables&lt;/h3&gt;
+
+&lt;p&gt;You can avoid copying and pasting by using variables inside your configuration files. The following example shows you how to prevent putting values inside your &lt;code&gt;continuous-pipe.yml&lt;/code&gt; by using variables that are defined in the configuration stored in ContinuousPipe when &lt;a href=&#34;../quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;# configuration in ContinuousPipe&lt;/span&gt;
+&lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;name:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CLUSTER,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;my-production-cluster&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# configuration in continuous-pipe.yml&lt;/span&gt;
+&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLUSTER}&lt;/span&gt;
+
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Once the configuration files are merged, the variables are resolved. That means that the final configuration will contain the &lt;code&gt;my-production-cluster&lt;/code&gt; value at the &lt;code&gt;cluster&lt;/code&gt; key of the deployment task.&lt;/p&gt;
+
+&lt;h3 id=&#34;conditional-variables&#34;&gt;Conditional Variables&lt;/h3&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Reference&lt;/p&gt;
+&lt;p&gt;Conditions use the &lt;a href=&#34;http://symfony.com/doc/current/components/expression_language/syntax.html&#34;&gt;Symfony expression language&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you need to change the value of the cluster, for instance depending on the branch name, you can use conditions:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;name:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CLUSTER,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;condition:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;code_reference.branch&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;[&amp;quot;production&amp;quot;,&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;uat&amp;quot;]&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;my-production-cluster&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;name:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CLUSTER,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;condition:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;code_reference.branch&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;not&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;[&amp;quot;production&amp;quot;,&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;uat&amp;quot;]&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;my-development-cluster&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;condition&lt;/code&gt; value is an expression. It has access to the tide related context object &lt;code&gt;code_reference&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;code_reference&lt;/code&gt; context object contains the following properties:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Property&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;The name of the branch&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sha1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;The SHA1 of the given commit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;default-variables&#34;&gt;Default Variables&lt;/h3&gt;
+
+&lt;p&gt;You can use a &lt;code&gt;defaults&lt;/code&gt; section to avoid variable duplication across tasks.&lt;/p&gt;
+
+&lt;p&gt;The following example shows a &lt;code&gt;cluster&lt;/code&gt; variable being defined in two separate tasks:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;initialise&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-cluster&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+   &lt;span style=&#34;color: #ae81ff&#34;&gt;deployments&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-cluster&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This can be rewritten using a &lt;code&gt;defaults&lt;/code&gt; section as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;defaults&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+     &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-cluster&lt;/span&gt;
+
+&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;initialise&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployments&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The default cluster variable will now be used for both tasks instead.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tasks</title>
+      <link>/configuration/tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/tasks/</guid>
+      <description>
+
+&lt;p&gt;As you&amp;rsquo;ve seen in the &lt;a href=&#34;../configuration/configuration-files/#tasks&#34;&gt;configuration files&lt;/a&gt;, most ContinuousPipe configuration is about tasks. By breaking down the configuration into smaller tasks, they can be composed together to create a flexible workflow.&lt;/p&gt;
+
+&lt;h2 id=&#34;inbuilt-tasks&#34;&gt;Inbuilt Tasks&lt;/h2&gt;
+
+&lt;p&gt;ContinuousPipe has several inbuilt tasks that can be included in your workflow:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;build&lt;/code&gt;: Will &lt;a href=&#34;../configuration/tasks-build/&#34;&gt;build&lt;/a&gt; and push your Docker image&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;deploy&lt;/code&gt;: Will &lt;a href=&#34;../configuration/tasks-deploy/&#34;&gt;deploy&lt;/a&gt; your service(s) to a cluster&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;run&lt;/code&gt;: Will &lt;a href=&#34;../configuration/tasks-run/&#34;&gt;run&lt;/a&gt; some commands inside a deployed context&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wait&lt;/code&gt;: Will &lt;a href=&#34;../configuration/tasks-wait/&#34;&gt;wait&lt;/a&gt; for some other GitHub statuses&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;manual_approval&lt;/code&gt;: Will suspend the task sequence until &lt;a href=&#34;../configuration/tasks-manual-approval/&#34;&gt;manual approval&lt;/a&gt; is given to the tide in the ContinuousPipe console&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;webhook&lt;/code&gt;: Will trigger a &lt;a href=&#34;../configuration/tasks-webhook/&#34;&gt;webhook&lt;/a&gt; for use by a third party service&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;filters&#34;&gt;Conditional Tasks&lt;/h2&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Reference&lt;/p&gt;
+&lt;p&gt;Filter expressions use the &lt;a href=&#34;http://symfony.com/doc/current/components/expression_language/syntax.html&#34;&gt;Symfony expression language&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can filter the execution of each task by using the &lt;code&gt;filter&lt;/code&gt; configuration in the YAML file. This can be done with an expression, as you can see in the following sample configuration:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;filter&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;expression&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;code_reference.branch == &amp;#39;master&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The expression has access to the tide related context objects &lt;code&gt;code_reference&lt;/code&gt; and &lt;code&gt;pull_request&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;code_reference&lt;/code&gt; context object contains the following properties:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Property&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;branch&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;The name of the branch&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sha1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;The SHA1 of the given commit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The &lt;code&gt;pull_request&lt;/code&gt; context object contains the following properties:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Property&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;labels&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;array&lt;/td&gt;
+&lt;td&gt;An array of the labels on the pull request&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;The title of the pull request&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;number&lt;/td&gt;
+&lt;td&gt;The number of pull requests&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;retrieving-task-information&#34;&gt;Retrieving Task Information&lt;/h2&gt;
+
+&lt;p&gt;Within a &lt;code&gt;tasks&lt;/code&gt; section, you can get access to information that comes from previous tasks. You need to use &lt;a href=&#34;../configuration/configuration-files/#tasks&#34;&gt;named tasks&lt;/a&gt; to expose the task information.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;deploy&lt;/code&gt; task exposes a &lt;code&gt;services&lt;/code&gt; context object which is an array of objects indexed by key. The key is the name of the deployed service. Each object will contain the following properties:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Property&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;created&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;If the service was created&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;updated&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;If the service was updated&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;deleted&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;If the service was deleted&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;For example, if you want to run a setup script, but only when the database is created, you can use the following configuration:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-cluster&lt;/span&gt;
+
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;mysql&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;source&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                            &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;mysql&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;fixtures&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;filter&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;expression&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;tasks.deployment.services.mysql.created&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tasks: Building Docker Images</title>
+      <link>/configuration/tasks-build/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/tasks-build/</guid>
+      <description>
+
+&lt;p&gt;Before deploying anything, you will most of the time want ContinuousPipe to build your Docker images. For this you need to use the &lt;code&gt;build&lt;/code&gt; task, which is one of the &lt;a href=&#34;../configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The only mandatory parameter of &lt;code&gt;build&lt;/code&gt; is the image name you want to build:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;docker.io/your-namespace/your-application&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You can obviously use any other image name as long as it contains the Docker registry as first part of it. You can also see that it&amp;rsquo;s configured per &lt;em&gt;service&lt;/em&gt;, here we have only one (named &lt;code&gt;web&lt;/code&gt;) that we need to deploy.&lt;/p&gt;
+
+&lt;p&gt;ContinuousPipe is getting parameters from your &lt;code&gt;docker-compose.yml&lt;/code&gt; file. The &lt;code&gt;image&lt;/code&gt; is the only required value if you have such a Docker Compose file.&lt;/p&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;Always think carefully before pushing your images to a public Docker repository. If you are using a private Git repository or your build contains secrets (e.g. Github token, database passwords) then you need to ensure that you use a private Docker repository. &lt;a href=&#34;https://hub.docker.com/billing-plans/&#34;&gt;Docker Hub&lt;/a&gt; and &lt;a href=&#34;https://quay.io/plans/&#34;&gt;Quay.io&lt;/a&gt; both offer private repositories as part of their subscription plans.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;naming-strategy&#34;&gt;Naming Strategy&lt;/h2&gt;
+
+&lt;p&gt;At the moment, there are two naming strategies: the default one being the &lt;code&gt;sha1&lt;/code&gt; strategy, which basically builds a tag per commit SHA1. If you require it you can instead use the &lt;code&gt;branch&lt;/code&gt; strategy, which will create a tag per branch.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;naming_strategy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;branch&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;The branch naming strategy is not recommended, as sometimes when clusters are updated they do not force pull the new image while rolling-updating the services.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;arguments&#34;&gt;Arguments&lt;/h2&gt;
+
+&lt;p&gt;If you need to inject token or strings in your build process in order to download private dependencies for instance, you can use &lt;a href=&#34;https://docs.docker.com/engine/reference/builder/#/arg&#34;&gt;Docker build arguments&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The following example shows how to install PHP private dependencies (using &lt;a href=&#34;http://getcomposer.org/&#34;&gt;Composer&lt;/a&gt;) using a private GitHub token:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;GITHUB_TOKEN&lt;/span&gt;
+                  &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${GITHUB_TOKEN}&lt;/span&gt;
+
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;This assumes that you have defined the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; variable somewhere. You can refer to the &lt;a href=&#34;../configuration/configuration-files/#variables&#34;&gt;variable section&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The following is an example Docker file to demonstrate how the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; will be used during the build:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# ...
+
+ARG GITHUB_TOKEN=
+
+RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
+    composer install -o --no-interaction &amp;amp;&amp;amp; \
+    composer clear-cache
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If you want to build multiple services at the same time, you can also provide the build argument per service:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;GITHUB_TOKEN&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${GITHUB_TOKEN}&lt;/span&gt;
+
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;artifacts&#34;&gt;Artifacts&lt;/h2&gt;
+
+&lt;p&gt;In order to build small images and/or hide secret values required during the build process, you can use artifacts. These artifacts will allow you to share files or folders between different build steps that use a combination of Dockerfiles, context and build arguments.&lt;/p&gt;
+
+&lt;p&gt;For more information see the &lt;a href=&#34;../configuration/artifacts/&#34;&gt;artifacts documentation&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tasks: Deploying Services</title>
+      <link>/configuration/tasks-deploy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/tasks-deploy/</guid>
+      <description>
+
+&lt;p&gt;Whether you are using a pre-built image or needed to build an image, you can now deploy it. For this you need to use the &lt;code&gt;deploy&lt;/code&gt; task, which is one of the &lt;a href=&#34;../configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;deploy&lt;/code&gt; task is configurable in many ways. The following examples assume that you have at least a &lt;code&gt;web&lt;/code&gt; and a &lt;code&gt;database&lt;/code&gt; service configured in your &lt;code&gt;docker-compose.yml&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-cluster-identifier&lt;/span&gt;
+
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;~&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;database&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;~&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;For each of these services, you can fine tune a lot of options that are presented in the following paragraphs. Therefore, the full YAML structure won&amp;rsquo;t be presented but assume that every option is under a service configuration like this one:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;database&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;source&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;mysql&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;image-source&#34;&gt;Image Source&lt;/h2&gt;
+
+&lt;p&gt;If you have a &lt;a href=&#34;../configuration/tasks/&#34;&gt;&lt;code&gt;build&lt;/code&gt; task&lt;/a&gt; before the deployment task and an image for the service with the same name was built just before, this image name will be used automatically, so you have nothing to configure.&lt;/p&gt;
+
+&lt;p&gt;If that&amp;rsquo;s not the case, the first way to reference an image is to explicitly mention the image name. Note that this value is automatically guessed if you have a service having the same name in your project&amp;rsquo;s &lt;code&gt;docker-compose.yml&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;source&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;mysql&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;tag&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;latest&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The second way to reference an image, if for instance you are deploying the same image but with different runtime commands, is to use a source from a given service:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;source&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;from_service&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;environment-name&#34;&gt;Environment Name&lt;/h2&gt;
+
+&lt;p&gt;You can configure the name of the deployed environment (the namespace in Kubernetes terms) using an expression:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;my-app-&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;code_reference.branch&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;deployment-strategy&#34;&gt;Deployment Strategy&lt;/h2&gt;
+
+&lt;p&gt;The deployment strategy describes how would you like the container(s) to be deployed.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;deployment_strategy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# If true, the locked parameter ensure that the container(s) won&amp;#39;t ever&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# be updated once created&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;locked&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+
+    &lt;span style=&#34;color: #75715e&#34;&gt;# If true, an attached container means that ContinuousPipe will wait this container&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# to have finished its job and stream the output&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;attached&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+
+    &lt;span style=&#34;color: #75715e&#34;&gt;# If true, the existing container will be forced to be reset&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# at each deployment&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;reset&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;environment-variables&#34;&gt;Environment Variables&lt;/h2&gt;
+
+&lt;p&gt;You can set environment variables that will be injected in the running containers.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;VARIABLE_NAME&lt;/span&gt;
+          &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;the-value&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;ANOTHER_VALUE&lt;/span&gt;
+          &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${USING_A_VARIABLE}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;ports&#34;&gt;Ports&lt;/h2&gt;
+
+&lt;p&gt;In order to expose some services to other ones or through a load-balancer, you need to define which ports are exposed by this service.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;There may be instances where you need to define the protocol for your ports. Allowed protocols are &lt;code&gt;TCP&lt;/code&gt; and &lt;code&gt;UDP&lt;/code&gt;. &lt;code&gt;TCP&lt;/code&gt; is set by default. To change this you may add the following -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;protocol&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;UDP&amp;#39;&lt;/span&gt;
+          &lt;span style=&#34;color: #ae81ff&#34;&gt;identifier&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;udp-1812&amp;#39;&lt;/span&gt;
+          &lt;span style=&#34;color: #ae81ff&#34;&gt;port&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1812&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;AWS ELB doesn&amp;rsquo;t currently support UDP.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;If you have an &lt;code&gt;expose&lt;/code&gt; configuration in your &lt;code&gt;docker-compose.yml&lt;/code&gt; file, this configuration will be filled automatically.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;accessibility&#34;&gt;Accessibility&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;accessibility&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# If true, the service will be accessible from inside the cluster by other services.&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;from_cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;true&lt;/span&gt;
+
+        &lt;span style=&#34;color: #75715e&#34;&gt;# If true, a public load-balancer will be created for this service.&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;from_external&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;endpoints&#34;&gt;Endpoints&lt;/h2&gt;
+
+&lt;p&gt;In most cases, the &lt;code&gt;from_external&lt;/code&gt; accessibility value is enough to configure an endpoint. However, if you are using a cluster that supports Ingress and SSL certificates, then you can use the &lt;code&gt;endpoints&lt;/code&gt; configuration to define these endpoints:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;endpoints&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;https&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;NodePort&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;ssl_certificates&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;your-certificate-name&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;cert&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${WILDCARD_SSL_CERT}&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${WILDCARD_SSL_KEY}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The documentation on &lt;a href=&#34;../configuration/endpoints/&#34;&gt;endpoints&lt;/a&gt; gives more details on how to use Ingress and SSL.&lt;/p&gt;
+
+&lt;h2 id=&#34;basic-http-authentication&#34;&gt;Basic HTTP Authentication&lt;/h2&gt;
+
+&lt;p&gt;If you are using one of the &lt;a href=&#34;../faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; for &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-apache#basic-authentication&#34;&gt;Apache&lt;/a&gt; or &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx#basic-authentication&#34;&gt;Nginx&lt;/a&gt; then you can enable basic auth using environment variables:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+   &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;AUTH_HTTP_&lt;/span&gt;
+       
+         &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;true&lt;/span&gt;
+       &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;AUTH_HTTP_HTPASSWD&lt;/span&gt;
+         &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${AUTH_HTTP_HTPASSWD}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here the value of &lt;code&gt;AUTH_HTTP_HTPASSWD&lt;/code&gt; is being passed in as a variable to keep it out of version control, this needs to be set on the &lt;a href=&#34;../quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
+
+&lt;h2 id=&#34;conditional-services&#34;&gt;Conditional Services&lt;/h2&gt;
+
+&lt;p&gt;If you need to not deploy some services on a given condition, you can use the &lt;code&gt;condition&lt;/code&gt; expression:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;code_reference.branch not in [&amp;quot;production&amp;quot;, &amp;quot;uat&amp;quot;, &amp;quot;integration&amp;quot;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;persistent-volumes&#34;&gt;Persistent Volumes&lt;/h2&gt;
+
+&lt;p&gt;If you want some volumes containing data that will be persistent across the deployments, you can mount some persistent volumes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;volumes&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;persistent&lt;/span&gt;
+          &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-volume&lt;/span&gt;
+          &lt;span style=&#34;color: #ae81ff&#34;&gt;capacity&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;5Gi&lt;/span&gt;
+          &lt;span style=&#34;color: #ae81ff&#34;&gt;storage_class&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;default&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;volume_mounts&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-volume&lt;/span&gt;
+          &lt;span style=&#34;color: #ae81ff&#34;&gt;mount_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;/data&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;You can define the amount of requested resources, as well as the resource limits for your services. These values will be applied to each replicated container individually.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;resources&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;requests&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cpu&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;50m&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;memory&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;250Mi&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;limits&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cpu&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;500m&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;memory&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;500Mi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;replicas-and-redundancy&#34;&gt;Replicas and Redundancy&lt;/h2&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;A replica is copy of a service (as defined in your &lt;code&gt;docker-compose.yml&lt;/code&gt; or &lt;code&gt;continuous-pipe.yml&lt;/code&gt; file) running in the cluster.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;By default a service is configured to have a single replica. You may want to provide redundancy for a service across multiple nodes to make your application more resilient. This can be done by increasing the number of replicas:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;scalability&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;number_of_replicas&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Upon deployment, your service will be transformed to a Kubernetes &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/controllers/deployment/&#34;&gt;Deployment&lt;/a&gt; object that will create a &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/pod/&#34;&gt;Pod&lt;/a&gt; object. If you would like to only create the Pod object (not recommend), you can use this configuration:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;scalability&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;enabled&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;health-checks&#34;&gt;Health-checks&lt;/h2&gt;
+
+&lt;p&gt;Health-checks (also called probes) help to identify when a container is ready during a deployment and when a container is still alive when deployed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;deployment_strategy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;readiness_probe&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;tcp&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;port&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;6379&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;liveness_probe&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;initial_delay_seconds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;timeout_seconds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;period_seconds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;http&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;port&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;/healthz&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Sometimes your container won&amp;rsquo;t be listening on the relevant port by the time the readiness probe runs but you will still want to check that it is functioning. A good idea would be to check that a file can be created in a directory such as /tmp:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;deployment_strategy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;readiness_probe&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;exec&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;command&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;touch&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;/tmp/healthy&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;initial_delay_seconds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;period_seconds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;success_threshold&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;failure_threshold&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;10&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;retrieving-deployed-endpoint-addresses&#34;&gt;Retrieving Deployed Endpoint Addresses&lt;/h2&gt;
+
+&lt;p&gt;You may have a complex script that contains several &lt;code&gt;deploy&lt;/code&gt; tasks, each creating their own endpoint. To inform subsequent services about a previous endpoint address ContinuousPipe creates a dynamic variable using the service name.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;infrastructure&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;backend&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;application&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;frontend&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;BACKEND_ENDPOINT&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${SERVICE_BACKEND_PUBLIC_ENDPOINT}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This configuration defines an initial &lt;code&gt;deploy&lt;/code&gt; task that creates a &lt;code&gt;backend&lt;/code&gt; service. The second &lt;code&gt;deploy&lt;/code&gt; task creates a &lt;code&gt;frontend&lt;/code&gt; service that passes the endpoint address of the &lt;code&gt;backend&lt;/code&gt; service as an environment variable &lt;code&gt;BACKEND_ENDPOINT&lt;/code&gt; using the dynamic variable &lt;code&gt;${SERVICE_BACKEND_PUBLIC_ENDPOINT}&lt;/code&gt; as the value.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tasks: Running Commands</title>
+      <link>/configuration/tasks-run/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/tasks-run/</guid>
+      <description>&lt;p&gt;After deploying you may need to run a series of commands to prepare the deployed container. For instance, you may need to run your integration tests or your application migrations. For this you need to use the &lt;code&gt;run&lt;/code&gt; task, which is one of the &lt;a href=&#34;../configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;. The &lt;code&gt;run&lt;/code&gt; task allows you to run commands in containers, inside the deployed environment.&lt;/p&gt;
+
+&lt;p&gt;Most of the options are shared with the &lt;a href=&#34;../configuration/tasks-deploy/&#34;&gt;&lt;code&gt;deploy&lt;/code&gt; task&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cluster&lt;/code&gt;, to select the &lt;a href=&#34;../configuration/tasks-deploy/#cluster&#34;&gt;cluster&lt;/a&gt; on which the container will run&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;image&lt;/code&gt;, to select the &lt;a href=&#34;../configuration/tasks-deploy/#image-source&#34;&gt;image&lt;/a&gt; that will be used to run the commands&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;environment&lt;/code&gt;, to select the &lt;a href=&#34;../configuration/tasks-deploy/#environment-name&#34;&gt;name of the environment&lt;/a&gt; on which the container will be created&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;environment_variables&lt;/code&gt;, to inject some &lt;a href=&#34;../configuration/tasks-deploy/#environment-variables&#34;&gt;environment variables&lt;/a&gt;  in the container&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once you&amp;rsquo;ve configured these options according to your needs, you only have to define the &lt;code&gt;commands&lt;/code&gt; options as in the following example.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;migrations&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;my-cluster&lt;/span&gt;
+
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;from_service&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;
+
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;commands&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;composer run-script update-parameters&lt;/span&gt;
+                &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;app/console doctrine:migrations:migrate --no-interaction&lt;/span&gt;
+
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;DATABASE_PASSWORD&lt;/span&gt;
+                  &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${THE_PRIVATE_DATABASE_PASSWORD_VARIABLE}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That example will run the some migration commands in a container created from the image of the web service. It will run on the cluster named &lt;code&gt;my-cluster&lt;/code&gt; and will have the environment variable named &lt;code&gt;DATABASE_PASSWORD&lt;/code&gt; injected with the value of a &lt;code&gt;THE_PRIVATE_DATABASE_PASSWORD_VARIABLE&lt;/code&gt; &lt;a href=&#34;../configuration/configuration-files/#variables&#34;&gt;variable previously defined&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tasks: Waiting Statuses</title>
+      <link>/configuration/tasks-wait/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/tasks-wait/</guid>
+      <description>&lt;p&gt;Sometimes, as part of your deployment pipeline, you&amp;rsquo;ll want to wait for other service integrations to return with a status. For this you need to use the &lt;code&gt;wait&lt;/code&gt; task, which is one of the &lt;a href=&#34;../configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example if you use the static code analyser tool Scrutinizer, you may want to deploy your application only if the static analysis passes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/github-statuses.png&#34; alt=&#34;GitHub statuses on Pull-Request&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to achieve that, you can add a &lt;code&gt;wait&lt;/code&gt; task:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;wait_scrutinizer&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;wait&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;context&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Scrutinizer&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;state&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;success&lt;/span&gt;
+
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The tide will be failed if the received status from the given third party service does not match the expected state - &lt;code&gt;success&lt;/code&gt; from Scrutinizer in this example.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tasks: Manual Approval</title>
+      <link>/configuration/tasks-manual-approval/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/tasks-manual-approval/</guid>
+      <description>&lt;p&gt;For production platforms in particular, you may want to introduce an approval process before a deployment can take place. For this you can use the &lt;code&gt;manual_approval&lt;/code&gt; task, which is one of the &lt;a href=&#34;../configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When the &lt;code&gt;manual_approval&lt;/code&gt; task is added to a list of tasks it will pause the running of a tide until manual approval is given to the tide in the ContinuousPipe console as shown here:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/configuration/flow-manual-approval.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the following example, if a tide is triggered then the &lt;code&gt;image&lt;/code&gt; task will run automatically as it is first in the sequence. However, when the &lt;code&gt;wait_product_owner&lt;/code&gt; runs, the tide will be suspended, pending approval. When approval is given, the tide will resume and the &lt;code&gt;deployment&lt;/code&gt; task will run.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;wait_product_owner&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+         &lt;span style=&#34;color: #ae81ff&#34;&gt;manual_approval&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;~&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The following example demonstrates the usage of &lt;code&gt;manual_approval&lt;/code&gt; with a &lt;a href=&#34;../configuration/pipelines/&#34;&gt;pipeline&lt;/a&gt;. The resulting behaviour for the &lt;code&gt;Production&lt;/code&gt; pipeline will be the same as the sequential task behaviour above:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;wait_product_owner&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+         &lt;span style=&#34;color: #ae81ff&#34;&gt;manual_approval&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;~&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+
+&lt;span style=&#34;color: #ae81ff&#34;&gt;pipelines&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Production&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;code_reference.branch&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;[&amp;quot;uat&amp;quot;,&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;production&amp;quot;]&amp;#39;&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;wait_product_owner&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Features&lt;/span&gt;
+      &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tasks: Creating Webhooks</title>
+      <link>/configuration/tasks-webhook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/tasks-webhook/</guid>
+      <description>
+
+&lt;p&gt;You may want to configure a third party application to receive notifications about tide activity. For this you can use the &lt;code&gt;web_hook&lt;/code&gt; task, which is one of the &lt;a href=&#34;../configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When the &lt;code&gt;web_hook&lt;/code&gt; task is added the end of the task list, and the prior tide tasks complete successfully, a body of JSON encoded metadata will be sent to a configured URL. The metadata contains information about the tide, the git repository and branch, and the deployed endpoints. A &lt;a href=&#34;#metadata-format&#34;&gt;sample metadata output&lt;/a&gt; is shown below.&lt;/p&gt;
+
+&lt;p&gt;If the prior tasks fail, the tide will fail, so the webhook will not be fired. Additionally, if the webhook does not receive a 200 HTTP status response the task will fail and the tide will fail.&lt;/p&gt;
+
+&lt;p&gt;In the following example a &lt;code&gt;third_party_integration&lt;/code&gt; task containing a &lt;code&gt;web_hook&lt;/code&gt; task has been added at the end of the task list. Assuming &lt;code&gt;images&lt;/code&gt; and &lt;code&gt;deployment&lt;/code&gt; are successful the webhook will fire for the address configured in the &lt;code&gt;url&lt;/code&gt; property.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;third_party_integration&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;web_hook&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;https://example.com/my-webhook&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In practice, you will probably not want to store the URL of the webhook in version control, so it is recommended that a variable is used instead. In the example below, the value of the &lt;code&gt;url&lt;/code&gt; property would instead be stored in a &lt;code&gt;WEBHOOK_URL&lt;/code&gt; variable set on the &lt;a href=&#34;../quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;third_party_integration&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;web_hook&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${WEBHOOK_URL}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;metadata-format&#34;&gt;Metadata Format&lt;/h2&gt;
+
+&lt;p&gt;A sample of the JSON encoded metadata body is as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;uuid&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;0dbf00d2-1625-11e7-920e-0a580a840256&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;url&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;http:\/\/requestb.in\/17cuv5x1&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;code_reference&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;code_repository&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;identifier&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;84107753&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;https:\/\/api.github.com\/repos\/pswaine\/hello-world&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;organisation&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;pswaine&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;hello-world&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;private&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;default_branch&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;master&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;github&amp;quot;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;},&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;sha1&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;469fbe737ca276a9029d86b225a7bdb2ebfc8123&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;branch&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;master&amp;quot;&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;},&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;public_endpoints&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;[{&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;web&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;5ff322e0-0818-11e7-ad00-0a580a840404-master-hello-world.continuouspipe.net&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;ports&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;[{&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;number&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;protocol&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;TCP&amp;quot;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;}]&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;},&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;web&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;5ff322e0-0818-11e7-ad00-0a580a840404-master-hello-world.continuouspipe.net&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;ports&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;[{&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;number&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;&amp;quot;protocol&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;TCP&amp;quot;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;}]&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;}]&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Notifications</title>
+      <link>/configuration/notifications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/notifications/</guid>
+      <description>
+
+&lt;p&gt;ContinuousPipe can send notifications about the tide statuses. This will help the development, QA or product team to have information about the deployments and the available feature branches.&lt;/p&gt;
+
+&lt;p&gt;The notifications are configured in the &lt;code&gt;notifications&lt;/code&gt; section. All of them can be filtered by event, as in the following example.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;notifications&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;default&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;github_pull_request&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;pull_request_on_success&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;github_pull_request&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;true&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;when&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;success&lt;/span&gt;
+
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;slack_everything&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;slack&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;webhook_url&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;https://...&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;when&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;pending&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;running&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;success&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;failure&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;github&#34;&gt;GitHub&lt;/h2&gt;
+
+&lt;p&gt;When using a GitHub repository, two notification types are by default enabled: the commit status and the pull-request comments.&lt;/p&gt;
+
+&lt;p&gt;If you feel too overloaded, you can disable them with the following configuration:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;notifications&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;default&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;github_commit_status&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;github_pull_request&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;slack&#34;&gt;Slack&lt;/h2&gt;
+
+&lt;p&gt;You can send a Slack notification in a Slack webhook. You just have to create a webhook integration into your Slack channel and configure the webhook URL as in the following example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;notifications&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;slack_to_my_organisation&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;slack&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;webhook_url&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;https://hooks.slack.com/services/[...]/[...]/[...]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Again, if this creates too much noise, you can filter the notices according to status:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;notifications&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;slack_to_my_organisation&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;slack&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;webhook_url&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;https://hooks.slack.com/services/[...]/[...]/[...]&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;when&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;success&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;failure&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pipelines</title>
+      <link>/configuration/pipelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/pipelines/</guid>
+      <description>
+
+&lt;p&gt;You can use a &lt;code&gt;pipelines&lt;/code&gt; section to simplify your configuration. By default tasks run in the order they are defined, but the addition of pipeline configuration disables this behaviour, and instead the pipelines become responsible for defining the task sequence.&lt;/p&gt;
+
+&lt;p&gt;In the following example two pipelines are created, and used to control which tasks are run.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;migrations&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+        
+&lt;span style=&#34;color: #ae81ff&#34;&gt;pipelines&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Production&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;code_reference.branch&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;[&amp;quot;uat&amp;quot;,&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;production&amp;quot;]&amp;#39;&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;images,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;deployment&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Staging&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;Ready&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;review&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;pull_request.labels&amp;#39;&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;images,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;migrations,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;deployment&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Branches with &amp;ldquo;uat&amp;rdquo; or &amp;ldquo;production&amp;rdquo; in their name will be routed to the &lt;code&gt;Production&lt;/code&gt; pipeline, where the &lt;code&gt;images&lt;/code&gt; and &lt;code&gt;deployment&lt;/code&gt; tasks will be run during the build. Branches that have the label &amp;ldquo;Ready for review&amp;rdquo; will be routed to the &amp;ldquo;Staging&amp;rdquo; pipeline, where the &lt;code&gt;images&lt;/code&gt;, &lt;code&gt;migrations&lt;/code&gt; and &lt;code&gt;deployment&lt;/code&gt; tasks will be run during the build.&lt;/p&gt;
+
+&lt;h2 id=&#34;overriding-variables&#34;&gt;Overriding Variables&lt;/h2&gt;
+
+&lt;p&gt;Pipelines can be used to override variables:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;SYMFONY_ENV&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;prod&lt;/span&gt;
+
+&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;migrations&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+        
+&lt;span style=&#34;color: #ae81ff&#34;&gt;pipelines&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Production&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;code_reference.branch&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;[&amp;quot;uat&amp;quot;,&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;production&amp;quot;]&amp;#39;&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;images,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;deployment&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Staging&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;Ready&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;review&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;pull_request.labels&amp;#39;&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;images,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;migrations,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;deployment&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+          &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;SYMFONY_ENV&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;dev&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here the &lt;code&gt;SYMFONY_ENV&lt;/code&gt; variable is set to &amp;ldquo;prod&amp;rdquo;, but is overridden within the &amp;ldquo;Staging&amp;rdquo; pipeline and set to &amp;ldquo;dev&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;overriding-tasks&#34;&gt;Overriding Tasks&lt;/h2&gt;
+
+&lt;p&gt;Pipelines can also be used to override tasks.&lt;/p&gt;
+
+&lt;p&gt;In the following configuration a &lt;code&gt;deployment&lt;/code&gt; task has been defined, which disables HTTPS traffic. There are also two pipelines which run the task.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;migrations&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+               &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                           &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;WEB_HTTPS&lt;/span&gt;
+                             &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+        
+&lt;span style=&#34;color: #ae81ff&#34;&gt;pipelines&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Production&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;code_reference.branch&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;[&amp;quot;uat&amp;quot;,&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;production&amp;quot;]&amp;#39;&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;images,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;deployment&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Staging&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;Ready&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;review&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;pull_request.labels&amp;#39;&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;images,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;migrations,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;deployment&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To override the task within a pipeline, you can import it using &lt;code&gt;imports&lt;/code&gt;, then make any changes you need to. In the below example the &lt;code&gt;Production&lt;/code&gt; pipeline overrides &lt;code&gt;environment_variables&lt;/code&gt; within the &lt;code&gt;deployment&lt;/code&gt; task to enable HTTPS traffic:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;migrations&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+               &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                   &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                       &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                           &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;WEB_HTTPS&lt;/span&gt;
+                             &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;false&lt;/span&gt;
+        
+&lt;span style=&#34;color: #ae81ff&#34;&gt;pipelines&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Production&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;code_reference.branch&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;[&amp;quot;uat&amp;quot;,&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;production&amp;quot;]&amp;#39;&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;imports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;
+          &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+              &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                  &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                      &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;WEB_HTTPS&lt;/span&gt;
+                                &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;true&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;Staging&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;condition&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;Ready&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;review&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;pull_request.labels&amp;#39;&lt;/span&gt;
+      &lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;images,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;migrations,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;deployment&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cloudflare Integration</title>
+      <link>/configuration/cloudflare-integration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/cloudflare-integration/</guid>
+      <description>&lt;p&gt;You can integrate your endpoints with the &lt;a href=&#34;https://www.cloudflare.com/&#34;&gt;Cloudflare&lt;/a&gt; service. At a minimum this allows you to take advantage of Cloudflare DNS functionality and view deployed tides using a domain name (rather than just an IP address). If you choose to proxy the traffic as well, you can use advanced features in Cloudflare, including adding SSL to the endpoint.&lt;/p&gt;
+
+&lt;p&gt;An example of the Cloudflare endpoint integration is as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;endpoints&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;cloud_flare_zone&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;zone_identifier&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLOUD_FLARE_ZONE}&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;authentication&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                                      &lt;span style=&#34;color: #ae81ff&#34;&gt;email&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLOUD_FLARE_EMAIL}&lt;/span&gt;
+                                      &lt;span style=&#34;color: #ae81ff&#34;&gt;api_key&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLOUD_FLARE_API_KEY}&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;proxied&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;true&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;record_suffix&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;-test.yourdomain.com&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This configuration adds a &lt;code&gt;cloud_flare_zone&lt;/code&gt; node to the &lt;code&gt;web&lt;/code&gt; endpoint. The authentication credentials under &lt;code&gt;cloud_flare_zone&lt;/code&gt; can be obtained from the Cloudflare console:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;zone_identifier&lt;/code&gt; is located on the overview screen of the Cloudflare console&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;email&lt;/code&gt; is the email used to log into the Cloudflare console&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;api_key&lt;/code&gt; is located in the account section of the Cloudflare console&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;You will notice that the actual values of these credentials are not entered into the configuration - instead they are represented as the YAML variables &lt;code&gt;${CLOUD_FLARE_ZONE}&lt;/code&gt;, &lt;code&gt;${CLOUD_FLARE_EMAIL}&lt;/code&gt; and &lt;code&gt;${CLOUD_FLARE_API_KEY}&lt;/code&gt; respectively. The values instead need to be entered into the ContinuousPipe console as explained when &lt;a href=&#34;../quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Additionally, &lt;code&gt;${CLOUD_FLARE_ZONE}&lt;/code&gt; and &lt;code&gt;${CLOUD_FLARE_API_KEY}&lt;/code&gt; need to be encrypted. This can be done by clicking the padlock icon when entering the values into the flow configuration, before saving.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;proxied&lt;/code&gt; property determines whether traffic is proxied through Cloudflare. If set to &amp;ldquo;false&amp;rdquo; (or not set at all) then the endpoint just uses Cloudflare DNS functionality to associate a domain name with a tide (rather than just an IP address). If set to &amp;ldquo;true&amp;rdquo; then traffic passes through Cloudflare servers so is subject to any configuration set up there. The primary advantage of this is that it allows SSL to be set up on the endpoint, however it also allows many other Cloudflare features to be used by setting up &lt;a href=&#34;https://support.cloudflare.com/hc/en-us/articles/218411427-Page-Rules-Tutorial&#34;&gt;page rules&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;record_suffix&lt;/code&gt; property is used to configure the domain name that will be used to view the deployed tide. It is combined with the environment identifier to form a complete url in the format &lt;code&gt;http://&amp;lt;environment_id&amp;gt;&amp;lt;record_suffix&amp;gt;&lt;/code&gt;. For example, with the configuration above, launching a tide with an environment identifier of &amp;ldquo;5ff322e0-0818-11e7-ad00-0a580a840404-master&amp;rdquo; would result in an endpoint URL of &amp;ldquo;&lt;a href=&#34;http://5ff322e0-0818-11e7-ad00-0a580a840404-master-test.yourdomain.com/&amp;quot;&#34;&gt;http://5ff322e0-0818-11e7-ad00-0a580a840404-master-test.yourdomain.com/&amp;quot;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;The domain used in the &lt;code&gt;record_suffix&lt;/code&gt; needs to match the domain associated with the Cloudflare account.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As you can see, using the default environment identifier results in a rather long endpoint URL. This can be improved by overriding the environment name as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;hello-world-&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;code_reference.branch&amp;#39;&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;endpoints&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;cloud_flare_zone&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;zone_identifier&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLOUD_FLARE_ZONE}&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;authentication&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                                      &lt;span style=&#34;color: #ae81ff&#34;&gt;email&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLOUD_FLARE_EMAIL}&lt;/span&gt;
+                                      &lt;span style=&#34;color: #ae81ff&#34;&gt;api_key&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLOUD_FLARE_API_KEY}&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;proxied&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;true&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;record_suffix&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;-test.yourdomain.com&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now when a tide is deployed, the endpoint URL will be &amp;ldquo;&lt;a href=&#34;http://hello-world-master-test.yourdomain.com/&amp;quot;&#34;&gt;http://hello-world-master-test.yourdomain.com/&amp;quot;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;Another way to set the environment name is by using &lt;a href=&#34;../faq/how-do-I-use-defaults-to-reduce-the-duplication-of-configuration/&#34;&gt;default configuration&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Endpoints</title>
+      <link>/configuration/endpoints/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/endpoints/</guid>
+      <description>
+
+&lt;h2 id=&#34;using-a-standard-endpoint&#34;&gt;Using a Standard Endpoint&lt;/h2&gt;
+
+&lt;p&gt;The standard way to expose your services to the internet is to use the following configuration:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;accessibility&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                            &lt;span style=&#34;color: #ae81ff&#34;&gt;from_external&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is fine for most purposes, but has it has three main limitations:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; It presents difficulties when trying to whitelist IP addresses for authentication as the client IP address is not passed through to the service. This can be resolved by using an annotation, which ensures that the client IP address is passed through to the service:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;endpoints&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                      &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;www&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;annotations&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;service.beta.kubernetes.io/external-traffic&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;OnlyLocal&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;accessibility&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                            &lt;span style=&#34;color: #ae81ff&#34;&gt;from_external&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;2)&lt;/strong&gt; The IP addresses are chosen from a random pool and by default are not static, which means they cannot be reliably associated with a DNS record.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3)&lt;/strong&gt; It uses a public IP address per service, which can be expensive.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-a-load-balancer&#34;&gt;Using a Load Balancer&lt;/h2&gt;
+
+&lt;p&gt;Most cloud services offer the option of using a load balancer, which mitigates two of the above limitations - with a load balancer public IP addresses are passed through to the service, and the IP address of the load balancer is static so can be set up in a DNS record. However, using load balancers can also be expensive as you still use a public IP address for each service.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-the-nginx-ingress-controller&#34;&gt;Using the Nginx Ingress Controller&lt;/h2&gt;
+
+&lt;p&gt;Using the &lt;a href=&#34;https://github.com/kubernetes/ingress/tree/master/controllers/nginx&#34;&gt;Nginx Ingress controller&lt;/a&gt; presents an option that mitigates all three of the above limitations, as it only requires one public IP address - a series of rules can be used to determine how inbound connections are directed to your services. The Nginx Ingress controller also allows SSL to be configured in one place so removes the need to configure SSL for each service independently.&lt;/p&gt;
+
+&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;ContinuousPipe currently provides no way to create the Nginx Ingress controller - this needs to be done as a manual step when setting up your Kubernetes cluster. Once the Ingress is deployed, it will be assigned an IP address from a random pool, which will then be static for the lifetime of the Ingress. The IP address of the manually deployed Ingress then needs to be set up in a DNS rule so that it is associated with your domain, unless you are using &lt;a href=&#34;#nginx-ingress-with-cloudflare-ssl&#34;&gt;Cloudflare integration&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;You need an Ingress controller to be deployed on your cluster first.&lt;/strong&gt; You can use the &lt;a href=&#34;https://github.com/continuouspipe/nginx-ingress-controller&#34;&gt;ContinuousPipe Ingress controller&lt;/a&gt; or any of the official &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-controllers&#34;&gt;Kubernetes Ingress controllers&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;continuouspipe-modifications&#34;&gt;ContinuousPipe Modifications&lt;/h3&gt;
+
+&lt;p&gt;The Nginx Ingress controller used by ContinuousPipe is slightly modified from the default Kubernetes behaviour. The default Nginx Ingress controller only exposes port 443 if a SSL certificate with matching hostname is also configured. The ContinuousPipe Nginx Ingress controller extends that behaviour to allow port 443 to be exposed, using a wildcard SSL certificate if no matching hostname certificate is configured. Additionally, it allows Cloudflare SSL to be configured.&lt;/p&gt;
+
+&lt;h3 id=&#34;nginx-ingress-with-no-ssl&#34;&gt;Nginx Ingress With No SSL&lt;/h3&gt;
+
+&lt;p&gt;If you wish to use the Nginx Ingress without SSL, this can be done as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLUSTER}&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;endpoints&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;webnossl&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;ingress&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;nginx&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;host_suffix&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;-example-with-no-ssl.yourdomain.com&amp;#39;&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                          &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see, the setup is quite straight forward. Within &lt;code&gt;endpoints&lt;/code&gt;, the Ingress is defined as &lt;code&gt;nginx&lt;/code&gt;. A &lt;code&gt;host_suffix&lt;/code&gt; is supplied, which will be combined with the branch name to create the full URL e.g. a deployment of &amp;ldquo;master&amp;rdquo; branch would create an environment with URL &amp;ldquo;http&amp;#58;//master-example-with-no-ssl.yourdomain.com&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Additionally, port 80 is exposed, so traffic will just use HTTP.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;You will need to set up a wildcard DNS rule associating the Ingress IP address with your domain name for this example to work.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;123.123.123.123 *example-with-no-ssl.yourdomain.com&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;nginx-ingress-with-own-ssl&#34;&gt;Nginx Ingress With Own SSL&lt;/h3&gt;
+
+&lt;p&gt;If you wish to use the Nginx Ingress with SSL, this can be done as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLUSTER}&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;endpoints&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;webwithssl&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;ingress&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;nginx&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;expression&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;example-with-ssl.yourdomain.com&amp;quot;&amp;#39;&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;ssl_certificates&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                            &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;webwithssl&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${SSL_KEY}&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;cert&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${SSL_CERT}&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                          &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;
+                          &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;443&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is similar to the previous configuration, but with important differences. Instead of using a &lt;code&gt;host_suffix&lt;/code&gt;, a &lt;code&gt;host&lt;/code&gt; expression is defined instead. This will create an environment using exactly &amp;ldquo;&lt;a href=&#34;https://example-with-ssl.yourdomain.com&amp;quot;&#34;&gt;https://example-with-ssl.yourdomain.com&amp;quot;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;ssl_certificates&lt;/code&gt; section is used to define the certificate, which can be either an officially supplied certificate or a self signed certificate. As this isn&amp;rsquo;t something you want to store in version control, the &lt;code&gt;key&lt;/code&gt; and &lt;code&gt;cert&lt;/code&gt; properties instead reference variables &lt;code&gt;${SSL_KEY}&lt;/code&gt; and &lt;code&gt;${SSL_CERT}&lt;/code&gt; respectively. The values need to be entered into the ContinuousPipe console as explained when &lt;a href=&#34;../quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;. The values entered should be base64 encoded.&lt;/p&gt;
+
+&lt;p&gt;In addition to port 80, port 443 is also exposed. This is needed to let ContinuousPipe know that you want to use HTTPS traffic.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;You will need to set up a DNS rule associating the Ingress IP address with your domain name for this example to work.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;123.123.123.123 example-with-ssl.yourdomain.com&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;nginx-ingress-with-wildcard-ssl&#34;&gt;Nginx Ingress With Wildcard SSL&lt;/h3&gt;
+
+&lt;p&gt;If you wish to use the Nginx Ingress with wildcard SSL, this can be done as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLUSTER}&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;endpoints&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;webwithwildcardssl&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;ingress&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;nginx&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;expression&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;&amp;quot;example-with-wildcard-ssl.yourdomain.com&amp;quot;&amp;#39;&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                          &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;
+                          &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;443&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is similar to the previous configuration, but omits the &lt;code&gt;ssl_certificates&lt;/code&gt;. However, as port 443 is still exposed ContinuousPipe will still set up SSL using wildcard certificates. This behaviour is distinct to the ContinuousPipe adaptation of the Nginx Ingress controller - the default Nginx Ingress controller would not set up SSL in this scenario.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;You will need to set up a wildcard DNS rule associating the Ingress IP address with your domain name for this example to work.&lt;/p&gt;
+
+&lt;p&gt;e.g. &lt;code&gt;123.123.123.123 *example-with-wildcard-ssl.yourdomain.com&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;nginx-ingress-with-cloudflare-ssl&#34;&gt;Nginx Ingress With Cloudflare SSL&lt;/h3&gt;
+
+&lt;p&gt;ContinuousPipe already has &lt;a href=&#34;../configuration/cloudflare-integration/&#34;&gt;integration with Cloudflare&lt;/a&gt; when configuring endpoints directly. This integration can also be applied to the Nginx Ingress. The major advantage of this is that it does not need a DNS rule setting up in advance, as Cloudflare will create this automatically.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;deploy&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;cluster&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLUSTER}&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;endpoints&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;webwithcloudflaressl&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;cloud_flare_zone&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;zone_identifier&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLOUD_FLARE_ZONE}&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;authentication&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;email&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLOUD_FLARE_EMAIL}&lt;/span&gt;
+                                  &lt;span style=&#34;color: #ae81ff&#34;&gt;api_key&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${CLOUD_FLARE_API_KEY}&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;proxied&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;true&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;record_suffix&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;-example-with-cloudflare-ssl.continuouspipe.net&amp;#39;&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;ingress&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;nginx&lt;/span&gt;
+                              &lt;span style=&#34;color: #ae81ff&#34;&gt;host_suffix&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;-example-with-cloudflare-ssl.continuouspipe.net&amp;#39;&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #ae81ff&#34;&gt;ports&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                          &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;80&lt;/span&gt;
+                          &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;443&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see, the main difference is the addition of a &lt;code&gt;cloud_flare_zone&lt;/code&gt; section, which defines how traffic should interact with Cloudflare. The values defined in &lt;code&gt;cloud_flare_zone&lt;/code&gt; are explained in the &lt;a href=&#34;../configuration/cloudflare-integration/&#34;&gt;integration with Cloudflare&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;Further down, the Ingress defines a &lt;code&gt;host_suffix&lt;/code&gt; that matches the Cloudflare &lt;code&gt;record_suffix&lt;/code&gt;, so that the environment URL and the Cloudflare DNS entry are matched.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Artifacts</title>
+      <link>/configuration/artifacts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/configuration/artifacts/</guid>
+      <description>
+
+&lt;h2 id=&#34;why-use-artifacts&#34;&gt;Why Use Artifacts?&lt;/h2&gt;
+
+&lt;p&gt;Artifacts are a ContinuousPipe feature that can be used to solve the problems of:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Insecure images&lt;/strong&gt; - where an image contains secret values used during the build process&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Large images&lt;/strong&gt; - where an image contains build tools that are not needed beyond the build process&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These problems are addressed by introducing build steps to create separate images, and then using artifacts to copy files and folders from an initial build image to a secondary build image.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/configuration/multi-step-building.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For example, you might create an initial build image containing a GitHub access token to pull the contents of a private Git repository, then create a secondary build image and copy the code across. The secondary image would only contain the code and none of the access credentials.&lt;/p&gt;
+
+&lt;p&gt;Similarly you might create an initial build image that uses Grunt to build your frontend code, which would need a combination of Ruby, Ruby gems, npm and npm modules to build the code. However, the secondary image would not require these tools once the code was copied across so would be much smaller.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-build-steps&#34;&gt;Using Build Steps&lt;/h2&gt;
+
+&lt;p&gt;Artifacts are used in conjunction with build steps. The standard way to build an image is to use the following configuration, which is effectively a single build step:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${IMAGE_NAME}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It defines a Docker image repository location to push the built image. It also assumes that a &lt;code&gt;Dockerfile&lt;/code&gt; is present in the project root directory to provide instructions on how to build the image.&lt;/p&gt;
+
+&lt;p&gt;Using a build step, the above can also be written as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;steps&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;docker_file_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./Dockerfile&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${IMAGE_NAME}&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see, the simple configuration has been replaced with a &lt;code&gt;steps&lt;/code&gt; section, which explicitly defines where the &lt;code&gt;Dockerfile&lt;/code&gt; is located as well as defining a Docker image repository location as before.&lt;/p&gt;
+
+&lt;p&gt;It is then quite straight forward to add an additional build step:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;steps&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;docker_file_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./Buildfile&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;docker_file_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./Dockerfile&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${IMAGE_NAME}&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This will build two separate Docker images, however as we haven&amp;rsquo;t introduced any artifacts yet the first image will effectively be built and then discarded, so the the net result will be the same as the previous examples.&lt;/p&gt;
+
+&lt;p&gt;It is also possible to specify a build directory, which works in conjunction with the Docker file path:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;steps&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;docker_file_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./Buildfile&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;build_directory&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./docker&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;docker_file_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./Dockerfile&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;build_directory&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./docker&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${IMAGE_NAME}&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this configuration the Docker file paths will be &lt;code&gt;./docker/Buildfile&lt;/code&gt; and &lt;code&gt;./docker/Dockerfile&lt;/code&gt; respectively.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-artifacts&#34;&gt;Using Artifacts&lt;/h2&gt;
+
+&lt;p&gt;To enable artifacts, a &lt;code&gt;write_artifacts&lt;/code&gt; and &lt;code&gt;read_artifacts&lt;/code&gt; section needs to be added to separate build steps as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;steps&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;docker_file_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./Buildfile&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;write_artifacts&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;built-files-artifact&lt;/span&gt;
+                                &lt;span style=&#34;color: #ae81ff&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;/app/built-files&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;docker_file_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./Dockerfile&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${IMAGE_NAME}&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;read_artifacts&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;built-files-artifact&lt;/span&gt;
+                                &lt;span style=&#34;color: #ae81ff&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;/built-files&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;write_artifacts&lt;/code&gt; section in the first build step creates a write artifact with name &amp;ldquo;built-files-artifact&amp;rdquo;. It then specifies a path of &amp;ldquo;/app/built-files&amp;rdquo; which represents the location where the Docker file &lt;code&gt;Buildfile&lt;/code&gt; will place the results of the build process that it intends to share.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;read_artifacts&lt;/code&gt; section in the second build step creates a corresponding read artifact by referencing the same name as the write artifact i.e. &amp;ldquo;built-files-artifact&amp;rdquo;. It then specifies a path of &amp;ldquo;/built-files&amp;rdquo; which represents the location where the Docker file &lt;code&gt;Dockerfile&lt;/code&gt; can expect to find the results of the build process that have been shared.&lt;/p&gt;
+
+&lt;h3 id=&#34;docker-file-for-first-build-step&#34;&gt;Docker File for First Build Step&lt;/h3&gt;
+
+&lt;p&gt;The following is a minimal example Docker file to demonstrate the interaction between the artifact and Docker in the first build step:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Buildfile&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FROM nginx
+
+RUN mkdir -p /app/built-files &amp;amp;&amp;amp; touch /app/built-files/test.txt &amp;amp;&amp;amp; echo &amp;quot;test1234&amp;quot; &amp;gt; /app/built-files/test.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This simply creates a directory that matches the path specified in the write artifact i.e &amp;ldquo;/app/built-files&amp;rdquo;, and then creates a file within the directory to populate the artifact.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;In practice the contents of the &amp;ldquo;/app/built-files&amp;rdquo; directory would be the result of a build process.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;docker-file-for-second-build-step&#34;&gt;Docker File for Second Build Step&lt;/h3&gt;
+
+&lt;p&gt;The following is a minimal example Docker file to demonstrate the interaction between the artifact and Docker in the second build step:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FROM nginx
+
+COPY ./built-files /usr/share/nginx/html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This uses the Docker &lt;a href=&#34;https://docs.docker.com/engine/reference/builder/#copy&#34;&gt;COPY instruction&lt;/a&gt; to import files into the image, copying them to the web server directory. It imports any files shared in the artifact by referencing the path specified in the read artifact prefixed by a full stop i.e &amp;ldquo;./built-files&amp;rdquo;. In this case there is just one file in the artifact, which will be copied from &amp;ldquo;./built-files/test.txt&amp;rdquo; to &amp;ldquo;/usr/share/nginx/html/test.txt&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-artifacts-with-secrets&#34;&gt;Using Artifacts With Secrets&lt;/h2&gt;
+
+&lt;p&gt;If your initial build image needs to use secure access credentials (such as an auth token) you can supply it as an environment variable:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+        &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+            &lt;span style=&#34;color: #ae81ff&#34;&gt;services&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color: #ae81ff&#34;&gt;web&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                    &lt;span style=&#34;color: #ae81ff&#34;&gt;steps&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;docker_file_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./Buildfile&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;environment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;GITHUB_TOKEN&lt;/span&gt;
+                                &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${GITHUB_TOKEN}&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;write_artifacts&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;built-files-artifact&lt;/span&gt;
+                                &lt;span style=&#34;color: #ae81ff&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;/app/built-files&lt;/span&gt;
+                        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;docker_file_path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;./Dockerfile&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${IMAGE_NAME}&lt;/span&gt;
+                          &lt;span style=&#34;color: #ae81ff&#34;&gt;read_artifacts&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+                              &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;built-files-artifact&lt;/span&gt;
+                                &lt;span style=&#34;color: #ae81ff&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;/built-files&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here the image in the first build step will be supplied with the enviroment variable &lt;code&gt;GITHUB_TOKEN&lt;/code&gt;, but the image in the second build step will have no record of it.&lt;/p&gt;
+
+&lt;p&gt;The following is an example Docker file to demonstrate how the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; will be used in the first build step:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Buildfile&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FROM quay.io/continuouspipe/symfony-php7.1-nginx:stable
+
+ARG GITHUB_TOKEN=
+
+RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
+    composer install -o --no-interaction &amp;amp;&amp;amp; \
+    composer clear-cache
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
