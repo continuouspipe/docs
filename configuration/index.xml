@@ -38,7 +38,7 @@
 &lt;p&gt;The ContinuousPipe configuration is represented as a YAML file. The final configuration is the result of a merger of these different optional configuration sources:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;The YAML stored on CP when &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The YAML stored on CP when &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;The YAML file named &lt;code&gt;continuous-pipe.yml&lt;/code&gt; in your code repository&lt;/li&gt;
 &lt;li&gt;The YAML file named &lt;code&gt;continuous-pipe.[branch].yml&lt;/code&gt; in your code repository&lt;/li&gt;
 &lt;/ul&gt;
@@ -69,11 +69,11 @@
             &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;You will learn more about each task in the &lt;a href=&#34;../docs/configuration/tasks/&#34;&gt;tasks overview section&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You will learn more about each task in the &lt;a href=&#34;/docs/docs/configuration/tasks/&#34;&gt;tasks overview section&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;variables&#34;&gt;Variables&lt;/h3&gt;
 
-&lt;p&gt;You can avoid copying and pasting by using variables inside your configuration files. The following example shows you how to prevent putting values inside your &lt;code&gt;continuous-pipe.yml&lt;/code&gt; by using variables that are defined in the configuration stored in ContinuousPipe when &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can avoid copying and pasting by using variables inside your configuration files. The following example shows you how to prevent putting values inside your &lt;code&gt;continuous-pipe.yml&lt;/code&gt; by using variables that are defined in the configuration stored in ContinuousPipe when &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;# configuration in ContinuousPipe&lt;/span&gt;
 &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;name:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CLUSTER,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;my-production-cluster&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
@@ -172,19 +172,19 @@
       <guid>/docs/configuration/tasks/</guid>
       <description>
 
-&lt;p&gt;As you&amp;rsquo;ve seen in the &lt;a href=&#34;../docs/configuration/configuration-files/#tasks&#34;&gt;configuration files&lt;/a&gt;, most ContinuousPipe configuration is about tasks. By breaking down the configuration into smaller tasks, they can be composed together to create a flexible workflow.&lt;/p&gt;
+&lt;p&gt;As you&amp;rsquo;ve seen in the &lt;a href=&#34;/docs/docs/configuration/configuration-files/#tasks&#34;&gt;configuration files&lt;/a&gt;, most ContinuousPipe configuration is about tasks. By breaking down the configuration into smaller tasks, they can be composed together to create a flexible workflow.&lt;/p&gt;
 
 &lt;h2 id=&#34;inbuilt-tasks&#34;&gt;Inbuilt Tasks&lt;/h2&gt;
 
 &lt;p&gt;ContinuousPipe has several inbuilt tasks that can be included in your workflow:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;build&lt;/code&gt;: Will &lt;a href=&#34;../docs/configuration/tasks-build/&#34;&gt;build&lt;/a&gt; and push your Docker image&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;deploy&lt;/code&gt;: Will &lt;a href=&#34;../docs/configuration/tasks-deploy/&#34;&gt;deploy&lt;/a&gt; your service(s) to a cluster&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;run&lt;/code&gt;: Will &lt;a href=&#34;../docs/configuration/tasks-run/&#34;&gt;run&lt;/a&gt; some commands inside a deployed context&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;wait&lt;/code&gt;: Will &lt;a href=&#34;../docs/configuration/tasks-wait/&#34;&gt;wait&lt;/a&gt; for some other GitHub statuses&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;manual_approval&lt;/code&gt;: Will suspend the task sequence until &lt;a href=&#34;../docs/configuration/tasks-manual-approval/&#34;&gt;manual approval&lt;/a&gt; is given to the tide in the ContinuousPipe console&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;webhook&lt;/code&gt;: Will trigger a &lt;a href=&#34;../docs/configuration/tasks-webhook/&#34;&gt;webhook&lt;/a&gt; for use by a third party service&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;build&lt;/code&gt;: Will &lt;a href=&#34;/docs/docs/configuration/tasks-build/&#34;&gt;build&lt;/a&gt; and push your Docker image&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;deploy&lt;/code&gt;: Will &lt;a href=&#34;/docs/docs/configuration/tasks-deploy/&#34;&gt;deploy&lt;/a&gt; your service(s) to a cluster&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;run&lt;/code&gt;: Will &lt;a href=&#34;/docs/docs/configuration/tasks-run/&#34;&gt;run&lt;/a&gt; some commands inside a deployed context&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wait&lt;/code&gt;: Will &lt;a href=&#34;/docs/docs/configuration/tasks-wait/&#34;&gt;wait&lt;/a&gt; for some other GitHub statuses&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;manual_approval&lt;/code&gt;: Will suspend the task sequence until &lt;a href=&#34;/docs/docs/configuration/tasks-manual-approval/&#34;&gt;manual approval&lt;/a&gt; is given to the tide in the ContinuousPipe console&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;webhook&lt;/code&gt;: Will trigger a &lt;a href=&#34;/docs/docs/configuration/tasks-webhook/&#34;&gt;webhook&lt;/a&gt; for use by a third party service&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;filters&#34;&gt;Conditional Tasks&lt;/h2&gt;
@@ -266,7 +266,7 @@
 
 &lt;h2 id=&#34;retrieving-task-information&#34;&gt;Retrieving Task Information&lt;/h2&gt;
 
-&lt;p&gt;Within a &lt;code&gt;tasks&lt;/code&gt; section, you can get access to information that comes from previous tasks. You need to use &lt;a href=&#34;../docs/configuration/configuration-files/#tasks&#34;&gt;named tasks&lt;/a&gt; to expose the task information.&lt;/p&gt;
+&lt;p&gt;Within a &lt;code&gt;tasks&lt;/code&gt; section, you can get access to information that comes from previous tasks. You need to use &lt;a href=&#34;/docs/docs/configuration/configuration-files/#tasks&#34;&gt;named tasks&lt;/a&gt; to expose the task information.&lt;/p&gt;
 
 &lt;p&gt;The &lt;code&gt;deploy&lt;/code&gt; task exposes a &lt;code&gt;services&lt;/code&gt; context object which is an array of objects indexed by key. The key is the name of the deployed service. Each object will contain the following properties:&lt;/p&gt;
 
@@ -330,7 +330,7 @@
       <guid>/docs/configuration/tasks-build/</guid>
       <description>
 
-&lt;p&gt;Before deploying anything, you will most of the time want ContinuousPipe to build your Docker images. For this you need to use the &lt;code&gt;build&lt;/code&gt; task, which is one of the &lt;a href=&#34;../docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before deploying anything, you will most of the time want ContinuousPipe to build your Docker images. For this you need to use the &lt;code&gt;build&lt;/code&gt; task, which is one of the &lt;a href=&#34;/docs/docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The only mandatory parameter of &lt;code&gt;build&lt;/code&gt; is the image name you want to build:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -384,7 +384,7 @@
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;This assumes that you have defined the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; variable somewhere. You can refer to the &lt;a href=&#34;../docs/configuration/configuration-files/#variables&#34;&gt;variable section&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This assumes that you have defined the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; variable somewhere. You can refer to the &lt;a href=&#34;/docs/docs/configuration/configuration-files/#variables&#34;&gt;variable section&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;The following is an example Docker file to demonstrate how the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; will be used during the build:&lt;/p&gt;
@@ -419,7 +419,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
 
 &lt;p&gt;In order to build small images and/or hide secret values required during the build process, you can use artifacts. These artifacts will allow you to share files or folders between different build steps that use a combination of Dockerfiles, context and build arguments.&lt;/p&gt;
 
-&lt;p&gt;For more information see the &lt;a href=&#34;../docs/configuration/artifacts/&#34;&gt;artifacts documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more information see the &lt;a href=&#34;/docs/docs/configuration/artifacts/&#34;&gt;artifacts documentation&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -431,7 +431,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
       <guid>/docs/configuration/tasks-deploy/</guid>
       <description>
 
-&lt;p&gt;Whether you are using a pre-built image or needed to build an image, you can now deploy it. For this you need to use the &lt;code&gt;deploy&lt;/code&gt; task, which is one of the &lt;a href=&#34;../docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Whether you are using a pre-built image or needed to build an image, you can now deploy it. For this you need to use the &lt;code&gt;deploy&lt;/code&gt; task, which is one of the &lt;a href=&#34;/docs/docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The &lt;code&gt;deploy&lt;/code&gt; task is configurable in many ways. The following examples assume that you have at least a &lt;code&gt;web&lt;/code&gt; and a &lt;code&gt;database&lt;/code&gt; service configured in your &lt;code&gt;docker-compose.yml&lt;/code&gt; file.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -456,7 +456,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
 
 &lt;h2 id=&#34;image-source&#34;&gt;Image Source&lt;/h2&gt;
 
-&lt;p&gt;If you have a &lt;a href=&#34;../docs/configuration/tasks/&#34;&gt;&lt;code&gt;build&lt;/code&gt; task&lt;/a&gt; before the deployment task and an image for the service with the same name was built just before, this image name will be used automatically, so you have nothing to configure.&lt;/p&gt;
+&lt;p&gt;If you have a &lt;a href=&#34;/docs/docs/configuration/tasks/&#34;&gt;&lt;code&gt;build&lt;/code&gt; task&lt;/a&gt; before the deployment task and an image for the service with the same name was built just before, this image name will be used automatically, so you have nothing to configure.&lt;/p&gt;
 
 &lt;p&gt;If that&amp;rsquo;s not the case, the first way to reference an image is to explicitly mention the image name. Note that this value is automatically guessed if you have a service having the same name in your project&amp;rsquo;s &lt;code&gt;docker-compose.yml&lt;/code&gt; file.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -556,11 +556,11 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
                 &lt;span style=&#34;color: #ae81ff&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${WILDCARD_SSL_KEY}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;The documentation on &lt;a href=&#34;../docs/configuration/endpoints/&#34;&gt;endpoints&lt;/a&gt; gives more details on how to use Ingress and SSL.&lt;/p&gt;
+&lt;p&gt;The documentation on &lt;a href=&#34;/docs/docs/configuration/endpoints/&#34;&gt;endpoints&lt;/a&gt; gives more details on how to use Ingress and SSL.&lt;/p&gt;
 
 &lt;h2 id=&#34;basic-http-authentication&#34;&gt;Basic HTTP Authentication&lt;/h2&gt;
 
-&lt;p&gt;If you are using one of the &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; for &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-apache#basic-authentication&#34;&gt;Apache&lt;/a&gt; or &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx#basic-authentication&#34;&gt;Nginx&lt;/a&gt; then you can enable basic auth using environment variables:&lt;/p&gt;
+&lt;p&gt;If you are using one of the &lt;a href=&#34;/docs/docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; for &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-apache#basic-authentication&#34;&gt;Apache&lt;/a&gt; or &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx#basic-authentication&#34;&gt;Nginx&lt;/a&gt; then you can enable basic auth using environment variables:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;specification&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
    &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
        &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;AUTH_HTTP_&lt;/span&gt;
@@ -570,7 +570,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
          &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${AUTH_HTTP_HTPASSWD}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Here the value of &lt;code&gt;AUTH_HTTP_HTPASSWD&lt;/code&gt; is being passed in as a variable to keep it out of version control, this needs to be set on the &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
+&lt;p&gt;Here the value of &lt;code&gt;AUTH_HTTP_HTPASSWD&lt;/code&gt; is being passed in as a variable to keep it out of version control, this needs to be set on the &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
 
 &lt;h2 id=&#34;conditional-services&#34;&gt;Conditional Services&lt;/h2&gt;
 
@@ -684,15 +684,15 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/configuration/tasks-run/</guid>
-      <description>&lt;p&gt;After deploying you may need to run a series of commands to prepare the deployed container. For instance, you may need to run your integration tests or your application migrations. For this you need to use the &lt;code&gt;run&lt;/code&gt; task, which is one of the &lt;a href=&#34;../docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;. The &lt;code&gt;run&lt;/code&gt; task allows you to run commands in containers, inside the deployed environment.&lt;/p&gt;
+      <description>&lt;p&gt;After deploying you may need to run a series of commands to prepare the deployed container. For instance, you may need to run your integration tests or your application migrations. For this you need to use the &lt;code&gt;run&lt;/code&gt; task, which is one of the &lt;a href=&#34;/docs/docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;. The &lt;code&gt;run&lt;/code&gt; task allows you to run commands in containers, inside the deployed environment.&lt;/p&gt;
 
-&lt;p&gt;Most of the options are shared with the &lt;a href=&#34;../docs/configuration/tasks-deploy/&#34;&gt;&lt;code&gt;deploy&lt;/code&gt; task&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;Most of the options are shared with the &lt;a href=&#34;/docs/docs/configuration/tasks-deploy/&#34;&gt;&lt;code&gt;deploy&lt;/code&gt; task&lt;/a&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;cluster&lt;/code&gt;, to select the &lt;a href=&#34;../docs/configuration/tasks-deploy/#cluster&#34;&gt;cluster&lt;/a&gt; on which the container will run&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;image&lt;/code&gt;, to select the &lt;a href=&#34;../docs/configuration/tasks-deploy/#image-source&#34;&gt;image&lt;/a&gt; that will be used to run the commands&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;environment&lt;/code&gt;, to select the &lt;a href=&#34;../docs/configuration/tasks-deploy/#environment-name&#34;&gt;name of the environment&lt;/a&gt; on which the container will be created&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;environment_variables&lt;/code&gt;, to inject some &lt;a href=&#34;../docs/configuration/tasks-deploy/#environment-variables&#34;&gt;environment variables&lt;/a&gt;  in the container&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cluster&lt;/code&gt;, to select the &lt;a href=&#34;/docs/docs/configuration/tasks-deploy/#cluster&#34;&gt;cluster&lt;/a&gt; on which the container will run&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;image&lt;/code&gt;, to select the &lt;a href=&#34;/docs/docs/configuration/tasks-deploy/#image-source&#34;&gt;image&lt;/a&gt; that will be used to run the commands&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;environment&lt;/code&gt;, to select the &lt;a href=&#34;/docs/docs/configuration/tasks-deploy/#environment-name&#34;&gt;name of the environment&lt;/a&gt; on which the container will be created&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;environment_variables&lt;/code&gt;, to inject some &lt;a href=&#34;/docs/docs/configuration/tasks-deploy/#environment-variables&#34;&gt;environment variables&lt;/a&gt;  in the container&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Once you&amp;rsquo;ve configured these options according to your needs, you only have to define the &lt;code&gt;commands&lt;/code&gt; options as in the following example.&lt;/p&gt;
@@ -715,7 +715,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
                   &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${THE_PRIVATE_DATABASE_PASSWORD_VARIABLE}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;That example will run the some migration commands in a container created from the image of the web service. It will run on the cluster named &lt;code&gt;my-cluster&lt;/code&gt; and will have the environment variable named &lt;code&gt;DATABASE_PASSWORD&lt;/code&gt; injected with the value of a &lt;code&gt;THE_PRIVATE_DATABASE_PASSWORD_VARIABLE&lt;/code&gt; &lt;a href=&#34;../docs/configuration/configuration-files/#variables&#34;&gt;variable previously defined&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That example will run the some migration commands in a container created from the image of the web service. It will run on the cluster named &lt;code&gt;my-cluster&lt;/code&gt; and will have the environment variable named &lt;code&gt;DATABASE_PASSWORD&lt;/code&gt; injected with the value of a &lt;code&gt;THE_PRIVATE_DATABASE_PASSWORD_VARIABLE&lt;/code&gt; &lt;a href=&#34;/docs/docs/configuration/configuration-files/#variables&#34;&gt;variable previously defined&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -725,11 +725,11 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/configuration/tasks-wait/</guid>
-      <description>&lt;p&gt;Sometimes, as part of your deployment pipeline, you&amp;rsquo;ll want to wait for other service integrations to return with a status. For this you need to use the &lt;code&gt;wait&lt;/code&gt; task, which is one of the &lt;a href=&#34;../docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;Sometimes, as part of your deployment pipeline, you&amp;rsquo;ll want to wait for other service integrations to return with a status. For this you need to use the &lt;code&gt;wait&lt;/code&gt; task, which is one of the &lt;a href=&#34;/docs/docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;For example if you use the static code analyser tool Scrutinizer, you may want to deploy your application only if the static analysis passes.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/github-statuses.png&#34; alt=&#34;GitHub statuses on Pull-Request&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/github-statuses.png&#34; alt=&#34;GitHub statuses on Pull-Request&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In order to achieve that, you can add a &lt;code&gt;wait&lt;/code&gt; task:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -754,11 +754,11 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/configuration/tasks-manual-approval/</guid>
-      <description>&lt;p&gt;For production platforms in particular, you may want to introduce an approval process before a deployment can take place. For this you can use the &lt;code&gt;manual_approval&lt;/code&gt; task, which is one of the &lt;a href=&#34;../docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;For production platforms in particular, you may want to introduce an approval process before a deployment can take place. For this you can use the &lt;code&gt;manual_approval&lt;/code&gt; task, which is one of the &lt;a href=&#34;/docs/docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;When the &lt;code&gt;manual_approval&lt;/code&gt; task is added to a list of tasks it will pause the running of a tide until manual approval is given to the tide in the ContinuousPipe console as shown here:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/configuration/flow-manual-approval.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/configuration/flow-manual-approval.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In the following example, if a tide is triggered then the &lt;code&gt;image&lt;/code&gt; task will run automatically as it is first in the sequence. However, when the &lt;code&gt;wait_product_owner&lt;/code&gt; runs, the tide will be suspended, pending approval. When approval is given, the tide will resume and the &lt;code&gt;deployment&lt;/code&gt; task will run.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -770,7 +770,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
         &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;The following example demonstrates the usage of &lt;code&gt;manual_approval&lt;/code&gt; with a &lt;a href=&#34;../docs/configuration/pipelines/&#34;&gt;pipeline&lt;/a&gt;. The resulting behaviour for the &lt;code&gt;Production&lt;/code&gt; pipeline will be the same as the sequential task behaviour above:&lt;/p&gt;
+&lt;p&gt;The following example demonstrates the usage of &lt;code&gt;manual_approval&lt;/code&gt; with a &lt;a href=&#34;/docs/docs/configuration/pipelines/&#34;&gt;pipeline&lt;/a&gt;. The resulting behaviour for the &lt;code&gt;Production&lt;/code&gt; pipeline will be the same as the sequential task behaviour above:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
         &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
@@ -800,7 +800,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
       <guid>/docs/configuration/tasks-webhook/</guid>
       <description>
 
-&lt;p&gt;You may want to configure a third party application to receive notifications about tide activity. For this you can use the &lt;code&gt;web_hook&lt;/code&gt; task, which is one of the &lt;a href=&#34;../docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may want to configure a third party application to receive notifications about tide activity. For this you can use the &lt;code&gt;web_hook&lt;/code&gt; task, which is one of the &lt;a href=&#34;/docs/docs/configuration/tasks/#inbuilt-tasks&#34;&gt;inbuilt tasks&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;When the &lt;code&gt;web_hook&lt;/code&gt; task is added the end of the task list, and the prior tide tasks complete successfully, a body of JSON encoded metadata will be sent to a configured URL. The metadata contains information about the tide, the git repository and branch, and the deployed endpoints. A &lt;a href=&#34;#metadata-format&#34;&gt;sample metadata output&lt;/a&gt; is shown below.&lt;/p&gt;
 
@@ -817,7 +817,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
             &lt;span style=&#34;color: #ae81ff&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;https://example.com/my-webhook&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;In practice, you will probably not want to store the URL of the webhook in version control, so it is recommended that a variable is used instead. In the example below, the value of the &lt;code&gt;url&lt;/code&gt; property would instead be stored in a &lt;code&gt;WEBHOOK_URL&lt;/code&gt; variable set on the &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
+&lt;p&gt;In practice, you will probably not want to store the URL of the webhook in version control, so it is recommended that a variable is used instead. In the example below, the value of the &lt;code&gt;url&lt;/code&gt; property would instead be stored in a &lt;code&gt;WEBHOOK_URL&lt;/code&gt; variable set on the &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
         &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
@@ -1095,7 +1095,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;You will notice that the actual values of these credentials are not entered into the configuration - instead they are represented as the YAML variables &lt;code&gt;${CLOUD_FLARE_ZONE}&lt;/code&gt;, &lt;code&gt;${CLOUD_FLARE_EMAIL}&lt;/code&gt; and &lt;code&gt;${CLOUD_FLARE_API_KEY}&lt;/code&gt; respectively. The values instead need to be entered into the ContinuousPipe console as explained when &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You will notice that the actual values of these credentials are not entered into the configuration - instead they are represented as the YAML variables &lt;code&gt;${CLOUD_FLARE_ZONE}&lt;/code&gt;, &lt;code&gt;${CLOUD_FLARE_EMAIL}&lt;/code&gt; and &lt;code&gt;${CLOUD_FLARE_API_KEY}&lt;/code&gt; respectively. The values instead need to be entered into the ContinuousPipe console as explained when &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Additionally, &lt;code&gt;${CLOUD_FLARE_ZONE}&lt;/code&gt; and &lt;code&gt;${CLOUD_FLARE_API_KEY}&lt;/code&gt; need to be encrypted. This can be done by clicking the padlock icon when entering the values into the flow configuration, before saving.&lt;/p&gt;
 &lt;/div&gt;
@@ -1135,7 +1135,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;Another way to set the environment name is by using &lt;a href=&#34;../docs/faq/how-do-I-use-defaults-to-reduce-the-duplication-of-configuration/&#34;&gt;default configuration&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Another way to set the environment name is by using &lt;a href=&#34;/docs/docs/faq/how-do-I-use-defaults-to-reduce-the-duplication-of-configuration/&#34;&gt;default configuration&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -1261,7 +1261,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
 
 &lt;p&gt;This is similar to the previous configuration, but with important differences. Instead of using a &lt;code&gt;host_suffix&lt;/code&gt;, a &lt;code&gt;host&lt;/code&gt; expression is defined instead. This will create an environment using exactly &amp;ldquo;&lt;a href=&#34;https://example-with-ssl.yourdomain.com&amp;quot;&#34;&gt;https://example-with-ssl.yourdomain.com&amp;quot;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code&gt;ssl_certificates&lt;/code&gt; section is used to define the certificate, which can be either an officially supplied certificate or a self signed certificate. As this isn&amp;rsquo;t something you want to store in version control, the &lt;code&gt;key&lt;/code&gt; and &lt;code&gt;cert&lt;/code&gt; properties instead reference variables &lt;code&gt;${SSL_KEY}&lt;/code&gt; and &lt;code&gt;${SSL_CERT}&lt;/code&gt; respectively. The values need to be entered into the ContinuousPipe console as explained when &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;. The values entered should be base64 encoded.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;ssl_certificates&lt;/code&gt; section is used to define the certificate, which can be either an officially supplied certificate or a self signed certificate. As this isn&amp;rsquo;t something you want to store in version control, the &lt;code&gt;key&lt;/code&gt; and &lt;code&gt;cert&lt;/code&gt; properties instead reference variables &lt;code&gt;${SSL_KEY}&lt;/code&gt; and &lt;code&gt;${SSL_CERT}&lt;/code&gt; respectively. The values need to be entered into the ContinuousPipe console as explained when &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;. The values entered should be base64 encoded.&lt;/p&gt;
 
 &lt;p&gt;In addition to port 80, port 443 is also exposed. This is needed to let ContinuousPipe know that you want to use HTTPS traffic.&lt;/p&gt;
 
@@ -1305,7 +1305,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
 
 &lt;h3 id=&#34;nginx-ingress-with-cloudflare-ssl&#34;&gt;Nginx Ingress With Cloudflare SSL&lt;/h3&gt;
 
-&lt;p&gt;ContinuousPipe already has &lt;a href=&#34;../docs/configuration/cloudflare-integration/&#34;&gt;integration with Cloudflare&lt;/a&gt; when configuring endpoints directly. This integration can also be applied to the Nginx Ingress. The major advantage of this is that it does not need a DNS rule setting up in advance, as Cloudflare will create this automatically.&lt;/p&gt;
+&lt;p&gt;ContinuousPipe already has &lt;a href=&#34;/docs/docs/configuration/cloudflare-integration/&#34;&gt;integration with Cloudflare&lt;/a&gt; when configuring endpoints directly. This integration can also be applied to the Nginx Ingress. The major advantage of this is that it does not need a DNS rule setting up in advance, as Cloudflare will create this automatically.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
     &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -1331,7 +1331,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
                           &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;443&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;As you can see, the main difference is the addition of a &lt;code&gt;cloud_flare_zone&lt;/code&gt; section, which defines how traffic should interact with Cloudflare. The values defined in &lt;code&gt;cloud_flare_zone&lt;/code&gt; are explained in the &lt;a href=&#34;../docs/configuration/cloudflare-integration/&#34;&gt;integration with Cloudflare&lt;/a&gt; page.&lt;/p&gt;
+&lt;p&gt;As you can see, the main difference is the addition of a &lt;code&gt;cloud_flare_zone&lt;/code&gt; section, which defines how traffic should interact with Cloudflare. The values defined in &lt;code&gt;cloud_flare_zone&lt;/code&gt; are explained in the &lt;a href=&#34;/docs/docs/configuration/cloudflare-integration/&#34;&gt;integration with Cloudflare&lt;/a&gt; page.&lt;/p&gt;
 
 &lt;p&gt;Further down, the Ingress defines a &lt;code&gt;host_suffix&lt;/code&gt; that matches the Cloudflare &lt;code&gt;record_suffix&lt;/code&gt;, so that the environment URL and the Cloudflare DNS entry are matched.&lt;/p&gt;
 </description>
@@ -1356,7 +1356,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
 
 &lt;p&gt;These problems are addressed by introducing build steps to create separate images, and then using artifacts to copy files and folders from an initial build image to a secondary build image.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/configuration/multi-step-building.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/configuration/multi-step-building.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;For example, you might create an initial build image containing a GitHub access token to pull the contents of a private Git repository, then create a secondary build image and copy the code across. The secondary image would only contain the code and none of the access credentials.&lt;/p&gt;
 

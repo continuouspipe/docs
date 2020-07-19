@@ -60,7 +60,7 @@
 
 &lt;h2 id=&#34;configuring-continuouspipe&#34;&gt;Configuring ContinuousPipe&lt;/h2&gt;
 
-&lt;p&gt;Before we can push any code to our repository, we need to ensure that the ContinuousPipe console is properly configured. Please refer to the ContinuousPipe Quick Start guide to setup your &lt;a href=&#34;../docs/quick-start/creating-a-project/&#34;&gt;project&lt;/a&gt;, &lt;a href=&#34;../docs/quick-start/configuring-a-cluster/&#34;&gt;cluster&lt;/a&gt;, &lt;a href=&#34;../docs/quick-start/configuring-a-registry/&#34;&gt;registry&lt;/a&gt; and create your first &lt;a href=&#34;../docs/quick-start/creating-a-flow/&#34;&gt;flow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before we can push any code to our repository, we need to ensure that the ContinuousPipe console is properly configured. Please refer to the ContinuousPipe Quick Start guide to setup your &lt;a href=&#34;/docs/docs/quick-start/creating-a-project/&#34;&gt;project&lt;/a&gt;, &lt;a href=&#34;/docs/docs/quick-start/configuring-a-cluster/&#34;&gt;cluster&lt;/a&gt;, &lt;a href=&#34;/docs/docs/quick-start/configuring-a-registry/&#34;&gt;registry&lt;/a&gt; and create your first &lt;a href=&#34;/docs/docs/quick-start/creating-a-flow/&#34;&gt;flow&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;One last thing we need to do before we can begin using ContinuousPipe is configure which cluster we will use. You are free to configure as many clusters as you wish, in fact, its a good idea to have a separate cluster from production as you would for development and testing.&lt;/p&gt;
 
@@ -68,11 +68,11 @@
 
 &lt;p&gt;From within the flow, click on configuration in the sidebar, create a new environment variable named &lt;code&gt;CLUSTER&lt;/code&gt; with a value to match what you set as your cluster name/identifier. I have set my cluster name as &lt;code&gt;main-cluster&lt;/code&gt;. Finally save the configuration.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/laravel/flow-variables-configuration.png&#34; alt=&#34;Flow Configuration&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/flow-variables-configuration.png&#34; alt=&#34;Flow Configuration&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;adding-docker-configuration&#34;&gt;Adding Docker configuration&lt;/h3&gt;
 
-&lt;p&gt;Lets start by configuring our &lt;code&gt;Dockerfile&lt;/code&gt;. We are going to use one of the &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; as our base. In reality, you would want to create a new base image that would extend this image to give you the ability to add other services, such as your NodeJS dependencies often used for the frontend build tools i.e. webpack&lt;/p&gt;
+&lt;p&gt;Lets start by configuring our &lt;code&gt;Dockerfile&lt;/code&gt;. We are going to use one of the &lt;a href=&#34;/docs/docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; as our base. In reality, you would want to create a new base image that would extend this image to give you the ability to add other services, such as your NodeJS dependencies often used for the frontend build tools i.e. webpack&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
@@ -347,7 +347,7 @@ mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt
 
 &lt;p&gt;If everything has gone to plan, we should now see the famous &amp;ldquo;Laravel&amp;rdquo; splash page at &lt;code&gt;https://localhost&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;prepare-to-build-on-continuouspipe&#34;&gt;Prepare to build on ContinuousPipe&lt;/h3&gt;
 
@@ -585,15 +585,15 @@ Branch master &lt;span style=&#34;color: #f8f8f2&#34;&gt;set&lt;/span&gt; up to 
 
 &lt;p&gt;Thats it, we should now see ContinuousPipe working through our defined tasks -&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/laravel/flow-overview.png&#34; alt=&#34;Dashboard&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/flow-overview.png&#34; alt=&#34;Dashboard&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once all our tasks have finished we should see a success status, everything green and a public endpoint for the web service.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/laravel/tide-complete-tasks.png&#34; alt=&#34;Complete Tasks&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/tide-complete-tasks.png&#34; alt=&#34;Complete Tasks&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If we now visit this endpoint in the browser e.g. &lt;code&gt;https://104.199.75.150/&lt;/code&gt; we should now see that Laravel splash page we previously seen when running in our local Docker build -&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;remote-development-environment&#34;&gt;Remote development environment&lt;/h2&gt;
 
@@ -603,7 +603,7 @@ Branch master &lt;span style=&#34;color: #f8f8f2&#34;&gt;set&lt;/span&gt; up to 
 
 &lt;h3 id=&#34;install-cp-remote&#34;&gt;Install &lt;code&gt;cp-remote&lt;/code&gt;&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;cp-remote&lt;/code&gt; is available on OSX, Linux and Windows. Please refer to the &lt;a href=&#34;../docs/remote-development/getting-started/#installation&#34;&gt;remote development installation instructions&lt;/a&gt; for each of the platforms.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cp-remote&lt;/code&gt; is available on OSX, Linux and Windows. Please refer to the &lt;a href=&#34;/docs/docs/remote-development/getting-started/#installation&#34;&gt;remote development installation instructions&lt;/a&gt; for each of the platforms.&lt;/p&gt;
 
 &lt;p&gt;For simplicity, here is the OSX installation instructions&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo curl https://raw.githubusercontent.com/continuouspipe/remote-environment-client/gh-pages/0.0.1/darwin-amd64.gz &amp;gt; cp-remote.gz
@@ -623,7 +623,7 @@ chmod +x /usr/local/bin/cp-remote
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote setup
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;You will now be asked a series of questions that relate to how you have configured ContinuousPipe and your cluster details. Please refer to the &lt;a href=&#34;../docs/remote-development/command-setup/&#34;&gt;remote development setup instructions&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;You will now be asked a series of questions that relate to how you have configured ContinuousPipe and your cluster details. Please refer to the &lt;a href=&#34;/docs/docs/remote-development/command-setup/&#34;&gt;remote development setup instructions&lt;/a&gt; for more information.&lt;/p&gt;
 
 &lt;h3 id=&#34;build-the-environment&#34;&gt;Build the environment&lt;/h3&gt;
 
@@ -641,7 +641,7 @@ You can see when it is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/s
 Please &lt;span style=&#34;color: #f8f8f2&#34;&gt;wait&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;until&lt;/span&gt; the build is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/span&gt; to use any of this tool&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;&amp;#39;&lt;/span&gt;s other commands.
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/laravel/dashboard-with-dev.png&#34; alt=&#34;Dashboard with dev environment&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/dashboard-with-dev.png&#34; alt=&#34;Dashboard with dev environment&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can check that the environment is ready either from the ContinuousPipe UI or by running the following -&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote ck
@@ -654,7 +654,7 @@ Connected successfully and found &lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt
 
 &lt;p&gt;Now that we know all three containers (pods) have been setup we need to obtain the IP address from the ContinuousPipe UI for that tide. Lets visit the IP address in our browser and once again, we will see the Laravel splash page.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;watching-for-changes&#34;&gt;Watching for changes&lt;/h3&gt;
 
@@ -671,7 +671,7 @@ Destination Pod: web-3232721034-k6g9t
 
 &lt;p&gt;Lets edit some code and see our changes reflected in the browser. Open &lt;code&gt;resources/views/welcome.blade.php&lt;/code&gt; and change the title on &lt;code&gt;Line 82&lt;/code&gt;. I will change it to &amp;ldquo;Awesome Laravel&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/laravel/sublime.png&#34; alt=&#34;Sublime&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/sublime.png&#34; alt=&#34;Sublime&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;When you save this file from within your editor, the &lt;code&gt;cp-remote watch&lt;/code&gt; command will pick up these changes and &lt;code&gt;RSYNC&lt;/code&gt; them to the web container. Your terminal should look something like the following -&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote watch
@@ -687,11 +687,11 @@ Done.
 
 &lt;p&gt;Now when you check the site in the browser you should see the following -&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/laravel/awesome-laravel.png&#34; alt=&#34;Awesome Laravel&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/awesome-laravel.png&#34; alt=&#34;Awesome Laravel&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is a quick screencast of that syncing in action -&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;../images/guides/laravel/awesome-laravel-screencast.gif&#34;&gt;&lt;img src=&#34;../images/guides/laravel/awesome-laravel-screencast.gif&#34; alt=&#34;Laravel Screencast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;/docs/images/guides/laravel/awesome-laravel-screencast.gif&#34;&gt;&lt;img src=&#34;/docs/images/guides/laravel/awesome-laravel-screencast.gif&#34; alt=&#34;Laravel Screencast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The syncing speeds are pretty fast, so fast in fact, I can run this from a train wifi while retaining the performance of the cloud hosting.&lt;/p&gt;
 
@@ -786,7 +786,7 @@ RUN container build
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;The Dockerfile is used to specify how the Docker image is built. It is based on a prebuilt image created specifically for Symfony running on nginx. This is one of several &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; that can be found at &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles&#34;&gt;https://github.com/continuouspipe/dockerfiles&lt;/a&gt;. The &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/symfony#environment-variables&#34;&gt;README&lt;/a&gt; for the prebuilt image lists the arguments that can be passed when it is initialised, including the &lt;code&gt;SYMFONY_ENV&lt;/code&gt; environment variable. The repository project code is copied onto the image and a script is run which will do things like install the vendors with composer. Read more about &lt;a href=&#34;https://docs.docker.com/engine/reference/builder/&#34;&gt;Dockerfiles&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Dockerfile is used to specify how the Docker image is built. It is based on a prebuilt image created specifically for Symfony running on nginx. This is one of several &lt;a href=&#34;/docs/docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; that can be found at &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles&#34;&gt;https://github.com/continuouspipe/dockerfiles&lt;/a&gt;. The &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/symfony#environment-variables&#34;&gt;README&lt;/a&gt; for the prebuilt image lists the arguments that can be passed when it is initialised, including the &lt;code&gt;SYMFONY_ENV&lt;/code&gt; environment variable. The repository project code is copied onto the image and a script is run which will do things like install the vendors with composer. Read more about &lt;a href=&#34;https://docs.docker.com/engine/reference/builder/&#34;&gt;Dockerfiles&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Add the following docker compose configuration in a &lt;code&gt;docker-compose.yml&lt;/code&gt; file in the project root.&lt;/p&gt;
 
@@ -852,15 +852,15 @@ RUN container build
 
 &lt;p&gt;The second task, called &lt;code&gt;deployment&lt;/code&gt;, deploys the service to a cluster set with the &lt;code&gt;CLUSTER&lt;/code&gt; variable (setting this variable is explained later). The environment name used to refer to the deployment is made consistent by combining &amp;ldquo;sfdemo-&amp;rdquo; with the name of the branch that triggered the process. Then the web service is deployed - it needs to be accessible directly from a browser so &lt;code&gt;from_external&lt;/code&gt; has been set to &amp;ldquo;true&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;The ContinousPipe documentation has more information about &lt;a href=&#34;../docs/configuration/tasks/&#34;&gt;tasks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The ContinousPipe documentation has more information about &lt;a href=&#34;/docs/docs/configuration/tasks/&#34;&gt;tasks&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;configuring-the-continuouspipe-console&#34;&gt;Configuring the ContinuousPipe Console&lt;/h3&gt;
 
-&lt;p&gt;Before we can push any code to our repository, we need to ensure that the ContinuousPipe console is properly configured. Please refer to the ContinuousPipe Quick Start guide to setup your &lt;a href=&#34;../docs/quick-start/creating-a-project/&#34;&gt;project&lt;/a&gt;, &lt;a href=&#34;../docs/quick-start/configuring-a-cluster/&#34;&gt;cluster&lt;/a&gt;, &lt;a href=&#34;../docs/quick-start/configuring-a-registry/&#34;&gt;registry&lt;/a&gt; and create your first &lt;a href=&#34;../docs/quick-start/creating-a-flow/&#34;&gt;flow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before we can push any code to our repository, we need to ensure that the ContinuousPipe console is properly configured. Please refer to the ContinuousPipe Quick Start guide to setup your &lt;a href=&#34;/docs/docs/quick-start/creating-a-project/&#34;&gt;project&lt;/a&gt;, &lt;a href=&#34;/docs/docs/quick-start/configuring-a-cluster/&#34;&gt;cluster&lt;/a&gt;, &lt;a href=&#34;/docs/docs/quick-start/configuring-a-registry/&#34;&gt;registry&lt;/a&gt; and create your first &lt;a href=&#34;/docs/docs/quick-start/creating-a-flow/&#34;&gt;flow&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;adding-variables-to-the-continuouspipe-console&#34;&gt;Adding Variables to the ContinuousPipe Console&lt;/h3&gt;
 
-&lt;p&gt;When creating the &lt;code&gt;continuous-pipe.yml&lt;/code&gt; above an &lt;code&gt;IMAGE_NAME&lt;/code&gt; and &lt;code&gt;CLUSTER&lt;/code&gt; variable were used. These can now be added in the configuration section of the new flow within the ContinuousPipe console. This is explained in &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When creating the &lt;code&gt;continuous-pipe.yml&lt;/code&gt; above an &lt;code&gt;IMAGE_NAME&lt;/code&gt; and &lt;code&gt;CLUSTER&lt;/code&gt; variable were used. These can now be added in the configuration section of the new flow within the ContinuousPipe console. This is explained in &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The &lt;code&gt;CLUSTER&lt;/code&gt; value you need can be found in the &amp;ldquo;Clusters&amp;rdquo; tab of the project. If you manually entered the Kubernetes cluster details you will have set the value yourself. If you used a Google linked account the value will have been set when setting up the Google Container Engine.&lt;/p&gt;
 
@@ -875,27 +875,27 @@ RUN container build
 
 &lt;p&gt;Commit any changes if not already done and push them to your code repository. You should be able to see that a tide was triggered on the overview or tides pages for the flow on &lt;a href=&#34;https://your-ui.example.com&#34;&gt;https://your-ui.example.com&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/symfony/cp-tide-running.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/symfony/cp-tide-running.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Clicking on the status will show more details of the build progressing. Some steps, particularly building the image and pushing it to the registry, may take a while to complete. Once it has completed running successfully you can view the environment and from there open the web service and see the running application:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/symfony/cp-tide-environment.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/symfony/cp-tide-environment.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The default Symfony installation page should be served up (you may need to accept using the self-signed SSL cert):&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/symfony/endpoint-view.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/symfony/endpoint-view.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;remote-development-with-continuouspipe&#34;&gt;Remote Development with ContinuousPipe&lt;/h2&gt;
 
 &lt;h3 id=&#34;install-the-client&#34;&gt;Install the Client&lt;/h3&gt;
 
-&lt;p&gt;To use ContinuousPipe as a remote development environment you will need the &lt;code&gt;cp-remote&lt;/code&gt; client, which is available on OSX, Linux and Windows. Please refer to the &lt;a href=&#34;../docs/remote-development/getting-started/#installation&#34;&gt;remote development installation instructions&lt;/a&gt; for each of the platforms.&lt;/p&gt;
+&lt;p&gt;To use ContinuousPipe as a remote development environment you will need the &lt;code&gt;cp-remote&lt;/code&gt; client, which is available on OSX, Linux and Windows. Please refer to the &lt;a href=&#34;/docs/docs/remote-development/getting-started/#installation&#34;&gt;remote development installation instructions&lt;/a&gt; for each of the platforms.&lt;/p&gt;
 
 &lt;h3 id=&#34;run-setup&#34;&gt;Run Setup&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; cp-remote setup
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;You will now be asked a series of questions that relate to how you have configured ContinuousPipe and your cluster details. Please refer to the &lt;a href=&#34;../docs/remote-development/command-setup/&#34;&gt;remote development setup instructions&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;You will now be asked a series of questions that relate to how you have configured ContinuousPipe and your cluster details. Please refer to the &lt;a href=&#34;/docs/docs/remote-development/command-setup/&#34;&gt;remote development setup instructions&lt;/a&gt; for more information.&lt;/p&gt;
 
 &lt;h3 id=&#34;build-the-remote-environment&#34;&gt;Build the Remote Environment&lt;/h3&gt;
 
@@ -1018,11 +1018,11 @@ RUN container build
 
 &lt;p&gt;To rebuild the remote environment with these changes, commit them to master and run &lt;code&gt;cp-remote build&lt;/code&gt; - this will establish the Production pipeline. You can now switch to a branch prefixed with &amp;ldquo;cpdev&amp;rdquo; and run &lt;code&gt;cp-remote build&lt;/code&gt; again to establish the Remote pipeline. You will then see the two new pipelines on the overview page in the ContinuousPipe console.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/symfony/cp-pipelines.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/symfony/cp-pipelines.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you now load the Remote pipeline endpoint in the browser you should see the Symfony toolbar at the bottom of the page indicating that it is in development mode.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/symfony/endpoint-view-toolbar.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/symfony/endpoint-view-toolbar.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;start-development&#34;&gt;Start Development&lt;/h3&gt;
 
@@ -1114,7 +1114,7 @@ RUN container build
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;The Dockerfile is used to specify how the Docker image is built. It is based on a prebuilt image created specifically for Drupal 8 running on Apache. This is one of several &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; that can be found at &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles&#34;&gt;https://github.com/continuouspipe/dockerfiles&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Dockerfile is used to specify how the Docker image is built. It is based on a prebuilt image created specifically for Drupal 8 running on Apache. This is one of several &lt;a href=&#34;/docs/docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; that can be found at &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles&#34;&gt;https://github.com/continuouspipe/dockerfiles&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/blob/master/drupal8-apache/7.0/README.md&#34;&gt;README&lt;/a&gt; for the prebuilt image lists the arguments that can be passed when it is initialised, including environment variables. The repository project code is copied onto the image and a script is run which will do things like install the vendors with composer.&lt;/p&gt;
 
@@ -1321,15 +1321,15 @@ pipelines:
 &lt;li&gt;&lt;code&gt;drupal_demo_install&lt;/code&gt; - runs the intial Drupal installation.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;The ContinousPipe documentation has more information about &lt;a href=&#34;../docs/configuration/tasks/&#34;&gt;tasks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The ContinousPipe documentation has more information about &lt;a href=&#34;/docs/docs/configuration/tasks/&#34;&gt;tasks&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;configuring-the-continuouspipe-console&#34;&gt;Configuring the ContinuousPipe Console&lt;/h3&gt;
 
-&lt;p&gt;Before we can push any code to our repository, we need to ensure that the ContinuousPipe console is properly configured. Please refer to the ContinuousPipe Quick Start guide to setup your &lt;a href=&#34;../docs/quick-start/creating-a-project/&#34;&gt;project&lt;/a&gt;, &lt;a href=&#34;../docs/quick-start/configuring-a-cluster/&#34;&gt;cluster&lt;/a&gt;, &lt;a href=&#34;../docs/quick-start/configuring-a-registry/&#34;&gt;registry&lt;/a&gt; and create your first &lt;a href=&#34;../docs/quick-start/creating-a-flow/&#34;&gt;flow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before we can push any code to our repository, we need to ensure that the ContinuousPipe console is properly configured. Please refer to the ContinuousPipe Quick Start guide to setup your &lt;a href=&#34;/docs/docs/quick-start/creating-a-project/&#34;&gt;project&lt;/a&gt;, &lt;a href=&#34;/docs/docs/quick-start/configuring-a-cluster/&#34;&gt;cluster&lt;/a&gt;, &lt;a href=&#34;/docs/docs/quick-start/configuring-a-registry/&#34;&gt;registry&lt;/a&gt; and create your first &lt;a href=&#34;/docs/docs/quick-start/creating-a-flow/&#34;&gt;flow&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;adding-variables-to-the-continuouspipe-console&#34;&gt;Adding Variables to the ContinuousPipe Console&lt;/h3&gt;
 
-&lt;p&gt;When creating the &lt;code&gt;continuous-pipe.yml&lt;/code&gt; above an &lt;code&gt;IMAGE_NAME&lt;/code&gt; and &lt;code&gt;CLUSTER&lt;/code&gt; variable were used. These can now be added in the configuration section of the new flow within the ContinuousPipe console. This is explained in &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When creating the &lt;code&gt;continuous-pipe.yml&lt;/code&gt; above an &lt;code&gt;IMAGE_NAME&lt;/code&gt; and &lt;code&gt;CLUSTER&lt;/code&gt; variable were used. These can now be added in the configuration section of the new flow within the ContinuousPipe console. This is explained in &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The &lt;code&gt;CLUSTER&lt;/code&gt; value you need can be found in the &amp;ldquo;Clusters&amp;rdquo; tab of the project. If you manually entered the Kubernetes cluster details you will have set the value yourself. If you used a Google linked account the value will have been set when setting up the Google Container Engine.&lt;/p&gt;
 
@@ -1344,7 +1344,7 @@ pipelines:
 
 &lt;p&gt;Commit any changes if not already done and push them to your code repository. You should be able to see that a tide was triggered on the overview or tides pages for the flow on &lt;a href=&#34;https://your-ui.example.com&#34;&gt;https://your-ui.example.com&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/drupal/cp-tide-running.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/drupal/cp-tide-running.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Clicking on the status will show more details of the build progressing. Some steps, particularly building the image and pushing it to the registry, may take a while to complete. Once it has completed running successfully you can view the environment and from there open the web service and see the running application. The default Drupal page should be visible.&lt;/p&gt;
 
@@ -1352,13 +1352,13 @@ pipelines:
 
 &lt;h3 id=&#34;install-the-client&#34;&gt;Install the Client&lt;/h3&gt;
 
-&lt;p&gt;To use ContinuousPipe as a remote development environment you will need the &lt;code&gt;cp-remote&lt;/code&gt; client, which is available on OSX, Linux and Windows. Please refer to the &lt;a href=&#34;../docs/remote-development/getting-started/#installation&#34;&gt;remote development installation instructions&lt;/a&gt; for each of the platforms.&lt;/p&gt;
+&lt;p&gt;To use ContinuousPipe as a remote development environment you will need the &lt;code&gt;cp-remote&lt;/code&gt; client, which is available on OSX, Linux and Windows. Please refer to the &lt;a href=&#34;/docs/docs/remote-development/getting-started/#installation&#34;&gt;remote development installation instructions&lt;/a&gt; for each of the platforms.&lt;/p&gt;
 
 &lt;h3 id=&#34;run-setup&#34;&gt;Run Setup&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; cp-remote setup
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;You will now be asked a series of questions that relate to how you have configured ContinuousPipe and your cluster details. Please refer to the &lt;a href=&#34;../docs/remote-development/command-setup/&#34;&gt;remote development setup instructions&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;You will now be asked a series of questions that relate to how you have configured ContinuousPipe and your cluster details. Please refer to the &lt;a href=&#34;/docs/docs/remote-development/command-setup/&#34;&gt;remote development setup instructions&lt;/a&gt; for more information.&lt;/p&gt;
 
 &lt;h3 id=&#34;build-the-remote-environment&#34;&gt;Build the Remote Environment&lt;/h3&gt;
 
@@ -1426,11 +1426,11 @@ This adds two different pipelines which use conditions to determine which pipeli
 
 &lt;ul&gt;
 &lt;li&gt;Basic Xdebug setup and usage - see &lt;a href=&#34;https://www.sitepoint.com/debugging-and-profiling-php-with-xdebug&#34;&gt;https://www.sitepoint.com/debugging-and-profiling-php-with-xdebug&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Setting up an environment in ContinuousPipe - see the &lt;a href=&#34;../docs/quick-start/creating-a-project/&#34;&gt;quick start guide&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Setting up a remote development environment in ContinuousPipe - see the &lt;a href=&#34;../docs/quick-start/remote-development-installing-the-client/&#34;&gt;remote development quick start guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Setting up an environment in ContinuousPipe - see the &lt;a href=&#34;/docs/docs/quick-start/creating-a-project/&#34;&gt;quick start guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Setting up a remote development environment in ContinuousPipe - see the &lt;a href=&#34;/docs/docs/quick-start/remote-development-installing-the-client/&#34;&gt;remote development quick start guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;In addition, we are going to use the ContinuousPipe Symfony demo app, so reading the &lt;a href=&#34;../docs/guides/symfony/&#34;&gt;getting started with Symfony guide&lt;/a&gt; will help too.&lt;/p&gt;
+&lt;p&gt;In addition, we are going to use the ContinuousPipe Symfony demo app, so reading the &lt;a href=&#34;/docs/docs/guides/symfony/&#34;&gt;getting started with Symfony guide&lt;/a&gt; will help too.&lt;/p&gt;
 
 &lt;h2 id=&#34;configuring-your-repository&#34;&gt;Configuring Your Repository&lt;/h2&gt;
 
@@ -1497,7 +1497,7 @@ COPY . /app
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;The exact location of the configuration will depend on the image you are using. For the &lt;code&gt;quay.io/continuouspipe/symfony-php7.1-nginx&lt;/code&gt; &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe image&lt;/a&gt; the Xdebug configuration file is at &amp;ldquo;/etc/php/7.1/fpm/conf.d/20-xdebug.ini&amp;rdquo;, however you may need to change this path according to your PHP version.&lt;/p&gt;
+&lt;p&gt;The exact location of the configuration will depend on the image you are using. For the &lt;code&gt;quay.io/continuouspipe/symfony-php7.1-nginx&lt;/code&gt; &lt;a href=&#34;/docs/docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe image&lt;/a&gt; the Xdebug configuration file is at &amp;ldquo;/etc/php/7.1/fpm/conf.d/20-xdebug.ini&amp;rdquo;, however you may need to change this path according to your PHP version.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;The following file therefore needs to be created in the repository at &amp;ldquo;docker/etc/php/7.1/fpm/conf.d/20-xdebug.ini&amp;rdquo;:&lt;/p&gt;
@@ -1676,7 +1676,7 @@ xdebug.remote_log=
 &lt;li&gt;&lt;strong&gt;Line 18:&lt;/strong&gt; A new service &lt;code&gt;sshforward&lt;/code&gt; is added.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Line 19:&lt;/strong&gt; A condition restricts the service to deployments for remote development branches i.e. branches that start with the string &amp;ldquo;cpdev&amp;rdquo;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Lines 21-22:&lt;/strong&gt; The service will use port 9000.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Lines 23-24:&lt;/strong&gt; A password for the service is specified by passing in the enviromental variable &lt;code&gt;SSH_FORWARD_PASSWORD&lt;/code&gt;. This references a YAML variable, also called &lt;code&gt;SSH_FORWARD_PASSWORD&lt;/code&gt; - this needs setting as a variable in the ContinuousPipe console, as explained in &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;. Additionally, it need to be encrypted. This can be done by clicking the padlock icon when entering the values into the flow configuration, before saving.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lines 23-24:&lt;/strong&gt; A password for the service is specified by passing in the enviromental variable &lt;code&gt;SSH_FORWARD_PASSWORD&lt;/code&gt;. This references a YAML variable, also called &lt;code&gt;SSH_FORWARD_PASSWORD&lt;/code&gt; - this needs setting as a variable in the ContinuousPipe console, as explained in &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;. Additionally, it need to be encrypted. This can be done by clicking the padlock icon when entering the values into the flow configuration, before saving.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&#34;admonition note&#34;&gt;
@@ -1701,7 +1701,7 @@ xdebug.remote_log=
 
 &lt;h2 id=&#34;creating-a-remote-development-environment&#34;&gt;Creating a Remote Development Environment&lt;/h2&gt;
 
-&lt;p&gt;You now need to set up a remote development environment using the ContinuousPipe console. See the &lt;a href=&#34;../docs/quick-start/remote-development-installing-the-client/&#34;&gt;remote development quick start guide&lt;/a&gt; for instructions on how to do this.&lt;/p&gt;
+&lt;p&gt;You now need to set up a remote development environment using the ContinuousPipe console. See the &lt;a href=&#34;/docs/docs/quick-start/remote-development-installing-the-client/&#34;&gt;remote development quick start guide&lt;/a&gt; for instructions on how to do this.&lt;/p&gt;
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
@@ -1710,7 +1710,7 @@ xdebug.remote_log=
 
 &lt;p&gt;If you review the tide progress for the new environment, you should see that the &amp;ldquo;sshforward&amp;rdquo; pod has been created:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/guides/remote-environment-xdebug/cp-tide-service-sshforward.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/guides/remote-environment-xdebug/cp-tide-service-sshforward.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You should also be able verify the environment using the &lt;code&gt;cp-remote pods&lt;/code&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; cp-remote pods
@@ -1840,7 +1840,7 @@ phpstorm 71963 username   40u  IPv4 0x725301cef22311b5      0t0  TCP *:cslistene
 
 &lt;h2 id=&#34;appendix-b-making-the-php-extension-configuration-conditional&#34;&gt;Appendix B: Making the PHP Extension Configuration Conditional&lt;/h2&gt;
 
-&lt;p&gt;One problem you may have noticed with the instructions above is that Xdebug is always set up and Tideways is always disabled, irrespective of environment. Assuming that you are using one of the &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt;, you can make the configuration for these extensions conditional using &lt;a href=&#34;https://github.com/kelseyhightower/confd&#34;&gt;confd&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;One problem you may have noticed with the instructions above is that Xdebug is always set up and Tideways is always disabled, irrespective of environment. Assuming that you are using one of the &lt;a href=&#34;/docs/docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt;, you can make the configuration for these extensions conditional using &lt;a href=&#34;https://github.com/kelseyhightower/confd&#34;&gt;confd&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Using confd, the single configuration file for each extension is replaced with two separate files:&lt;/p&gt;
 

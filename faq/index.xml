@@ -17,23 +17,23 @@
       <guid>/docs/faq/how-do-I-create-a-billing-profile/</guid>
       <description>&lt;p&gt;To create a billing profile you will first need to log into the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console&lt;/a&gt;. You then need to navigate to the Account section using the sub menu in the top right corner.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Within the account section, select the &amp;ldquo;Billing&amp;rdquo; tab. You will need to select how many users you would like to subscribe. The number of users is effectively the number of people who will have GitHub or Bitbucket accounts that will be pushing to repositories set up in a ContinuousPipe.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/faq/billing-create-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-create-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you click on &amp;ldquo;Subscribe&amp;rdquo; a window will open to &lt;a href=&#34;https://recurly.com/&#34;&gt;Recurly&lt;/a&gt;, which is a third party payment subscription handler. Follow the instructions to complete payment.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/faq/billing-recurly-interface.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-recurly-interface.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can also adjust the number of users up or down at this stage:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/faq/billing-adjust-users.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-adjust-users.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;After payment is completed, the &amp;ldquo;Billing&amp;rdquo; tab in the ContinuousPipe account section should now display subscription information.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/faq/billing-display-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-display-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -67,7 +67,7 @@
 
 &lt;p&gt;The benefit of using ContinuousPipe images are that they have been created according to best practices on security and performance. For example, the Apache and Nginx server images are automatically configured to use HTTPS only websites and install self signed SSL certificate on container start. More information about the specific setup of each image is provided in the README for each image within &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles&#34;&gt;https://github.com/continuouspipe/dockerfiles&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;ContinuousPipe images are also compatible with the &lt;a href=&#34;../docs/remote-development/getting-started/&#34;&gt;remote development&lt;/a&gt; functionality without any additional configuration.&lt;/p&gt;
+&lt;p&gt;ContinuousPipe images are also compatible with the &lt;a href=&#34;/docs/docs/remote-development/getting-started/&#34;&gt;remote development&lt;/a&gt; functionality without any additional configuration.&lt;/p&gt;
 </description>
     </item>
     
@@ -90,7 +90,7 @@
 
 &lt;p&gt;They can be used to get an environment running quickly or as a basis for further adaptation to suit the needs of your own organisation.&lt;/p&gt;
 
-&lt;p&gt;The demo sites are built on top of &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; so they take advantage of their security and performance best practices.&lt;/p&gt;
+&lt;p&gt;The demo sites are built on top of &lt;a href=&#34;/docs/docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; so they take advantage of their security and performance best practices.&lt;/p&gt;
 </description>
     </item>
     
@@ -104,7 +104,7 @@
 
 &lt;h2 id=&#34;continuouspipe-api-keys&#34;&gt;ContinuousPipe API Keys&lt;/h2&gt;
 
-&lt;p&gt;ContinuousPipe API keys can be used with the &lt;code&gt;cp-remote&lt;/code&gt; tool in &lt;a href=&#34;../docs/remote-development/working-with-different-environments/#interactive-mode&#34;&gt;interactive mode&lt;/a&gt; to access a bash terminal on a deployed container.&lt;/p&gt;
+&lt;p&gt;ContinuousPipe API keys can be used with the &lt;code&gt;cp-remote&lt;/code&gt; tool in &lt;a href=&#34;/docs/docs/remote-development/working-with-different-environments/#interactive-mode&#34;&gt;interactive mode&lt;/a&gt; to access a bash terminal on a deployed container.&lt;/p&gt;
 
 &lt;h2 id=&#34;creating-a-continuouspipe-api-key&#34;&gt;Creating a ContinuousPipe API Key&lt;/h2&gt;
 
@@ -115,7 +115,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;../images/faq/account-api-key-new.png&#34; /&gt;
+        &lt;img src=&#34;/docs/images/faq/account-api-key-new.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -126,7 +126,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;../images/faq/account-api-key-view.png&#34; /&gt;
+        &lt;img src=&#34;/docs/images/faq/account-api-key-view.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -160,7 +160,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;../images/faq/flow-tide-logs-open-cp-logs.png&#34; /&gt;
+        &lt;img src=&#34;/docs/images/faq/flow-tide-logs-open-cp-logs.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -171,7 +171,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;../images/faq/flow-tide-logs-view-cp-logs.png&#34; /&gt;
+        &lt;img src=&#34;/docs/images/faq/flow-tide-logs-view-cp-logs.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -182,7 +182,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;../images/faq/flow-tide-logs-view-cp-events.png&#34; /&gt;
+        &lt;img src=&#34;/docs/images/faq/flow-tide-logs-view-cp-events.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -197,7 +197,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;../images/faq/flow-environment-open-cp-logs.png&#34; /&gt;
+        &lt;img src=&#34;/docs/images/faq/flow-environment-open-cp-logs.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -446,7 +446,7 @@
       <guid>/docs/faq/how-do-I-use-composer-with-github-access-token/</guid>
       <description>&lt;p&gt;If you need to download private repositories from GitHub during the build process, an access token has to be available during &lt;code&gt;composer install&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;If you are using one of the &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; then you can pass the image a GitHub token using the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; environment variable. During the build process the image will then run &lt;code&gt;composer global config github-oauth.github.com &amp;quot;$GITHUB_TOKEN&amp;quot;&lt;/code&gt; which will then allow subsequent composer commands permission to access the private repository.&lt;/p&gt;
+&lt;p&gt;If you are using one of the &lt;a href=&#34;/docs/docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; then you can pass the image a GitHub token using the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; environment variable. During the build process the image will then run &lt;code&gt;composer global config github-oauth.github.com &amp;quot;$GITHUB_TOKEN&amp;quot;&lt;/code&gt; which will then allow subsequent composer commands permission to access the private repository.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
         &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -459,7 +459,7 @@
             &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Here the &lt;code&gt;api&lt;/code&gt; service is passed &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; as an environment variable, with the value being passed in as a variable to keep it out of version control. This needs to be set on the &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
+&lt;p&gt;Here the &lt;code&gt;api&lt;/code&gt; service is passed &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; as an environment variable, with the value being passed in as a variable to keep it out of version control. This needs to be set on the &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
 
 &lt;p&gt;By setting up these build arguments, the &lt;code&gt;Dockerfile&lt;/code&gt; will able to consume the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; variable using a Docker ARG, as described in the ContinuousPipe image documentation for &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-apache#php-70-base&#34;&gt;Apache&lt;/a&gt; or &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx#php-nginx&#34;&gt;Nginx&lt;/a&gt;.&lt;/p&gt;
 
@@ -483,7 +483,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/faq/how-do-I-add-basic-http-authentication-to-an-application/</guid>
-      <description>&lt;p&gt;Publicly exposed endpoints are accessible to anyone by default. If you are using one of the &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; for &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-apache#basic-authentication&#34;&gt;Apache&lt;/a&gt; or &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx#basic-authentication&#34;&gt;Nginx&lt;/a&gt; then you can enable basic auth using environment variables:&lt;/p&gt;
+      <description>&lt;p&gt;Publicly exposed endpoints are accessible to anyone by default. If you are using one of the &lt;a href=&#34;/docs/docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; for &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-apache#basic-authentication&#34;&gt;Apache&lt;/a&gt; or &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx#basic-authentication&#34;&gt;Nginx&lt;/a&gt; then you can enable basic auth using environment variables:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -499,7 +499,7 @@
                              &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${AUTH_HTTP_HTPASSWD}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Here the value of &lt;code&gt;AUTH_HTTP_HTPASSWD&lt;/code&gt; is being passed in as a variable to keep it out of version control, this needs to be set on the &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
+&lt;p&gt;Here the value of &lt;code&gt;AUTH_HTTP_HTPASSWD&lt;/code&gt; is being passed in as a variable to keep it out of version control, this needs to be set on the &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
 </description>
     </item>
     
@@ -604,7 +604,7 @@
 
 &lt;p&gt;In this configuration the &lt;code&gt;Features&lt;/code&gt; pipeline will start a tide which will run the &lt;code&gt;images&lt;/code&gt; and &lt;code&gt;deployment&lt;/code&gt; tasks automatically. However, the &lt;code&gt;Production&lt;/code&gt; pipeline will start a tide which will run the &lt;code&gt;images&lt;/code&gt; task, then pause until approval is granted. This is done in the ContinuousPipe console by clicking on the paused tide and clicking &amp;ldquo;APPROVE&amp;rdquo;, which will cause the tide to resume and run the &lt;code&gt;deployment&lt;/code&gt; task:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../images/configuration/flow-manual-approval.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/configuration/flow-manual-approval.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -685,7 +685,7 @@
 
 &lt;p&gt;This configuration defines an initial &lt;code&gt;deploy&lt;/code&gt; task that creates a &lt;code&gt;backend&lt;/code&gt; service. The second &lt;code&gt;deploy&lt;/code&gt; task creates a &lt;code&gt;frontend&lt;/code&gt; service that passes the endpoint address of the &lt;code&gt;backend&lt;/code&gt; service as an environment variable &lt;code&gt;BACKEND_ENDPOINT&lt;/code&gt; using the dynamic variable &lt;code&gt;${SERVICE_BACKEND_PUBLIC_ENDPOINT}&lt;/code&gt; as the value.&lt;/p&gt;
 
-&lt;p&gt;Additionally, the value of &lt;code&gt;CLUSTER&lt;/code&gt;, &lt;code&gt;IMAGE_PATH_BACKEND&lt;/code&gt; and &lt;code&gt;IMAGE_PATH_FRONTEND&lt;/code&gt; are being passed in as variables - these need to be set on the &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
+&lt;p&gt;Additionally, the value of &lt;code&gt;CLUSTER&lt;/code&gt;, &lt;code&gt;IMAGE_PATH_BACKEND&lt;/code&gt; and &lt;code&gt;IMAGE_PATH_FRONTEND&lt;/code&gt; are being passed in as variables - these need to be set on the &lt;a href=&#34;/docs/docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
 </description>
     </item>
     
