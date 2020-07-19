@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FAQ on ContinuousPipe Docs</title>
-    <link>/faq/index.xml</link>
+    <link>/docs/faq/index.xml</link>
     <description>Recent content in FAQ on ContinuousPipe Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>Released under the MIT license</copyright>
-    <atom:link href="/faq/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/docs/faq/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Accounts: How do I create a billing profile?</title>
-      <link>/faq/how-do-I-create-a-billing-profile/</link>
+      <link>/docs/faq/how-do-I-create-a-billing-profile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-create-a-billing-profile/</guid>
+      <guid>/docs/faq/how-do-I-create-a-billing-profile/</guid>
       <description>&lt;p&gt;To create a billing profile you will first need to log into the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console&lt;/a&gt;. You then need to navigate to the Account section using the sub menu in the top right corner.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -39,10 +39,10 @@
     
     <item>
       <title>General: What are the ContinuousPipe images?</title>
-      <link>/faq/what-are-the-continuous-pipe-images/</link>
+      <link>/docs/faq/what-are-the-continuous-pipe-images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/what-are-the-continuous-pipe-images/</guid>
+      <guid>/docs/faq/what-are-the-continuous-pipe-images/</guid>
       <description>&lt;p&gt;ContinuousPipe provides images for many common technologies that you may need to use in your application infrastructure.&lt;/p&gt;
 
 &lt;p&gt;Some examples are:&lt;/p&gt;
@@ -67,16 +67,16 @@
 
 &lt;p&gt;The benefit of using ContinuousPipe images are that they have been created according to best practices on security and performance. For example, the Apache and Nginx server images are automatically configured to use HTTPS only websites and install self signed SSL certificate on container start. More information about the specific setup of each image is provided in the README for each image within &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles&#34;&gt;https://github.com/continuouspipe/dockerfiles&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;ContinuousPipe images are also compatible with the &lt;a href=&#34;../remote-development/getting-started/&#34;&gt;remote development&lt;/a&gt; functionality without any additional configuration.&lt;/p&gt;
+&lt;p&gt;ContinuousPipe images are also compatible with the &lt;a href=&#34;../docs/remote-development/getting-started/&#34;&gt;remote development&lt;/a&gt; functionality without any additional configuration.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>General: What are the ContinuousPipe demo sites?</title>
-      <link>/faq/what-are-the-continuous-pipe-demo-sites/</link>
+      <link>/docs/faq/what-are-the-continuous-pipe-demo-sites/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/what-are-the-continuous-pipe-demo-sites/</guid>
+      <guid>/docs/faq/what-are-the-continuous-pipe-demo-sites/</guid>
       <description>&lt;p&gt;ContinuousPipe provides some sample applications for common frameworks:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -90,21 +90,21 @@
 
 &lt;p&gt;They can be used to get an environment running quickly or as a basis for further adaptation to suit the needs of your own organisation.&lt;/p&gt;
 
-&lt;p&gt;The demo sites are built on top of &lt;a href=&#34;../faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; so they take advantage of their security and performance best practices.&lt;/p&gt;
+&lt;p&gt;The demo sites are built on top of &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; so they take advantage of their security and performance best practices.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Console: Where can I get a ContinuousPipe API key?</title>
-      <link>/faq/where-can-I-get-a-continuous-pipe-api-key/</link>
+      <link>/docs/faq/where-can-I-get-a-continuous-pipe-api-key/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/where-can-I-get-a-continuous-pipe-api-key/</guid>
+      <guid>/docs/faq/where-can-I-get-a-continuous-pipe-api-key/</guid>
       <description>
 
 &lt;h2 id=&#34;continuouspipe-api-keys&#34;&gt;ContinuousPipe API Keys&lt;/h2&gt;
 
-&lt;p&gt;ContinuousPipe API keys can be used with the &lt;code&gt;cp-remote&lt;/code&gt; tool in &lt;a href=&#34;../remote-development/working-with-different-environments/#interactive-mode&#34;&gt;interactive mode&lt;/a&gt; to access a bash terminal on a deployed container.&lt;/p&gt;
+&lt;p&gt;ContinuousPipe API keys can be used with the &lt;code&gt;cp-remote&lt;/code&gt; tool in &lt;a href=&#34;../docs/remote-development/working-with-different-environments/#interactive-mode&#34;&gt;interactive mode&lt;/a&gt; to access a bash terminal on a deployed container.&lt;/p&gt;
 
 &lt;h2 id=&#34;creating-a-continuouspipe-api-key&#34;&gt;Creating a ContinuousPipe API Key&lt;/h2&gt;
 
@@ -141,10 +141,10 @@
     
     <item>
       <title>Console: Where can I view container logs and events?</title>
-      <link>/faq/where-can-I-view-container-logs-and-events/</link>
+      <link>/docs/faq/where-can-I-view-container-logs-and-events/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/where-can-I-view-container-logs-and-events/</guid>
+      <guid>/docs/faq/where-can-I-view-container-logs-and-events/</guid>
       <description>
 
 &lt;h2 id=&#34;container-logs&#34;&gt;Container Logs&lt;/h2&gt;
@@ -207,10 +207,10 @@
     
     <item>
       <title>Configuration: How do I set environment variables?</title>
-      <link>/faq/how-do-I-set-environment-variables/</link>
+      <link>/docs/faq/how-do-I-set-environment-variables/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-set-environment-variables/</guid>
+      <guid>/docs/faq/how-do-I-set-environment-variables/</guid>
       <description>&lt;p&gt;You may want to change the behaviour of an application based on what environment it is deployed to. This can be done by changing the value of an environment variable passed to a container. For example you may want to set the &lt;code&gt;SYMFONY_ENV&lt;/code&gt; environment variable to &amp;ldquo;prod&amp;rdquo; for production, UAT and feature branch environments. We can do this by creating a variable within &lt;code&gt;continuous-pipe.yml&lt;/code&gt; and then using it as the value of the environment variable passed to the service.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;SYMFONY_ENVIRONMENT&lt;/span&gt;
@@ -259,10 +259,10 @@
     
     <item>
       <title>Configuration: How do I control deployments using pull request labels?</title>
-      <link>/faq/how-do-I-control-deployments-using-pr-labels/</link>
+      <link>/docs/faq/how-do-I-control-deployments-using-pr-labels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-control-deployments-using-pr-labels/</guid>
+      <guid>/docs/faq/how-do-I-control-deployments-using-pr-labels/</guid>
       <description>&lt;p&gt;You may not want to deploy an environment every time a commit is pushed to a branch. One way of limiting this is to only deploy environments for branches with open pull requests. You can do this by putting a condition on tasks in &lt;code&gt;continuous-pipe.yml&lt;/code&gt; using a &lt;code&gt;filter&lt;/code&gt; expression.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
   &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -313,10 +313,10 @@
     
     <item>
       <title>Configuration: How do I use &#34;defaults&#34; to reduce the duplication of configuration?</title>
-      <link>/faq/how-do-I-use-defaults-to-reduce-the-duplication-of-configuration/</link>
+      <link>/docs/faq/how-do-I-use-defaults-to-reduce-the-duplication-of-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-use-defaults-to-reduce-the-duplication-of-configuration/</guid>
+      <guid>/docs/faq/how-do-I-use-defaults-to-reduce-the-duplication-of-configuration/</guid>
       <description>&lt;p&gt;In the following example the definition of the &lt;code&gt;cluster&lt;/code&gt; and environment &lt;code&gt;name&lt;/code&gt; variables are duplicated across tasks:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #ae81ff&#34;&gt;initialise&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -354,10 +354,10 @@
     
     <item>
       <title>Configuration: How do I use &#34;pipelines&#34; to simplify the configuration?</title>
-      <link>/faq/how-do-I-use-pipelines-to-simplify-the-configuration/</link>
+      <link>/docs/faq/how-do-I-use-pipelines-to-simplify-the-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-use-pipelines-to-simplify-the-configuration/</guid>
+      <guid>/docs/faq/how-do-I-use-pipelines-to-simplify-the-configuration/</guid>
       <description>&lt;p&gt;You can use variable conditions and task filters to change behaviour based on which branch/environment is being deployed. This can lead to the conditions/filters being repeated in lots of places within the &lt;code&gt;continuous-pipe.yml&lt;/code&gt; file. This can be cleaned up using pipelines.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
@@ -440,13 +440,13 @@
     
     <item>
       <title>Configuration: How do I use Composer with GitHub personal access token?</title>
-      <link>/faq/how-do-I-use-composer-with-github-access-token/</link>
+      <link>/docs/faq/how-do-I-use-composer-with-github-access-token/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-use-composer-with-github-access-token/</guid>
+      <guid>/docs/faq/how-do-I-use-composer-with-github-access-token/</guid>
       <description>&lt;p&gt;If you need to download private repositories from GitHub during the build process, an access token has to be available during &lt;code&gt;composer install&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;If you are using one of the &lt;a href=&#34;../faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; then you can pass the image a GitHub token using the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; environment variable. During the build process the image will then run &lt;code&gt;composer global config github-oauth.github.com &amp;quot;$GITHUB_TOKEN&amp;quot;&lt;/code&gt; which will then allow subsequent composer commands permission to access the private repository.&lt;/p&gt;
+&lt;p&gt;If you are using one of the &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; then you can pass the image a GitHub token using the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; environment variable. During the build process the image will then run &lt;code&gt;composer global config github-oauth.github.com &amp;quot;$GITHUB_TOKEN&amp;quot;&lt;/code&gt; which will then allow subsequent composer commands permission to access the private repository.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
         &lt;span style=&#34;color: #ae81ff&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -459,7 +459,7 @@
             &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Here the &lt;code&gt;api&lt;/code&gt; service is passed &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; as an environment variable, with the value being passed in as a variable to keep it out of version control. This needs to be set on the &lt;a href=&#34;../quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
+&lt;p&gt;Here the &lt;code&gt;api&lt;/code&gt; service is passed &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; as an environment variable, with the value being passed in as a variable to keep it out of version control. This needs to be set on the &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
 
 &lt;p&gt;By setting up these build arguments, the &lt;code&gt;Dockerfile&lt;/code&gt; will able to consume the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; variable using a Docker ARG, as described in the ContinuousPipe image documentation for &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-apache#php-70-base&#34;&gt;Apache&lt;/a&gt; or &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx#php-nginx&#34;&gt;Nginx&lt;/a&gt;.&lt;/p&gt;
 
@@ -479,11 +479,11 @@
     
     <item>
       <title>Configuration: How do I add basic HTTP authentication to an application?</title>
-      <link>/faq/how-do-I-add-basic-http-authentication-to-an-application/</link>
+      <link>/docs/faq/how-do-I-add-basic-http-authentication-to-an-application/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-add-basic-http-authentication-to-an-application/</guid>
-      <description>&lt;p&gt;Publicly exposed endpoints are accessible to anyone by default. If you are using one of the &lt;a href=&#34;../faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; for &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-apache#basic-authentication&#34;&gt;Apache&lt;/a&gt; or &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx#basic-authentication&#34;&gt;Nginx&lt;/a&gt; then you can enable basic auth using environment variables:&lt;/p&gt;
+      <guid>/docs/faq/how-do-I-add-basic-http-authentication-to-an-application/</guid>
+      <description>&lt;p&gt;Publicly exposed endpoints are accessible to anyone by default. If you are using one of the &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; for &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-apache#basic-authentication&#34;&gt;Apache&lt;/a&gt; or &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles/tree/master/php-nginx#basic-authentication&#34;&gt;Nginx&lt;/a&gt; then you can enable basic auth using environment variables:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
    &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
    &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -499,16 +499,16 @@
                              &lt;span style=&#34;color: #ae81ff&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;${AUTH_HTTP_HTPASSWD}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Here the value of &lt;code&gt;AUTH_HTTP_HTPASSWD&lt;/code&gt; is being passed in as a variable to keep it out of version control, this needs to be set on the &lt;a href=&#34;../quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
+&lt;p&gt;Here the value of &lt;code&gt;AUTH_HTTP_HTPASSWD&lt;/code&gt; is being passed in as a variable to keep it out of version control, this needs to be set on the &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Configuration: How do I override tasks in pipelines?</title>
-      <link>/faq/how-do-I-override-tasks-in-pipelines/</link>
+      <link>/docs/faq/how-do-I-override-tasks-in-pipelines/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-override-tasks-in-pipelines/</guid>
+      <guid>/docs/faq/how-do-I-override-tasks-in-pipelines/</guid>
       <description>&lt;p&gt;You may want to change the way certain tasks are run according to the environment. You could achieve this by defining separate tasks per pipeline, however this runs the risk of introducing a lot of duplication. To avoid excessive duplication ContinuousPipe allows you to override some or all of a task definition.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #ae81ff&#34;&gt;deployment&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -577,10 +577,10 @@
     
     <item>
       <title>Configuration: How do I set up manual approval of deployments?</title>
-      <link>/faq/how-do-I-set-up-manual-approval-of-deployments/</link>
+      <link>/docs/faq/how-do-I-set-up-manual-approval-of-deployments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-set-up-manual-approval-of-deployments/</guid>
+      <guid>/docs/faq/how-do-I-set-up-manual-approval-of-deployments/</guid>
       <description>&lt;p&gt;You may want to introduce a manual approval step into your deployment process as an added precaution against unintentional or unauthorised deployments. This can be done by adding a &lt;code&gt;manual_approval&lt;/code&gt; task.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #ae81ff&#34;&gt;images&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -610,10 +610,10 @@
     
     <item>
       <title>Configuration: How do I create a readiness check when deploying services?</title>
-      <link>/faq/how-do-I-define-a-readiness-check-when-deploying-services/</link>
+      <link>/docs/faq/how-do-I-define-a-readiness-check-when-deploying-services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-define-a-readiness-check-when-deploying-services/</guid>
+      <guid>/docs/faq/how-do-I-define-a-readiness-check-when-deploying-services/</guid>
       <description>&lt;p&gt;Sometimes a service is not immediately available - it may need to load configuration or import data, taking several minutes before it is ready. In this situation you can define a &lt;code&gt;readiness_probe&lt;/code&gt; to ensure that the availability of the service is deferred until any setup routines are finished.&lt;/p&gt;
 
 &lt;p&gt;Sometimes your container won&amp;rsquo;t be listening on the relevant port by the time the readiness probe runs but you will still want to check that it is functioning. A good idea would be to check that a file can be created in a directory such as /tmp (see varnish example).&lt;/p&gt;
@@ -655,10 +655,10 @@
     
     <item>
       <title>Configuration: How do I get the deployed endpoint address for a service?</title>
-      <link>/faq/how-do-I-get-the-deployed-endpoint-address-for-a-service/</link>
+      <link>/docs/faq/how-do-I-get-the-deployed-endpoint-address-for-a-service/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-get-the-deployed-endpoint-address-for-a-service/</guid>
+      <guid>/docs/faq/how-do-I-get-the-deployed-endpoint-address-for-a-service/</guid>
       <description>&lt;p&gt;You may have a complex script that contains several &lt;code&gt;deploy&lt;/code&gt; tasks, each creating their own endpoint. To inform subsequent services about a previous endpoint address ContinuousPipe creates a dynamic variable using the service name. So, for example, if a service called &lt;code&gt;api&lt;/code&gt; was created by a &lt;code&gt;deploy&lt;/code&gt; task, then the endpoint address would become available to subsequent tasks as &lt;code&gt;${SERVICE_API_PUBLIC_ENDPOINT}&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #ae81ff&#34;&gt;infrastructure&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -685,7 +685,7 @@
 
 &lt;p&gt;This configuration defines an initial &lt;code&gt;deploy&lt;/code&gt; task that creates a &lt;code&gt;backend&lt;/code&gt; service. The second &lt;code&gt;deploy&lt;/code&gt; task creates a &lt;code&gt;frontend&lt;/code&gt; service that passes the endpoint address of the &lt;code&gt;backend&lt;/code&gt; service as an environment variable &lt;code&gt;BACKEND_ENDPOINT&lt;/code&gt; using the dynamic variable &lt;code&gt;${SERVICE_BACKEND_PUBLIC_ENDPOINT}&lt;/code&gt; as the value.&lt;/p&gt;
 
-&lt;p&gt;Additionally, the value of &lt;code&gt;CLUSTER&lt;/code&gt;, &lt;code&gt;IMAGE_PATH_BACKEND&lt;/code&gt; and &lt;code&gt;IMAGE_PATH_FRONTEND&lt;/code&gt; are being passed in as variables - these need to be set on the &lt;a href=&#34;../quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
+&lt;p&gt;Additionally, the value of &lt;code&gt;CLUSTER&lt;/code&gt;, &lt;code&gt;IMAGE_PATH_BACKEND&lt;/code&gt; and &lt;code&gt;IMAGE_PATH_FRONTEND&lt;/code&gt; are being passed in as variables - these need to be set on the &lt;a href=&#34;../docs/quick-start/configuring-a-flow/&#34;&gt;configuration page for the flow&lt;/a&gt; in the ContinuousPipe console.&lt;/p&gt;
 </description>
     </item>
     

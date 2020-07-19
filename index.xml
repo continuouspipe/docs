@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>What is ContinuousPipe? on ContinuousPipe Docs</title>
-    <link>/index.xml</link>
+    <link>/docs/index.xml</link>
     <description>Recent content in What is ContinuousPipe? on ContinuousPipe Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>Released under the MIT license</copyright>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Accounts: How do I create a billing profile?</title>
-      <link>/faq/how-do-I-create-a-billing-profile/</link>
+      <link>/docs/faq/how-do-I-create-a-billing-profile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-create-a-billing-profile/</guid>
+      <guid>/docs/faq/how-do-I-create-a-billing-profile/</guid>
       <description>&lt;p&gt;To create a billing profile you will first need to log into the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console&lt;/a&gt;. You then need to navigate to the Account section using the sub menu in the top right corner.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;./images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -39,10 +39,10 @@
     
     <item>
       <title>General: What are the ContinuousPipe images?</title>
-      <link>/faq/what-are-the-continuous-pipe-images/</link>
+      <link>/docs/faq/what-are-the-continuous-pipe-images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/what-are-the-continuous-pipe-images/</guid>
+      <guid>/docs/faq/what-are-the-continuous-pipe-images/</guid>
       <description>&lt;p&gt;ContinuousPipe provides images for many common technologies that you may need to use in your application infrastructure.&lt;/p&gt;
 
 &lt;p&gt;Some examples are:&lt;/p&gt;
@@ -67,16 +67,16 @@
 
 &lt;p&gt;The benefit of using ContinuousPipe images are that they have been created according to best practices on security and performance. For example, the Apache and Nginx server images are automatically configured to use HTTPS only websites and install self signed SSL certificate on container start. More information about the specific setup of each image is provided in the README for each image within &lt;a href=&#34;https://github.com/continuouspipe/dockerfiles&#34;&gt;https://github.com/continuouspipe/dockerfiles&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;ContinuousPipe images are also compatible with the &lt;a href=&#34;./remote-development/getting-started/&#34;&gt;remote development&lt;/a&gt; functionality without any additional configuration.&lt;/p&gt;
+&lt;p&gt;ContinuousPipe images are also compatible with the &lt;a href=&#34;./docs/remote-development/getting-started/&#34;&gt;remote development&lt;/a&gt; functionality without any additional configuration.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>General: What are the ContinuousPipe demo sites?</title>
-      <link>/faq/what-are-the-continuous-pipe-demo-sites/</link>
+      <link>/docs/faq/what-are-the-continuous-pipe-demo-sites/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/what-are-the-continuous-pipe-demo-sites/</guid>
+      <guid>/docs/faq/what-are-the-continuous-pipe-demo-sites/</guid>
       <description>&lt;p&gt;ContinuousPipe provides some sample applications for common frameworks:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -90,21 +90,21 @@
 
 &lt;p&gt;They can be used to get an environment running quickly or as a basis for further adaptation to suit the needs of your own organisation.&lt;/p&gt;
 
-&lt;p&gt;The demo sites are built on top of &lt;a href=&#34;./faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; so they take advantage of their security and performance best practices.&lt;/p&gt;
+&lt;p&gt;The demo sites are built on top of &lt;a href=&#34;./docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; so they take advantage of their security and performance best practices.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Console: Where can I get a ContinuousPipe API key?</title>
-      <link>/faq/where-can-I-get-a-continuous-pipe-api-key/</link>
+      <link>/docs/faq/where-can-I-get-a-continuous-pipe-api-key/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/where-can-I-get-a-continuous-pipe-api-key/</guid>
+      <guid>/docs/faq/where-can-I-get-a-continuous-pipe-api-key/</guid>
       <description>
 
 &lt;h2 id=&#34;continuouspipe-api-keys&#34;&gt;ContinuousPipe API Keys&lt;/h2&gt;
 
-&lt;p&gt;ContinuousPipe API keys can be used with the &lt;code&gt;cp-remote&lt;/code&gt; tool in &lt;a href=&#34;./remote-development/working-with-different-environments/#interactive-mode&#34;&gt;interactive mode&lt;/a&gt; to access a bash terminal on a deployed container.&lt;/p&gt;
+&lt;p&gt;ContinuousPipe API keys can be used with the &lt;code&gt;cp-remote&lt;/code&gt; tool in &lt;a href=&#34;./docs/remote-development/working-with-different-environments/#interactive-mode&#34;&gt;interactive mode&lt;/a&gt; to access a bash terminal on a deployed container.&lt;/p&gt;
 
 &lt;h2 id=&#34;creating-a-continuouspipe-api-key&#34;&gt;Creating a ContinuousPipe API Key&lt;/h2&gt;
 
@@ -141,10 +141,10 @@
     
     <item>
       <title>Console: Where can I view container logs and events?</title>
-      <link>/faq/where-can-I-view-container-logs-and-events/</link>
+      <link>/docs/faq/where-can-I-view-container-logs-and-events/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/where-can-I-view-container-logs-and-events/</guid>
+      <guid>/docs/faq/where-can-I-view-container-logs-and-events/</guid>
       <description>
 
 &lt;h2 id=&#34;container-logs&#34;&gt;Container Logs&lt;/h2&gt;
@@ -207,10 +207,10 @@
     
     <item>
       <title>Configuration Files</title>
-      <link>/configuration/configuration-files/</link>
+      <link>/docs/configuration/configuration-files/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/configuration/configuration-files/</guid>
+      <guid>/docs/configuration/configuration-files/</guid>
       <description>
 
 &lt;p&gt;There are three main configuration files that are needed to build a Docker image and set up ContinuousPipe deployments:&lt;/p&gt;
@@ -234,7 +234,7 @@
 &lt;p&gt;The ContinuousPipe configuration is represented as a YAML file. The final configuration is the result of a merger of these different optional configuration sources:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;The YAML stored on CP when &lt;a href=&#34;./quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The YAML stored on CP when &lt;a href=&#34;./docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;The YAML file named &lt;code&gt;continuous-pipe.yml&lt;/code&gt; in your code repository&lt;/li&gt;
 &lt;li&gt;The YAML file named &lt;code&gt;continuous-pipe.[branch].yml&lt;/code&gt; in your code repository&lt;/li&gt;
 &lt;/ul&gt;
@@ -265,11 +265,11 @@
             &lt;span style=&#34;color: #75715e&#34;&gt;# ...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;You will learn more about each task in the &lt;a href=&#34;./configuration/tasks/&#34;&gt;tasks overview section&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You will learn more about each task in the &lt;a href=&#34;./docs/configuration/tasks/&#34;&gt;tasks overview section&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;variables&#34;&gt;Variables&lt;/h3&gt;
 
-&lt;p&gt;You can avoid copying and pasting by using variables inside your configuration files. The following example shows you how to prevent putting values inside your &lt;code&gt;continuous-pipe.yml&lt;/code&gt; by using variables that are defined in the configuration stored in ContinuousPipe when &lt;a href=&#34;./quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can avoid copying and pasting by using variables inside your configuration files. The following example shows you how to prevent putting values inside your &lt;code&gt;continuous-pipe.yml&lt;/code&gt; by using variables that are defined in the configuration stored in ContinuousPipe when &lt;a href=&#34;./docs/quick-start/configuring-a-flow/&#34;&gt;configuring a flow&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;# configuration in ContinuousPipe&lt;/span&gt;
 &lt;span style=&#34;color: #ae81ff&#34;&gt;environment_variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;name:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CLUSTER,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;my-production-cluster&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
@@ -362,10 +362,10 @@
     
     <item>
       <title>ContinuousPipe</title>
-      <link>/basics/continuous-pipe/</link>
+      <link>/docs/basics/continuous-pipe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/basics/continuous-pipe/</guid>
+      <guid>/docs/basics/continuous-pipe/</guid>
       <description>
 
 &lt;h2 id=&#34;what-is-continuouspipe&#34;&gt;What is ContinuousPipe?&lt;/h2&gt;
@@ -374,7 +374,7 @@
 
 &lt;h2 id=&#34;technology-stack&#34;&gt;Technology Stack&lt;/h2&gt;
 
-&lt;p&gt;ContinuousPipe allows you to deploy your &lt;a href=&#34;./basics/concepts-build-concepts/&#34;&gt;Docker application&lt;/a&gt; on any &lt;a href=&#34;./basics/concepts-deployment-concepts/&#34;&gt;Kubernetes cluster&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;ContinuousPipe allows you to deploy your &lt;a href=&#34;./docs/basics/concepts-build-concepts/&#34;&gt;Docker application&lt;/a&gt; on any &lt;a href=&#34;./docs/basics/concepts-deployment-concepts/&#34;&gt;Kubernetes cluster&lt;/a&gt;.&lt;/p&gt;
 
 
 &lt;figure class=&#34;diagram technology-stack&#34;&gt;
@@ -397,16 +397,16 @@
 
 &lt;h2 id=&#34;customizable-workflow&#34;&gt;Customizable Workflow&lt;/h2&gt;
 
-&lt;p&gt;The &lt;a href=&#34;./basics/workflow-principles/&#34;&gt;customizable workflow&lt;/a&gt; allows you to integrate developers, QA and product owners to produce super-fast feedback cycles on a feature-by-feature basis.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;./docs/basics/workflow-principles/&#34;&gt;customizable workflow&lt;/a&gt; allows you to integrate developers, QA and product owners to produce super-fast feedback cycles on a feature-by-feature basis.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Creating a Project</title>
-      <link>/quick-start/creating-a-project/</link>
+      <link>/docs/quick-start/creating-a-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/creating-a-project/</guid>
+      <guid>/docs/quick-start/creating-a-project/</guid>
       <description>&lt;p&gt;When you log in for the first time you will see the project overview screen, which will be empty. You&amp;rsquo;ll be prompted to create a new project.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;./images/quick-start/project-overview-no-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -430,10 +430,10 @@
     
     <item>
       <title>Getting Started</title>
-      <link>/remote-development/getting-started/</link>
+      <link>/docs/remote-development/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/getting-started/</guid>
+      <guid>/docs/remote-development/getting-started/</guid>
       <description>
 
 &lt;p&gt;ContinuousPipe can be used as a remote development environment using the &lt;code&gt;cp-remote&lt;/code&gt; command line tool. It helps to create, build and destroy remote environments and keep files in sync with the local filesystem.&lt;/p&gt;
@@ -511,9 +511,9 @@ mv cp-remote /usr/local/bin/cp-remote
 &lt;p&gt;The quick start guide gives an overview of how to get running with remote development:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;./quick-start/remote-development-configuring-your-repository/&#34;&gt;Remote Development: Configuring Your Repository&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./quick-start/remote-development-creating-a-remote-environment/&#34;&gt;Remote Development: Creating a Remote Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./quick-start/remote-development-using-a-remote-environment/&#34;&gt;Remote Development: Using a Remote Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/quick-start/remote-development-configuring-your-repository/&#34;&gt;Remote Development: Configuring Your Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/quick-start/remote-development-creating-a-remote-environment/&#34;&gt;Remote Development: Creating a Remote Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/quick-start/remote-development-using-a-remote-environment/&#34;&gt;Remote Development: Using a Remote Environment&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;data-sharing&#34;&gt;Data Sharing&lt;/h2&gt;
@@ -537,10 +537,10 @@ mv cp-remote /usr/local/bin/cp-remote
     
     <item>
       <title>Getting Started with Laravel</title>
-      <link>/guides/laravel/</link>
+      <link>/docs/guides/laravel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/guides/laravel/</guid>
+      <guid>/docs/guides/laravel/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -586,7 +586,7 @@ mv cp-remote /usr/local/bin/cp-remote
 
 &lt;h2 id=&#34;configuring-continuouspipe&#34;&gt;Configuring ContinuousPipe&lt;/h2&gt;
 
-&lt;p&gt;Before we can push any code to our repository, we need to ensure that the ContinuousPipe console is properly configured. Please refer to the ContinuousPipe Quick Start guide to setup your &lt;a href=&#34;./quick-start/creating-a-project/&#34;&gt;project&lt;/a&gt;, &lt;a href=&#34;./quick-start/configuring-a-cluster/&#34;&gt;cluster&lt;/a&gt;, &lt;a href=&#34;./quick-start/configuring-a-registry/&#34;&gt;registry&lt;/a&gt; and create your first &lt;a href=&#34;./quick-start/creating-a-flow/&#34;&gt;flow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before we can push any code to our repository, we need to ensure that the ContinuousPipe console is properly configured. Please refer to the ContinuousPipe Quick Start guide to setup your &lt;a href=&#34;./docs/quick-start/creating-a-project/&#34;&gt;project&lt;/a&gt;, &lt;a href=&#34;./docs/quick-start/configuring-a-cluster/&#34;&gt;cluster&lt;/a&gt;, &lt;a href=&#34;./docs/quick-start/configuring-a-registry/&#34;&gt;registry&lt;/a&gt; and create your first &lt;a href=&#34;./docs/quick-start/creating-a-flow/&#34;&gt;flow&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;One last thing we need to do before we can begin using ContinuousPipe is configure which cluster we will use. You are free to configure as many clusters as you wish, in fact, its a good idea to have a separate cluster from production as you would for development and testing.&lt;/p&gt;
 
@@ -598,7 +598,7 @@ mv cp-remote /usr/local/bin/cp-remote
 
 &lt;h3 id=&#34;adding-docker-configuration&#34;&gt;Adding Docker configuration&lt;/h3&gt;
 
-&lt;p&gt;Lets start by configuring our &lt;code&gt;Dockerfile&lt;/code&gt;. We are going to use one of the &lt;a href=&#34;./faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; as our base. In reality, you would want to create a new base image that would extend this image to give you the ability to add other services, such as your NodeJS dependencies often used for the frontend build tools i.e. webpack&lt;/p&gt;
+&lt;p&gt;Lets start by configuring our &lt;code&gt;Dockerfile&lt;/code&gt;. We are going to use one of the &lt;a href=&#34;./docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; as our base. In reality, you would want to create a new base image that would extend this image to give you the ability to add other services, such as your NodeJS dependencies often used for the frontend build tools i.e. webpack&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
@@ -1058,7 +1058,7 @@ mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt
 
 &lt;p&gt;Here we are creating a new web container, making it accessible to the public which instructs ContinuousPipe to get an IP address from the load balancer. We inject the environment variables previously defined in the &lt;code&gt;initalization&lt;/code&gt; task, and finally we configure the resources required from the cluster and open up the required ports, &lt;code&gt;80&lt;/code&gt; and &lt;code&gt;443&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;The last section of this task is the &lt;code&gt;deployment_strategy&lt;/code&gt; which configures how ContinuousPipe will determine when the container is finished building and if it was successful or not. For more information on health checks please refer to &lt;a href=&#34;http://documentation-continuouspipe.github.io/configuration/deployments/#health-checks&#34;&gt;http://documentation-continuouspipe.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The last section of this task is the &lt;code&gt;deployment_strategy&lt;/code&gt; which configures how ContinuousPipe will determine when the container is finished building and if it was successful or not. For more information on health checks please refer to &lt;a href=&#34;http://continuouspipe.github.io/docs/configuration/deployments/#health-checks&#34;&gt;http://continuouspipe.github.io/docs/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Now that we have defined our &lt;code&gt;continuous-pipe.yml&lt;/code&gt; file lets configure that one last script we set to use in the &lt;code&gt;initialization&lt;/code&gt; task. Create a new file &lt;code&gt;tools/docker/setup/setup.sh&lt;/code&gt; with the following -&lt;/p&gt;
 
@@ -1129,7 +1129,7 @@ Branch master &lt;span style=&#34;color: #f8f8f2&#34;&gt;set&lt;/span&gt; up to 
 
 &lt;h3 id=&#34;install-cp-remote&#34;&gt;Install &lt;code&gt;cp-remote&lt;/code&gt;&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;cp-remote&lt;/code&gt; is available on OSX, Linux and Windows. Please refer to the &lt;a href=&#34;./remote-development/getting-started/#installation&#34;&gt;remote development installation instructions&lt;/a&gt; for each of the platforms.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cp-remote&lt;/code&gt; is available on OSX, Linux and Windows. Please refer to the &lt;a href=&#34;./docs/remote-development/getting-started/#installation&#34;&gt;remote development installation instructions&lt;/a&gt; for each of the platforms.&lt;/p&gt;
 
 &lt;p&gt;For simplicity, here is the OSX installation instructions&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo curl https://raw.githubusercontent.com/continuouspipe/remote-environment-client/gh-pages/0.0.1/darwin-amd64.gz &amp;gt; cp-remote.gz
@@ -1149,7 +1149,7 @@ chmod +x /usr/local/bin/cp-remote
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote setup
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;You will now be asked a series of questions that relate to how you have configured ContinuousPipe and your cluster details. Please refer to the &lt;a href=&#34;./remote-development/command-setup/&#34;&gt;remote development setup instructions&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;You will now be asked a series of questions that relate to how you have configured ContinuousPipe and your cluster details. Please refer to the &lt;a href=&#34;./docs/remote-development/command-setup/&#34;&gt;remote development setup instructions&lt;/a&gt; for more information.&lt;/p&gt;
 
 &lt;h3 id=&#34;build-the-environment&#34;&gt;Build the environment&lt;/h3&gt;
 
@@ -1229,16 +1229,16 @@ Done.
 
 &lt;p&gt;There is far more we can do with ContinuousPipe to increase productivity, for example, we can use filters to determine when tasks are run. Perhaps we only want certain branches to build environments, or a certain GitHub label on a Pull-Request to trigger the build. We can also go one step further and separate our builds into pipelines. Perhaps we want to have a separate pipeline for production compared to development or testing. This is useful if there are certain environment variables and tasks that should only be used in development but not production.&lt;/p&gt;
 
-&lt;p&gt;This getting started guide should be treated as a first step, please refer to the &lt;a href=&#34;http://documentation-continuouspipe.github.io&#34;&gt;http://documentation-continuouspipe.github.io&lt;/a&gt; for more advanced tutorials.&lt;/p&gt;
+&lt;p&gt;This getting started guide should be treated as a first step, please refer to the &lt;a href=&#34;http://continuouspipe.github.io/docs&#34;&gt;http://continuouspipe.github.io/docs&lt;/a&gt; for more advanced tutorials.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Configuration: How do I set environment variables?</title>
-      <link>/faq/how-do-I-set-environment-variables/</link>
+      <link>/docs/faq/how-do-I-set-environment-variables/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/how-do-I-set-environment-variables/</guid>
+      <guid>/docs/faq/how-do-I-set-environment-variables/</guid>
       <description>&lt;p&gt;You may want to change the behaviour of an application based on what environment it is deployed to. This can be done by changing the value of an environment variable passed to a container. For example you may want to set the &lt;code&gt;SYMFONY_ENV&lt;/code&gt; environment variable to &amp;ldquo;prod&amp;rdquo; for production, UAT and feature branch environments. We can do this by creating a variable within &lt;code&gt;continuous-pipe.yml&lt;/code&gt; and then using it as the value of the environment variable passed to the service.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;variables&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
     &lt;span style=&#34;color: #f8f8f2&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;SYMFONY_ENVIRONMENT&lt;/span&gt;
@@ -1287,10 +1287,10 @@ Done.
     
     <item>
       <title>Working with a Different Environment</title>
-      <link>/remote-development/working-with-different-environments/</link>
+      <link>/docs/remote-development/working-with-different-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/working-with-different-environments/</guid>
+      <guid>/docs/remote-development/working-with-different-environments/</guid>
       <description>
 
 &lt;p&gt;Sometimes you may want to use &lt;code&gt;cp-remote&lt;/code&gt; to access an environment that you did not build using a token. Examples of this might be:&lt;/p&gt;
@@ -1350,13 +1350,13 @@ Done.
 &lt;p&gt;The commands you can use with a token setup and the &lt;code&gt;--kube-environment-name&lt;/code&gt; option are:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;./remote-development/command-bash/&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./remote-development/command-check-connection/&#34;&gt;checkconnection&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./remote-development/command-exec/&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./remote-development/command-forward/&#34;&gt;forward&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./remote-development/command-fetch/&#34;&gt;fetch&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./remote-development/command-sync/&#34;&gt;sync&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./remote-development/command-watch/&#34;&gt;watch&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/remote-development/command-bash/&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/remote-development/command-check-connection/&#34;&gt;checkconnection&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/remote-development/command-exec/&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/remote-development/command-forward/&#34;&gt;forward&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/remote-development/command-fetch/&#34;&gt;fetch&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/remote-development/command-sync/&#34;&gt;sync&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/remote-development/command-watch/&#34;&gt;watch&lt;/a&gt; command&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;For example, to open a bash session on the &lt;code&gt;web&lt;/code&gt; container of the &lt;code&gt;php-example-cpdev-foo&lt;/code&gt; environment you can run:&lt;/p&gt;
@@ -1376,9 +1376,9 @@ Done.
 &lt;p&gt;The commands you can use with the &lt;code&gt;--interactive&lt;/code&gt; option are:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;./remote-development/command-init/#interactive-mode&#34;&gt;init&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./remote-development/command-bash/#interactive-mode&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./remote-development/command-exec/#interactive-mode&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/remote-development/command-init/#interactive-mode&#34;&gt;init&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/remote-development/command-bash/#interactive-mode&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./docs/remote-development/command-exec/#interactive-mode&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;If you have not previously run interactive mode with any command, you will first need to generate a &lt;a href=&#34;https://your-api.example.com/account/api-keys&#34;&gt;ContinuousPipe API key&lt;/a&gt;.&lt;/p&gt;
@@ -1410,22 +1410,22 @@ Done.
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;./remote-development/command-bash/#interactive-mode&#34;&gt;bash command&lt;/a&gt; and &lt;a href=&#34;./remote-development/command-exec/#interactive-mode&#34;&gt;exec command&lt;/a&gt; can be run in interactive mode directly without having to run &lt;code&gt;cp-remote init -i&lt;/code&gt; first.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;./docs/remote-development/command-bash/#interactive-mode&#34;&gt;bash command&lt;/a&gt; and &lt;a href=&#34;./docs/remote-development/command-exec/#interactive-mode&#34;&gt;exec command&lt;/a&gt; can be run in interactive mode directly without having to run &lt;code&gt;cp-remote init -i&lt;/code&gt; first.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;If you need to reset the stored username and API key, you need to run the &lt;a href=&#34;./remote-development/command-init/#interactive-mode&#34;&gt;init command&lt;/a&gt; with the &lt;code&gt;--reset&lt;/code&gt; flag.&lt;/p&gt;
+&lt;p&gt;If you need to reset the stored username and API key, you need to run the &lt;a href=&#34;./docs/remote-development/command-init/#interactive-mode&#34;&gt;init command&lt;/a&gt; with the &lt;code&gt;--reset&lt;/code&gt; flag.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Working with a Direct Connection to the Cluster</title>
-      <link>/remote-development/working-with-direct-cluster-connection/</link>
+      <link>/docs/remote-development/working-with-direct-cluster-connection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/working-with-direct-cluster-connection/</guid>
+      <guid>/docs/remote-development/working-with-direct-cluster-connection/</guid>
       <description>&lt;p&gt;Edit the &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; local configuration file, set &lt;code&gt;kube-proxy-enabled&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; and add the cluster ip, username and password.&lt;/p&gt;
 
 &lt;p&gt;For example:&lt;/p&gt;
@@ -1443,10 +1443,10 @@ kube-direct-cluster-password: {cluster-password}
     
     <item>
       <title>Advanced Setup</title>
-      <link>/remote-development/advanced-setup/</link>
+      <link>/docs/remote-development/advanced-setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/advanced-setup/</guid>
+      <guid>/docs/remote-development/advanced-setup/</guid>
       <description>
 
 &lt;h2 id=&#34;usage-logging&#34;&gt;Usage Logging&lt;/h2&gt;
@@ -1465,10 +1465,10 @@ kube-direct-cluster-password: {cluster-password}
     
     <item>
       <title>Concepts: ContinuousPipe Concepts</title>
-      <link>/basics/concepts-continuous-pipe-concepts/</link>
+      <link>/docs/basics/concepts-continuous-pipe-concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/basics/concepts-continuous-pipe-concepts/</guid>
+      <guid>/docs/basics/concepts-continuous-pipe-concepts/</guid>
       <description>
 
 &lt;h2 id=&#34;system-overview&#34;&gt;System Overview&lt;/h2&gt;
@@ -1484,7 +1484,7 @@ kube-direct-cluster-password: {cluster-password}
 
 &lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
 
-&lt;p&gt;A project is where the ContinuousPipe workflow begins. It is used to group together &lt;a href=&#34;./basics/concepts-build-concepts/&#34;&gt;Docker registries&lt;/a&gt; and &lt;a href=&#34;./basics/concepts-deployment-concepts/&#34;&gt;Kubernetes clusters&lt;/a&gt;, and configure user access.&lt;/p&gt;
+&lt;p&gt;A project is where the ContinuousPipe workflow begins. It is used to group together &lt;a href=&#34;./docs/basics/concepts-build-concepts/&#34;&gt;Docker registries&lt;/a&gt; and &lt;a href=&#34;./docs/basics/concepts-deployment-concepts/&#34;&gt;Kubernetes clusters&lt;/a&gt;, and configure user access.&lt;/p&gt;
 
 &lt;p&gt;Each project needs assigning at least one Docker registry. Storing the Docker registry credentials allows that registry to be specified in the YAML configuration so that ContinuousPipe can automatically push built images.&lt;/p&gt;
 
@@ -1501,7 +1501,7 @@ kube-direct-cluster-password: {cluster-password}
 
 &lt;p&gt;A flow is created within a project by selecting a Git code repository. Typically a single flow is all that is needed for a project. However additional flows can easily be added to a project to represent different Git code repositories or even different components in the same Git code repository where a micro services architecture is used.&lt;/p&gt;
 
-&lt;p&gt;In parallel with the selection of a Git code repository, &lt;a href=&#34;./basics/installation-github/&#34;&gt;ContinuousPipe integration&lt;/a&gt; needs to be installed on that repository so that ContinuousPipe can respond to events such as code pushes, pull requests, and branch deletions.&lt;/p&gt;
+&lt;p&gt;In parallel with the selection of a Git code repository, &lt;a href=&#34;./docs/basics/installation-github/&#34;&gt;ContinuousPipe integration&lt;/a&gt; needs to be installed on that repository so that ContinuousPipe can respond to events such as code pushes, pull requests, and branch deletions.&lt;/p&gt;
 
 &lt;p&gt;Each flow allows YAML secrets to be defined and optionally encrypted. This allows sensitive data to be stored within ContinuousPipe rather than exposed in YAML configuration files in the Git code repository. The secrets are exposed to the YAML configuration as variables.&lt;/p&gt;
 
@@ -1524,7 +1524,7 @@ kube-direct-cluster-password: {cluster-password}
 
 &lt;h2 id=&#34;remote-development&#34;&gt;Remote Development&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;./remote-development/getting-started/&#34;&gt;Remote development&lt;/a&gt; in the ContinuousPipe context refers to the use of an environment for the incremental testing of work in development. An environment used in this way is referred to as a &amp;ldquo;remote development environment&amp;rdquo; or just &amp;ldquo;remote environment&amp;rdquo;. A specialised tool &lt;code&gt;cp-remote&lt;/code&gt; is provided to assist this process, using rsync to synchronise local filesystem changes with the remote environment. This allows local changes to be visible in the remote environment almost instantly so offering the same benefits as a VM but without requiring the same local machine resources. It also offers the benefit of centralising the devops effort needed to support development environments.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./docs/remote-development/getting-started/&#34;&gt;Remote development&lt;/a&gt; in the ContinuousPipe context refers to the use of an environment for the incremental testing of work in development. An environment used in this way is referred to as a &amp;ldquo;remote development environment&amp;rdquo; or just &amp;ldquo;remote environment&amp;rdquo;. A specialised tool &lt;code&gt;cp-remote&lt;/code&gt; is provided to assist this process, using rsync to synchronise local filesystem changes with the remote environment. This allows local changes to be visible in the remote environment almost instantly so offering the same benefits as a VM but without requiring the same local machine resources. It also offers the benefit of centralising the devops effort needed to support development environments.&lt;/p&gt;
 </description>
     </item>
     

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Remote Development on ContinuousPipe Docs</title>
-    <link>/remote-development/index.xml</link>
+    <link>/docs/remote-development/index.xml</link>
     <description>Recent content in Remote Development on ContinuousPipe Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>Released under the MIT license</copyright>
-    <atom:link href="/remote-development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/docs/remote-development/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Getting Started</title>
-      <link>/remote-development/getting-started/</link>
+      <link>/docs/remote-development/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/getting-started/</guid>
+      <guid>/docs/remote-development/getting-started/</guid>
       <description>
 
 &lt;p&gt;ContinuousPipe can be used as a remote development environment using the &lt;code&gt;cp-remote&lt;/code&gt; command line tool. It helps to create, build and destroy remote environments and keep files in sync with the local filesystem.&lt;/p&gt;
@@ -92,9 +92,9 @@ mv cp-remote /usr/local/bin/cp-remote
 &lt;p&gt;The quick start guide gives an overview of how to get running with remote development:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../quick-start/remote-development-configuring-your-repository/&#34;&gt;Remote Development: Configuring Your Repository&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../quick-start/remote-development-creating-a-remote-environment/&#34;&gt;Remote Development: Creating a Remote Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../quick-start/remote-development-using-a-remote-environment/&#34;&gt;Remote Development: Using a Remote Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/quick-start/remote-development-configuring-your-repository/&#34;&gt;Remote Development: Configuring Your Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/quick-start/remote-development-creating-a-remote-environment/&#34;&gt;Remote Development: Creating a Remote Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/quick-start/remote-development-using-a-remote-environment/&#34;&gt;Remote Development: Using a Remote Environment&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;data-sharing&#34;&gt;Data Sharing&lt;/h2&gt;
@@ -118,10 +118,10 @@ mv cp-remote /usr/local/bin/cp-remote
     
     <item>
       <title>Working with a Different Environment</title>
-      <link>/remote-development/working-with-different-environments/</link>
+      <link>/docs/remote-development/working-with-different-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/working-with-different-environments/</guid>
+      <guid>/docs/remote-development/working-with-different-environments/</guid>
       <description>
 
 &lt;p&gt;Sometimes you may want to use &lt;code&gt;cp-remote&lt;/code&gt; to access an environment that you did not build using a token. Examples of this might be:&lt;/p&gt;
@@ -181,13 +181,13 @@ mv cp-remote /usr/local/bin/cp-remote
 &lt;p&gt;The commands you can use with a token setup and the &lt;code&gt;--kube-environment-name&lt;/code&gt; option are:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../remote-development/command-bash/&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../remote-development/command-check-connection/&#34;&gt;checkconnection&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../remote-development/command-exec/&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../remote-development/command-forward/&#34;&gt;forward&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../remote-development/command-fetch/&#34;&gt;fetch&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../remote-development/command-sync/&#34;&gt;sync&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../remote-development/command-watch/&#34;&gt;watch&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/remote-development/command-bash/&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/remote-development/command-check-connection/&#34;&gt;checkconnection&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/remote-development/command-exec/&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/remote-development/command-forward/&#34;&gt;forward&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/remote-development/command-fetch/&#34;&gt;fetch&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/remote-development/command-sync/&#34;&gt;sync&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/remote-development/command-watch/&#34;&gt;watch&lt;/a&gt; command&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;For example, to open a bash session on the &lt;code&gt;web&lt;/code&gt; container of the &lt;code&gt;php-example-cpdev-foo&lt;/code&gt; environment you can run:&lt;/p&gt;
@@ -207,9 +207,9 @@ mv cp-remote /usr/local/bin/cp-remote
 &lt;p&gt;The commands you can use with the &lt;code&gt;--interactive&lt;/code&gt; option are:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../remote-development/command-init/#interactive-mode&#34;&gt;init&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../remote-development/command-bash/#interactive-mode&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../remote-development/command-exec/#interactive-mode&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/remote-development/command-init/#interactive-mode&#34;&gt;init&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/remote-development/command-bash/#interactive-mode&#34;&gt;bash&lt;/a&gt; command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/remote-development/command-exec/#interactive-mode&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;If you have not previously run interactive mode with any command, you will first need to generate a &lt;a href=&#34;https://your-api.example.com/account/api-keys&#34;&gt;ContinuousPipe API key&lt;/a&gt;.&lt;/p&gt;
@@ -241,22 +241,22 @@ mv cp-remote /usr/local/bin/cp-remote
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;../remote-development/command-bash/#interactive-mode&#34;&gt;bash command&lt;/a&gt; and &lt;a href=&#34;../remote-development/command-exec/#interactive-mode&#34;&gt;exec command&lt;/a&gt; can be run in interactive mode directly without having to run &lt;code&gt;cp-remote init -i&lt;/code&gt; first.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;../docs/remote-development/command-bash/#interactive-mode&#34;&gt;bash command&lt;/a&gt; and &lt;a href=&#34;../docs/remote-development/command-exec/#interactive-mode&#34;&gt;exec command&lt;/a&gt; can be run in interactive mode directly without having to run &lt;code&gt;cp-remote init -i&lt;/code&gt; first.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;If you need to reset the stored username and API key, you need to run the &lt;a href=&#34;../remote-development/command-init/#interactive-mode&#34;&gt;init command&lt;/a&gt; with the &lt;code&gt;--reset&lt;/code&gt; flag.&lt;/p&gt;
+&lt;p&gt;If you need to reset the stored username and API key, you need to run the &lt;a href=&#34;../docs/remote-development/command-init/#interactive-mode&#34;&gt;init command&lt;/a&gt; with the &lt;code&gt;--reset&lt;/code&gt; flag.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Working with a Direct Connection to the Cluster</title>
-      <link>/remote-development/working-with-direct-cluster-connection/</link>
+      <link>/docs/remote-development/working-with-direct-cluster-connection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/working-with-direct-cluster-connection/</guid>
+      <guid>/docs/remote-development/working-with-direct-cluster-connection/</guid>
       <description>&lt;p&gt;Edit the &lt;code&gt;.cp-remote-settings.yml&lt;/code&gt; local configuration file, set &lt;code&gt;kube-proxy-enabled&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; and add the cluster ip, username and password.&lt;/p&gt;
 
 &lt;p&gt;For example:&lt;/p&gt;
@@ -274,10 +274,10 @@ kube-direct-cluster-password: {cluster-password}
     
     <item>
       <title>Advanced Setup</title>
-      <link>/remote-development/advanced-setup/</link>
+      <link>/docs/remote-development/advanced-setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/advanced-setup/</guid>
+      <guid>/docs/remote-development/advanced-setup/</guid>
       <description>
 
 &lt;h2 id=&#34;usage-logging&#34;&gt;Usage Logging&lt;/h2&gt;
@@ -296,10 +296,10 @@ kube-direct-cluster-password: {cluster-password}
     
     <item>
       <title>Command: Init</title>
-      <link>/remote-development/command-init/</link>
+      <link>/docs/remote-development/command-init/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-init/</guid>
+      <guid>/docs/remote-development/command-init/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-init-command&#34;&gt;Using the Init Command&lt;/h2&gt;
@@ -307,7 +307,7 @@ kube-direct-cluster-password: {cluster-password}
 &lt;pre&gt;&lt;code&gt;cp-remote init [token]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The &lt;code&gt;init&lt;/code&gt; command will initialise a remote environment using an initialization token. Tokens can be generated in the ContinuousPipe console when &lt;a href=&#34;../quick-start/remote-development-creating-a-remote-environment/&#34;&gt;creating a remote environment&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;init&lt;/code&gt; command will initialise a remote environment using an initialization token. Tokens can be generated in the ContinuousPipe console when &lt;a href=&#34;../docs/quick-start/remote-development-creating-a-remote-environment/&#34;&gt;creating a remote environment&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;If the initialization process is interrupted it can be restarted using the same token and by default it will continue the process where it left off. You can use the flag &lt;code&gt;--reset&lt;/code&gt; to start any partial initializations from the beginning.&lt;/p&gt;
 
@@ -334,7 +334,7 @@ kube-direct-cluster-password: {cluster-password}
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;You can read a full explanation of interactive mode, including how to get an API key and what arguments are available &lt;a href=&#34;../remote-development/working-with-different-environments/#interactive-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can read a full explanation of interactive mode, including how to get an API key and what arguments are available &lt;a href=&#34;../docs/remote-development/working-with-different-environments/#interactive-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Sometimes you may want to connect to an environment that’s not set up as a remote environment, e.g. an environment created for a pull request. You can do this using interactive mode.&lt;/p&gt;
@@ -445,27 +445,27 @@ cp-remote init -i
     
     <item>
       <title>Command: Setup</title>
-      <link>/remote-development/command-setup/</link>
+      <link>/docs/remote-development/command-setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-setup/</guid>
+      <guid>/docs/remote-development/command-setup/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-setup-command&#34;&gt;Using the Setup Command&lt;/h2&gt;
 
 &lt;div class=&#34;admonition warning&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;setup&lt;/code&gt; command is now obsolete. It has been replaced with the &lt;a href=&#34;../remote-development/command-init/&#34;&gt;init&lt;/a&gt; command.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;setup&lt;/code&gt; command is now obsolete. It has been replaced with the &lt;a href=&#34;../docs/remote-development/command-init/&#34;&gt;init&lt;/a&gt; command.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Command: Build</title>
-      <link>/remote-development/command-build/</link>
+      <link>/docs/remote-development/command-build/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-build/</guid>
+      <guid>/docs/remote-development/command-build/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-build-command&#34;&gt;Using the Build Command&lt;/h2&gt;
@@ -520,10 +520,10 @@ cp-remote init -i
     
     <item>
       <title>Command: Logs</title>
-      <link>/remote-development/command-logs/</link>
+      <link>/docs/remote-development/command-logs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-logs/</guid>
+      <guid>/docs/remote-development/command-logs/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-logs-command&#34;&gt;Using the Logs Command&lt;/h2&gt;
@@ -629,10 +629,10 @@ cp-remote init -i
     
     <item>
       <title>Command: Bash</title>
-      <link>/remote-development/command-bash/</link>
+      <link>/docs/remote-development/command-bash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-bash/</guid>
+      <guid>/docs/remote-development/command-bash/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-bash-command&#34;&gt;Using the Bash Command&lt;/h2&gt;
@@ -661,7 +661,7 @@ cp-remote ba # alias
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;You can read a full explanation of interactive mode, including how to get an API key and what arguments are available &lt;a href=&#34;../remote-development/working-with-different-environments/#interactive-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can read a full explanation of interactive mode, including how to get an API key and what arguments are available &lt;a href=&#34;../docs/remote-development/working-with-different-environments/#interactive-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Interactive mode allows you to connect directly to an environment that is not set up as a remote environment.&lt;/p&gt;
@@ -757,10 +757,10 @@ cp-remote bash -i
     
     <item>
       <title>Command: Exec</title>
-      <link>/remote-development/command-exec/</link>
+      <link>/docs/remote-development/command-exec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-exec/</guid>
+      <guid>/docs/remote-development/command-exec/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-exec-command&#34;&gt;Using the Exec Command&lt;/h2&gt;
@@ -790,7 +790,7 @@ cp-remote bash -i
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;You can read a full explanation of interactive mode, including how to get an API key and what arguments are available &lt;a href=&#34;../remote-development/working-with-different-environments/#interactive-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can read a full explanation of interactive mode, including how to get an API key and what arguments are available &lt;a href=&#34;../docs/remote-development/working-with-different-environments/#interactive-mode&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Interactive mode allows you to connect directly to an environment that is not set up as a remote environment.&lt;/p&gt;
@@ -886,10 +886,10 @@ cp-remote exec -i -- /bin/sh
     
     <item>
       <title>Command: Watch</title>
-      <link>/remote-development/command-watch/</link>
+      <link>/docs/remote-development/command-watch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-watch/</guid>
+      <guid>/docs/remote-development/command-watch/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-watch-command&#34;&gt;Using the Watch Command&lt;/h2&gt;
@@ -1036,10 +1036,10 @@ cp-remote wa # alias
     
     <item>
       <title>Command: Fetch</title>
-      <link>/remote-development/command-fetch/</link>
+      <link>/docs/remote-development/command-fetch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-fetch/</guid>
+      <guid>/docs/remote-development/command-fetch/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-fetch-command&#34;&gt;Using the Fetch Command&lt;/h2&gt;
@@ -1075,7 +1075,7 @@ cp-remote fe # alias
 
 &lt;h2 id=&#34;ignoring-files&#34;&gt;Ignoring Files&lt;/h2&gt;
 
-&lt;p&gt;You can use &lt;code&gt;.cp-remote-ignore&lt;/code&gt; to &lt;a href=&#34;../remote-development/advanced-setup/#ignoring-files-directories-when-syncing&#34;&gt;ignore files and directories when syncing&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can use &lt;code&gt;.cp-remote-ignore&lt;/code&gt; to &lt;a href=&#34;../docs/remote-development/advanced-setup/#ignoring-files-directories-when-syncing&#34;&gt;ignore files and directories when syncing&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This behaviour can be overridden for the &lt;code&gt;fetch&lt;/code&gt; command by adding a &lt;code&gt;.cp-remote-ignore-fetch&lt;/code&gt; file. Like &lt;code&gt;.cp-remote-ignore&lt;/code&gt; it uses standard rsync excludes-from format:&lt;/p&gt;
 
@@ -1176,10 +1176,10 @@ cp-remote fe # alias
     
     <item>
       <title>Command: Push</title>
-      <link>/remote-development/command-push/</link>
+      <link>/docs/remote-development/command-push/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-push/</guid>
+      <guid>/docs/remote-development/command-push/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-push-command&#34;&gt;Using the Push Command&lt;/h2&gt;
@@ -1307,10 +1307,10 @@ cp-remote sy #alias
     
     <item>
       <title>Command: Sync</title>
-      <link>/remote-development/command-sync/</link>
+      <link>/docs/remote-development/command-sync/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-sync/</guid>
+      <guid>/docs/remote-development/command-sync/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-sync-command&#34;&gt;Using the Sync Command&lt;/h2&gt;
@@ -1438,10 +1438,10 @@ cp-remote pu #alias
     
     <item>
       <title>Command: Delete</title>
-      <link>/remote-development/command-delete/</link>
+      <link>/docs/remote-development/command-delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/remote-development/command-delete/</guid>
+      <guid>/docs/remote-development/command-delete/</guid>
       <description>
 
 &lt;h2 id=&#34;using-the-delete-command&#34;&gt;Using the Delete Command&lt;/h2&gt;

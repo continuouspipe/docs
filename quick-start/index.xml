@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Quick Start on ContinuousPipe Docs</title>
-    <link>/quick-start/index.xml</link>
+    <link>/docs/quick-start/index.xml</link>
     <description>Recent content in Quick Start on ContinuousPipe Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>Released under the MIT license</copyright>
-    <atom:link href="/quick-start/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/docs/quick-start/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Creating a Project</title>
-      <link>/quick-start/creating-a-project/</link>
+      <link>/docs/quick-start/creating-a-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/creating-a-project/</guid>
+      <guid>/docs/quick-start/creating-a-project/</guid>
       <description>&lt;p&gt;When you log in for the first time you will see the project overview screen, which will be empty. You&amp;rsquo;ll be prompted to create a new project.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/quick-start/project-overview-no-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -38,10 +38,10 @@
     
     <item>
       <title>Creating a Flow</title>
-      <link>/quick-start/creating-a-flow/</link>
+      <link>/docs/quick-start/creating-a-flow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/creating-a-flow/</guid>
+      <guid>/docs/quick-start/creating-a-flow/</guid>
       <description>&lt;p&gt;Once you have created a project you&amp;rsquo;ll be prompted to create a flow.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/quick-start/project-view-new-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -80,10 +80,10 @@
     
     <item>
       <title>Configuring Users</title>
-      <link>/quick-start/configuring-users/</link>
+      <link>/docs/quick-start/configuring-users/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/configuring-users/</guid>
+      <guid>/docs/quick-start/configuring-users/</guid>
       <description>
 
 &lt;p&gt;When you create a project, you are automatically added as the default user:&lt;/p&gt;
@@ -120,7 +120,7 @@
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;If you don&amp;rsquo;t need to add additional users to your project, you can skip straight to to &lt;a href=&#34;../quick-start/configuring-a-cluster/&#34;&gt;configuring a cluster&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you don&amp;rsquo;t need to add additional users to your project, you can skip straight to to &lt;a href=&#34;../docs/quick-start/configuring-a-cluster/&#34;&gt;configuring a cluster&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&#34;adding-users&#34;&gt;Adding Users&lt;/h2&gt;
@@ -174,10 +174,10 @@
     
     <item>
       <title>Configuring a Cluster</title>
-      <link>/quick-start/configuring-a-cluster/</link>
+      <link>/docs/quick-start/configuring-a-cluster/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/configuring-a-cluster/</guid>
+      <guid>/docs/quick-start/configuring-a-cluster/</guid>
       <description>
 
 &lt;p&gt;Before a flow can be used it needs to know where to deploy to. This is done in the &amp;ldquo;Clusters&amp;rdquo; tab of the project. You&amp;rsquo;ll be prompted to add a new cluster configuration.&lt;/p&gt;
@@ -195,7 +195,7 @@
 
 &lt;h2 id=&#34;google-container-engine&#34;&gt;Google Container Engine&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;In order to use this option you will first need to set up a Google Cloud project.&lt;/strong&gt; You will then need to link your Google account with ContinuousPipe, which is discussed in &lt;a href=&#34;../quick-start/creating-a-project/&#34;&gt;creating a project&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;In order to use this option you will first need to set up a Google Cloud project.&lt;/strong&gt; You will then need to link your Google account with ContinuousPipe, which is discussed in &lt;a href=&#34;../docs/quick-start/creating-a-project/&#34;&gt;creating a project&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;If selected, you will then be asked to enter the following:&lt;/p&gt;
 
@@ -227,10 +227,10 @@
     
     <item>
       <title>Configuring a Registry</title>
-      <link>/quick-start/configuring-a-registry/</link>
+      <link>/docs/quick-start/configuring-a-registry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/configuring-a-registry/</guid>
+      <guid>/docs/quick-start/configuring-a-registry/</guid>
       <description>&lt;p&gt;Before a flow can be used it needs to know where to store Docker images. This is done in the &amp;ldquo;Registries&amp;rdquo; tab of the project. You&amp;rsquo;ll be prompted to add a new registry configuration.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/quick-start/project-registry-overview-no-registry.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -261,10 +261,10 @@
     
     <item>
       <title>Configuring Your Repository</title>
-      <link>/quick-start/configuring-your-repository/</link>
+      <link>/docs/quick-start/configuring-your-repository/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/configuring-your-repository/</guid>
+      <guid>/docs/quick-start/configuring-your-repository/</guid>
       <description>
 
 &lt;p&gt;At this stage you should have a fully configured project, so it&amp;rsquo;s time to configure your code repository by adding the configuration files that are needed to build a Docker image and set up ContinuousPipe deployments.&lt;/p&gt;
@@ -327,11 +327,11 @@ COPY . /usr/share/nginx/html
 
 &lt;ul&gt;
 &lt;li&gt;It will configure the Docker image to be called &lt;code&gt;hello-world&lt;/code&gt; and stored in an account at docker.io&lt;/li&gt;
-&lt;li&gt;It will configure the Docker image to be deployed to the &lt;code&gt;hello-world&lt;/code&gt; cluster - this cluster identifier is defined when &lt;a href=&#34;../quick-start/configuring-a-cluster/&#34;&gt;configuring a cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;It will configure the Docker image to be deployed to the &lt;code&gt;hello-world&lt;/code&gt; cluster - this cluster identifier is defined when &lt;a href=&#34;../docs/quick-start/configuring-a-cluster/&#34;&gt;configuring a cluster&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;It will configure the Kubernetes cluster to create a public load-balancer for the web service allowing public access&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;See &lt;a href=&#34;../configuration/tasks-deploy/&#34;&gt;configuring deployments&lt;/a&gt; for more documentation.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;../docs/configuration/tasks-deploy/&#34;&gt;configuring deployments&lt;/a&gt; for more documentation.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;These new configuration files then need pushing to your code repository so that ContinuousPipe can read them.&lt;/strong&gt;&lt;/p&gt;
 </description>
@@ -339,15 +339,15 @@ COPY . /usr/share/nginx/html
     
     <item>
       <title>Configuring a Flow</title>
-      <link>/quick-start/configuring-a-flow/</link>
+      <link>/docs/quick-start/configuring-a-flow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/configuring-a-flow/</guid>
+      <guid>/docs/quick-start/configuring-a-flow/</guid>
       <description>&lt;p&gt;The final step before executing the flow is to configure it. You can do this by clicking on the flow, then selecting the &amp;ldquo;Configuration&amp;rdquo; tab. This will present you with an interface that allows you to define YAML variables.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-configuration-no-config.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;We are going to variablise the image name and the cluster identifier that were defined in &lt;code&gt;continuous-pipe.yml&lt;/code&gt; when &lt;a href=&#34;../quick-start/configuring-your-repository/&#34;&gt;configuring your repository&lt;/a&gt;. Here&amp;rsquo;s a reminder of what that looks like:&lt;/p&gt;
+&lt;p&gt;We are going to variablise the image name and the cluster identifier that were defined in &lt;code&gt;continuous-pipe.yml&lt;/code&gt; when &lt;a href=&#34;../docs/quick-start/configuring-your-repository/&#34;&gt;configuring your repository&lt;/a&gt;. Here&amp;rsquo;s a reminder of what that looks like:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;tasks:
     images:
@@ -409,10 +409,10 @@ COPY . /usr/share/nginx/html
     
     <item>
       <title>Creating a Tide</title>
-      <link>/quick-start/creating-a-tide/</link>
+      <link>/docs/quick-start/creating-a-tide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/creating-a-tide/</guid>
+      <guid>/docs/quick-start/creating-a-tide/</guid>
       <description>&lt;p&gt;The flow is now ready to run. An execution of a flow is called a tide.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-overview-no-tide.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -443,25 +443,25 @@ COPY . /usr/share/nginx/html
     
     <item>
       <title>Remote Development: Installing the Client</title>
-      <link>/quick-start/remote-development-installing-the-client/</link>
+      <link>/docs/quick-start/remote-development-installing-the-client/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/remote-development-installing-the-client/</guid>
+      <guid>/docs/quick-start/remote-development-installing-the-client/</guid>
       <description>&lt;p&gt;The remote development feature of ContinuousPipe allows a developer to work locally while viewing and testing changes in a remote environment. A command line tool &lt;code&gt;cp-remote&lt;/code&gt; keeps local and remote files in sync.&lt;/p&gt;
 
-&lt;p&gt;To get started, you will need to &lt;a href=&#34;../remote-development/getting-started/#installation&#34;&gt;install the remote development client&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To get started, you will need to &lt;a href=&#34;../docs/remote-development/getting-started/#installation&#34;&gt;install the remote development client&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Remote Development: Configuring Your Repository</title>
-      <link>/quick-start/remote-development-configuring-your-repository/</link>
+      <link>/docs/quick-start/remote-development-configuring-your-repository/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/remote-development-configuring-your-repository/</guid>
+      <guid>/docs/quick-start/remote-development-configuring-your-repository/</guid>
       <description>
 
-&lt;p&gt;After &lt;a href=&#34;../quick-start/remote-development-installing-the-client/&#34;&gt;installing the client&lt;/a&gt;, the next step is to update the configuration files in your code repository.&lt;/p&gt;
+&lt;p&gt;After &lt;a href=&#34;../docs/quick-start/remote-development-installing-the-client/&#34;&gt;installing the client&lt;/a&gt;, the next step is to update the configuration files in your code repository.&lt;/p&gt;
 
 &lt;h2 id=&#34;update-the-dockerfile&#34;&gt;Update the Dockerfile&lt;/h2&gt;
 
@@ -481,12 +481,12 @@ RUN ln -s /usr/share/nginx/html /app
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
-&lt;p&gt;If you are using one of the &lt;a href=&#34;../faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; then &lt;code&gt;rsync&lt;/code&gt; will already be configured for installation.&lt;/p&gt;
+&lt;p&gt;If you are using one of the &lt;a href=&#34;../docs/faq/what-are-the-continuous-pipe-images/&#34;&gt;ContinuousPipe images&lt;/a&gt; then &lt;code&gt;rsync&lt;/code&gt; will already be configured for installation.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&#34;update-the-continuous-pipe-yml&#34;&gt;Update the continuous-pipe.yml&lt;/h2&gt;
 
-&lt;p&gt;If you are using the &lt;code&gt;continuous-pipe.yml&lt;/code&gt; configuration from previous steps in the quick start guide, there is no further configuration required so you can go ahead and &lt;a href=&#34;../quick-start/remote-development-creating-a-remote-environment/&#34;&gt;create a remote environment&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are using the &lt;code&gt;continuous-pipe.yml&lt;/code&gt; configuration from previous steps in the quick start guide, there is no further configuration required so you can go ahead and &lt;a href=&#34;../docs/quick-start/remote-development-creating-a-remote-environment/&#34;&gt;create a remote environment&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;However, if you have progressed to adding pipelines to your configuration you will need to ensure that the pipeline conditions are not so restrictive that they prevent a tide running for a remote development branch. Remote development branches are by convention in the format &amp;ldquo;cpdev*&amp;ldquo;.&lt;/p&gt;
 
@@ -521,11 +521,11 @@ pipelines:
     
     <item>
       <title>Remote Development: Creating a Remote Environment</title>
-      <link>/quick-start/remote-development-creating-a-remote-environment/</link>
+      <link>/docs/quick-start/remote-development-creating-a-remote-environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/remote-development-creating-a-remote-environment/</guid>
-      <description>&lt;p&gt;After &lt;a href=&#34;../quick-start/remote-development-configuring-your-repository/&#34;&gt;configuring your repository&lt;/a&gt; you now need to go to the &amp;ldquo;Dev Environments&amp;rdquo; tab within the flow.&lt;/p&gt;
+      <guid>/docs/quick-start/remote-development-creating-a-remote-environment/</guid>
+      <description>&lt;p&gt;After &lt;a href=&#34;../docs/quick-start/remote-development-configuring-your-repository/&#34;&gt;configuring your repository&lt;/a&gt; you now need to go to the &amp;ldquo;Dev Environments&amp;rdquo; tab within the flow.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-no-env.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -537,7 +537,7 @@ pipelines:
 
 &lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-environment-no-token.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;You will then see a screen displaying a token. This needs to be copied for use with the remote development tool &lt;a href=&#34;../remote-development/command-init/&#34;&gt;init command&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You will then see a screen displaying a token. This needs to be copied for use with the remote development tool &lt;a href=&#34;../docs/remote-development/command-init/&#34;&gt;init command&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-environment-not-started.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
@@ -545,11 +545,11 @@ pipelines:
     
     <item>
       <title>Remote Development: Using a Remote Environment</title>
-      <link>/quick-start/remote-development-using-a-remote-environment/</link>
+      <link>/docs/quick-start/remote-development-using-a-remote-environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/quick-start/remote-development-using-a-remote-environment/</guid>
-      <description>&lt;p&gt;After &lt;a href=&#34;../quick-start/remote-development-creating-a-remote-environment/&#34;&gt;creating a remote environment&lt;/a&gt; you&amp;rsquo;ll need to open the project directory in a terminal. You can be checked out on any branch.&lt;/p&gt;
+      <guid>/docs/quick-start/remote-development-using-a-remote-environment/</guid>
+      <description>&lt;p&gt;After &lt;a href=&#34;../docs/quick-start/remote-development-creating-a-remote-environment/&#34;&gt;creating a remote environment&lt;/a&gt; you&amp;rsquo;ll need to open the project directory in a terminal. You can be checked out on any branch.&lt;/p&gt;
 
 &lt;div class=&#34;admonition note&#34;&gt;
 &lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
@@ -569,7 +569,7 @@ cp-remote init &amp;lt;token&amp;gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/quick-start/flow-dev-environments-environment-view-endpoint.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;With the tide up and running, it can now be used for remote development. This is done by running the remote development tool &lt;a href=&#34;../remote-development/command-watch/&#34;&gt;watch command&lt;/a&gt;, which runs in the background, detecting file changes and synchronising them with the remote environment.&lt;/p&gt;
+&lt;p&gt;With the tide up and running, it can now be used for remote development. This is done by running the remote development tool &lt;a href=&#34;../docs/remote-development/command-watch/&#34;&gt;watch command&lt;/a&gt;, which runs in the background, detecting file changes and synchronising them with the remote environment.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cp-remote watch
 &lt;/pre&gt;&lt;/div&gt;
 
