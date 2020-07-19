@@ -17,23 +17,23 @@
       <guid>/docs/faq/how-do-I-create-a-billing-profile/</guid>
       <description>&lt;p&gt;To create a billing profile you will first need to log into the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console&lt;/a&gt;. You then need to navigate to the Account section using the sub menu in the top right corner.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Within the account section, select the &amp;ldquo;Billing&amp;rdquo; tab. You will need to select how many users you would like to subscribe. The number of users is effectively the number of people who will have GitHub or Bitbucket accounts that will be pushing to repositories set up in a ContinuousPipe.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-create-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/faq/billing-create-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you click on &amp;ldquo;Subscribe&amp;rdquo; a window will open to &lt;a href=&#34;https://recurly.com/&#34;&gt;Recurly&lt;/a&gt;, which is a third party payment subscription handler. Follow the instructions to complete payment.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-recurly-interface.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/faq/billing-recurly-interface.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can also adjust the number of users up or down at this stage:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-adjust-users.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/faq/billing-adjust-users.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;After payment is completed, the &amp;ldquo;Billing&amp;rdquo; tab in the ContinuousPipe account section should now display subscription information.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-display-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/faq/billing-display-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -115,7 +115,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/account-api-key-new.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/account-api-key-new.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -126,7 +126,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/account-api-key-view.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/account-api-key-view.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -160,7 +160,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/flow-tide-logs-open-cp-logs.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/flow-tide-logs-open-cp-logs.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -171,7 +171,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/flow-tide-logs-view-cp-logs.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/flow-tide-logs-view-cp-logs.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -182,7 +182,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/flow-tide-logs-view-cp-events.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/flow-tide-logs-view-cp-events.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -197,7 +197,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/flow-environment-open-cp-logs.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/flow-environment-open-cp-logs.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -379,7 +379,7 @@
 
 &lt;figure class=&#34;diagram technology-stack&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/basics/cp-technology-stack.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/basics/cp-technology-stack.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -409,7 +409,7 @@
       <guid>/docs/quick-start/creating-a-project/</guid>
       <description>&lt;p&gt;When you log in for the first time you will see the project overview screen, which will be empty. You&amp;rsquo;ll be prompted to create a new project.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-overview-no-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-overview-no-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To create a project, just click the &amp;ldquo;CREATE A PROJECT&amp;rdquo; button in the top right of the interface.&lt;/p&gt;
 
@@ -424,7 +424,7 @@
 
 &lt;p&gt;The new project will now be visible in the project overview screen.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-overview-new-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-overview-new-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -594,7 +594,7 @@ mv cp-remote /usr/local/bin/cp-remote
 
 &lt;p&gt;From within the flow, click on configuration in the sidebar, create a new environment variable named &lt;code&gt;CLUSTER&lt;/code&gt; with a value to match what you set as your cluster name/identifier. I have set my cluster name as &lt;code&gt;main-cluster&lt;/code&gt;. Finally save the configuration.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/flow-variables-configuration.png&#34; alt=&#34;Flow Configuration&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/flow-variables-configuration.png&#34; alt=&#34;Flow Configuration&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;adding-docker-configuration&#34;&gt;Adding Docker configuration&lt;/h3&gt;
 
@@ -873,7 +873,7 @@ mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt
 
 &lt;p&gt;If everything has gone to plan, we should now see the famous &amp;ldquo;Laravel&amp;rdquo; splash page at &lt;code&gt;https://localhost&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;prepare-to-build-on-continuouspipe&#34;&gt;Prepare to build on ContinuousPipe&lt;/h3&gt;
 
@@ -1111,15 +1111,15 @@ Branch master &lt;span style=&#34;color: #f8f8f2&#34;&gt;set&lt;/span&gt; up to 
 
 &lt;p&gt;Thats it, we should now see ContinuousPipe working through our defined tasks -&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/flow-overview.png&#34; alt=&#34;Dashboard&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/flow-overview.png&#34; alt=&#34;Dashboard&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once all our tasks have finished we should see a success status, everything green and a public endpoint for the web service.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/tide-complete-tasks.png&#34; alt=&#34;Complete Tasks&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/tide-complete-tasks.png&#34; alt=&#34;Complete Tasks&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If we now visit this endpoint in the browser e.g. &lt;code&gt;https://104.199.75.150/&lt;/code&gt; we should now see that Laravel splash page we previously seen when running in our local Docker build -&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;remote-development-environment&#34;&gt;Remote development environment&lt;/h2&gt;
 
@@ -1167,7 +1167,7 @@ You can see when it is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/s
 Please &lt;span style=&#34;color: #f8f8f2&#34;&gt;wait&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;until&lt;/span&gt; the build is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/span&gt; to use any of this tool&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;&amp;#39;&lt;/span&gt;s other commands.
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/dashboard-with-dev.png&#34; alt=&#34;Dashboard with dev environment&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/dashboard-with-dev.png&#34; alt=&#34;Dashboard with dev environment&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can check that the environment is ready either from the ContinuousPipe UI or by running the following -&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote ck
@@ -1180,7 +1180,7 @@ Connected successfully and found &lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt
 
 &lt;p&gt;Now that we know all three containers (pods) have been setup we need to obtain the IP address from the ContinuousPipe UI for that tide. Lets visit the IP address in our browser and once again, we will see the Laravel splash page.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;watching-for-changes&#34;&gt;Watching for changes&lt;/h3&gt;
 
@@ -1197,7 +1197,7 @@ Destination Pod: web-3232721034-k6g9t
 
 &lt;p&gt;Lets edit some code and see our changes reflected in the browser. Open &lt;code&gt;resources/views/welcome.blade.php&lt;/code&gt; and change the title on &lt;code&gt;Line 82&lt;/code&gt;. I will change it to &amp;ldquo;Awesome Laravel&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/sublime.png&#34; alt=&#34;Sublime&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/sublime.png&#34; alt=&#34;Sublime&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;When you save this file from within your editor, the &lt;code&gt;cp-remote watch&lt;/code&gt; command will pick up these changes and &lt;code&gt;RSYNC&lt;/code&gt; them to the web container. Your terminal should look something like the following -&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote watch
@@ -1213,11 +1213,11 @@ Done.
 
 &lt;p&gt;Now when you check the site in the browser you should see the following -&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/awesome-laravel.png&#34; alt=&#34;Awesome Laravel&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/awesome-laravel.png&#34; alt=&#34;Awesome Laravel&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is a quick screencast of that syncing in action -&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;/docs/images/guides/laravel/awesome-laravel-screencast.gif&#34;&gt;&lt;img src=&#34;/docs/images/guides/laravel/awesome-laravel-screencast.gif&#34; alt=&#34;Laravel Screencast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;/docs/docs/images/guides/laravel/awesome-laravel-screencast.gif&#34;&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/awesome-laravel-screencast.gif&#34; alt=&#34;Laravel Screencast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The syncing speeds are pretty fast, so fast in fact, I can run this from a train wifi while retaining the performance of the cloud hosting.&lt;/p&gt;
 
@@ -1308,7 +1308,7 @@ Done.
 
 &lt;figure class=&#34;half-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/environment-id-default.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/environment-id-default.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -1321,7 +1321,7 @@ Done.
 
 &lt;figure class=&#34;half-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/environment-id-config.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/environment-id-config.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -1476,7 +1476,7 @@ kube-direct-cluster-password: {cluster-password}
 
 &lt;figure class=&#34;diagram concepts&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/basics/cp-system-overview.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/basics/cp-system-overview.svg&#34; /&gt;
     
     
 &lt;/figure&gt;

@@ -139,7 +139,7 @@ mv cp-remote /usr/local/bin/cp-remote
 
 &lt;figure class=&#34;half-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/environment-id-default.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/environment-id-default.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -152,7 +152,7 @@ mv cp-remote /usr/local/bin/cp-remote
 
 &lt;figure class=&#34;half-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/environment-id-config.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/environment-id-config.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -324,7 +324,7 @@ kube-direct-cluster-password: {cluster-password}
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-init.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-init.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -355,7 +355,7 @@ cp-remote init -i
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-init-interactive.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-init-interactive.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -486,7 +486,7 @@ cp-remote init -i
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-build.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-build.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -538,7 +538,7 @@ cp-remote init -i
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-logs.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-logs.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -651,7 +651,7 @@ cp-remote ba # alias
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-bash.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-bash.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -680,7 +680,7 @@ cp-remote bash -i
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-bash-interactive.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-bash-interactive.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -780,7 +780,7 @@ cp-remote bash -i
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-exec.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-exec.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -809,7 +809,7 @@ cp-remote exec -i -- /bin/sh
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-exec-interactive.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-exec-interactive.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -917,7 +917,7 @@ cp-remote wa # alias
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-watch.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-watch.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -1067,7 +1067,7 @@ cp-remote fe # alias
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-fetch.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-fetch.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -1202,7 +1202,7 @@ cp-remote sy #alias
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-push.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-push.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -1333,7 +1333,7 @@ cp-remote pu #alias
 
 &lt;figure class=&#34;remote-development&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/remote-development/cp-remote-development-push.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/remote-development/cp-remote-development-push.svg&#34; /&gt;
     
     
 &lt;/figure&gt;

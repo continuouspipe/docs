@@ -27,8 +27,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/docs/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/docs/images/favicon.png">
 
     <style>
       @font-face {
@@ -1221,7 +1221,7 @@
 
 <p>From within the flow, click on configuration in the sidebar, create a new environment variable named <code>CLUSTER</code> with a value to match what you set as your cluster name/identifier. I have set my cluster name as <code>main-cluster</code>. Finally save the configuration.</p>
 
-<p><img src="/images/guides/laravel/flow-variables-configuration.png" alt="Flow Configuration" /></p>
+<p><img src="/docs/images/guides/laravel/flow-variables-configuration.png" alt="Flow Configuration" /></p>
 
 <h3 id="adding-docker-configuration">Adding Docker configuration</h3>
 
@@ -1500,7 +1500,7 @@ mkdir -p <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2
 
 <p>If everything has gone to plan, we should now see the famous &ldquo;Laravel&rdquo; splash page at <code>https://localhost</code></p>
 
-<p><img src="/images/guides/laravel/laravel-splash.png" alt="Laravel Splash" /></p>
+<p><img src="/docs/images/guides/laravel/laravel-splash.png" alt="Laravel Splash" /></p>
 
 <h3 id="prepare-to-build-on-continuouspipe">Prepare to build on ContinuousPipe</h3>
 
@@ -1738,15 +1738,15 @@ Branch master <span style="color: #f8f8f2">set</span> up to track remote branch 
 
 <p>Thats it, we should now see ContinuousPipe working through our defined tasks -</p>
 
-<p><img src="/images/guides/laravel/flow-overview.png" alt="Dashboard" /></p>
+<p><img src="/docs/images/guides/laravel/flow-overview.png" alt="Dashboard" /></p>
 
 <p>Once all our tasks have finished we should see a success status, everything green and a public endpoint for the web service.</p>
 
-<p><img src="/images/guides/laravel/tide-complete-tasks.png" alt="Complete Tasks" /></p>
+<p><img src="/docs/images/guides/laravel/tide-complete-tasks.png" alt="Complete Tasks" /></p>
 
 <p>If we now visit this endpoint in the browser e.g. <code>https://104.199.75.150/</code> we should now see that Laravel splash page we previously seen when running in our local Docker build -</p>
 
-<p><img src="/images/guides/laravel/laravel-splash.png" alt="Laravel Splash" /></p>
+<p><img src="/docs/images/guides/laravel/laravel-splash.png" alt="Laravel Splash" /></p>
 
 <h2 id="remote-development-environment">Remote development environment</h2>
 
@@ -1794,7 +1794,7 @@ You can see when it is <span style="color: #f8f8f2">complete</span> and find its
 Please <span style="color: #f8f8f2">wait</span> <span style="color: #66d9ef">until</span> the build is <span style="color: #f8f8f2">complete</span> to use any of this tool<span style="color: #960050; background-color: #1e0010">&#39;</span>s other commands.
 </pre></div>
 
-<p><img src="/images/guides/laravel/dashboard-with-dev.png" alt="Dashboard with dev environment" /></p>
+<p><img src="/docs/images/guides/laravel/dashboard-with-dev.png" alt="Dashboard with dev environment" /></p>
 
 <p>You can check that the environment is ready either from the ContinuousPipe UI or by running the following -</p>
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ cp-remote ck
@@ -1807,7 +1807,7 @@ Connected successfully and found <span style="color: #ae81ff">3</span> pods <spa
 
 <p>Now that we know all three containers (pods) have been setup we need to obtain the IP address from the ContinuousPipe UI for that tide. Lets visit the IP address in our browser and once again, we will see the Laravel splash page.</p>
 
-<p><img src="/images/guides/laravel/laravel-splash.png" alt="Laravel Splash" /></p>
+<p><img src="/docs/images/guides/laravel/laravel-splash.png" alt="Laravel Splash" /></p>
 
 <h3 id="watching-for-changes">Watching for changes</h3>
 
@@ -1824,7 +1824,7 @@ Destination Pod: web-3232721034-k6g9t
 
 <p>Lets edit some code and see our changes reflected in the browser. Open <code>resources/views/welcome.blade.php</code> and change the title on <code>Line 82</code>. I will change it to &ldquo;Awesome Laravel&rdquo;.</p>
 
-<p><img src="/images/guides/laravel/sublime.png" alt="Sublime" /></p>
+<p><img src="/docs/images/guides/laravel/sublime.png" alt="Sublime" /></p>
 
 <p>When you save this file from within your editor, the <code>cp-remote watch</code> command will pick up these changes and <code>RSYNC</code> them to the web container. Your terminal should look something like the following -</p>
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ cp-remote watch
@@ -1840,11 +1840,11 @@ Done.
 
 <p>Now when you check the site in the browser you should see the following -</p>
 
-<p><img src="/images/guides/laravel/awesome-laravel.png" alt="Awesome Laravel" /></p>
+<p><img src="/docs/images/guides/laravel/awesome-laravel.png" alt="Awesome Laravel" /></p>
 
 <p>Here is a quick screencast of that syncing in action -</p>
 
-<p><a href="/images/guides/laravel/awesome-laravel-screencast.gif"><img src="/images/guides/laravel/awesome-laravel-screencast.gif" alt="Laravel Screencast" /></a></p>
+<p><a href="/docs/images/guides/laravel/awesome-laravel-screencast.gif"><img src="/docs/images/guides/laravel/awesome-laravel-screencast.gif" alt="Laravel Screencast" /></a></p>
 
 <p>The syncing speeds are pretty fast, so fast in fact, I can run this from a train wifi while retaining the performance of the cloud hosting.</p>
 

@@ -729,7 +729,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
 
 &lt;p&gt;For example if you use the static code analyser tool Scrutinizer, you may want to deploy your application only if the static analysis passes.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/github-statuses.png&#34; alt=&#34;GitHub statuses on Pull-Request&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/github-statuses.png&#34; alt=&#34;GitHub statuses on Pull-Request&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In order to achieve that, you can add a &lt;code&gt;wait&lt;/code&gt; task:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -758,7 +758,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
 
 &lt;p&gt;When the &lt;code&gt;manual_approval&lt;/code&gt; task is added to a list of tasks it will pause the running of a tide until manual approval is given to the tide in the ContinuousPipe console as shown here:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/configuration/flow-manual-approval.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/configuration/flow-manual-approval.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In the following example, if a tide is triggered then the &lt;code&gt;image&lt;/code&gt; task will run automatically as it is first in the sequence. However, when the &lt;code&gt;wait_product_owner&lt;/code&gt; runs, the tide will be suspended, pending approval. When approval is given, the tide will resume and the &lt;code&gt;deployment&lt;/code&gt; task will run.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;tasks&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
@@ -1356,7 +1356,7 @@ RUN composer config github-oauth.github.com $GITHUB_TOKEN &amp;amp;&amp;amp; \
 
 &lt;p&gt;These problems are addressed by introducing build steps to create separate images, and then using artifacts to copy files and folders from an initial build image to a secondary build image.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/configuration/multi-step-building.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/configuration/multi-step-building.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;For example, you might create an initial build image containing a GitHub access token to pull the contents of a private Git repository, then create a secondary build image and copy the code across. The secondary image would only contain the code and none of the access credentials.&lt;/p&gt;
 

@@ -17,23 +17,23 @@
       <guid>/docs/faq/how-do-I-create-a-billing-profile/</guid>
       <description>&lt;p&gt;To create a billing profile you will first need to log into the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console&lt;/a&gt;. You then need to navigate to the Account section using the sub menu in the top right corner.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Within the account section, select the &amp;ldquo;Billing&amp;rdquo; tab. You will need to select how many users you would like to subscribe. The number of users is effectively the number of people who will have GitHub or Bitbucket accounts that will be pushing to repositories set up in a ContinuousPipe.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-create-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/faq/billing-create-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you click on &amp;ldquo;Subscribe&amp;rdquo; a window will open to &lt;a href=&#34;https://recurly.com/&#34;&gt;Recurly&lt;/a&gt;, which is a third party payment subscription handler. Follow the instructions to complete payment.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-recurly-interface.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/faq/billing-recurly-interface.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can also adjust the number of users up or down at this stage:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-adjust-users.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/faq/billing-adjust-users.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;After payment is completed, the &amp;ldquo;Billing&amp;rdquo; tab in the ContinuousPipe account section should now display subscription information.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/faq/billing-display-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/faq/billing-display-subscription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -115,7 +115,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/account-api-key-new.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/account-api-key-new.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -126,7 +126,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/account-api-key-view.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/account-api-key-view.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -160,7 +160,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/flow-tide-logs-open-cp-logs.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/flow-tide-logs-open-cp-logs.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -171,7 +171,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/flow-tide-logs-view-cp-logs.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/flow-tide-logs-view-cp-logs.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -182,7 +182,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/flow-tide-logs-view-cp-events.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/flow-tide-logs-view-cp-events.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -197,7 +197,7 @@
 
 &lt;figure class=&#34;three-quarter-width&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/faq/flow-environment-open-cp-logs.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/faq/flow-environment-open-cp-logs.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -604,7 +604,7 @@
 
 &lt;p&gt;In this configuration the &lt;code&gt;Features&lt;/code&gt; pipeline will start a tide which will run the &lt;code&gt;images&lt;/code&gt; and &lt;code&gt;deployment&lt;/code&gt; tasks automatically. However, the &lt;code&gt;Production&lt;/code&gt; pipeline will start a tide which will run the &lt;code&gt;images&lt;/code&gt; task, then pause until approval is granted. This is done in the ContinuousPipe console by clicking on the paused tide and clicking &amp;ldquo;APPROVE&amp;rdquo;, which will cause the tide to resume and run the &lt;code&gt;deployment&lt;/code&gt; task:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/configuration/flow-manual-approval.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/configuration/flow-manual-approval.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

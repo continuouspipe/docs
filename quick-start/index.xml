@@ -17,7 +17,7 @@
       <guid>/docs/quick-start/creating-a-project/</guid>
       <description>&lt;p&gt;When you log in for the first time you will see the project overview screen, which will be empty. You&amp;rsquo;ll be prompted to create a new project.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-overview-no-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-overview-no-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To create a project, just click the &amp;ldquo;CREATE A PROJECT&amp;rdquo; button in the top right of the interface.&lt;/p&gt;
 
@@ -32,7 +32,7 @@
 
 &lt;p&gt;The new project will now be visible in the project overview screen.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-overview-new-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-overview-new-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -44,17 +44,17 @@
       <guid>/docs/quick-start/creating-a-flow/</guid>
       <description>&lt;p&gt;Once you have created a project you&amp;rsquo;ll be prompted to create a flow.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-view-new-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-view-new-project.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To create a flow, just click the “CREATE A FLOW” button in the top right of the interface.&lt;/p&gt;
 
 &lt;p&gt;The first time you attempt to create a flow you will see a message informing you that you don&amp;rsquo;t have a linked repository account.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-create-a-flow-no-repo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-create-a-flow-no-repo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To solve this, either click on the link provided in the page or navigate to the account section using the menu in the top right of the header. Within the account section you will see the option to connect to a repository under the &amp;ldquo;Connected accounts&amp;rdquo; heading.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/connect-accounts-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/connect-accounts-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Currently you can choose from the following accounts to connect:&lt;/p&gt;
 
@@ -68,13 +68,13 @@
 
 &lt;p&gt;Once permissions have been granted you will be returned to ContinuousPipe. You&amp;rsquo;ll need to reselect the project, then click “CREATE A FLOW” again. This time you will be able to choose a repository from the associated repository account.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-create-a-flow-choose-repo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-create-a-flow-choose-repo.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;By default your personal repositories from the linked account are displayed. If the linked account is a member of an Organisation these are also visible below. Clicking on each respective Organisation will load a list of available repositories.&lt;/p&gt;
 
 &lt;p&gt;Once you have selected your repository, click &amp;ldquo;CREATE&amp;rdquo; to finish creating the flow.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-flow-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-flow-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -88,7 +88,7 @@
 
 &lt;p&gt;When you create a project, you are automatically added as the default user:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-users-overview-default-user.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-users-overview-default-user.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;There are two levels of user permissions:&lt;/p&gt;
 
@@ -166,7 +166,7 @@
 
 &lt;p&gt;You will be asked to confirm the invitation:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-users-add-user-email-confirm-invite.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-users-add-user-email-confirm-invite.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The owner of that email address will be sent an invitation. They will need to open the invitation email and click on &amp;ldquo;Accept invitation&amp;rdquo;. This will take them to the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console login screen&lt;/a&gt; where they need to click &amp;ldquo;Login with GitHub&amp;rdquo;. They will then need to create a new GitHub account as part of the login process, which can be done from the GitHub login screen by clicking on &amp;ldquo;Create an account&amp;rdquo;.&lt;/p&gt;
 </description>
@@ -182,7 +182,7 @@
 
 &lt;p&gt;Before a flow can be used it needs to know where to deploy to. This is done in the &amp;ldquo;Clusters&amp;rdquo; tab of the project. You&amp;rsquo;ll be prompted to add a new cluster configuration.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-cluster-overview-no-cluster.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-cluster-overview-no-cluster.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To add a new cluster configuration, click the “ADD” button in the top right of the interface.&lt;/p&gt;
 
@@ -221,7 +221,7 @@
 
 &lt;p&gt;Then click &amp;ldquo;CREATE&amp;rdquo; to finish.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-cluster-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-cluster-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -233,7 +233,7 @@
       <guid>/docs/quick-start/configuring-a-registry/</guid>
       <description>&lt;p&gt;Before a flow can be used it needs to know where to store Docker images. This is done in the &amp;ldquo;Registries&amp;rdquo; tab of the project. You&amp;rsquo;ll be prompted to add a new registry configuration.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-registry-overview-no-registry.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-registry-overview-no-registry.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To add a new registry configuration, click the “ADD” button in the top right of the interface.&lt;/p&gt;
 
@@ -255,7 +255,7 @@
 
 &lt;p&gt;Then click &amp;ldquo;CREATE&amp;rdquo; to finish.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/project-registry-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/project-registry-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -345,7 +345,7 @@ COPY . /usr/share/nginx/html
       <guid>/docs/quick-start/configuring-a-flow/</guid>
       <description>&lt;p&gt;The final step before executing the flow is to configure it. You can do this by clicking on the flow, then selecting the &amp;ldquo;Configuration&amp;rdquo; tab. This will present you with an interface that allows you to define YAML variables.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-configuration-no-config.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-configuration-no-config.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We are going to variablise the image name and the cluster identifier that were defined in &lt;code&gt;continuous-pipe.yml&lt;/code&gt; when &lt;a href=&#34;/docs/docs/quick-start/configuring-your-repository/&#34;&gt;configuring your repository&lt;/a&gt;. Here&amp;rsquo;s a reminder of what that looks like:&lt;/p&gt;
 
@@ -382,7 +382,7 @@ COPY . /usr/share/nginx/html
 
 &lt;p&gt;Then click &amp;ldquo;SAVE&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-configuration-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-configuration-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The cluster note in &lt;code&gt;continuous-pipe.yml&lt;/code&gt; can now be updated:&lt;/p&gt;
 
@@ -415,7 +415,7 @@ COPY . /usr/share/nginx/html
       <guid>/docs/quick-start/creating-a-tide/</guid>
       <description>&lt;p&gt;The flow is now ready to run. An execution of a flow is called a tide.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-overview-no-tide.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-overview-no-tide.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The easiest way to create the tide is to run it manually. To do this click the &amp;ldquo;START MANUALLY&amp;rdquo; button in the top right of the interface.&lt;/p&gt;
 
@@ -425,19 +425,19 @@ COPY . /usr/share/nginx/html
 
 &lt;p&gt;You will initially be shown the &amp;ldquo;Tides&amp;rdquo; tab. If you return to the &amp;ldquo;Overview&amp;rdquo; tab you will be able to see updates on the tide as it progresses.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-overview-tide-success.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-overview-tide-success.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you click on the tide it will give you more information. Each of the sections is expandable and will show more detail on the processes the tide ran.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-info-expanded.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-info-expanded.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you then go to the &amp;ldquo;Environments&amp;rdquo; tab, you will see an entry representing the Kubernetes cluster associated with the tide that was just run.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-environments-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-environments-overview.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you click the &amp;ldquo;OPEN&amp;rdquo; button you will see a confirm message to let you know that you are being redirected outside ContinuousPipe to the deployed environment. Click &amp;ldquo;OPEN IT&amp;rdquo; to proceed. Finally, you should see your deployed site in a new tab.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-environments-view-endpoint.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-environments-view-endpoint.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -527,7 +527,7 @@ pipelines:
       <guid>/docs/quick-start/remote-development-creating-a-remote-environment/</guid>
       <description>&lt;p&gt;After &lt;a href=&#34;/docs/docs/quick-start/remote-development-configuring-your-repository/&#34;&gt;configuring your repository&lt;/a&gt; you now need to go to the &amp;ldquo;Dev Environments&amp;rdquo; tab within the flow.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-dev-environments-no-env.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-dev-environments-no-env.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To create a dev environment, just click the “CREATE MY ENVIRONMENT” button in the top right of the interface.&lt;/p&gt;
 
@@ -535,11 +535,11 @@ pipelines:
 
 &lt;p&gt;You will then see a screen prompting you to create a token. Before you generate the token you need to enter a branch name (or accept the default). Then click &amp;ldquo;GENERATE AN INITIALIZATION TOKEN&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-dev-environments-environment-no-token.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-dev-environments-environment-no-token.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You will then see a screen displaying a token. This needs to be copied for use with the remote development tool &lt;a href=&#34;/docs/docs/remote-development/command-init/&#34;&gt;init command&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-dev-environments-environment-not-started.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-dev-environments-environment-not-started.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -563,11 +563,11 @@ cp-remote init &amp;lt;token&amp;gt;
 
 &lt;p&gt;Within ContinuousPipe this will trigger the creation of a tide, which becomes in effect the remote development environment. Therefore the running of the &lt;code&gt;init&lt;/code&gt; command may take several minutes while the tide runs. When it completes it will describe the endpoint associated with the new tide.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-dev-environments-environment-cli-init.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-dev-environments-environment-cli-init.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Opening the endpoint will reveal the application in its default state.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-dev-environments-environment-view-endpoint.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-dev-environments-environment-view-endpoint.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;With the tide up and running, it can now be used for remote development. This is done by running the remote development tool &lt;a href=&#34;/docs/docs/remote-development/command-watch/&#34;&gt;watch command&lt;/a&gt;, which runs in the background, detecting file changes and synchronising them with the remote environment.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cp-remote watch
@@ -575,11 +575,11 @@ cp-remote init &amp;lt;token&amp;gt;
 
 &lt;p&gt;Updating a file and saving it will therefore result in an immediate update.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-dev-environments-environment-cli-watch.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-dev-environments-environment-cli-watch.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you now refresh the endpoint you will see the changes:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/quick-start/flow-dev-environments-environment-view-endpoint-change.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/quick-start/flow-dev-environments-environment-view-endpoint-change.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This allows you to develop locally and view iterative changes remotely in the same way as you would if the environment was on your local machine.&lt;/p&gt;
 </description>

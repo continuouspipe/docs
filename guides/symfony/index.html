@@ -27,8 +27,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/docs/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/docs/images/favicon.png">
 
     <style>
       @font-face {
@@ -1330,15 +1330,15 @@ RUN container build
 
 <p>Commit any changes if not already done and push them to your code repository. You should be able to see that a tide was triggered on the overview or tides pages for the flow on <a href="https://your-ui.example.com">https://your-ui.example.com</a>.</p>
 
-<p><img src="/images/guides/symfony/cp-tide-running.png" alt="" /></p>
+<p><img src="/docs/images/guides/symfony/cp-tide-running.png" alt="" /></p>
 
 <p>Clicking on the status will show more details of the build progressing. Some steps, particularly building the image and pushing it to the registry, may take a while to complete. Once it has completed running successfully you can view the environment and from there open the web service and see the running application:</p>
 
-<p><img src="/images/guides/symfony/cp-tide-environment.png" alt="" /></p>
+<p><img src="/docs/images/guides/symfony/cp-tide-environment.png" alt="" /></p>
 
 <p>The default Symfony installation page should be served up (you may need to accept using the self-signed SSL cert):</p>
 
-<p><img src="/images/guides/symfony/endpoint-view.png" alt="" /></p>
+<p><img src="/docs/images/guides/symfony/endpoint-view.png" alt="" /></p>
 
 <h2 id="remote-development-with-continuouspipe">Remote Development with ContinuousPipe</h2>
 
@@ -1473,11 +1473,11 @@ RUN container build
 
 <p>To rebuild the remote environment with these changes, commit them to master and run <code>cp-remote build</code> - this will establish the Production pipeline. You can now switch to a branch prefixed with &ldquo;cpdev&rdquo; and run <code>cp-remote build</code> again to establish the Remote pipeline. You will then see the two new pipelines on the overview page in the ContinuousPipe console.</p>
 
-<p><img src="/images/guides/symfony/cp-pipelines.png" alt="" /></p>
+<p><img src="/docs/images/guides/symfony/cp-pipelines.png" alt="" /></p>
 
 <p>If you now load the Remote pipeline endpoint in the browser you should see the Symfony toolbar at the bottom of the page indicating that it is in development mode.</p>
 
-<p><img src="/images/guides/symfony/endpoint-view-toolbar.png" alt="" /></p>
+<p><img src="/docs/images/guides/symfony/endpoint-view-toolbar.png" alt="" /></p>
 
 <h3 id="start-development">Start Development</h3>
 

@@ -68,7 +68,7 @@
 
 &lt;p&gt;From within the flow, click on configuration in the sidebar, create a new environment variable named &lt;code&gt;CLUSTER&lt;/code&gt; with a value to match what you set as your cluster name/identifier. I have set my cluster name as &lt;code&gt;main-cluster&lt;/code&gt;. Finally save the configuration.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/flow-variables-configuration.png&#34; alt=&#34;Flow Configuration&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/flow-variables-configuration.png&#34; alt=&#34;Flow Configuration&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;adding-docker-configuration&#34;&gt;Adding Docker configuration&lt;/h3&gt;
 
@@ -347,7 +347,7 @@ mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt
 
 &lt;p&gt;If everything has gone to plan, we should now see the famous &amp;ldquo;Laravel&amp;rdquo; splash page at &lt;code&gt;https://localhost&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;prepare-to-build-on-continuouspipe&#34;&gt;Prepare to build on ContinuousPipe&lt;/h3&gt;
 
@@ -585,15 +585,15 @@ Branch master &lt;span style=&#34;color: #f8f8f2&#34;&gt;set&lt;/span&gt; up to 
 
 &lt;p&gt;Thats it, we should now see ContinuousPipe working through our defined tasks -&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/flow-overview.png&#34; alt=&#34;Dashboard&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/flow-overview.png&#34; alt=&#34;Dashboard&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once all our tasks have finished we should see a success status, everything green and a public endpoint for the web service.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/tide-complete-tasks.png&#34; alt=&#34;Complete Tasks&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/tide-complete-tasks.png&#34; alt=&#34;Complete Tasks&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If we now visit this endpoint in the browser e.g. &lt;code&gt;https://104.199.75.150/&lt;/code&gt; we should now see that Laravel splash page we previously seen when running in our local Docker build -&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;remote-development-environment&#34;&gt;Remote development environment&lt;/h2&gt;
 
@@ -641,7 +641,7 @@ You can see when it is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/s
 Please &lt;span style=&#34;color: #f8f8f2&#34;&gt;wait&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;until&lt;/span&gt; the build is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/span&gt; to use any of this tool&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;&amp;#39;&lt;/span&gt;s other commands.
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/dashboard-with-dev.png&#34; alt=&#34;Dashboard with dev environment&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/dashboard-with-dev.png&#34; alt=&#34;Dashboard with dev environment&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can check that the environment is ready either from the ContinuousPipe UI or by running the following -&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote ck
@@ -654,7 +654,7 @@ Connected successfully and found &lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt
 
 &lt;p&gt;Now that we know all three containers (pods) have been setup we need to obtain the IP address from the ContinuousPipe UI for that tide. Lets visit the IP address in our browser and once again, we will see the Laravel splash page.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/laravel-splash.png&#34; alt=&#34;Laravel Splash&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;watching-for-changes&#34;&gt;Watching for changes&lt;/h3&gt;
 
@@ -671,7 +671,7 @@ Destination Pod: web-3232721034-k6g9t
 
 &lt;p&gt;Lets edit some code and see our changes reflected in the browser. Open &lt;code&gt;resources/views/welcome.blade.php&lt;/code&gt; and change the title on &lt;code&gt;Line 82&lt;/code&gt;. I will change it to &amp;ldquo;Awesome Laravel&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/sublime.png&#34; alt=&#34;Sublime&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/sublime.png&#34; alt=&#34;Sublime&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;When you save this file from within your editor, the &lt;code&gt;cp-remote watch&lt;/code&gt; command will pick up these changes and &lt;code&gt;RSYNC&lt;/code&gt; them to the web container. Your terminal should look something like the following -&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cp-remote watch
@@ -687,11 +687,11 @@ Done.
 
 &lt;p&gt;Now when you check the site in the browser you should see the following -&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/laravel/awesome-laravel.png&#34; alt=&#34;Awesome Laravel&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/awesome-laravel.png&#34; alt=&#34;Awesome Laravel&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is a quick screencast of that syncing in action -&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;/docs/images/guides/laravel/awesome-laravel-screencast.gif&#34;&gt;&lt;img src=&#34;/docs/images/guides/laravel/awesome-laravel-screencast.gif&#34; alt=&#34;Laravel Screencast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;/docs/docs/images/guides/laravel/awesome-laravel-screencast.gif&#34;&gt;&lt;img src=&#34;/docs/docs/images/guides/laravel/awesome-laravel-screencast.gif&#34; alt=&#34;Laravel Screencast&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The syncing speeds are pretty fast, so fast in fact, I can run this from a train wifi while retaining the performance of the cloud hosting.&lt;/p&gt;
 
@@ -875,15 +875,15 @@ RUN container build
 
 &lt;p&gt;Commit any changes if not already done and push them to your code repository. You should be able to see that a tide was triggered on the overview or tides pages for the flow on &lt;a href=&#34;https://your-ui.example.com&#34;&gt;https://your-ui.example.com&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/symfony/cp-tide-running.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/symfony/cp-tide-running.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Clicking on the status will show more details of the build progressing. Some steps, particularly building the image and pushing it to the registry, may take a while to complete. Once it has completed running successfully you can view the environment and from there open the web service and see the running application:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/symfony/cp-tide-environment.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/symfony/cp-tide-environment.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The default Symfony installation page should be served up (you may need to accept using the self-signed SSL cert):&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/symfony/endpoint-view.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/symfony/endpoint-view.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;remote-development-with-continuouspipe&#34;&gt;Remote Development with ContinuousPipe&lt;/h2&gt;
 
@@ -1018,11 +1018,11 @@ RUN container build
 
 &lt;p&gt;To rebuild the remote environment with these changes, commit them to master and run &lt;code&gt;cp-remote build&lt;/code&gt; - this will establish the Production pipeline. You can now switch to a branch prefixed with &amp;ldquo;cpdev&amp;rdquo; and run &lt;code&gt;cp-remote build&lt;/code&gt; again to establish the Remote pipeline. You will then see the two new pipelines on the overview page in the ContinuousPipe console.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/symfony/cp-pipelines.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/symfony/cp-pipelines.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you now load the Remote pipeline endpoint in the browser you should see the Symfony toolbar at the bottom of the page indicating that it is in development mode.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/symfony/endpoint-view-toolbar.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/symfony/endpoint-view-toolbar.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;start-development&#34;&gt;Start Development&lt;/h3&gt;
 
@@ -1344,7 +1344,7 @@ pipelines:
 
 &lt;p&gt;Commit any changes if not already done and push them to your code repository. You should be able to see that a tide was triggered on the overview or tides pages for the flow on &lt;a href=&#34;https://your-ui.example.com&#34;&gt;https://your-ui.example.com&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/drupal/cp-tide-running.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/drupal/cp-tide-running.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Clicking on the status will show more details of the build progressing. Some steps, particularly building the image and pushing it to the registry, may take a while to complete. Once it has completed running successfully you can view the environment and from there open the web service and see the running application. The default Drupal page should be visible.&lt;/p&gt;
 
@@ -1710,7 +1710,7 @@ xdebug.remote_log=
 
 &lt;p&gt;If you review the tide progress for the new environment, you should see that the &amp;ldquo;sshforward&amp;rdquo; pod has been created:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/guides/remote-environment-xdebug/cp-tide-service-sshforward.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/guides/remote-environment-xdebug/cp-tide-service-sshforward.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You should also be able verify the environment using the &lt;code&gt;cp-remote pods&lt;/code&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; cp-remote pods

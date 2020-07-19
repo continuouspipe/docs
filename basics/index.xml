@@ -28,7 +28,7 @@
 
 &lt;figure class=&#34;diagram technology-stack&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/basics/cp-technology-stack.png&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/basics/cp-technology-stack.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -63,7 +63,7 @@
 
 &lt;figure class=&#34;diagram concepts&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/basics/cp-system-overview.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/basics/cp-system-overview.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -155,7 +155,7 @@
 
 &lt;figure class=&#34;diagram concepts&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/basics/cp-tide-triggers-default.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/basics/cp-tide-triggers-default.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -168,7 +168,7 @@
 
 &lt;figure class=&#34;diagram concepts&#34;&gt;
     
-        &lt;img src=&#34;/docs/images/basics/cp-tide-triggers-pipeline.svg&#34; /&gt;
+        &lt;img src=&#34;/docs/docs/images/basics/cp-tide-triggers-pipeline.svg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -324,11 +324,11 @@
 &lt;p&gt;If you get as far as creating a flow without installing the integration, you&amp;rsquo;ll be prompted to do so before you can proceed.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/basics/github-integration-install.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/basics/github-integration-install.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You will then be presented with the configuration page. You can choose whether to apply the installation to all repositories associated with the account with the &amp;ldquo;All repositories&amp;rdquo; option or alternatively just limit the integration to individual repositories with the &amp;ldquo;Only selected repositories&amp;rdquo; option. Then click &amp;ldquo;Install&amp;rdquo; to complete the installation.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/basics/github-integration-configure.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/basics/github-integration-configure.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You are now all set and the GitHub integration is configured for the code repository.&lt;/p&gt;
 </description>
@@ -361,15 +361,15 @@
 
 &lt;p&gt;Go to the Bitbucket account settings page, and in the left menu click on &amp;ldquo;Manage integrations&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/basics/bitbucket-settings-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/basics/bitbucket-settings-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can now click on &amp;ldquo;Install add-on from URL&amp;rdquo; and enter &lt;code&gt;https://your-api.example.com/connect/service/bitbucket/addon/&lt;/code&gt; as show in this example:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/basics/bitbucket-addon-install.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/basics/bitbucket-addon-install.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The last step is to grant ContinuousPipe access to the code repository by clicking the &amp;ldquo;Grant access&amp;rdquo; button in the following screen.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/docs/images/basics/bitbucket-grant-access-popup.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/docs/images/basics/bitbucket-grant-access-popup.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You are now all set and the Bitbucket integration is configured for the code repository.&lt;/p&gt;
 </description>
