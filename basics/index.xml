@@ -129,7 +129,7 @@
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;.
 ├── Dockerfile          | https://docs.docker.com/engine/reference/builder/
 ├── docker-compose.yml  | https://docs.docker.com/compose/compose-file/
-└── continuous-pipe.yml | https://docs.continuouspipe.io/configuration/tasks/
+└── continuous-pipe.yml | https://documentation-continuouspipe.github.io/configuration/tasks/
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The &lt;code&gt;continuous-pipe.yml&lt;/code&gt; file extends &lt;code&gt;docker-compose.yml&lt;/code&gt;. It allows the ContinuousPipe build and deployment to be configured using a set of tasks expressed using YAML. When a flow is triggered the configuration files are read from the branch that is being acted upon.&lt;/p&gt;
@@ -363,7 +363,7 @@
 
 &lt;p&gt;&lt;img src=&#34;../images/basics/bitbucket-settings-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;You can now click on &amp;ldquo;Install add-on from URL&amp;rdquo; and enter &lt;code&gt;https://authenticator.continuouspipe.io/connect/service/bitbucket/addon/&lt;/code&gt; as show in this example:&lt;/p&gt;
+&lt;p&gt;You can now click on &amp;ldquo;Install add-on from URL&amp;rdquo; and enter &lt;code&gt;https://your-api.example.com/connect/service/bitbucket/addon/&lt;/code&gt; as show in this example:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/basics/bitbucket-addon-install.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 

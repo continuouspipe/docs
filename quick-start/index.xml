@@ -142,7 +142,7 @@
 
 &lt;p&gt;Then click &amp;ldquo;ADD&amp;rdquo; to finish.&lt;/p&gt;
 
-&lt;p&gt;The owner of that account will have instant access to the project by going to the &lt;a href=&#34;https://ui.continuouspipe.io/&#34;&gt;ContinuousPipe console login screen&lt;/a&gt; and clicking &amp;ldquo;Login with GitHub&amp;rdquo;. If the user is already authenticated with GitHub, they will be logged straight into the console. Otherwise the user will need to enter their GitHub login credentials.&lt;/p&gt;
+&lt;p&gt;The owner of that account will have instant access to the project by going to the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console login screen&lt;/a&gt; and clicking &amp;ldquo;Login with GitHub&amp;rdquo;. If the user is already authenticated with GitHub, they will be logged straight into the console. Otherwise the user will need to enter their GitHub login credentials.&lt;/p&gt;
 
 &lt;h3 id=&#34;invite-user-using-email-address&#34;&gt;Invite User Using Email Address&lt;/h3&gt;
 
@@ -168,7 +168,7 @@
 
 &lt;p&gt;&lt;img src=&#34;../images/quick-start/project-users-add-user-email-confirm-invite.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The owner of that email address will be sent an invitation. They will need to open the invitation email and click on &amp;ldquo;Accept invitation&amp;rdquo;. This will take them to the &lt;a href=&#34;https://ui.continuouspipe.io/&#34;&gt;ContinuousPipe console login screen&lt;/a&gt; where they need to click &amp;ldquo;Login with GitHub&amp;rdquo;. They will then need to create a new GitHub account as part of the login process, which can be done from the GitHub login screen by clicking on &amp;ldquo;Create an account&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;The owner of that email address will be sent an invitation. They will need to open the invitation email and click on &amp;ldquo;Accept invitation&amp;rdquo;. This will take them to the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console login screen&lt;/a&gt; where they need to click &amp;ldquo;Login with GitHub&amp;rdquo;. They will then need to create a new GitHub account as part of the login process, which can be done from the GitHub login screen by clicking on &amp;ldquo;Create an account&amp;rdquo;.&lt;/p&gt;
 </description>
     </item>
     

@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/faq/how-do-I-create-a-billing-profile/</guid>
-      <description>&lt;p&gt;To create a billing profile you will first need to log into the &lt;a href=&#34;https://ui.continuouspipe.io/&#34;&gt;ContinuousPipe console&lt;/a&gt;. You then need to navigate to the Account section using the sub menu in the top right corner.&lt;/p&gt;
+      <description>&lt;p&gt;To create a billing profile you will first need to log into the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console&lt;/a&gt;. You then need to navigate to the Account section using the sub menu in the top right corner.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -108,7 +108,7 @@
 
 &lt;h2 id=&#34;creating-a-continuouspipe-api-key&#34;&gt;Creating a ContinuousPipe API Key&lt;/h2&gt;
 
-&lt;p&gt;You can generate a new API key in the account section of the console: &lt;a href=&#34;https://authenticator.continuouspipe.io/account/api-keys&#34;&gt;https://authenticator.continuouspipe.io/account/api-keys&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can generate a new API key in the account section of the console: &lt;a href=&#34;https://your-api.example.com/account/api-keys&#34;&gt;https://your-api.example.com/account/api-keys&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;To create a new API key, enter a description in the &amp;ldquo;New key&amp;rdquo; form:&lt;/p&gt;
 

@@ -212,7 +212,7 @@ mv cp-remote /usr/local/bin/cp-remote
 &lt;li&gt;&lt;a href=&#34;../remote-development/command-exec/#interactive-mode&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;If you have not previously run interactive mode with any command, you will first need to generate a &lt;a href=&#34;https://authenticator.continuouspipe.io/account/api-keys&#34;&gt;ContinuousPipe API key&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have not previously run interactive mode with any command, you will first need to generate a &lt;a href=&#34;https://your-api.example.com/account/api-keys&#34;&gt;ContinuousPipe API key&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The first time you run the the &lt;code&gt;--interactive&lt;/code&gt; option with any of the above commands you will be prompted to enter your ContinuousPipe username and the ContinuousPipe API key you generated. These credentials are then stored in a global configuration file &lt;code&gt;~/.cp-remote/config.yml&lt;/code&gt; (on Linux/OSX) &lt;code&gt;C:\Users\{YourUserName}\.cp-remote\config.yml&lt;/code&gt; (on Windows), so you won&amp;rsquo;t need to enter them again.&lt;/p&gt;
 
@@ -475,7 +475,7 @@ cp-remote init -i
 
 &lt;h3 id=&#34;creating-a-new-remote-environment&#34;&gt;Creating a New Remote Environment&lt;/h3&gt;
 
-&lt;p&gt;The &lt;code&gt;build&lt;/code&gt; command will push changes the branch you have checked out locally to your remote environment branch. ContinuousPipe will then build the environment. You can use the &lt;a href=&#34;https://ui.continuouspipe.io/&#34;&gt;ContinuousPipe console&lt;/a&gt; to see when the environment has finished building and to find its IP address.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;build&lt;/code&gt; command will push changes the branch you have checked out locally to your remote environment branch. ContinuousPipe will then build the environment. You can use the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console&lt;/a&gt; to see when the environment has finished building and to find its IP address.&lt;/p&gt;
 
 &lt;h3 id=&#34;rebuilding-the-remote-environment&#34;&gt;Rebuilding the Remote Environment&lt;/h3&gt;
 

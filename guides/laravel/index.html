@@ -96,7 +96,7 @@
         </div>
         <div class="stretch">
             <div class="title">
-                <a href="https://continuouspipe.io/" class="cp-website-link"><i class="cp-icon-logo"></i></a>
+                <a href="https://continuouspipe.github.io/" class="cp-website-link"><i class="cp-icon-logo"></i></a>
                 <a href="../../">ContinuousPipe
                     Documentation</a>
             </div>
@@ -1180,7 +1180,7 @@
 
 <ul>
 <li>A <a href="https://github.com/">GitHub</a> or <a href="https://bitbucket.org/">Bitbucket</a> account to host your Laravel project</li>
-<li>A <a href="https://continuouspipe.io/">ContinuousPipe</a> account</li>
+<li>A <a href="https://continuouspipe.github.io/">ContinuousPipe</a> account</li>
 <li>A Kubernetes cluster e.g. <a href="https://aws.amazon.com/">AWS</a>, <a href="https://cloud.google.com/container-engine/">GCE</a> or <a href="https://azure.microsoft.com/en-au/">Azure</a></li>
 <li>A Docker Registry account e.g. <a href="https://docker.io">docker.io</a> or <a href="https://quay.io">quay.io</a></li>
 </ul>
@@ -1685,7 +1685,7 @@ mkdir -p <span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2
 
 <p>Here we are creating a new web container, making it accessible to the public which instructs ContinuousPipe to get an IP address from the load balancer. We inject the environment variables previously defined in the <code>initalization</code> task, and finally we configure the resources required from the cluster and open up the required ports, <code>80</code> and <code>443</code></p>
 
-<p>The last section of this task is the <code>deployment_strategy</code> which configures how ContinuousPipe will determine when the container is finished building and if it was successful or not. For more information on health checks please refer to <a href="http://docs.continuouspipe.io/configuration/deployments/#health-checks">http://docs.continuouspipe.io/</a></p>
+<p>The last section of this task is the <code>deployment_strategy</code> which configures how ContinuousPipe will determine when the container is finished building and if it was successful or not. For more information on health checks please refer to <a href="http://documentation-continuouspipe.github.io/configuration/deployments/#health-checks">http://documentation-continuouspipe.github.io/</a></p>
 
 <p>Now that we have defined our <code>continuous-pipe.yml</code> file lets configure that one last script we set to use in the <code>initialization</code> task. Create a new file <code>tools/docker/setup/setup.sh</code> with the following -</p>
 
@@ -1790,7 +1790,7 @@ Total <span style="color: #ae81ff">0</span> <span style="color: #f92672">(</span
 To github.com:continuouspipe/demo-laravel.git
  * <span style="color: #f92672">[</span>new branch<span style="color: #f92672">]</span>      master -&gt; dev-richdynamix
 Continuous Pipe will now build your developer environment
-You can see when it is <span style="color: #f8f8f2">complete</span> and find its IP address at https://ui.continuouspipe.io/
+You can see when it is <span style="color: #f8f8f2">complete</span> and find its IP address at https://your-ui.example.com/
 Please <span style="color: #f8f8f2">wait</span> <span style="color: #66d9ef">until</span> the build is <span style="color: #f8f8f2">complete</span> to use any of this tool<span style="color: #960050; background-color: #1e0010">&#39;</span>s other commands.
 </pre></div>
 
@@ -1856,7 +1856,7 @@ Done.
 
 <p>There is far more we can do with ContinuousPipe to increase productivity, for example, we can use filters to determine when tasks are run. Perhaps we only want certain branches to build environments, or a certain GitHub label on a Pull-Request to trigger the build. We can also go one step further and separate our builds into pipelines. Perhaps we want to have a separate pipeline for production compared to development or testing. This is useful if there are certain environment variables and tasks that should only be used in development but not production.</p>
 
-<p>This getting started guide should be treated as a first step, please refer to the <a href="http://docs.continuouspipe.io">http://docs.continuouspipe.io</a> for more advanced tutorials.</p>
+<p>This getting started guide should be treated as a first step, please refer to the <a href="http://documentation-continuouspipe.github.io">http://documentation-continuouspipe.github.io</a> for more advanced tutorials.</p>
 
 
 

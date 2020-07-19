@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/faq/how-do-I-create-a-billing-profile/</guid>
-      <description>&lt;p&gt;To create a billing profile you will first need to log into the &lt;a href=&#34;https://ui.continuouspipe.io/&#34;&gt;ContinuousPipe console&lt;/a&gt;. You then need to navigate to the Account section using the sub menu in the top right corner.&lt;/p&gt;
+      <description>&lt;p&gt;To create a billing profile you will first need to log into the &lt;a href=&#34;https://your-ui.example.com/&#34;&gt;ContinuousPipe console&lt;/a&gt;. You then need to navigate to the Account section using the sub menu in the top right corner.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;./images/faq/billing-account-menu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -108,7 +108,7 @@
 
 &lt;h2 id=&#34;creating-a-continuouspipe-api-key&#34;&gt;Creating a ContinuousPipe API Key&lt;/h2&gt;
 
-&lt;p&gt;You can generate a new API key in the account section of the console: &lt;a href=&#34;https://authenticator.continuouspipe.io/account/api-keys&#34;&gt;https://authenticator.continuouspipe.io/account/api-keys&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can generate a new API key in the account section of the console: &lt;a href=&#34;https://your-api.example.com/account/api-keys&#34;&gt;https://your-api.example.com/account/api-keys&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;To create a new API key, enter a description in the &amp;ldquo;New key&amp;rdquo; form:&lt;/p&gt;
 
@@ -553,7 +553,7 @@ mv cp-remote /usr/local/bin/cp-remote
 
 &lt;ul&gt;
 &lt;li&gt;A &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; or &lt;a href=&#34;https://bitbucket.org/&#34;&gt;Bitbucket&lt;/a&gt; account to host your Laravel project&lt;/li&gt;
-&lt;li&gt;A &lt;a href=&#34;https://continuouspipe.io/&#34;&gt;ContinuousPipe&lt;/a&gt; account&lt;/li&gt;
+&lt;li&gt;A &lt;a href=&#34;https://continuouspipe.github.io/&#34;&gt;ContinuousPipe&lt;/a&gt; account&lt;/li&gt;
 &lt;li&gt;A Kubernetes cluster e.g. &lt;a href=&#34;https://aws.amazon.com/&#34;&gt;AWS&lt;/a&gt;, &lt;a href=&#34;https://cloud.google.com/container-engine/&#34;&gt;GCE&lt;/a&gt; or &lt;a href=&#34;https://azure.microsoft.com/en-au/&#34;&gt;Azure&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;A Docker Registry account e.g. &lt;a href=&#34;https://docker.io&#34;&gt;docker.io&lt;/a&gt; or &lt;a href=&#34;https://quay.io&#34;&gt;quay.io&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1058,7 +1058,7 @@ mkdir -p &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;${&lt;/span&gt;&lt
 
 &lt;p&gt;Here we are creating a new web container, making it accessible to the public which instructs ContinuousPipe to get an IP address from the load balancer. We inject the environment variables previously defined in the &lt;code&gt;initalization&lt;/code&gt; task, and finally we configure the resources required from the cluster and open up the required ports, &lt;code&gt;80&lt;/code&gt; and &lt;code&gt;443&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;The last section of this task is the &lt;code&gt;deployment_strategy&lt;/code&gt; which configures how ContinuousPipe will determine when the container is finished building and if it was successful or not. For more information on health checks please refer to &lt;a href=&#34;http://docs.continuouspipe.io/configuration/deployments/#health-checks&#34;&gt;http://docs.continuouspipe.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The last section of this task is the &lt;code&gt;deployment_strategy&lt;/code&gt; which configures how ContinuousPipe will determine when the container is finished building and if it was successful or not. For more information on health checks please refer to &lt;a href=&#34;http://documentation-continuouspipe.github.io/configuration/deployments/#health-checks&#34;&gt;http://documentation-continuouspipe.github.io/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Now that we have defined our &lt;code&gt;continuous-pipe.yml&lt;/code&gt; file lets configure that one last script we set to use in the &lt;code&gt;initialization&lt;/code&gt; task. Create a new file &lt;code&gt;tools/docker/setup/setup.sh&lt;/code&gt; with the following -&lt;/p&gt;
 
@@ -1163,7 +1163,7 @@ Total &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&
 To github.com:continuouspipe/demo-laravel.git
  * &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;new branch&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;      master -&amp;gt; dev-richdynamix
 Continuous Pipe will now build your developer environment
-You can see when it is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/span&gt; and find its IP address at https://ui.continuouspipe.io/
+You can see when it is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/span&gt; and find its IP address at https://your-ui.example.com/
 Please &lt;span style=&#34;color: #f8f8f2&#34;&gt;wait&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;until&lt;/span&gt; the build is &lt;span style=&#34;color: #f8f8f2&#34;&gt;complete&lt;/span&gt; to use any of this tool&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;&amp;#39;&lt;/span&gt;s other commands.
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1229,7 +1229,7 @@ Done.
 
 &lt;p&gt;There is far more we can do with ContinuousPipe to increase productivity, for example, we can use filters to determine when tasks are run. Perhaps we only want certain branches to build environments, or a certain GitHub label on a Pull-Request to trigger the build. We can also go one step further and separate our builds into pipelines. Perhaps we want to have a separate pipeline for production compared to development or testing. This is useful if there are certain environment variables and tasks that should only be used in development but not production.&lt;/p&gt;
 
-&lt;p&gt;This getting started guide should be treated as a first step, please refer to the &lt;a href=&#34;http://docs.continuouspipe.io&#34;&gt;http://docs.continuouspipe.io&lt;/a&gt; for more advanced tutorials.&lt;/p&gt;
+&lt;p&gt;This getting started guide should be treated as a first step, please refer to the &lt;a href=&#34;http://documentation-continuouspipe.github.io&#34;&gt;http://documentation-continuouspipe.github.io&lt;/a&gt; for more advanced tutorials.&lt;/p&gt;
 </description>
     </item>
     
@@ -1381,7 +1381,7 @@ Done.
 &lt;li&gt;&lt;a href=&#34;./remote-development/command-exec/#interactive-mode&#34;&gt;exec&lt;/a&gt; command&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;If you have not previously run interactive mode with any command, you will first need to generate a &lt;a href=&#34;https://authenticator.continuouspipe.io/account/api-keys&#34;&gt;ContinuousPipe API key&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have not previously run interactive mode with any command, you will first need to generate a &lt;a href=&#34;https://your-api.example.com/account/api-keys&#34;&gt;ContinuousPipe API key&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The first time you run the the &lt;code&gt;--interactive&lt;/code&gt; option with any of the above commands you will be prompted to enter your ContinuousPipe username and the ContinuousPipe API key you generated. These credentials are then stored in a global configuration file &lt;code&gt;~/.cp-remote/config.yml&lt;/code&gt; (on Linux/OSX) &lt;code&gt;C:\Users\{YourUserName}\.cp-remote\config.yml&lt;/code&gt; (on Windows), so you won&amp;rsquo;t need to enter them again.&lt;/p&gt;
 
